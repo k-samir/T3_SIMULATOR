@@ -70,12 +70,12 @@ namespace Menu
 
 
 
-        public void setpaNecess(int pA)
+        public void setPaNecess(int pA)
         {
             this.paNecess = pA;
         }
 
-        public int getpaNecess()
+        public int getPaNecess()
         {
             return this.paNecess;
         }
