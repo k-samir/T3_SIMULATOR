@@ -33,13 +33,13 @@ namespace Menu
         public void afficherStatPerso()
         {
             panelStatPerso.Visible = true;
-            btnFleche.Location = new System.Drawing.Point(1227, 452);
-            btnFleche.Text = " > ";
+            btnFleche.Location = new System.Drawing.Point(1223, 450);
+            btnFleche.Text = ">";
         }
         public void cacherStatPerso()
         {
             panelStatPerso.Visible = false;
-            btnFleche.Location = new System.Drawing.Point(1577, 455);
+            btnFleche.Location = new System.Drawing.Point(1565, 455);
             btnFleche.Text = "<";
         }
 

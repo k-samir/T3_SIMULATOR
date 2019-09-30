@@ -134,6 +134,35 @@ namespace Personnage
                 this.sociabilite = 100;
             }
         }
+        public void realisation(Menu.Fonctionnalites fct, int nbPa)
+        {
+            if (fct.getPaNecess() > fct.getPaDepense() + nbPa)
+            {
+                fct.setPaDepense(fct.getPaDepense() + nbPa);
+            }
+            else
+            {
+                fct.setPaDepense(fct.getPaNecess());
+            }
+        }
+
+        public void recherche(Personnage id, int nbPa)
+        {
+            id.setConnaissances(id.getConnaissances() + nbPa);
+        }
+        public void repos(Personnage id, int nbPa)
+        {
+            id.setStress(id.getStress() - nbPa);
+            id.setFatigue(id.getFatigue() - nbPa);
+
+        }
+
+        public void reunion()
+        {
+            //ouvrir page réunion
+        }
+
+
     }
 
 }
