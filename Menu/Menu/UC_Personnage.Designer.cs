@@ -88,9 +88,9 @@
             this.lblProductivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductivite.Location = new System.Drawing.Point(206, 36);
             this.lblProductivite.Name = "lblProductivite";
-            this.lblProductivite.Size = new System.Drawing.Size(279, 26);
+            this.lblProductivite.Size = new System.Drawing.Size(102, 26);
             this.lblProductivite.TabIndex = 3;
-            this.lblProductivite.Text = "Productivité";
+            this.lblProductivite.Text = "Productivité:";
             this.lblProductivite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStress
@@ -98,9 +98,9 @@
             this.lblStress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStress.Location = new System.Drawing.Point(206, 62);
             this.lblStress.Name = "lblStress";
-            this.lblStress.Size = new System.Drawing.Size(279, 26);
+            this.lblStress.Size = new System.Drawing.Size(89, 26);
             this.lblStress.TabIndex = 4;
-            this.lblStress.Text = "Stress";
+            this.lblStress.Text = "Stress:";
             this.lblStress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblConnaissance
@@ -108,9 +108,9 @@
             this.lblConnaissance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConnaissance.Location = new System.Drawing.Point(206, 88);
             this.lblConnaissance.Name = "lblConnaissance";
-            this.lblConnaissance.Size = new System.Drawing.Size(279, 26);
+            this.lblConnaissance.Size = new System.Drawing.Size(127, 26);
             this.lblConnaissance.TabIndex = 5;
-            this.lblConnaissance.Text = "Connaissance";
+            this.lblConnaissance.Text = "Connaissance:";
             this.lblConnaissance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblSociabilite
@@ -118,9 +118,9 @@
             this.lblSociabilite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSociabilite.Location = new System.Drawing.Point(206, 114);
             this.lblSociabilite.Name = "lblSociabilite";
-            this.lblSociabilite.Size = new System.Drawing.Size(279, 26);
+            this.lblSociabilite.Size = new System.Drawing.Size(102, 26);
             this.lblSociabilite.TabIndex = 6;
-            this.lblSociabilite.Text = "Sociabilité";
+            this.lblSociabilite.Text = "Sociabilité:";
             this.lblSociabilite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // comboBox1
