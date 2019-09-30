@@ -1,11 +1,9 @@
 C:\Users\tieut\myt3\Menu\Menu\bin\Debug\Menu.exe.config
 C:\Users\tieut\myt3\Menu\Menu\bin\Debug\Menu.exe
 C:\Users\tieut\myt3\Menu\Menu\bin\Debug\Menu.pdb
-C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.csprojAssemblyReference.cache
 C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.frmMenu.resources
 C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.Properties.Resources.resources
 C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.csproj.GenerateResource.cache
-C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.csproj.CoreCompileInputs.cache
 C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.exe
 C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.pdb
 C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.frmJeu.resources
@@ -19,3 +17,5 @@ C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.Properties.Resources.reso
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.csproj.GenerateResource.cache
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.exe
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.pdb
+C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.UC_Personnage.resources
+C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.csprojAssemblyReference.cache
