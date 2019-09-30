@@ -16,5 +16,31 @@ namespace Menu
         {
             InitializeComponent();
         }
+
+        public void setFatigue(int fatigue)
+        {
+            lblValFatigue.Text = String.Empty;
+            lblValFatigue.Text = fatigue.ToString();
+        }
+        public void setProductivite(int productivite)
+        {
+            lblValProductivite.Text = String.Empty;
+            lblValProductivite.Text = productivite.ToString();
+        }
+        public void setStress(int stress)
+        {
+            lblValStress.Text = String.Empty;
+            lblValStress.Text = stress.ToString();
+        }
+        public void setConnaissance(int connaissance)
+        {
+            lblValConnaissance.Text = String.Empty;
+            lblValConnaissance.Text = connaissance.ToString();
+        }
+        public void setSociabilite(int sociabilite)
+        {
+            lblValSociabilite.Text = String.Empty;
+            lblValSociabilite.Text = sociabilite.ToString();
+        }
     }
 }

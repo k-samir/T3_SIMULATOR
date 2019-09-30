@@ -33,10 +33,11 @@
             this.lblStatPerso = new System.Windows.Forms.Label();
             this.btnTourSuivant = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
-            this.uC_Personnage1 = new Menu.UC_Personnage();
-            this.uC_Personnage2 = new Menu.UC_Personnage();
-            this.uC_Personnage3 = new Menu.UC_Personnage();
+            this.btnFleche = new System.Windows.Forms.Button();
             this.uC_Personnage4 = new Menu.UC_Personnage();
+            this.uC_Personnage3 = new Menu.UC_Personnage();
+            this.uC_Personnage2 = new Menu.UC_Personnage();
+            this.uC_Personnage1 = new Menu.UC_Personnage();
             this.panelStatPerso.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,15 +54,15 @@
             this.panelStatPerso.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panelStatPerso.Controls.Add(this.lblStatPerso);
             this.panelStatPerso.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelStatPerso.Location = new System.Drawing.Point(1287, 0);
+            this.panelStatPerso.Location = new System.Drawing.Point(1261, 0);
             this.panelStatPerso.Name = "panelStatPerso";
-            this.panelStatPerso.Size = new System.Drawing.Size(317, 881);
+            this.panelStatPerso.Size = new System.Drawing.Size(343, 881);
             this.panelStatPerso.TabIndex = 6;
             // 
             // lblStatPerso
             // 
             this.lblStatPerso.Font = new System.Drawing.Font("Bernard MT Condensed", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatPerso.Location = new System.Drawing.Point(49, 12);
+            this.lblStatPerso.Location = new System.Drawing.Point(73, 12);
             this.lblStatPerso.Name = "lblStatPerso";
             this.lblStatPerso.Size = new System.Drawing.Size(217, 76);
             this.lblStatPerso.TabIndex = 0;
@@ -71,17 +72,18 @@
             // btnTourSuivant
             // 
             this.btnTourSuivant.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTourSuivant.Location = new System.Drawing.Point(1105, 724);
+            this.btnTourSuivant.Location = new System.Drawing.Point(1095, 724);
             this.btnTourSuivant.Name = "btnTourSuivant";
             this.btnTourSuivant.Size = new System.Drawing.Size(143, 44);
             this.btnTourSuivant.TabIndex = 7;
             this.btnTourSuivant.Text = "Tour Suivant";
             this.btnTourSuivant.UseVisualStyleBackColor = true;
+            this.btnTourSuivant.Click += new System.EventHandler(this.btnTourSuivant_Click);
             // 
             // btnQuitter
             // 
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitter.Location = new System.Drawing.Point(1105, 784);
+            this.btnQuitter.Location = new System.Drawing.Point(1095, 784);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(143, 44);
             this.btnQuitter.TabIndex = 8;
@@ -89,32 +91,16 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
-            // uC_Personnage1
+            // btnFleche
             // 
-            this.uC_Personnage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage1.Location = new System.Drawing.Point(58, 86);
-            this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage1.Name = "uC_Personnage1";
-            this.uC_Personnage1.Size = new System.Drawing.Size(442, 355);
-            this.uC_Personnage1.TabIndex = 9;
-            // 
-            // uC_Personnage2
-            // 
-            this.uC_Personnage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage2.Location = new System.Drawing.Point(607, 86);
-            this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage2.Name = "uC_Personnage2";
-            this.uC_Personnage2.Size = new System.Drawing.Size(442, 355);
-            this.uC_Personnage2.TabIndex = 10;
-            // 
-            // uC_Personnage3
-            // 
-            this.uC_Personnage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage3.Location = new System.Drawing.Point(58, 473);
-            this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage3.Name = "uC_Personnage3";
-            this.uC_Personnage3.Size = new System.Drawing.Size(442, 355);
-            this.uC_Personnage3.TabIndex = 11;
+            this.btnFleche.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFleche.Location = new System.Drawing.Point(1227, 452);
+            this.btnFleche.Name = "btnFleche";
+            this.btnFleche.Size = new System.Drawing.Size(35, 32);
+            this.btnFleche.TabIndex = 13;
+            this.btnFleche.Text = ">";
+            this.btnFleche.UseVisualStyleBackColor = true;
+            this.btnFleche.Click += new System.EventHandler(this.btnFleche_Click);
             // 
             // uC_Personnage4
             // 
@@ -125,12 +111,40 @@
             this.uC_Personnage4.Size = new System.Drawing.Size(442, 355);
             this.uC_Personnage4.TabIndex = 12;
             // 
+            // uC_Personnage3
+            // 
+            this.uC_Personnage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage3.Location = new System.Drawing.Point(58, 473);
+            this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage3.Name = "uC_Personnage3";
+            this.uC_Personnage3.Size = new System.Drawing.Size(442, 355);
+            this.uC_Personnage3.TabIndex = 11;
+            // 
+            // uC_Personnage2
+            // 
+            this.uC_Personnage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage2.Location = new System.Drawing.Point(607, 86);
+            this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage2.Name = "uC_Personnage2";
+            this.uC_Personnage2.Size = new System.Drawing.Size(442, 355);
+            this.uC_Personnage2.TabIndex = 10;
+            // 
+            // uC_Personnage1
+            // 
+            this.uC_Personnage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage1.Location = new System.Drawing.Point(58, 86);
+            this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage1.Name = "uC_Personnage1";
+            this.uC_Personnage1.Size = new System.Drawing.Size(442, 355);
+            this.uC_Personnage1.TabIndex = 9;
+            // 
             // frmJeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1604, 881);
+            this.Controls.Add(this.btnFleche);
             this.Controls.Add(this.uC_Personnage4);
             this.Controls.Add(this.uC_Personnage3);
             this.Controls.Add(this.uC_Personnage2);
@@ -140,6 +154,7 @@
             this.Controls.Add(this.panelStatPerso);
             this.Controls.Add(this.pbAvancement);
             this.Name = "frmJeu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmJeu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelStatPerso.ResumeLayout(false);
@@ -157,5 +172,6 @@
         private UC_Personnage uC_Personnage2;
         private UC_Personnage uC_Personnage3;
         private UC_Personnage uC_Personnage4;
+        private System.Windows.Forms.Button btnFleche;
     }
 }
