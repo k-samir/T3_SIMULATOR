@@ -1,6 +1,6 @@
 # myT3
 
-#Présentation
+# Présentation
 Bienvenue sur le git de T3 Simulator !
 Notre projet a pour but de développer un jeu sérieux visant un utilisateur lambda, qui sera chargé de simuler la gestion d’un projet, en assignant des tâches à une équipe de personnes dans le but de terminer le projet à 100% avant une deadline imposée. 
 Pour y parvenir, le joueur devra enfiler les différentes casquettes d’un chef de projet et apprendre à construire une équipe reliant affinité, productivité et cohésion. Il devra anticiper les risques d’un projet, apprendre à estimer des charges et durées, et comprendre la complexité de la gestion d’un projet. 
