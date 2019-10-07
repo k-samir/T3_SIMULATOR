@@ -15,10 +15,15 @@ namespace Menu
             }
         }
 
-        public void lancerJeu()
+        public void lancerJeu(frmMenu f)
         {
-            throw new System.NotImplementedException();
+            frmJeu jeu = new frmJeu();
+            f.Hide();
+            jeu.Show();
+            
+            //throw new System.NotImplementedException();
         }
+
 
         public void arreterJeu()
         {
@@ -27,6 +32,7 @@ namespace Menu
 
         public void nouveauTour()
         {
+
             throw new System.NotImplementedException();
         }
     }

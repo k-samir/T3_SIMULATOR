@@ -25,10 +25,11 @@ namespace Menu
         private void btnCommencer_Click(object sender, EventArgs e)
         {
             //lancer formulaire pour lancer le jeu
-            frmJeu jeu = new frmJeu();
-            this.Hide();
-            jeu.Show();
+            ControleurJeu j = new ControleurJeu();
+            j.lancerJeu(this);
+            
         }
+
 
         private void btnCommencer_MouseEnter(object sender, EventArgs e)
         {
