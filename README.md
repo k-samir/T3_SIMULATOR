@@ -31,16 +31,16 @@ Prendre conscience des phases d’un projet :
 - Livraison
 
 Savoir utiliser les informations à bon escient :
-gestion du temps de travail.
-choix à prendre en fonction de l'état de l’équipe.
+- gestion du temps de travail
+- choix à prendre en fonction de l'état de l’équipe.
 
 **Savoir gérer des tâches** 
 Si la tâche plaît à la personne selon ses compétences, alors la motivation de cette personne augmente et sa fatigue augmente moins vite.
 Au contraire si la tâche lui déplait, augmentation du stress, de fatigue, baisse de motivation, d’efficacité et risque de dépression.
 
 En fonction de la capacité de son groupe dans une tâche :
-Si la personne a une affinité avec ses collègues, augmentation de la motivation du groupe.
-Au contraire en cas d’affinité négative, baisse de motivation.
+- Un membre du projet a beaucoup d'affinité avec un autre membre ? Sa motivation augmente. 
+- Au contraire en cas d’affinité négative, vous devinez que sa motivation en sera impactée. 
 
 Attention ! Il y aura de multiples aléas durant votre projet, restez prudent !
 
