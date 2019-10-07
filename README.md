@@ -44,5 +44,6 @@ En fonction de la capacité de son groupe dans une tâche :
 
 Attention ! Il y aura de multiples aléas durant votre projet, restez prudent !
 
+# Installation du jeu
 
 
