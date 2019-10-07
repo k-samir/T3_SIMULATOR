@@ -17,21 +17,21 @@
   <Class Name="Menu.Fonctionnalites">
     <Position X="6" Y="1" Width="2" />
     <TypeIdentifier>
-      <HashCode>AgQAIIAAAAAAIAAgACAAKAIAAAAABEAiAAACAgICAAA=</HashCode>
+      <HashCode>AgQAIIAAAAAAIAAgACAAIAIAAAgABEAiAAACAgICAAA=</HashCode>
       <FileName>Classes\Fonctionnalites.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Menu.ControleurJeu">
     <Position X="1.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAAgAAAAAAAAEAAAAABAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\ControlleurJeu.cs</FileName>
+      <HashCode>AAAAAIAAAAAAAAhAAAACAAAEAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\ControleurJeu.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Projet" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Personnage.Personnage">
+  <Class Name="Menu.classePersonnage.Personnage">
     <Position X="8.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CgCQAAAQgCQAAAgAABKAAQAAACBAKABQAAAgAoAgAgA=</HashCode>

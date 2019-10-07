@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -17,30 +17,48 @@ namespace Menu
             InitializeComponent();
         }
 
+        public UC_Personnage(string prenom, double productivite, int stress, int sociabilite,int connaissance)
+        {
+            this.setPrenom(prenom);
+            this.setProductivite(productivite);
+            this.setStress(stress);
+            //this.setFatigue(0);
+            this.setSociabilite(sociabilite);
+
+            this.setConnaissance(connaissance);
+        }
+
+
+        public void setPrenom(string prenom)
+        {
+            lblPrenom.Text = String.Empty;
+            lblPrenom.Text = prenom;
+            lblPrenom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        }
         public void setFatigue(int fatigue)
         {
             lblValFatigue.Text = String.Empty;
-            lblValFatigue.Text = fatigue.ToString();
+            lblValFatigue.Text = fatigue.ToString() + "   /100";
         }
-        public void setProductivite(int productivite)
+        public void setProductivite(double productivite)
         {
             lblValProductivite.Text = String.Empty;
-            lblValProductivite.Text = productivite.ToString();
+            lblValProductivite.Text = productivite.ToString() + "   /5";
         }
         public void setStress(int stress)
         {
             lblValStress.Text = String.Empty;
-            lblValStress.Text = stress.ToString();
+            lblValStress.Text = stress.ToString() + "   /100";
         }
         public void setConnaissance(int connaissance)
         {
             lblValConnaissance.Text = String.Empty;
-            lblValConnaissance.Text = connaissance.ToString();
+            lblValConnaissance.Text = connaissance.ToString() + "   /100";
         }
         public void setSociabilite(int sociabilite)
         {
             lblValSociabilite.Text = String.Empty;
-            lblValSociabilite.Text = sociabilite.ToString();
+            lblValSociabilite.Text = sociabilite.ToString() + "   /100";
         }
     }
 }

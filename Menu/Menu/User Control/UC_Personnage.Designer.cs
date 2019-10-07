@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Personnage));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPrenom = new System.Windows.Forms.Label();
             this.lblFatigue = new System.Windows.Forms.Label();
             this.lblProductivite = new System.Windows.Forms.Label();
             this.lblStress = new System.Windows.Forms.Label();
@@ -63,15 +63,15 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // lblPrenom
             // 
-            this.label1.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 134);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Prénom du Perso";
+            this.lblPrenom.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrenom.Location = new System.Drawing.Point(6, 134);
+            this.lblPrenom.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblPrenom.Name = "lblPrenom";
+            this.lblPrenom.Size = new System.Drawing.Size(176, 24);
+            this.lblPrenom.TabIndex = 1;
+            this.lblPrenom.Text = "Prénom du Perso";
             // 
             // lblFatigue
             // 
@@ -252,7 +252,7 @@
             this.Controls.Add(this.lblStress);
             this.Controls.Add(this.lblProductivite);
             this.Controls.Add(this.lblFatigue);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPrenom);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -267,7 +267,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPrenom;
         private System.Windows.Forms.Label lblFatigue;
         private System.Windows.Forms.Label lblProductivite;
         private System.Windows.Forms.Label lblStress;

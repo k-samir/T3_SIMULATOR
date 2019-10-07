@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Personnage
+namespace Menu.classePersonnage
 {
     public class Personnage
     {
@@ -12,16 +12,15 @@ namespace Personnage
         private int id;
         private string prenom;
         private int fatigue = 0;
-
-        private int productivite;
+        private double productivite;
         private int stress;
         private int connaissances = 0;
         private int sociabilite;
         private int pA;
-               
 
+               
         //Constructeur de la classe personnage
-        public Personnage(string prenom, int productivite, int stress, int sociabilite)
+        public Personnage(string prenom, double productivite, int stress, int sociabilite)
         {
             this.prenom = prenom;
             this.productivite = productivite;
@@ -133,6 +132,15 @@ namespace Personnage
             {
                 this.sociabilite = 100;
             }
+        }
+
+        public double getProductivite()
+        {
+            return this.productivite;
+        }
+        public void setProductivite(int productivite)
+        {
+            this.productivite = productivite;
         }
         public void realisation(Menu.Fonctionnalites fct, int nbPa)
         {

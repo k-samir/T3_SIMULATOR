@@ -18,5 +18,5 @@ C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.csproj.GenerateResource.c
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.exe
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.pdb
 C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.UC_Personnage.resources
-C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.csprojAssemblyReference.cache
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.UC_Personnage.resources
+C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.csprojAssemblyReference.cache
