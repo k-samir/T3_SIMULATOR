@@ -17,10 +17,10 @@ ses affinités avec le projet et entre eux
 connaître leur point fort et point faible
 
 
-chaque tâche à :
--une difficulté
--un temps de réalisation
--rattaché à un objectif.
+chaque tâche est définie par :
+- une difficulté
+- un temps de réalisation
+- rattachée à un objectif
 - un niveau de connaissance
 
 Prendre conscience des phases d’un projet :
