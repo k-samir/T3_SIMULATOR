@@ -12,15 +12,39 @@ namespace Menu
 {
     public partial class UC_Personnage : UserControl
     {
+
+        /*variable global
+        public ArrayList liste_fonctionnalites_Recherche = new ArrayList();
+        public void remplirRecherche() {
+            liste_fonctionnalites_Recherche.Add("Recherche dans Cahier des Charges");
+            liste_fonctionnalites_Recherche.Add("Recherche Objectifs Pédagogiques");
+            liste_fonctionnalites_Recherche.Add("Recherche code");
+        }
+
+        public ArrayList liste_fonctionnalites_Developpement = new ArrayList();
+        public void remplirDeveloppement() {
+            liste_fonctionnalites_Developpement.Add("1");
+            liste_fonctionnalites_Developpement.Add("2");
+            liste_fonctionnalites_Developpement.Add("3");
+
+        }
+        public ArrayList liste_fonctionnalites_Conception = new ArrayList();
+        public void remplirConception() {
+            liste_fonctionnalites_Conception.Add("4");
+            liste_fonctionnalites_Conception.Add("5");
+            liste_fonctionnalites_Conception.Add("6");
+        }
+        */
         public UC_Personnage()
         {
             InitializeComponent();
 
                ArrayList tabAction = new ArrayList();
-               tabAction.Add("Réalisation");
+               tabAction.Add("Conception");
                tabAction.Add("Développement");
                tabAction.Add("Recherche");
 
+               
 
                for(int i=0; i<tabAction.Count; i++)
                {
@@ -37,10 +61,14 @@ namespace Menu
             this.setPrenom(prenom);
             this.setProductivite(productivite);
             this.setStress(stress);
-            //this.setFatigue(0);
+            this.setFatigue(0);
             this.setSociabilite(sociabilite);
 
             this.setConnaissance(connaissance);
+
+            //remplirConception();
+            //remplirDeveloppement();
+            //remplirRecherche();
         }
 
 
@@ -74,6 +102,49 @@ namespace Menu
         {
             lblValSociabilite.Text = String.Empty;
             lblValSociabilite.Text = sociabilite.ToString() + "   /100";
+        }
+
+        private void cboAction1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //cboFonctionnalite1.Items.Clear();
+
+            String action = cboAction1.Text;
+            MessageBox.Show(action);
+            if (action == "Conception")
+            {
+                cboFonctionnalite1.Items.Clear();
+                cboFonctionnalite1.Items.Add("CC1");
+                cboFonctionnalite1.Items.Add("CC2");
+                cboFonctionnalite1.Items.Add("CC3");
+
+                /*for (int i = 0; i < liste_fonctionnalites_Conception.Count; i++)
+                {
+                    MessageBox.Show(liste_fonctionnalites_Conception[i].ToString());
+                    cboFonctionnalite1.Items.Add(liste_fonctionnalites_Conception[i]);
+                }*/
+            }
+            if (action == "Développement")
+            {
+                cboFonctionnalite1.Items.Clear();
+                cboFonctionnalite1.Items.Add("DD1");
+                cboFonctionnalite1.Items.Add("DD2");
+                cboFonctionnalite1.Items.Add("DD3");
+                /*for (int i = 0; i < liste_fonctionnalites_Developpement.Count; i++)
+                {
+                    cboFonctionnalite1.Items.Add(liste_fonctionnalites_Developpement[i]);
+                }*/
+            }
+            if (action == "Recherche")
+            {
+                cboFonctionnalite1.Items.Clear();
+                cboFonctionnalite1.Items.Add("Recherche dans Cahier des Charges");
+                cboFonctionnalite1.Items.Add("Recherche Objectifs Pédagogiques");
+                cboFonctionnalite1.Items.Add("Recherche code");
+                /*for (int i = 0; i < liste_fonctionnalites_Recherche.Count; i++)
+                {
+                    cboFonctionnalite1.Items.Add(liste_fonctionnalites_Recherche[i]);
+                }*/
+            }
         }
     }
 }

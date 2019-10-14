@@ -28,7 +28,38 @@ namespace Menu.classePersonnage
             this.sociabilite = sociabilite;
         }
 
-        //Accesseurs (pour les set, les valeurs acceptées sont comprises entre 0 et 100)
+        /* ------------------------------------------- actions ---------------------------- */
+        public void realisation(Menu.Fonctionnalites fct, int nbPa)
+        {
+            if (fct.getPaNecess() > fct.getPaDepense() + nbPa)
+            {
+                fct.setPaDepense(fct.getPaDepense() + nbPa);
+            }
+            else
+            {
+                fct.setPaDepense(fct.getPaNecess());
+            }
+        }
+
+        public void recherche(Personnage id, int nbPa)
+        {
+            id.setConnaissances(id.getConnaissances() + nbPa);
+        }
+        public void repos(Personnage id, int nbPa)
+        {
+            id.setStress(id.getStress() - nbPa);
+            id.setFatigue(id.getFatigue() - nbPa);
+
+        }
+
+        public void reunion()
+        {
+            //ouvrir page réunion
+        }
+
+        /* ---------------------------------------------------------------------- */
+
+        /* ------Accesseurs (pour les set, les valeurs acceptées sont comprises entre 0 et 100)  ------------------ */
         public string getPrenom()
         {
             return this.prenom;
@@ -94,7 +125,7 @@ namespace Menu.classePersonnage
             }
         }
 
-        public int getConnaissances()
+        public int getConnaissances() 
         {
             return this.connaissances;
         }
@@ -142,33 +173,9 @@ namespace Menu.classePersonnage
         {
             this.productivite = productivite;
         }
-        public void realisation(Menu.Fonctionnalites fct, int nbPa)
-        {
-            if (fct.getPaNecess() > fct.getPaDepense() + nbPa)
-            {
-                fct.setPaDepense(fct.getPaDepense() + nbPa);
-            }
-            else
-            {
-                fct.setPaDepense(fct.getPaNecess());
-            }
-        }
+        /* ---------------------------------------------------------------------- */
 
-        public void recherche(Personnage id, int nbPa)
-        {
-            id.setConnaissances(id.getConnaissances() + nbPa);
-        }
-        public void repos(Personnage id, int nbPa)
-        {
-            id.setStress(id.getStress() - nbPa);
-            id.setFatigue(id.getFatigue() - nbPa);
 
-        }
-
-        public void reunion()
-        {
-            //ouvrir page réunion
-        }
 
 
     }
