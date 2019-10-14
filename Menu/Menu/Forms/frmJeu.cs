@@ -46,35 +46,12 @@ namespace Menu
             return texte;
         }
 
-        public void afficherStatPerso()
-        {
-            panelStatPerso.Visible = true;
-            btnFleche.Location = new System.Drawing.Point(1223, 450);
-            btnFleche.Text = ">";
-        }
-        public void cacherStatPerso()
-        {
-            panelStatPerso.Visible = false;
-            btnFleche.Location = new System.Drawing.Point(1565, 455);
-            btnFleche.Text = "<";
-        }
 
-
-        private void btnFleche_Click(object sender, EventArgs e)
-        {
-            if (btnFleche.Text.ToString() == ">")
-            {
-                cacherStatPerso();
-            }
-            else
-            {
-                afficherStatPerso();
-            }
-        }
+        
 
         private void btnTourSuivant_Click(object sender, EventArgs e)
         {
-            
+            //ControleurJeu.nouveauTour();
         }
     }
 }

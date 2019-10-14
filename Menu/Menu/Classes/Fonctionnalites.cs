@@ -7,12 +7,13 @@ namespace Menu
 {
     public class Fonctionnalites
     {
-        //Attributs d'un personnage
+        //Attributs d'un personnage            pk c la ?
         private string nom;
         private int paNecess;
         private int pourcentNote;
         private int nvConnaissNecess;
         private int paDepense;
+        private string type;
 
 
 
@@ -21,14 +22,14 @@ namespace Menu
 
 
         //Constructeur de la classe Fonctionnalites
-        public Fonctionnalites(string nom, int paNecess, int pourcentNote, int nvConnaissNecces)
+        public Fonctionnalites(string nom, int paNecess, int pourcentNote, int nvConnaissNeces, string action)
         {
             this.nom = nom;
             this.paNecess = paNecess;
             this.pourcentNote = pourcentNote;
-            this.nvConnaissNecess = nvConnaissNecces;
+            this.nvConnaissNecess = nvConnaissNeces;
+            this.action = action;
         }
-
 
         //Getter et Setter de la classe Fonctionnalites
         public string getNnom()
