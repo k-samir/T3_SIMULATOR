@@ -36,9 +36,6 @@
             this.lblStress = new System.Windows.Forms.Label();
             this.lblConnaissance = new System.Windows.Forms.Label();
             this.lblSociabilite = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.lblAction1 = new System.Windows.Forms.Label();
             this.grpAction = new System.Windows.Forms.GroupBox();
             this.lblAction3 = new System.Windows.Forms.Label();
@@ -48,6 +45,18 @@
             this.lblValStress = new System.Windows.Forms.Label();
             this.lblValConnaissance = new System.Windows.Forms.Label();
             this.lblValSociabilite = new System.Windows.Forms.Label();
+            this.cboFonctionnalite1 = new System.Windows.Forms.ComboBox();
+            this.cboFonctionnalite2 = new System.Windows.Forms.ComboBox();
+            this.cboFonctionnalite3 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtHeure3 = new System.Windows.Forms.TextBox();
+            this.txtHeure2 = new System.Windows.Forms.TextBox();
+            this.txtHeure1 = new System.Windows.Forms.TextBox();
+            this.cboAction1 = new System.Windows.Forms.ComboBox();
+            this.cboAction3 = new System.Windows.Forms.ComboBox();
+            this.cboAction2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpAction.SuspendLayout();
             this.SuspendLayout();
@@ -123,34 +132,10 @@
             this.lblSociabilite.Text = "Sociabilité:";
             this.lblSociabilite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(288, 32);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(113, 70);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(288, 32);
-            this.comboBox2.TabIndex = 8;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(113, 110);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(288, 32);
-            this.comboBox3.TabIndex = 9;
-            // 
             // lblAction1
             // 
             this.lblAction1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAction1.Location = new System.Drawing.Point(6, 28);
+            this.lblAction1.Location = new System.Drawing.Point(12, 58);
             this.lblAction1.Name = "lblAction1";
             this.lblAction1.Size = new System.Drawing.Size(101, 38);
             this.lblAction1.TabIndex = 10;
@@ -159,15 +144,24 @@
             // 
             // grpAction
             // 
+            this.grpAction.Controls.Add(this.cboAction1);
+            this.grpAction.Controls.Add(this.cboAction3);
+            this.grpAction.Controls.Add(this.cboAction2);
+            this.grpAction.Controls.Add(this.label3);
+            this.grpAction.Controls.Add(this.label2);
+            this.grpAction.Controls.Add(this.label1);
+            this.grpAction.Controls.Add(this.txtHeure3);
+            this.grpAction.Controls.Add(this.txtHeure2);
+            this.grpAction.Controls.Add(this.txtHeure1);
+            this.grpAction.Controls.Add(this.cboFonctionnalite3);
+            this.grpAction.Controls.Add(this.cboFonctionnalite2);
+            this.grpAction.Controls.Add(this.cboFonctionnalite1);
             this.grpAction.Controls.Add(this.lblAction3);
             this.grpAction.Controls.Add(this.lblAction2);
             this.grpAction.Controls.Add(this.lblAction1);
-            this.grpAction.Controls.Add(this.comboBox1);
-            this.grpAction.Controls.Add(this.comboBox3);
-            this.grpAction.Controls.Add(this.comboBox2);
-            this.grpAction.Location = new System.Drawing.Point(11, 188);
+            this.grpAction.Location = new System.Drawing.Point(16, 170);
             this.grpAction.Name = "grpAction";
-            this.grpAction.Size = new System.Drawing.Size(428, 164);
+            this.grpAction.Size = new System.Drawing.Size(480, 179);
             this.grpAction.TabIndex = 11;
             this.grpAction.TabStop = false;
             this.grpAction.Text = "Liste d\'actions que le personnage doit effectuer";
@@ -175,7 +169,7 @@
             // lblAction3
             // 
             this.lblAction3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAction3.Location = new System.Drawing.Point(6, 106);
+            this.lblAction3.Location = new System.Drawing.Point(12, 129);
             this.lblAction3.Name = "lblAction3";
             this.lblAction3.Size = new System.Drawing.Size(101, 38);
             this.lblAction3.TabIndex = 12;
@@ -185,7 +179,7 @@
             // lblAction2
             // 
             this.lblAction2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAction2.Location = new System.Drawing.Point(6, 66);
+            this.lblAction2.Location = new System.Drawing.Point(11, 92);
             this.lblAction2.Name = "lblAction2";
             this.lblAction2.Size = new System.Drawing.Size(101, 38);
             this.lblAction2.TabIndex = 11;
@@ -237,9 +231,109 @@
             this.lblValSociabilite.TabIndex = 16;
             this.lblValSociabilite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cboFonctionnalite1
+            // 
+            this.cboFonctionnalite1.FormattingEnabled = true;
+            this.cboFonctionnalite1.Location = new System.Drawing.Point(220, 53);
+            this.cboFonctionnalite1.Name = "cboFonctionnalite1";
+            this.cboFonctionnalite1.Size = new System.Drawing.Size(138, 37);
+            this.cboFonctionnalite1.TabIndex = 13;
+            // 
+            // cboFonctionnalite2
+            // 
+            this.cboFonctionnalite2.FormattingEnabled = true;
+            this.cboFonctionnalite2.Location = new System.Drawing.Point(220, 96);
+            this.cboFonctionnalite2.Name = "cboFonctionnalite2";
+            this.cboFonctionnalite2.Size = new System.Drawing.Size(138, 37);
+            this.cboFonctionnalite2.TabIndex = 14;
+            // 
+            // cboFonctionnalite3
+            // 
+            this.cboFonctionnalite3.FormattingEnabled = true;
+            this.cboFonctionnalite3.Location = new System.Drawing.Point(220, 134);
+            this.cboFonctionnalite3.Name = "cboFonctionnalite3";
+            this.cboFonctionnalite3.Size = new System.Drawing.Size(138, 37);
+            this.cboFonctionnalite3.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(434, 139);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 26);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "h";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(434, 104);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 26);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "h";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(434, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 26);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "h";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtHeure3
+            // 
+            this.txtHeure3.Location = new System.Drawing.Point(364, 136);
+            this.txtHeure3.Name = "txtHeure3";
+            this.txtHeure3.Size = new System.Drawing.Size(64, 34);
+            this.txtHeure3.TabIndex = 27;
+            // 
+            // txtHeure2
+            // 
+            this.txtHeure2.Location = new System.Drawing.Point(364, 96);
+            this.txtHeure2.Name = "txtHeure2";
+            this.txtHeure2.Size = new System.Drawing.Size(64, 34);
+            this.txtHeure2.TabIndex = 26;
+            // 
+            // txtHeure1
+            // 
+            this.txtHeure1.Location = new System.Drawing.Point(364, 56);
+            this.txtHeure1.Name = "txtHeure1";
+            this.txtHeure1.Size = new System.Drawing.Size(64, 34);
+            this.txtHeure1.TabIndex = 25;
+            this.txtHeure1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // cboAction1
+            // 
+            this.cboAction1.FormattingEnabled = true;
+            this.cboAction1.Location = new System.Drawing.Point(114, 54);
+            this.cboAction1.Name = "cboAction1";
+            this.cboAction1.Size = new System.Drawing.Size(100, 37);
+            this.cboAction1.TabIndex = 31;
+            // 
+            // cboAction3
+            // 
+            this.cboAction3.FormattingEnabled = true;
+            this.cboAction3.Location = new System.Drawing.Point(115, 133);
+            this.cboAction3.Name = "cboAction3";
+            this.cboAction3.Size = new System.Drawing.Size(100, 37);
+            this.cboAction3.TabIndex = 33;
+            // 
+            // cboAction2
+            // 
+            this.cboAction2.FormattingEnabled = true;
+            this.cboAction2.Location = new System.Drawing.Point(115, 94);
+            this.cboAction2.Name = "cboAction2";
+            this.cboAction2.Size = new System.Drawing.Size(100, 37);
+            this.cboAction2.TabIndex = 32;
+            // 
             // UC_Personnage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblValSociabilite);
             this.Controls.Add(this.lblValConnaissance);
@@ -257,9 +351,10 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UC_Personnage";
-            this.Size = new System.Drawing.Size(442, 355);
+            this.Size = new System.Drawing.Size(501, 441);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpAction.ResumeLayout(false);
+            this.grpAction.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -273,9 +368,6 @@
         private System.Windows.Forms.Label lblStress;
         private System.Windows.Forms.Label lblConnaissance;
         private System.Windows.Forms.Label lblSociabilite;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label lblAction1;
         private System.Windows.Forms.GroupBox grpAction;
         private System.Windows.Forms.Label lblAction3;
@@ -285,5 +377,17 @@
         private System.Windows.Forms.Label lblValStress;
         private System.Windows.Forms.Label lblValConnaissance;
         private System.Windows.Forms.Label lblValSociabilite;
+        private System.Windows.Forms.ComboBox cboFonctionnalite3;
+        private System.Windows.Forms.ComboBox cboFonctionnalite2;
+        private System.Windows.Forms.ComboBox cboFonctionnalite1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtHeure3;
+        private System.Windows.Forms.TextBox txtHeure2;
+        private System.Windows.Forms.TextBox txtHeure1;
+        private System.Windows.Forms.ComboBox cboAction1;
+        private System.Windows.Forms.ComboBox cboAction3;
+        private System.Windows.Forms.ComboBox cboAction2;
     }
 }

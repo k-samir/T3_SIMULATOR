@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 using System.Text;
 using Menu.classePersonnage;
 
@@ -15,7 +16,7 @@ namespace Menu
             {
             }
         }
-
+        Projet proj1;
 
         //variable globale
         Personnage p1;
@@ -23,9 +24,13 @@ namespace Menu
         Personnage p3;
         Personnage p4;
 
-       // frmJeu jeu;
-        
-        
+        // frmJeu jeu;
+
+
+        private ArrayList liste_fonctionnalites_Recherche = new ArrayList();
+        private ArrayList liste_fonctionnalites_Developpement = new ArrayList();
+        private ArrayList liste_fonctionnalites_Conception = new ArrayList();
+
         public void lancerJeu(frmMenu f)
         {
             f.Hide();

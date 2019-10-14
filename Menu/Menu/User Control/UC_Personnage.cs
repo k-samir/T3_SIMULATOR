@@ -1,5 +1,5 @@
 ﻿    using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
@@ -15,6 +15,21 @@ namespace Menu
         public UC_Personnage()
         {
             InitializeComponent();
+
+               ArrayList tabAction = new ArrayList();
+               tabAction.Add("Réalisation");
+               tabAction.Add("Développement");
+               tabAction.Add("Recherche");
+
+
+               for(int i=0; i<tabAction.Count; i++)
+               {
+                   cboAction1.Items.Add(tabAction[i]);
+                   cboAction2.Items.Add(tabAction[i]);
+                   cboAction3.Items.Add(tabAction[i]);
+               }
+               
+
         }
 
         public UC_Personnage(string prenom, double productivite, int stress, int sociabilite,int connaissance)
