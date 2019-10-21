@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ArrayList;
+//using System.Collections.ArrayList;
+using System.Windows.Forms;
 using System.Linq;
 using System.Collections;
 using System.Text;
@@ -18,14 +19,7 @@ namespace Menu
             }
         }
 
-        public Fonctionnalites Fonctionnalites
-        {
-            get => default;
-            set
-            {
-                ArrayList listFonctionnalite = new ArrayList();
-            }
-        }
+
 
         Projet proj1;
 
@@ -37,18 +31,32 @@ namespace Menu
 
 
         //Fonctionnalite
-        Fonctionnalite f1 = new Fonctionnalite();
-        Fonctionnalite f2 = new Fonctionnalite();
-        Fonctionnalite f3 = new Fonctionnalite();
-        Fonctionnalite f4 = new Fonctionnalite();
-        Fonctionnalite f5 = new Fonctionnalite();
-        Fonctionnalite f6 = new Fonctionnalite();
-        Fonctionnalite f7 = new Fonctionnalite();
 
+        Fonctionnalites f1 = new Fonctionnalites("Recherche dans Cahier des Charges", 7, 0, 0, "Recherche");
+        Fonctionnalites f2 = new Fonctionnalites("Recherche Objectifs Pédagogiques", 5, 0, 0, "Recherche");
+        Fonctionnalites f3 = new Fonctionnalites("Recherche code", 8, 0, 0, "Recherche");
+        Fonctionnalites f4 = new Fonctionnalites("MCD", 8, 0, 0, "Conception");
+        Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 5, 0, 0, "Conception");
+        Fonctionnalites f6 = new Fonctionnalites("Conception3", 3, 0, 0, "Conception");
+        Fonctionnalites f7 = new Fonctionnalites("Developpement des classes", 10, 0, 0, "Développement");
+        Fonctionnalites f8 = new Fonctionnalites("Developpement controleur", 10, 0, 0, "Développement");
+        Fonctionnalites f9 = new Fonctionnalites("Developpement ", 10, 0, 0, "Développement");
+
+
+        public ArrayList listFonctionnalite = new ArrayList();
+
+        /*
+        listFonctionnalite.Add(f1);
+        listFonctionnalite.Add(f2);
+        listFonctionnalite.Add(f3);
+        listFonctionnalite.Add(f4);
+        listFonctionnalite.Add(f5);
+        */
         // frmJeu jeu;
 
         private int compteurTours = 0;
-        private bool gameON = true;
+        private Boolean gameON = true;
+
 
         public void lancerJeu(frmMenu f)
         {
@@ -62,51 +70,61 @@ namespace Menu
             frmJeu jeu = new frmJeu(p1, p2, p3, p4);
             jeu.Show();
         }
-        
+
         public Personnage remplirPersonnage(string prenom, double productivite, int stress, int sociabilite) //créer personnage avec attributs en paramètres
         {
             // TEST A EFFECTUER 
             return new Personnage(prenom, productivite, stress, sociabilite);
         }
-
-        public Fonctionnalites remplirFonctionnalites(string nom, int paNecess, int pourcentNote, int nvConnaissNecces) //créer fonctionnalites avec attributs en paramètres
-        {
-            return new Fonctionnalites(nom, paNecess, pourcentNote, nvConnaissNecess);
-        }
-
+        /*
         public Projet remplirProjet(string prenom, double productivite, int stress, int sociabilite) //créer projet avec attributs en paramètres
         {
-            return new Personnage(prenom, productivite, stress, sociabilite);
+           // return new Projet(prenom, productivite, stress, sociabilite);
         }
-
+        */
 
         public void arreterJeu()
         {
             throw new System.NotImplementedException();
         }
 
+        public static void remplirComboBox(ComboBox cb, String action)
+        {
+           /* foreach (Fonctionnalites f in listFonctionnalite)
+            {
+                if (f.getAction() == action)
+                {
+                    cb.Items.Add(f.getNom());
+                }
+            }*/
+        }
 
         public void main()
         {
-            //lancerJeu(get ?);
-            while (compteurTours < proj1.getTempsLimite() && gameON == true){
-                // 12 => nb de tours associés au projet , gameON : bouton quitter set false
-
-                /* une while par attente de l'utilisateur ?
-                while (done == 0)
-                {
-
-                    
-                }
-                */
-
-                compteurTours = 13; //pour pas bloquer les tests
-
-
-                compteurTours += 1;
-            }
             arreterJeu();
         }
+
+        public static void lancerNouveauTour()
+        {
+            calculsAttributs();
+
+
+        }
+
+        public static void calculsAttributs()
+        {
+            String prenom = "";
+            //integer 
+            //p1.setPrenom(prenom); //string
+            
+            //p1.setFatigue(fatigue); //int
+            //p1.setStress(stress); //int
+            //p1.setConnaissances(connaissances); //int
+            //p1.setSociabilite(sociabilite); //int
+            //p1.setProductivite(productivite); //int
+
+        }
+
 
         /* ----------------------Accesseurs----------------------------------- */
         public int getCompteurTours()

@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Action.cs" />
     <Compile Include="Classes\ControleurJeu.cs" />
     <Compile Include="Classes\Fonctionnalites.cs" />
     <Compile Include="Forms\frmJeu.cs">

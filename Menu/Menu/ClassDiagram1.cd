@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Menu.Action">
-    <Position X="6.25" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAIIAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>Classes\Action.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Menu.Projet">
     <Position X="4" Y="1.5" Width="1.5" />
     <TypeIdentifier>
@@ -17,19 +10,18 @@
   <Class Name="Menu.Fonctionnalites">
     <Position X="6" Y="1" Width="2" />
     <TypeIdentifier>
-      <HashCode>AgQAJIAAAAAAIAAgACAAIAIAAAgABEAiAAACAgICAAA=</HashCode>
+      <HashCode>AgQAIIAAAAAAIAAgACAAIAIAAAgBBEAiAAACAgICAAA=</HashCode>
       <FileName>Classes\Fonctionnalites.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Menu.ControleurJeu">
     <Position X="1.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAJAAAAAUAAhQAAEAAEAAAA0AABAAgAAAAAACQCQ=</HashCode>
+      <HashCode>CAEAAJAAAAAUEAhQAAEAAEAACAUIBBIQhAAAAlAAQiQ=</HashCode>
       <FileName>Classes\ControleurJeu.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Projet" />
-      <Property Name="Fonctionnalites" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Menu.classePersonnage.Personnage">

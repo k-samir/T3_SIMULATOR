@@ -2,24 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections;
 
 namespace Menu
 {
     public class Fonctionnalites
     {
-        //Attributs d'un personnage            pk c la ?
+        //Attributs d'un personnage
         private string nom;
         private int paNecess;
         private int pourcentNote;
         private int nvConnaissNecess;
         private int paDepense;
         private string type;
+        private string action { get; set; }
 
 
 
         //false si complete , true complete
         private Boolean status;
-
 
         //Constructeur de la classe Fonctionnalites
         public Fonctionnalites(string nom, int paNecess, int pourcentNote, int nvConnaissNeces, string action)
@@ -29,6 +30,14 @@ namespace Menu
             this.pourcentNote = pourcentNote;
             this.nvConnaissNecess = nvConnaissNeces;
             this.action = action;
+        }
+
+        public ControleurJeu ControleurJeu
+        {
+            get => default;
+            set
+            {
+            }
         }
 
         //Getter et Setter de la classe Fonctionnalites
@@ -92,7 +101,10 @@ namespace Menu
             this.status = status;
         }
 
-
+        public String getAction()
+        {
+            return this.action;
+        }
 
 
 
