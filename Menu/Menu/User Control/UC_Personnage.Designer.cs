@@ -41,12 +41,6 @@
             this.cboAction1 = new System.Windows.Forms.ComboBox();
             this.cboAction3 = new System.Windows.Forms.ComboBox();
             this.cboAction2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtHeure3 = new System.Windows.Forms.TextBox();
-            this.txtHeure2 = new System.Windows.Forms.TextBox();
-            this.txtHeure1 = new System.Windows.Forms.TextBox();
             this.cboFonctionnalite3 = new System.Windows.Forms.ComboBox();
             this.cboFonctionnalite2 = new System.Windows.Forms.ComboBox();
             this.cboFonctionnalite1 = new System.Windows.Forms.ComboBox();
@@ -147,12 +141,6 @@
             this.grpAction.Controls.Add(this.cboAction1);
             this.grpAction.Controls.Add(this.cboAction3);
             this.grpAction.Controls.Add(this.cboAction2);
-            this.grpAction.Controls.Add(this.label3);
-            this.grpAction.Controls.Add(this.label2);
-            this.grpAction.Controls.Add(this.label1);
-            this.grpAction.Controls.Add(this.txtHeure3);
-            this.grpAction.Controls.Add(this.txtHeure2);
-            this.grpAction.Controls.Add(this.txtHeure1);
             this.grpAction.Controls.Add(this.cboFonctionnalite3);
             this.grpAction.Controls.Add(this.cboFonctionnalite2);
             this.grpAction.Controls.Add(this.cboFonctionnalite1);
@@ -190,58 +178,6 @@
             this.cboAction2.Name = "cboAction2";
             this.cboAction2.Size = new System.Drawing.Size(100, 37);
             this.cboAction2.TabIndex = 32;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(434, 139);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 26);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "h";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(434, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 26);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "h";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(434, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 26);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "h";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtHeure3
-            // 
-            this.txtHeure3.Location = new System.Drawing.Point(364, 136);
-            this.txtHeure3.Name = "txtHeure3";
-            this.txtHeure3.Size = new System.Drawing.Size(64, 34);
-            this.txtHeure3.TabIndex = 27;
-            // 
-            // txtHeure2
-            // 
-            this.txtHeure2.Location = new System.Drawing.Point(364, 96);
-            this.txtHeure2.Name = "txtHeure2";
-            this.txtHeure2.Size = new System.Drawing.Size(64, 34);
-            this.txtHeure2.TabIndex = 26;
-            // 
-            // txtHeure1
-            // 
-            this.txtHeure1.Location = new System.Drawing.Point(364, 56);
-            this.txtHeure1.Name = "txtHeure1";
-            this.txtHeure1.Size = new System.Drawing.Size(64, 34);
-            this.txtHeure1.TabIndex = 25;
-            this.txtHeure1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cboFonctionnalite3
             // 
@@ -355,7 +291,6 @@
             this.Size = new System.Drawing.Size(501, 441);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpAction.ResumeLayout(false);
-            this.grpAction.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -381,12 +316,6 @@
         private System.Windows.Forms.ComboBox cboFonctionnalite3;
         private System.Windows.Forms.ComboBox cboFonctionnalite2;
         private System.Windows.Forms.ComboBox cboFonctionnalite1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtHeure3;
-        private System.Windows.Forms.TextBox txtHeure2;
-        private System.Windows.Forms.TextBox txtHeure1;
         private System.Windows.Forms.ComboBox cboAction1;
         private System.Windows.Forms.ComboBox cboAction3;
         private System.Windows.Forms.ComboBox cboAction2;

@@ -18,7 +18,7 @@ namespace Menu.classePersonnage
         private int sociabilite;
         private int pA;
 
-               
+
         //Constructeur de la classe personnage
         public Personnage(string prenom, double productivite, int stress, int sociabilite)
         {
@@ -54,6 +54,8 @@ namespace Menu.classePersonnage
 
         public void reunion()
         {
+
+
             //ouvrir page réunion
         }
 
@@ -73,7 +75,7 @@ namespace Menu.classePersonnage
         {
             return this.id;
         }
-       
+
 
         public int getPA()
         {
@@ -125,7 +127,7 @@ namespace Menu.classePersonnage
             }
         }
 
-        public int getConnaissances() 
+        public int getConnaissances()
         {
             return this.connaissances;
         }
@@ -173,8 +175,6 @@ namespace Menu.classePersonnage
         {
             this.productivite = productivite;
         }
-        /* ---------------------------------------------------------------------- */
-
 
 
 
