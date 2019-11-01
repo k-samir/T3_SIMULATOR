@@ -41,7 +41,7 @@ namespace Menu
         }
 
         //Getter et Setter de la classe Fonctionnalites
-        public string getNnom()
+        public string getNom()
         {
             return this.nom;
         }

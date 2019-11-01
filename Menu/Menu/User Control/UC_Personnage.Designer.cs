@@ -129,7 +129,7 @@
             // lblAction1
             // 
             this.lblAction1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAction1.Location = new System.Drawing.Point(12, 58);
+            this.lblAction1.Location = new System.Drawing.Point(6, 37);
             this.lblAction1.Name = "lblAction1";
             this.lblAction1.Size = new System.Drawing.Size(101, 38);
             this.lblAction1.TabIndex = 10;
@@ -149,7 +149,7 @@
             this.grpAction.Controls.Add(this.lblAction1);
             this.grpAction.Location = new System.Drawing.Point(16, 170);
             this.grpAction.Name = "grpAction";
-            this.grpAction.Size = new System.Drawing.Size(480, 179);
+            this.grpAction.Size = new System.Drawing.Size(538, 163);
             this.grpAction.TabIndex = 11;
             this.grpAction.TabStop = false;
             this.grpAction.Text = "Liste d\'actions que le personnage doit effectuer";
@@ -157,56 +157,57 @@
             // cboAction1
             // 
             this.cboAction1.FormattingEnabled = true;
-            this.cboAction1.Location = new System.Drawing.Point(114, 54);
+            this.cboAction1.Location = new System.Drawing.Point(92, 40);
             this.cboAction1.Name = "cboAction1";
-            this.cboAction1.Size = new System.Drawing.Size(100, 37);
+            this.cboAction1.Size = new System.Drawing.Size(139, 32);
             this.cboAction1.TabIndex = 31;
             this.cboAction1.SelectedIndexChanged += new System.EventHandler(this.cboAction1_SelectedIndexChanged);
             // 
             // cboAction3
             // 
             this.cboAction3.FormattingEnabled = true;
-            this.cboAction3.Location = new System.Drawing.Point(115, 133);
+            this.cboAction3.Location = new System.Drawing.Point(92, 116);
             this.cboAction3.Name = "cboAction3";
-            this.cboAction3.Size = new System.Drawing.Size(100, 37);
+            this.cboAction3.Size = new System.Drawing.Size(139, 32);
             this.cboAction3.TabIndex = 33;
             // 
             // cboAction2
             // 
             this.cboAction2.FormattingEnabled = true;
-            this.cboAction2.Location = new System.Drawing.Point(115, 94);
+            this.cboAction2.Location = new System.Drawing.Point(92, 78);
             this.cboAction2.Name = "cboAction2";
-            this.cboAction2.Size = new System.Drawing.Size(100, 37);
+            this.cboAction2.Size = new System.Drawing.Size(139, 32);
             this.cboAction2.TabIndex = 32;
+            this.cboAction2.SelectedIndexChanged += new System.EventHandler(this.cboAction2_SelectedIndexChanged);
             // 
             // cboFonctionnalite3
             // 
             this.cboFonctionnalite3.FormattingEnabled = true;
-            this.cboFonctionnalite3.Location = new System.Drawing.Point(220, 134);
+            this.cboFonctionnalite3.Location = new System.Drawing.Point(237, 116);
             this.cboFonctionnalite3.Name = "cboFonctionnalite3";
-            this.cboFonctionnalite3.Size = new System.Drawing.Size(138, 37);
+            this.cboFonctionnalite3.Size = new System.Drawing.Size(295, 32);
             this.cboFonctionnalite3.TabIndex = 15;
             // 
             // cboFonctionnalite2
             // 
             this.cboFonctionnalite2.FormattingEnabled = true;
-            this.cboFonctionnalite2.Location = new System.Drawing.Point(220, 96);
+            this.cboFonctionnalite2.Location = new System.Drawing.Point(237, 78);
             this.cboFonctionnalite2.Name = "cboFonctionnalite2";
-            this.cboFonctionnalite2.Size = new System.Drawing.Size(138, 37);
+            this.cboFonctionnalite2.Size = new System.Drawing.Size(295, 32);
             this.cboFonctionnalite2.TabIndex = 14;
             // 
             // cboFonctionnalite1
             // 
             this.cboFonctionnalite1.FormattingEnabled = true;
-            this.cboFonctionnalite1.Location = new System.Drawing.Point(220, 53);
+            this.cboFonctionnalite1.Location = new System.Drawing.Point(237, 40);
             this.cboFonctionnalite1.Name = "cboFonctionnalite1";
-            this.cboFonctionnalite1.Size = new System.Drawing.Size(138, 37);
+            this.cboFonctionnalite1.Size = new System.Drawing.Size(295, 32);
             this.cboFonctionnalite1.TabIndex = 13;
             // 
             // lblAction3
             // 
             this.lblAction3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAction3.Location = new System.Drawing.Point(12, 129);
+            this.lblAction3.Location = new System.Drawing.Point(6, 113);
             this.lblAction3.Name = "lblAction3";
             this.lblAction3.Size = new System.Drawing.Size(101, 38);
             this.lblAction3.TabIndex = 12;
@@ -216,7 +217,7 @@
             // lblAction2
             // 
             this.lblAction2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAction2.Location = new System.Drawing.Point(11, 92);
+            this.lblAction2.Location = new System.Drawing.Point(6, 75);
             this.lblAction2.Name = "lblAction2";
             this.lblAction2.Size = new System.Drawing.Size(101, 38);
             this.lblAction2.TabIndex = 11;
@@ -270,7 +271,7 @@
             // 
             // UC_Personnage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblValSociabilite);
             this.Controls.Add(this.lblValConnaissance);
@@ -288,7 +289,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UC_Personnage";
-            this.Size = new System.Drawing.Size(501, 441);
+            this.Size = new System.Drawing.Size(560, 343);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpAction.ResumeLayout(false);
             this.ResumeLayout(false);

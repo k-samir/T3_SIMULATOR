@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-//using System.Collections.ArrayList;
 using System.Windows.Forms;
 using System.Linq;
 using System.Collections;
@@ -24,34 +23,15 @@ namespace Menu
         Projet proj1;
 
         //variable globale
+        private static ArrayList listfonctionnalite = new ArrayList();
+        private static ArrayList listPersonnage = new ArrayList();
+
         Personnage p1;
         Personnage p2;
         Personnage p3;
         Personnage p4;
 
 
-        //Fonctionnalite
-
-        Fonctionnalites f1 = new Fonctionnalites("Recherche dans Cahier des Charges", 7, 0, 0, "Recherche");
-        Fonctionnalites f2 = new Fonctionnalites("Recherche Objectifs Pédagogiques", 5, 0, 0, "Recherche");
-        Fonctionnalites f3 = new Fonctionnalites("Recherche code", 8, 0, 0, "Recherche");
-        Fonctionnalites f4 = new Fonctionnalites("MCD", 8, 0, 0, "Conception");
-        Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 5, 0, 0, "Conception");
-        Fonctionnalites f6 = new Fonctionnalites("Conception3", 3, 0, 0, "Conception");
-        Fonctionnalites f7 = new Fonctionnalites("Developpement des classes", 10, 0, 0, "Développement");
-        Fonctionnalites f8 = new Fonctionnalites("Developpement controleur", 10, 0, 0, "Développement");
-        Fonctionnalites f9 = new Fonctionnalites("Developpement ", 10, 0, 0, "Développement");
-
-
-        public ArrayList listFonctionnalite = new ArrayList();
-
-        /*
-        listFonctionnalite.Add(f1);
-        listFonctionnalite.Add(f2);
-        listFonctionnalite.Add(f3);
-        listFonctionnalite.Add(f4);
-        listFonctionnalite.Add(f5);
-        */
         // frmJeu jeu;
 
         private int compteurTours = 0;
@@ -67,6 +47,33 @@ namespace Menu
             p3 = remplirPersonnage("Mathieu", 3.3, 40, 50);
             p4 = remplirPersonnage("Samir", 4.2, 10, 45);
 
+
+            Fonctionnalites f1 = new Fonctionnalites("Recherche dans Cahier des Charges", 7, 0, 0, "Recherche");
+            Fonctionnalites f2 = new Fonctionnalites("Recherche Objectifs Pédagogiques", 5, 0, 0, "Recherche");
+            Fonctionnalites f3 = new Fonctionnalites("Recherche code", 8, 0, 0, "Recherche");
+            Fonctionnalites f4 = new Fonctionnalites("MCD", 8, 0, 0, "Conception");
+            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 5, 0, 0, "Conception");
+            Fonctionnalites f6 = new Fonctionnalites("Conception3", 3, 0, 0, "Conception");
+            Fonctionnalites f7 = new Fonctionnalites("Développement des classes", 10, 0, 0, "Développement");
+            Fonctionnalites f8 = new Fonctionnalites("Développement Controleur", 10, 0, 0, "Développement");
+            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 10, 0, 0, "Développement");
+
+
+            listfonctionnalite.Add(f1);
+            listfonctionnalite.Add(f2);
+            listfonctionnalite.Add(f3);
+            listfonctionnalite.Add(f4);
+            listfonctionnalite.Add(f5);
+            listfonctionnalite.Add(f6);
+            listfonctionnalite.Add(f7);
+            listfonctionnalite.Add(f8);
+            listfonctionnalite.Add(f9);
+
+            listPersonnage.Add(p1);
+            listPersonnage.Add(p2);
+            listPersonnage.Add(p3);
+            listPersonnage.Add(p4);
+
             frmJeu jeu = new frmJeu(p1, p2, p3, p4);
             jeu.Show();
         }
@@ -76,27 +83,10 @@ namespace Menu
             // TEST A EFFECTUER 
             return new Personnage(prenom, productivite, stress, sociabilite);
         }
-        /*
-        public Projet remplirProjet(string prenom, double productivite, int stress, int sociabilite) //créer projet avec attributs en paramètres
-        {
-           // return new Projet(prenom, productivite, stress, sociabilite);
-        }
-        */
 
         public void arreterJeu()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public static void remplirComboBox(ComboBox cb, String action)
-        {
-           /* foreach (Fonctionnalites f in listFonctionnalite)
-            {
-                if (f.getAction() == action)
-                {
-                    cb.Items.Add(f.getNom());
-                }
-            }*/
+            Application.Exit();
         }
 
         public void main()
@@ -104,19 +94,31 @@ namespace Menu
             arreterJeu();
         }
 
-        public static void lancerNouveauTour()
+        public static void nouveauTour()
         {
             calculsAttributs();
-
-
         }
 
         public static void calculsAttributs()
         {
-            String prenom = "";
+            foreach (Personnage p in listPersonnage)
+            {
+                p.setFatigue(p.getFatigue() + 10);
+                if (p.getFatigue() > 100)
+                {
+                    p.setFatigue(100);
+                }
+                int coeffStress = (p.getFatigue() / 100) + 1;     //plus la personnne sera fatigué plus elle sera stressé d'ou le but de ce coeff
+                p.setStress(p.getStress() + 1 * coeffStress);
+                if (p.getStress() > 100)
+                {
+                    p.setStress(100);
+                }
+            }
+            //String prenom = "";
             //integer 
             //p1.setPrenom(prenom); //string
-            
+
             //p1.setFatigue(fatigue); //int
             //p1.setStress(stress); //int
             //p1.setConnaissances(connaissances); //int
@@ -125,6 +127,24 @@ namespace Menu
 
         }
 
+        public static void crunch()
+        {
+            foreach (Personnage p in listPersonnage)
+            {
+                p.setFatigue(0);
+                p.setStress(0);
+            }
+        }
+
+        public static ArrayList getListeFonctionnalite()
+        {
+            return listfonctionnalite;
+        }
+
+        public static ArrayList getListePersonnage()
+        {
+            return listPersonnage;
+        }
 
         /* ----------------------Accesseurs----------------------------------- */
         public int getCompteurTours()

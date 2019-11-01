@@ -8,31 +8,51 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Menu.classePersonnage;
+using System.Collections;
 
 namespace Menu
 {
     public partial class frmJeu : Form
     {
+
+        ArrayList listPerso = new ArrayList();
+        int nbTour = 1; //nb de tour pour le projet
         public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4)
         {
             InitializeComponent();
 
-            modifierUC(uC_Personnage1, p1.getPrenom(), p1.getProductivite(), p1.getStress(), p1.getSociabilite(),p1.getFatigue(),p1.getConnaissances());
-            modifierUC(uC_Personnage2,p2.getPrenom(), p2.getProductivite(), p2.getStress(), p2.getSociabilite(), p2.getFatigue(), p2.getConnaissances());
-            modifierUC(uC_Personnage3, p3.getPrenom(), p3.getProductivite(), p3.getStress(), p3.getSociabilite(), p3.getFatigue(), p3.getConnaissances());
-            modifierUC(uC_Personnage4,p4.getPrenom(), p4.getProductivite(), p4.getStress(), p4.getSociabilite(), p4.getFatigue(), p4.getConnaissances());
+            ArrayList listPerso = ControleurJeu.getListeFonctionnalite();
 
+            initUC(uC_Personnage1, p1);
+            initUC(uC_Personnage2, p2);
+            initUC(uC_Personnage3, p3);
+            initUC(uC_Personnage4, p4);
+
+            foreach (Object o in Controls)
+            {
+                if (o is UC_Personnage)
+                {
+                    UC_Personnage uC_Perso = new UC_Personnage();
+                    uC_Perso.Enabled = true;
+                }
+            }
         }
         
-        public void modifierUC(UC_Personnage uC, string prenom, double productivite, int stress, int sociabilite,int fatigue, int connaissance)
+        public void initUC(UC_Personnage uC, Personnage p)
         {
-            uC.setPrenom(prenom);
-            uC.setProductivite(productivite);
-            uC.setStress(stress);
-            uC.setSociabilite(sociabilite);
-            uC.setFatigue(fatigue);
-            uC.setConnaissance(connaissance);
+            uC.initialisationUCPerso(p);
         }
+
+        public void augmenterNbTour()
+        {
+            nbTour++;
+        }
+
+        public int getNbTour()
+        {
+            return this.nbTour;
+        }
+
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             frmMenu menu = new frmMenu();
@@ -51,7 +71,66 @@ namespace Menu
 
         private void btnTourSuivant_Click(object sender, EventArgs e)
         {
-            //ControleurJeu.nouveauTour();
+            rtbActu.Text = String.Empty;
+
+            ControleurJeu.nouveauTour();
+            rtbActu.Text = "Tour effectué " + this.getNbTour() + " / 30 ";
+            this.augmenterNbTour();   //incremente nb de tour
+
+            ArrayList listPerso = ControleurJeu.getListePersonnage();
+
+            Personnage p1 = (Personnage)listPerso[0];
+            Personnage p2 = (Personnage)listPerso[1];
+            Personnage p3 = (Personnage)listPerso[2];
+            Personnage p4 = (Personnage)listPerso[3];
+
+            //mise a jour des persos apres avoir effectue les taches
+            initUC(uC_Personnage1, p1 );
+            initUC(uC_Personnage2, p2 );
+            initUC(uC_Personnage3, p3 );
+            initUC(uC_Personnage4, p4 );
+
+            foreach (Object o in Controls)
+            {
+                if (o is UC_Personnage)
+                {
+                    UC_Personnage uC_Perso = new UC_Personnage();
+                    uC_Perso.Enabled = true;
+                }
+            }
+
+        }
+
+        private void btnCrunch_Click(object sender, EventArgs e)
+        {
+            //tout les persos se reposent
+            rtbActu.Text = String.Empty;
+
+            ControleurJeu.crunch();
+            rtbActu.Text = "Crunch Activé\nTout le monde se repose\nPersonne ne s'avance sur le projet\nEt donc tout le monde revient en pleine forme et sans être stressé\nTour effectué " + this.getNbTour() + " / 30 ";
+            this.augmenterNbTour();   //incremente nb de tour
+
+            ArrayList listPerso = ControleurJeu.getListePersonnage();
+
+            Personnage p1 = (Personnage)listPerso[0];
+            Personnage p2 = (Personnage)listPerso[1];
+            Personnage p3 = (Personnage)listPerso[2];
+            Personnage p4 = (Personnage)listPerso[3];
+
+            //mise a jour des persos apres avoir effectue les taches
+            initUC(uC_Personnage1, p1);
+            initUC(uC_Personnage2, p2);
+            initUC(uC_Personnage3, p3);
+            initUC(uC_Personnage4, p4);
+
+            foreach (Object o in Controls)
+            {
+                if (o is UC_Personnage)
+                {
+                    UC_Personnage uC_Perso = new UC_Personnage();
+                    uC_Perso.Enabled = true;
+                }
+            }
         }
     }
 }
