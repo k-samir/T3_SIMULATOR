@@ -171,11 +171,10 @@ namespace Menu.classePersonnage
         {
             return this.productivite;
         }
-        public void setProductivite(int productivite)
+        public void setProductivite(double productivite)
         {
             this.productivite = productivite;
         }
-
 
 
     }
