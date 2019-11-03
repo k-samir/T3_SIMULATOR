@@ -31,13 +31,3 @@ D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\M
 D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.csproj.GenerateResource.cache
 D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.exe
 D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.pdb
-C:\Users\k-sam\Desktop\Menu\Menu\bin\Debug\Menu.exe.config
-C:\Users\k-sam\Desktop\Menu\Menu\bin\Debug\Menu.exe
-C:\Users\k-sam\Desktop\Menu\Menu\obj\Debug\Menu.csprojAssemblyReference.cache
-C:\Users\k-sam\Desktop\Menu\Menu\obj\Debug\Menu.frmJeu.resources
-C:\Users\k-sam\Desktop\Menu\Menu\obj\Debug\Menu.frmMenu.resources
-C:\Users\k-sam\Desktop\Menu\Menu\obj\Debug\Menu.Properties.Resources.resources
-C:\Users\k-sam\Desktop\Menu\Menu\obj\Debug\Menu.UC_Personnage.resources
-C:\Users\k-sam\Desktop\Menu\Menu\obj\Debug\Menu.csproj.GenerateResource.cache
-C:\Users\k-sam\Desktop\Menu\Menu\obj\Debug\Menu.exe
-C:\Users\k-sam\Desktop\Menu\Menu\obj\Debug\Menu.pdb

@@ -149,7 +149,7 @@
             this.grpAction.Controls.Add(this.lblAction1);
             this.grpAction.Location = new System.Drawing.Point(16, 170);
             this.grpAction.Name = "grpAction";
-            this.grpAction.Size = new System.Drawing.Size(538, 163);
+            this.grpAction.Size = new System.Drawing.Size(559, 163);
             this.grpAction.TabIndex = 11;
             this.grpAction.TabStop = false;
             this.grpAction.Text = "Liste d\'actions que le personnage doit effectuer";
@@ -157,51 +157,51 @@
             // cboAction1
             // 
             this.cboAction1.FormattingEnabled = true;
-            this.cboAction1.Location = new System.Drawing.Point(92, 40);
+            this.cboAction1.Location = new System.Drawing.Point(80, 40);
             this.cboAction1.Name = "cboAction1";
-            this.cboAction1.Size = new System.Drawing.Size(139, 32);
+            this.cboAction1.Size = new System.Drawing.Size(148, 32);
             this.cboAction1.TabIndex = 31;
             this.cboAction1.SelectedIndexChanged += new System.EventHandler(this.cboAction1_SelectedIndexChanged);
             // 
             // cboAction3
             // 
             this.cboAction3.FormattingEnabled = true;
-            this.cboAction3.Location = new System.Drawing.Point(92, 116);
+            this.cboAction3.Location = new System.Drawing.Point(80, 116);
             this.cboAction3.Name = "cboAction3";
-            this.cboAction3.Size = new System.Drawing.Size(139, 32);
+            this.cboAction3.Size = new System.Drawing.Size(148, 32);
             this.cboAction3.TabIndex = 33;
             // 
             // cboAction2
             // 
             this.cboAction2.FormattingEnabled = true;
-            this.cboAction2.Location = new System.Drawing.Point(92, 78);
+            this.cboAction2.Location = new System.Drawing.Point(80, 78);
             this.cboAction2.Name = "cboAction2";
-            this.cboAction2.Size = new System.Drawing.Size(139, 32);
+            this.cboAction2.Size = new System.Drawing.Size(148, 32);
             this.cboAction2.TabIndex = 32;
             this.cboAction2.SelectedIndexChanged += new System.EventHandler(this.cboAction2_SelectedIndexChanged);
             // 
             // cboFonctionnalite3
             // 
             this.cboFonctionnalite3.FormattingEnabled = true;
-            this.cboFonctionnalite3.Location = new System.Drawing.Point(237, 116);
+            this.cboFonctionnalite3.Location = new System.Drawing.Point(234, 116);
             this.cboFonctionnalite3.Name = "cboFonctionnalite3";
-            this.cboFonctionnalite3.Size = new System.Drawing.Size(295, 32);
+            this.cboFonctionnalite3.Size = new System.Drawing.Size(319, 32);
             this.cboFonctionnalite3.TabIndex = 15;
             // 
             // cboFonctionnalite2
             // 
             this.cboFonctionnalite2.FormattingEnabled = true;
-            this.cboFonctionnalite2.Location = new System.Drawing.Point(237, 78);
+            this.cboFonctionnalite2.Location = new System.Drawing.Point(234, 78);
             this.cboFonctionnalite2.Name = "cboFonctionnalite2";
-            this.cboFonctionnalite2.Size = new System.Drawing.Size(295, 32);
+            this.cboFonctionnalite2.Size = new System.Drawing.Size(319, 32);
             this.cboFonctionnalite2.TabIndex = 14;
             // 
             // cboFonctionnalite1
             // 
             this.cboFonctionnalite1.FormattingEnabled = true;
-            this.cboFonctionnalite1.Location = new System.Drawing.Point(237, 40);
+            this.cboFonctionnalite1.Location = new System.Drawing.Point(234, 40);
             this.cboFonctionnalite1.Name = "cboFonctionnalite1";
-            this.cboFonctionnalite1.Size = new System.Drawing.Size(295, 32);
+            this.cboFonctionnalite1.Size = new System.Drawing.Size(319, 32);
             this.cboFonctionnalite1.TabIndex = 13;
             // 
             // lblAction3
@@ -289,7 +289,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UC_Personnage";
-            this.Size = new System.Drawing.Size(560, 343);
+            this.Size = new System.Drawing.Size(578, 343);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpAction.ResumeLayout(false);
             this.ResumeLayout(false);
