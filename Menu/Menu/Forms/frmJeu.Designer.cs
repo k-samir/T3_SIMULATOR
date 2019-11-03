@@ -35,6 +35,8 @@
             this.pbAvancement = new System.Windows.Forms.ProgressBar();
             this.rtbActu = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblDeadLine = new System.Windows.Forms.Label();
+            this.btnReunion = new System.Windows.Forms.Button();
             this.uC_Personnage3 = new Menu.UC_Personnage();
             this.uC_Personnage4 = new Menu.UC_Personnage();
             this.uC_Personnage2 = new Menu.UC_Personnage();
@@ -46,7 +48,7 @@
             // 
             this.btnTourSuivant.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTourSuivant.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTourSuivant.Location = new System.Drawing.Point(1237, 648);
+            this.btnTourSuivant.Location = new System.Drawing.Point(1228, 598);
             this.btnTourSuivant.Name = "btnTourSuivant";
             this.btnTourSuivant.Size = new System.Drawing.Size(143, 44);
             this.btnTourSuivant.TabIndex = 7;
@@ -58,7 +60,7 @@
             // 
             this.btnQuitter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitter.Location = new System.Drawing.Point(1237, 748);
+            this.btnQuitter.Location = new System.Drawing.Point(1228, 748);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(143, 44);
             this.btnQuitter.TabIndex = 8;
@@ -74,17 +76,17 @@
             this.panel1.Controls.Add(this.uC_Personnage4);
             this.panel1.Controls.Add(this.uC_Personnage2);
             this.panel1.Controls.Add(this.uC_Personnage1);
-            this.panel1.Location = new System.Drawing.Point(11, 63);
+            this.panel1.Location = new System.Drawing.Point(2, 63);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1154, 729);
+            this.panel1.Size = new System.Drawing.Size(1163, 729);
             this.panel1.TabIndex = 14;
             // 
             // btnCrunch
             // 
             this.btnCrunch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCrunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrunch.Location = new System.Drawing.Point(1237, 698);
+            this.btnCrunch.Location = new System.Drawing.Point(1228, 698);
             this.btnCrunch.Name = "btnCrunch";
             this.btnCrunch.Size = new System.Drawing.Size(143, 44);
             this.btnCrunch.TabIndex = 15;
@@ -94,50 +96,70 @@
             // 
             // pbAvancement
             // 
-            this.pbAvancement.Location = new System.Drawing.Point(17, 12);
+            this.pbAvancement.Location = new System.Drawing.Point(11, 12);
             this.pbAvancement.Name = "pbAvancement";
-            this.pbAvancement.Size = new System.Drawing.Size(1049, 35);
+            this.pbAvancement.Size = new System.Drawing.Size(976, 35);
             this.pbAvancement.TabIndex = 1;
             this.pbAvancement.Value = 1;
             // 
             // rtbActu
             // 
             this.rtbActu.BackColor = System.Drawing.Color.White;
-            this.rtbActu.Enabled = false;
             this.rtbActu.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbActu.ForeColor = System.Drawing.Color.Black;
-            this.rtbActu.Location = new System.Drawing.Point(1190, 89);
+            this.rtbActu.Location = new System.Drawing.Point(1170, 89);
             this.rtbActu.Name = "rtbActu";
-            this.rtbActu.Size = new System.Drawing.Size(233, 532);
+            this.rtbActu.Size = new System.Drawing.Size(253, 447);
             this.rtbActu.TabIndex = 16;
             this.rtbActu.Text = "";
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1220, 43);
+            this.label1.Location = new System.Drawing.Point(1207, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(173, 43);
             this.label1.TabIndex = 17;
             this.label1.Text = "Actu Projet";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblDeadLine
+            // 
+            this.lblDeadLine.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeadLine.Location = new System.Drawing.Point(993, 12);
+            this.lblDeadLine.Name = "lblDeadLine";
+            this.lblDeadLine.Size = new System.Drawing.Size(172, 35);
+            this.lblDeadLine.TabIndex = 18;
+            this.lblDeadLine.Text = "% Avancement";
+            this.lblDeadLine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnReunion
+            // 
+            this.btnReunion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReunion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReunion.Location = new System.Drawing.Point(1228, 648);
+            this.btnReunion.Name = "btnReunion";
+            this.btnReunion.Size = new System.Drawing.Size(143, 44);
+            this.btnReunion.TabIndex = 19;
+            this.btnReunion.Text = "Réunion";
+            this.btnReunion.UseVisualStyleBackColor = true;
+            // 
             // uC_Personnage3
             // 
             this.uC_Personnage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage3.Location = new System.Drawing.Point(6, 15);
+            this.uC_Personnage3.Location = new System.Drawing.Point(-2, 15);
             this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(6);
             this.uC_Personnage3.Name = "uC_Personnage3";
-            this.uC_Personnage3.Size = new System.Drawing.Size(556, 340);
+            this.uC_Personnage3.Size = new System.Drawing.Size(577, 340);
             this.uC_Personnage3.TabIndex = 11;
             // 
             // uC_Personnage4
             // 
             this.uC_Personnage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage4.Location = new System.Drawing.Point(566, 402);
+            this.uC_Personnage4.Location = new System.Drawing.Point(566, 369);
             this.uC_Personnage4.Margin = new System.Windows.Forms.Padding(6);
             this.uC_Personnage4.Name = "uC_Personnage4";
-            this.uC_Personnage4.Size = new System.Drawing.Size(562, 411);
+            this.uC_Personnage4.Size = new System.Drawing.Size(581, 411);
             this.uC_Personnage4.TabIndex = 12;
             // 
             // uC_Personnage2
@@ -146,16 +168,16 @@
             this.uC_Personnage2.Location = new System.Drawing.Point(566, 15);
             this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(6);
             this.uC_Personnage2.Name = "uC_Personnage2";
-            this.uC_Personnage2.Size = new System.Drawing.Size(558, 340);
+            this.uC_Personnage2.Size = new System.Drawing.Size(581, 340);
             this.uC_Personnage2.TabIndex = 10;
             // 
             // uC_Personnage1
             // 
             this.uC_Personnage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage1.Location = new System.Drawing.Point(7, 402);
+            this.uC_Personnage1.Location = new System.Drawing.Point(-2, 369);
             this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(6);
             this.uC_Personnage1.Name = "uC_Personnage1";
-            this.uC_Personnage1.Size = new System.Drawing.Size(556, 494);
+            this.uC_Personnage1.Size = new System.Drawing.Size(577, 494);
             this.uC_Personnage1.TabIndex = 9;
             // 
             // frmJeu
@@ -164,6 +186,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1426, 839);
+            this.Controls.Add(this.btnReunion);
+            this.Controls.Add(this.lblDeadLine);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rtbActu);
             this.Controls.Add(this.btnCrunch);
@@ -192,5 +216,7 @@
         private System.Windows.Forms.ProgressBar pbAvancement;
         private System.Windows.Forms.RichTextBox rtbActu;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDeadLine;
+        private System.Windows.Forms.Button btnReunion;
     }
 }

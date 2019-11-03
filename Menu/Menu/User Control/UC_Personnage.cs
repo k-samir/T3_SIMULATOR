@@ -23,9 +23,9 @@ namespace Menu
             InitializeComponent();
 
             ArrayList tabAction = new ArrayList();
-            tabAction.Add("Conception");
-            tabAction.Add("Développement");
-            tabAction.Add("Recherche");
+            tabAction.Add("Concevoir");
+            tabAction.Add("Développer");
+            tabAction.Add("Rechercher");
 
 
             for (int i = 0; i < tabAction.Count; i++)
@@ -47,6 +47,15 @@ namespace Menu
             this.setFatigue(perso.getFatigue());
             this.setSociabilite(perso.getSociabilite());
             this.setConnaissances(perso.getConnaissances());
+
+            if(this.perso.getFatigue() == 100)
+            {
+                this.Enabled = false;
+            }
+            else
+            {
+                this.Enabled = true;
+            }
         }
 
 
@@ -93,34 +102,11 @@ namespace Menu
         {
 
             b.Items.Clear();
-            if (action == "Conception")
+            foreach (Fonctionnalites f in listfonctionnalite)
             {
-                foreach (Fonctionnalites f in listfonctionnalite)
+                if (f.getAction() == action)
                 {
-                    if (f.getAction() == action)
-                    {
-                        b.Items.Add(f.getNom());
-                    }
-                }
-            }
-            if (action == "Développement")
-            {
-                foreach (Fonctionnalites f in listfonctionnalite)
-                {
-                    if (f.getAction() == action)
-                    {
-                        b.Items.Add(f.getNom());
-                    }
-                }
-            }
-            if (action == "Recherche")
-            {
-                foreach (Fonctionnalites f in listfonctionnalite)
-                {
-                    if (f.getAction() == action)
-                    {
-                        b.Items.Add(f.getNom());
-                    }
+                    b.Items.Add(f.getNom());
                 }
             }
         }

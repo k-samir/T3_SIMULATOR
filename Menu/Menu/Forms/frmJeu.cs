@@ -21,6 +21,8 @@ namespace Menu
         {
             InitializeComponent();
 
+            lblDeadLine.Text = pbAvancement.Value + "% Avancement";
+
             ArrayList listPerso = ControleurJeu.getListeFonctionnalite();
 
             initUC(uC_Personnage1, p1);
@@ -67,15 +69,25 @@ namespace Menu
         }
 
 
-        
+        public void ecrireSurConsole()       //controleur de jeu écrit sur le fil d'actualité
+        {
+            rtbActu.Text = String.Empty;
+            rtbActu.Text = ControleurJeu.filActualite();
+            rtbActu.Text += "Tour effectué " + this.getNbTour() + " / 30 ";
+            this.augmenterNbTour();   //incremente nb de tour
+        }
 
         private void btnTourSuivant_Click(object sender, EventArgs e)
         {
-            rtbActu.Text = String.Empty;
-
+            if (nbTour >= 30)
+            {
+                ControleurJeu.arreterJeu();
+                this.Close();
+            }
+       
             ControleurJeu.nouveauTour();
-            rtbActu.Text = "Tour effectué " + this.getNbTour() + " / 30 ";
-            this.augmenterNbTour();   //incremente nb de tour
+
+            ecrireSurConsole();
 
             ArrayList listPerso = ControleurJeu.getListePersonnage();
 
@@ -90,19 +102,18 @@ namespace Menu
             initUC(uC_Personnage3, p3 );
             initUC(uC_Personnage4, p4 );
 
-            foreach (Object o in Controls)
-            {
-                if (o is UC_Personnage)
-                {
-                    UC_Personnage uC_Perso = new UC_Personnage();
-                    uC_Perso.Enabled = true;
-                }
-            }
-
+            
         }
 
         private void btnCrunch_Click(object sender, EventArgs e)
         {
+            
+            if(nbTour >= 30)
+            {
+                ControleurJeu.arreterJeu();
+                this.Close();
+            }
+
             //tout les persos se reposent
             rtbActu.Text = String.Empty;
 
@@ -122,15 +133,6 @@ namespace Menu
             initUC(uC_Personnage2, p2);
             initUC(uC_Personnage3, p3);
             initUC(uC_Personnage4, p4);
-
-            foreach (Object o in Controls)
-            {
-                if (o is UC_Personnage)
-                {
-                    UC_Personnage uC_Perso = new UC_Personnage();
-                    uC_Perso.Enabled = true;
-                }
-            }
         }
     }
 }
