@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Menu.classePersonnage
 {
     public class Personnage
@@ -41,23 +42,19 @@ namespace Menu.classePersonnage
             }
         }
 
-        public void recherche(Personnage id, int nbPa)
+        public void recherche()
         {
-            id.setConnaissances(id.getConnaissances() + nbPa);
-        }
-        public void repos(Personnage id, int nbPa)
-        {
-            id.setStress(id.getStress() - nbPa);
-            id.setFatigue(id.getFatigue() - nbPa);
-
+            this.setConnaissances(this.getConnaissances() + 10);
         }
 
-        public void reunion()
+
+        public void repos()
         {
 
-
-            //ouvrir page réunion
+            this.setStress(this.getStress() - 10);
+            this.setFatigue(this.getFatigue() - 10);
         }
+
 
         /* ---------------------------------------------------------------------- */
 
@@ -175,6 +172,25 @@ namespace Menu.classePersonnage
         {
             this.productivite = productivite;
         }
+
+        public void faireAction(Fonctionnalites action){    //tache que le personnage va effectuer
+            if(action.getPaDepense() >= action.getPaNecess())
+            {
+                action.setStatus(true); //modif du status pour dire que la tache est terminée
+            }
+            
+            if(action.getStatus() == false)
+            {
+                action.setPaDepense(action.getPaDepense() + 1);
+                if (action.getPaDepense() >= action.getPaNecess())
+                {
+                    action.setStatus(true); //modif du status pour dire que la tache est terminée
+                }
+            }
+            ControleurJeu.mettreAJourListeTache(action);
+
+        }
+
 
 
     }

@@ -48,7 +48,9 @@ namespace Menu
             this.setSociabilite(perso.getSociabilite());
             this.setConnaissances(perso.getConnaissances());
 
-            if(this.perso.getFatigue() == 100)
+            listfonctionnalite = ControleurJeu.getListeFonctionnalite(); //remet à jour la liste de fonctionnalité
+
+            if (this.perso.getFatigue() == 100)
             {
                 this.Enabled = false;
             }
@@ -56,6 +58,12 @@ namespace Menu
             {
                 this.Enabled = true;
             }
+            if(this.perso.getStress() == 100){
+                //this.setProductivite();
+                this.Enabled = false;
+            }
+
+            
         }
 
 
@@ -104,9 +112,13 @@ namespace Menu
             b.Items.Clear();
             foreach (Fonctionnalites f in listfonctionnalite)
             {
-                if (f.getAction() == action)
+                if (f.getType() == action)
                 {
-                    b.Items.Add(f.getNom());
+                    if(f.getPaDepense() < f.getPaNecess() && f.getStatus() == false)
+                    {
+                        b.Items.Add(f.getNom());
+                    }
+                    
                 }
             }
         }
@@ -115,5 +127,54 @@ namespace Menu
         {
             remplirComboBox(cboAction2.Text, cboFonctionnalite2);
         }
+
+        private void cboAction3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            remplirComboBox(cboAction3.Text, cboFonctionnalite3);
+        }
+
+
+        public void recherche(Personnage perso)
+        {
+            perso.setConnaissances(perso.getConnaissances() + 10);
+        }
+
+        public void crunchActive()
+        {
+            this.lblAction3.Visible = true;
+            this.cboAction3.Visible = true;
+            this.cboFonctionnalite3.Visible = true;
+
+        }
+
+        public void crunchDesactive()
+        {
+            this.lblAction3.Visible = false;
+            this.cboAction3.Visible = false;
+            this.cboFonctionnalite3.Visible = false;
+        }
+
+        public void donnerTachePerso()
+        {
+            ArrayList listeTache = new ArrayList(); //arrayliste des taches que le personnage va effectuer
+            foreach(Fonctionnalites f in listfonctionnalite)
+            {
+                if(f.getType()==cboFonctionnalite1.Text)
+                {
+                    listeTache.Add(f);
+                }
+                if (f.getType() == cboFonctionnalite2.Text)
+                {
+                    listeTache.Add(f);
+                }
+                if (cboFonctionnalite3.Visible == false)  //si le crunch est activé alors ajouter une tache en plus
+                {
+                    listeTache.Add(f);
+                }
+            }
+
+            ControleurJeu.tache(this.perso, listeTache);
+        }
+
     }
 }
