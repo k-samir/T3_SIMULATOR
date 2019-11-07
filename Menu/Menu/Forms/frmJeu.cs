@@ -17,8 +17,10 @@ namespace Menu
 
         ArrayList listPerso = new ArrayList();
         int nbTour = 1; //nb de tour pour le projet
-        public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4)
-        {
+        bool crunchBool = false;
+       
+         public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4)
+          {
             InitializeComponent();
 
             lblDeadLine.Text = pbAvancement.Value + "% Avancement";
@@ -73,18 +75,60 @@ namespace Menu
         {
             rtbActu.Text = String.Empty;
             rtbActu.Text = ControleurJeu.filActualite();
-            rtbActu.Text += "Tour effectué " + this.getNbTour() + " / 30 ";
+            rtbActu.Text += "Tour effectué " + this.getNbTour() + " / 10 ";
             this.augmenterNbTour();   //incremente nb de tour
         }
 
         private void btnTourSuivant_Click(object sender, EventArgs e)
         {
-            if (nbTour >= 30)
+            if (crunchBool == true)
+            {
+                foreach (Object o in Controls)
+                {
+                    if (o is Panel)
+                    {
+                        Panel p = (Panel)o;
+                        foreach (Object c in p.Controls)
+                        {
+                            if (c is UC_Personnage)
+                            {
+                                
+                                UC_Personnage up = (UC_Personnage)c;
+                                up.crunchDesactive();
+                                crunchBool = false;
+
+                            }
+                        }
+                    }
+
+                }
+            }
+            if (nbTour >= 10)
             {
                 ControleurJeu.arreterJeu();
                 this.Close();
             }
-       
+
+            //modification des taches des user controls
+            foreach (Object o in Controls)
+            {
+                if (o is Panel)
+                {
+                    Panel p = (Panel)o;
+                    foreach (Object c in p.Controls)
+                    {
+                        if (c is UC_Personnage)
+                        {
+                            UC_Personnage up = (UC_Personnage)c;
+                            up.donnerTachePerso();
+                            MessageBox.Show("affectation des taches");
+                        }
+                    }
+                }
+
+            }
+
+
             ControleurJeu.nouveauTour();
 
             ecrireSurConsole();
@@ -105,20 +149,46 @@ namespace Menu
             
         }
 
-        private void btnCrunch_Click(object sender, EventArgs e)
+        private void btnRepos_Click(object sender, EventArgs e)
         {
-            
-            if(nbTour >= 30)
+            if (crunchBool == true)
+            {
+                foreach (Object o in Controls)
+                {
+                    if (o is Panel)
+                    {
+                        Panel p = (Panel)o;
+                        foreach (Object c in p.Controls)
+                        {
+                            if (c is UC_Personnage)
+                            {
+                                
+                                UC_Personnage up = (UC_Personnage)c;
+                                up.crunchDesactive();
+                                crunchBool = false;
+
+                            }
+                        }
+                    }
+
+                }
+            }
+
+
+                if (nbTour >= 10)
             {
                 ControleurJeu.arreterJeu();
                 this.Close();
             }
 
-            //tout les persos se reposent
+            //tous les persos se reposent
+
+
+
             rtbActu.Text = String.Empty;
 
-            ControleurJeu.crunch();
-            rtbActu.Text = "Crunch Activé\nTout le monde se repose\nPersonne ne s'avance sur le projet\nEt donc tout le monde revient en pleine forme et sans être stressé\nTour effectué " + this.getNbTour() + " / 30 ";
+            ControleurJeu.repos();
+            rtbActu.Text = "Repos Activé\nTout le monde se repose\nPersonne ne s'avance sur le projet\nEt donc tout le monde revient moins fatigué et moins stressé\nTour effectué " + this.getNbTour() + " / 30 ";
             this.augmenterNbTour();   //incremente nb de tour
 
             ArrayList listPerso = ControleurJeu.getListePersonnage();
@@ -133,6 +203,29 @@ namespace Menu
             initUC(uC_Personnage2, p2);
             initUC(uC_Personnage3, p3);
             initUC(uC_Personnage4, p4);
+        }
+
+        private void btnCrunch_Click_1(object sender, EventArgs e)
+        {
+            foreach (Object o in Controls)
+            {
+                if(o is Panel)
+                {
+                    Panel p = (Panel)o;
+                    foreach(Object c in p.Controls)
+                    {
+                        if (c is UC_Personnage)
+                        {
+                            UC_Personnage up = (UC_Personnage)c;
+                            up.crunchActive();
+                            
+
+                            crunchBool = true;
+
+                        }
+                    }
+                }
+            }
         }
     }
 }

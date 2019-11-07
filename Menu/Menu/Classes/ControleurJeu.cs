@@ -20,11 +20,12 @@ namespace Menu
 
 
 
-        Projet proj1;
+        
 
         //variable globale
         private static ArrayList listfonctionnalite = new ArrayList();
         private static ArrayList listPersonnage = new ArrayList();
+         
 
         Personnage p1;
         Personnage p2;
@@ -51,6 +52,9 @@ namespace Menu
             p4 = remplirPersonnage("Samir", 4.2, 10, 45);
 
 
+            /*
+            nom;paNecess;pourcentNote;nvConnaissNecess;paDepense;type;
+            */
             Fonctionnalites f1 = new Fonctionnalites("Recherche dans Cahier des Charges", 7, 0, 0, "Rechercher");
             Fonctionnalites f2 = new Fonctionnalites("Recherche Objectifs Pédagogiques", 5, 0, 0, "Rechercher");
             Fonctionnalites f3 = new Fonctionnalites("Recherche code", 8, 0, 0, "Rechercher");
@@ -71,6 +75,7 @@ namespace Menu
             listfonctionnalite.Add(f7);
             listfonctionnalite.Add(f8);
             listfonctionnalite.Add(f9);
+            verifPourcentNote();
 
             listPersonnage.Add(p1);
             listPersonnage.Add(p2);
@@ -102,36 +107,70 @@ namespace Menu
         public static void nouveauTour()
         {
             calculsAttributs();     //actualise les attributs des persos après avoir effectué des taches
+
+            
+
+            foreach (Personnage p in listPersonnage)
+            {
+                MessageBox.Show(p.getPrenom());
+            }
+            foreach (Fonctionnalites f in listfonctionnalite)
+            {
+                MessageBox.Show(f.getNom() + f.getPaDepense() + f.getType());
+            }
         }
 
+
+        //Modification de tous les attributs
         public static void calculsAttributs()
         {
             foreach (Personnage p in listPersonnage)
             {
+                
                 p.setFatigue(p.getFatigue() + 10);
                 if (p.getFatigue() > 100)
                 {
                     p.setFatigue(100);
                     
                 }
+                //stress
                 int coeffStress = (p.getFatigue() / 100) + 1;     //plus la personnne sera fatigué plus elle sera stressé d'ou le but de ce coeff
                 p.setStress(p.getStress() + 1 * coeffStress);
                 if (p.getStress() > 100)
                 {
+                    
                     p.setStress(100);
                 }
+
             }
 
-            //String prenom = "";
-            //integer 
-            //p1.setPrenom(prenom); //string
+           
 
-            //p1.setFatigue(fatigue); //int
-            //p1.setStress(stress); //int
-            //p1.setConnaissances(connaissances); //int
-            //p1.setSociabilite(sociabilite); //int
-            //p1.setProductivite(productivite); //int
+        }
 
+        public static void verifPourcentNote()  //on vérifie l'addition du pourcentage de note de toute les fonctionnalits soit egal a 100, sinon on appelle nouveauPourcentNote
+        {
+            float pourcentageActuel = 0;  //addition du pourcentage de la note de chaque fonctionnalite
+            foreach (Fonctionnalites f in listfonctionnalite)
+            {
+                pourcentageActuel = pourcentageActuel + f.getPourcentNote();
+            }
+
+            if (pourcentageActuel != 100)
+            {
+                nouveauPourcentNote();
+            }
+
+        }
+
+        public static void nouveauPourcentNote()  //On donne le meme pourcentage de la note a chaque fonctionnalite
+        {
+            float pourcentageNouveau = 0;
+            pourcentageNouveau = 100 / listfonctionnalite.Count;
+                foreach (Fonctionnalites f in listfonctionnalite)
+            {
+                f.setPourcentNote(pourcentageNouveau);
+            }
         }
 
         public static String filActualite()     //renvoi toute les info à savoir sur l'actu du projet et des perso 
@@ -152,12 +191,60 @@ namespace Menu
             return actu;
         }
 
-        public static void crunch()
+        public static void crunch(Personnage p, List<Fonctionnalites> f1)
+        {
+            calculsAttributs();
+
+            // Parcours de toutes les fonctionallités 
+            foreach (Fonctionnalites f in f1 )
+            {
+            
+                    if (f.getType() == "Rechercher")
+                    {
+                        p.recherche();
+                    }
+                    else
+                    {
+                        p.faireAction(f);
+                    }
+               
+            }
+        }
+
+        public static void tache(Personnage p, ArrayList listeTache)
+        {
+            //calculsAttributs();
+
+            // Parcours de toutes les fonctionalités pour que le perso p les fasse
+            foreach (Fonctionnalites f in listeTache)
+            {
+
+                if (f.getType() == "Rechercher")
+                {
+                    p.recherche();  //à revoir préciser le type de recherche
+                }
+                else
+                {
+                    p.faireAction(f);
+                }
+            }
+
+            for (int i = 0; i < listPersonnage.Count; i++)      //MAJ de la liste des persos
+            {
+                if (listPersonnage[i] == p)
+                {
+                    listPersonnage.Insert(i, p);
+                }
+            }
+
+        }
+
+        public static void repos()
         {
             foreach (Personnage p in listPersonnage)
             {
-                p.setFatigue(0);
-                p.setStress(0);
+                // Lance la méthode repos du personnage p
+                p.repos();
             }
         }
 
@@ -171,8 +258,20 @@ namespace Menu
             return listPersonnage;
         }
 
-        /* ----------------------Accesseurs----------------------------------- */
-        public int getCompteurTours()
+
+        public static void mettreAJourListeTache(Fonctionnalites f) //MAJ de la liste de tache d'origin
+        {
+            for (int i = 0; i < listfonctionnalite.Count; i++)
+            {
+                if (listfonctionnalite[i] == f)
+                {
+                    listfonctionnalite.Insert(i, f);
+                }
+            }
+
+        }
+    /* ----------------------Accesseurs----------------------------------- */
+    public int getCompteurTours()
         {
             return this.compteurTours;
         }

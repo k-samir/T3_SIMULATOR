@@ -159,7 +159,7 @@
             this.cboAction1.FormattingEnabled = true;
             this.cboAction1.Location = new System.Drawing.Point(80, 40);
             this.cboAction1.Name = "cboAction1";
-            this.cboAction1.Size = new System.Drawing.Size(148, 32);
+            this.cboAction1.Size = new System.Drawing.Size(148, 37);
             this.cboAction1.TabIndex = 31;
             this.cboAction1.SelectedIndexChanged += new System.EventHandler(this.cboAction1_SelectedIndexChanged);
             // 
@@ -168,15 +168,17 @@
             this.cboAction3.FormattingEnabled = true;
             this.cboAction3.Location = new System.Drawing.Point(80, 116);
             this.cboAction3.Name = "cboAction3";
-            this.cboAction3.Size = new System.Drawing.Size(148, 32);
+            this.cboAction3.Size = new System.Drawing.Size(148, 37);
             this.cboAction3.TabIndex = 33;
+            this.cboAction3.Visible = false;
+            this.cboAction3.SelectedIndexChanged += new System.EventHandler(this.cboAction3_SelectedIndexChanged);
             // 
             // cboAction2
             // 
             this.cboAction2.FormattingEnabled = true;
             this.cboAction2.Location = new System.Drawing.Point(80, 78);
             this.cboAction2.Name = "cboAction2";
-            this.cboAction2.Size = new System.Drawing.Size(148, 32);
+            this.cboAction2.Size = new System.Drawing.Size(148, 37);
             this.cboAction2.TabIndex = 32;
             this.cboAction2.SelectedIndexChanged += new System.EventHandler(this.cboAction2_SelectedIndexChanged);
             // 
@@ -185,15 +187,16 @@
             this.cboFonctionnalite3.FormattingEnabled = true;
             this.cboFonctionnalite3.Location = new System.Drawing.Point(234, 116);
             this.cboFonctionnalite3.Name = "cboFonctionnalite3";
-            this.cboFonctionnalite3.Size = new System.Drawing.Size(319, 32);
+            this.cboFonctionnalite3.Size = new System.Drawing.Size(319, 37);
             this.cboFonctionnalite3.TabIndex = 15;
+            this.cboFonctionnalite3.Visible = false;
             // 
             // cboFonctionnalite2
             // 
             this.cboFonctionnalite2.FormattingEnabled = true;
             this.cboFonctionnalite2.Location = new System.Drawing.Point(234, 78);
             this.cboFonctionnalite2.Name = "cboFonctionnalite2";
-            this.cboFonctionnalite2.Size = new System.Drawing.Size(319, 32);
+            this.cboFonctionnalite2.Size = new System.Drawing.Size(319, 37);
             this.cboFonctionnalite2.TabIndex = 14;
             // 
             // cboFonctionnalite1
@@ -201,7 +204,7 @@
             this.cboFonctionnalite1.FormattingEnabled = true;
             this.cboFonctionnalite1.Location = new System.Drawing.Point(234, 40);
             this.cboFonctionnalite1.Name = "cboFonctionnalite1";
-            this.cboFonctionnalite1.Size = new System.Drawing.Size(319, 32);
+            this.cboFonctionnalite1.Size = new System.Drawing.Size(319, 37);
             this.cboFonctionnalite1.TabIndex = 13;
             // 
             // lblAction3
@@ -213,6 +216,7 @@
             this.lblAction3.TabIndex = 12;
             this.lblAction3.Text = "Action 3 :";
             this.lblAction3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAction3.Visible = false;
             // 
             // lblAction2
             // 
@@ -271,7 +275,7 @@
             // 
             // UC_Personnage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblValSociabilite);
             this.Controls.Add(this.lblValConnaissance);

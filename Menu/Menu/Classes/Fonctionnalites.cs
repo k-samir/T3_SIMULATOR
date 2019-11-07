@@ -8,30 +8,32 @@ namespace Menu
 {
     public class Fonctionnalites
     {
-        //Attributs d'un personnage
+        //Attributs de fonctionnalite
         private string nom;
         private int paNecess;
-        private int pourcentNote;
+        private float pourcentNote;
         private int nvConnaissNecess;
         private int paDepense;
         private string type;
-        private string action { get; set; }
+        
 
 
 
-        //false si complete , true complete
-        private Boolean status;
+        //false si incomplete , true complete
+        
+        private Boolean status = false;
 
         //Constructeur de la classe Fonctionnalites
-        public Fonctionnalites(string nom, int paNecess, int pourcentNote, int nvConnaissNeces, string action)
+        public Fonctionnalites(string nom, int paNecess, float pourcentNote, int nvConnaissNeces, string type)
         {
             this.nom = nom;
             this.paNecess = paNecess;
             this.pourcentNote = pourcentNote;
             this.nvConnaissNecess = nvConnaissNeces;
-            this.action = action;
+            this.paDepense = 0;
+            this.type = type;
         }
-
+                       
         public ControleurJeu ControleurJeu
         {
             get => default;
@@ -51,11 +53,11 @@ namespace Menu
         }
 
 
-        public int getPourcentNote()
+        public float getPourcentNote()
         {
             return this.pourcentNote;
         }
-        public void setPourcentNote(int pN)
+        public void setPourcentNote(float pN)
         {
             this.pourcentNote = pN;
         }
@@ -101,9 +103,9 @@ namespace Menu
             this.status = status;
         }
 
-        public String getAction()
+        public String getType()
         {
-            return this.action;
+            return this.type;
         }
 
 
