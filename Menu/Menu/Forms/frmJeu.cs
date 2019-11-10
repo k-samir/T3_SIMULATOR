@@ -18,9 +18,10 @@ namespace Menu
         ArrayList listPerso = new ArrayList();
         int nbTour = 1; //nb de tour pour le projet
         bool crunchBool = false;
-       
-         public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4)
-          {
+        // String d'affichage des actoins / jour
+        public static string s = "";
+        public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4)
+        {
             InitializeComponent();
 
             lblDeadLine.Text = pbAvancement.Value + "% Avancement";
@@ -41,7 +42,7 @@ namespace Menu
                 }
             }
         }
-        
+
         public void initUC(UC_Personnage uC, Personnage p)
         {
             uC.initialisationUCPerso(p);
@@ -66,7 +67,7 @@ namespace Menu
 
         public String recupTxtFichier(String nomFichier, String typeFichier)
         {
-            String texte = System.IO.File.ReadAllText(@"C:\Users\tieut\myt3\Menu\Menu\"+nomFichier+"."+typeFichier);
+            String texte = System.IO.File.ReadAllText(@"C:\Users\tieut\myt3\Menu\Menu\" + nomFichier + "." + typeFichier);
             return texte;
         }
 
@@ -77,6 +78,7 @@ namespace Menu
             rtbActu.Text = ControleurJeu.filActualite();
             rtbActu.Text += "Tour effectué " + this.getNbTour() + " / 10 ";
             this.augmenterNbTour();   //incremente nb de tour
+
         }
 
         private void btnTourSuivant_Click(object sender, EventArgs e)
@@ -92,18 +94,19 @@ namespace Menu
                         {
                             if (c is UC_Personnage)
                             {
-                                
                                 UC_Personnage up = (UC_Personnage)c;
                                 up.crunchDesactive();
                                 crunchBool = false;
-
+                                    
                             }
                         }
                     }
-
                 }
             }
-            if (nbTour >= 10)
+
+            // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
+            // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
+            if ((nbTour >= 10) || (ControleurJeu.getListeFonctionnalite().Count == 1))
             {
                 ControleurJeu.arreterJeu();
                 this.Close();
@@ -115,40 +118,101 @@ namespace Menu
                 if (o is Panel)
                 {
                     Panel p = (Panel)o;
+
                     foreach (Object c in p.Controls)
                     {
                         if (c is UC_Personnage)
                         {
-                            UC_Personnage up = (UC_Personnage)c;
+
+                            UC_Personnage up = (UC_Personnage)c;               
                             up.donnerTachePerso();
-                            MessageBox.Show("affectation des taches");
+                            // MessageBox.Show("affectation des taches");
+             
                         }
+                        
+                        
                     }
+
                 }
 
             }
 
 
-            ControleurJeu.nouveauTour();
+            try
+            {
+                // REMPLISSAGE DEUXIEME "CONSOLE"
+                rtbListeF.Text += "\n    Journée " + nbTour.ToString() + ":\n";
+                rtbListeF.Text += s;
 
-            ecrireSurConsole();
+                s = "";
+                /** foreach (Fonctionnalites f in ControleurJeu.getListTache())
+                 {
+                     rtbListeF.Text += f.getNom() + "\n";
 
-            ArrayList listPerso = ControleurJeu.getListePersonnage();
+                 }**/
 
-            Personnage p1 = (Personnage)listPerso[0];
-            Personnage p2 = (Personnage)listPerso[1];
-            Personnage p3 = (Personnage)listPerso[2];
-            Personnage p4 = (Personnage)listPerso[3];
 
-            //mise a jour des persos apres avoir effectue les taches
-            initUC(uC_Personnage1, p1 );
-            initUC(uC_Personnage2, p2 );
-            initUC(uC_Personnage3, p3 );
-            initUC(uC_Personnage4, p4 );
+                // MISE A ZERO DES COMBOBOX POUR NE PLUS AVOIR LES ANCIENS CHOIX
+                foreach (Object o in Controls)
+                {
+                    if (o is Panel)
+                    {
+                        Panel p = (Panel)o;
 
-            
+                        foreach (Object c in p.Controls)
+                        {
+                            if (c is UC_Personnage)
+                            {
+
+                                UC_Personnage up = (UC_Personnage)c;
+                                up.cleanCBO();
+                                
+
+                            }
+
+
+                        }
+
+                    }
+
+                }
+
+                ControleurJeu.nouveauTour();
+
+                ecrireSurConsole();
+
+                ArrayList listPerso = ControleurJeu.getListePersonnage();
+
+                Personnage p1 = (Personnage)listPerso[0];
+                Personnage p2 = (Personnage)listPerso[1];
+                Personnage p3 = (Personnage)listPerso[2];
+                Personnage p4 = (Personnage)listPerso[3];
+
+                //mise a jour des persos apres avoir effectue les taches
+                initUC(uC_Personnage1, p1);
+                initUC(uC_Personnage2, p2);
+                initUC(uC_Personnage3, p3);
+                initUC(uC_Personnage4, p4);
+
+               
+            }
+            catch (NullReferenceException)
+            {
+                
+                MessageBox.Show("Selectionnez Action");
+            }
         }
 
+
+        // METHODE DE CONCATENATION DES ACTIONS DU JOUR
+        public static void remplir(string s1)
+        {
+            s += s1;
+            
+            
+        } 
+        
+        
         private void btnRepos_Click(object sender, EventArgs e)
         {
             if (crunchBool == true)
@@ -162,20 +226,16 @@ namespace Menu
                         {
                             if (c is UC_Personnage)
                             {
-                                
                                 UC_Personnage up = (UC_Personnage)c;
                                 up.crunchDesactive();
                                 crunchBool = false;
-
                             }
                         }
                     }
-
                 }
             }
 
-
-                if (nbTour >= 10)
+            if (nbTour >= 10)
             {
                 ControleurJeu.arreterJeu();
                 this.Close();
@@ -183,12 +243,10 @@ namespace Menu
 
             //tous les persos se reposent
 
-
-
             rtbActu.Text = String.Empty;
 
             ControleurJeu.repos();
-            rtbActu.Text = "Repos Activé\nTout le monde se repose\nPersonne ne s'avance sur le projet\nEt donc tout le monde revient moins fatigué et moins stressé\nTour effectué " + this.getNbTour() + " / 30 ";
+            rtbActu.Text = "Repos Activé\nTout le monde se repose\nPersonne ne s'avance sur le projet\nEt donc tout le monde revient moins fatigué et moins stressé\nTour effectué " + this.getNbTour() + " / 10 ";
             this.augmenterNbTour();   //incremente nb de tour
 
             ArrayList listPerso = ControleurJeu.getListePersonnage();
@@ -209,23 +267,22 @@ namespace Menu
         {
             foreach (Object o in Controls)
             {
-                if(o is Panel)
+                if (o is Panel)
                 {
                     Panel p = (Panel)o;
-                    foreach(Object c in p.Controls)
+                    foreach (Object c in p.Controls)
                     {
                         if (c is UC_Personnage)
                         {
                             UC_Personnage up = (UC_Personnage)c;
                             up.crunchActive();
-                            
-
                             crunchBool = true;
-
                         }
                     }
                 }
             }
         }
+
+       
     }
 }

@@ -187,7 +187,7 @@ namespace Menu.classePersonnage
                     action.setStatus(true); //modif du status pour dire que la tache est terminée
                 }
             }
-            ControleurJeu.mettreAJourListeTache(action);
+           // ControleurJeu.mettreAJourListeTache(action);
 
         }
 
