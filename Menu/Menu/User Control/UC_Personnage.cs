@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Menu.classePersonnage;
+using System.Collections.Generic;
 
 namespace Menu
 {
@@ -38,6 +39,20 @@ namespace Menu
         }
 
 
+        // Remise a zero des combobox
+        public void cleanCBO()
+        {
+            cboAction1.Text = "";
+            cboAction2.Text = "";
+            cboAction3.Text = "";
+
+            cboFonctionnalite1.Text = "";
+            cboFonctionnalite2.Text = "";
+            cboFonctionnalite3.Text = "";
+
+
+        }
+
         public void initialisationUCPerso(Personnage p)
         {
             this.perso = p;
@@ -58,11 +73,14 @@ namespace Menu
             {
                 this.Enabled = true;
             }
-            if(this.perso.getStress() == 100){
+            if (this.perso.getStress() == 100)
+            {
                 //this.setProductivite();
                 this.Enabled = false;
             }
 
+
+        
             
         }
 
@@ -154,27 +172,41 @@ namespace Menu
             this.cboFonctionnalite3.Visible = false;
         }
 
+        
+     
         public void donnerTachePerso()
         {
-            ArrayList listeTache = new ArrayList(); //arrayliste des taches que le personnage va effectuer
-            foreach(Fonctionnalites f in listfonctionnalite)
-            {
-                if(f.getType()==cboFonctionnalite1.Text)
+            List<Fonctionnalites> listeTache = new List<Fonctionnalites>();
+            
+               //arrayliste des taches que le personnage va effectuer
+            
+                foreach(Fonctionnalites f in listfonctionnalite)
                 {
-                    listeTache.Add(f);
-                }
-                if (f.getType() == cboFonctionnalite2.Text)
-                {
-                    listeTache.Add(f);
-                }
-                if (cboFonctionnalite3.Visible == false)  //si le crunch est activé alors ajouter une tache en plus
-                {
-                    listeTache.Add(f);
-                }
-            }
+                    //MessageBox.Show(cboFonctionnalite1.Text);
 
-            ControleurJeu.tache(this.perso, listeTache);
+                    if(f.getNom()==cboFonctionnalite1.Text)
+                    {
+                        listeTache.Add(f); 
+                    }
+                    if (f.getNom() == cboFonctionnalite2.Text)
+                    {
+                        listeTache.Add(f);
+                    }
+                    if (cboFonctionnalite3.Visible == false)  //si le crunch est activé alors ajouter une tache en plus
+                    {
+                        if (f.getNom() == cboFonctionnalite3.Text)
+                        {
+                            listeTache.Add(f);
+                        }
+                    }
+                }
+            
+                ControleurJeu.tache(this.perso, listeTache);
+            
+            
         }
+
+        
 
     }
 }

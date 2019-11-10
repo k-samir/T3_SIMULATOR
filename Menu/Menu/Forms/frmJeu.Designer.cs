@@ -42,6 +42,7 @@
             this.lblDeadLine = new System.Windows.Forms.Label();
             this.btnCrunch = new System.Windows.Forms.Button();
             this.btnReunion = new System.Windows.Forms.Button();
+            this.rtbListeF = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,7 +152,7 @@
             this.rtbActu.Location = new System.Drawing.Point(1561, 117);
             this.rtbActu.Margin = new System.Windows.Forms.Padding(4);
             this.rtbActu.Name = "rtbActu";
-            this.rtbActu.Size = new System.Drawing.Size(336, 549);
+            this.rtbActu.Size = new System.Drawing.Size(336, 240);
             this.rtbActu.TabIndex = 16;
             this.rtbActu.Text = "";
             // 
@@ -202,12 +203,25 @@
             this.btnReunion.Text = "Réunion";
             this.btnReunion.UseVisualStyleBackColor = true;
             // 
+            // rtbListeF
+            // 
+            this.rtbListeF.BackColor = System.Drawing.Color.White;
+            this.rtbListeF.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbListeF.ForeColor = System.Drawing.Color.Black;
+            this.rtbListeF.Location = new System.Drawing.Point(1561, 379);
+            this.rtbListeF.Margin = new System.Windows.Forms.Padding(4);
+            this.rtbListeF.Name = "rtbListeF";
+            this.rtbListeF.Size = new System.Drawing.Size(436, 240);
+            this.rtbListeF.TabIndex = 21;
+            this.rtbListeF.Text = "";
+            // 
             // frmJeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1901, 1033);
+            this.Controls.Add(this.rtbListeF);
             this.Controls.Add(this.btnReunion);
             this.Controls.Add(this.btnCrunch);
             this.Controls.Add(this.lblDeadLine);
@@ -243,5 +257,6 @@
         private System.Windows.Forms.Label lblDeadLine;
         private System.Windows.Forms.Button btnCrunch;
         private System.Windows.Forms.Button btnReunion;
+        private System.Windows.Forms.RichTextBox rtbListeF;
     }
 }
