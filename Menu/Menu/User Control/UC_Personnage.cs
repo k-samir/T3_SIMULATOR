@@ -192,7 +192,7 @@ namespace Menu
                     {
                         listeTache.Add(f);
                     }
-                    if (cboFonctionnalite3.Visible == false)  //si le crunch est activé alors ajouter une tache en plus
+                    if (cboFonctionnalite3.Visible != false)  //si le crunch est activé alors ajouter une tache en plus
                     {
                         if (f.getNom() == cboFonctionnalite3.Text)
                         {

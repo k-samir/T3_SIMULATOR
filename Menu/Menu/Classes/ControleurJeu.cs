@@ -57,12 +57,14 @@ namespace Menu
             Fonctionnalites f1 = new Fonctionnalites("Recherche dans Cahier des Charges", 1, 0, 0, "Rechercher");
             Fonctionnalites f2 = new Fonctionnalites("Recherche Objectifs Pédagogiques", 1, 0, 0, "Rechercher");
             Fonctionnalites f3 = new Fonctionnalites("Recherche code", 1, 0, 0, "Rechercher");
-            Fonctionnalites f4 = new Fonctionnalites("MCD", 2, 0, 0, "Concevoir");
+            Fonctionnalites f4 = new Fonctionnalites("MCD", 1, 0, 0, "Concevoir");
             Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 1, 0, 0, "Concevoir");
             Fonctionnalites f6 = new Fonctionnalites("Conception3", 1, 0, 0, "Concevoir");
             Fonctionnalites f7 = new Fonctionnalites("Développement des classes", 1, 0, 0, "Développer");
             Fonctionnalites f8 = new Fonctionnalites("Développement Controleur", 1, 0, 0, "Développer");
             Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 1, 0, 0, "Développer");
+
+
 
 
             listfonctionnalite.Add(f1);
@@ -73,7 +75,7 @@ namespace Menu
             listfonctionnalite.Add(f6);
             listfonctionnalite.Add(f7);
             listfonctionnalite.Add(f8);
-            listfonctionnalite.Add(f9);
+           // listfonctionnalite.Add(f9);
             verifPourcentNote();
 
             listPersonnage.Add(p1);
@@ -96,6 +98,7 @@ namespace Menu
             frmMenu fm = new frmMenu();
             fm.Show();
         }
+
 
         public void main()
         {
@@ -213,12 +216,27 @@ namespace Menu
         }**/
         public static void tache(Personnage p, List<Fonctionnalites> listeTache)
         {
+
+            string afficher = "";
+
+            for (int i = 0; i < listfonctionnalite.Count; i++)
+            {
+                Fonctionnalites ajout = (Fonctionnalites)listfonctionnalite[i];
+                afficher += "\n" + ajout.getNom();
+            }
+
+            if (afficher != "")
+            {
+                MessageBox.Show(afficher);
+            }
+
+
             String texte = "";
             // Parcours de toutes les fonctionalités pour que le perso p les fasse
             foreach (Fonctionnalites f in listeTache)
             {
-                
-                if (f.getType() == "Rechercher")
+                p.faireAction(f);
+                /*if (f.getType() == "Rechercher")
                 {
                     /////////////::////////////A MODIFIER POUR RECHERCHE///////////////////////////////
                     p.faireAction(f);
@@ -228,18 +246,20 @@ namespace Menu
                 {
                     p.faireAction(f);
                 }
+                */
             }
 
             string fonc = "";
-            bool fini = false;
+            //bool fini = false;
                 foreach (Fonctionnalites f in listeTache)
                 {
                     // Si la fonction est finie on l'enleve de la liste et on affiche qui l'a fini
-                    if (f.getStatus() == true && fini == false)
+                    if (f.getStatus() == true)
                     {
-                        fini = true;
-                            texte += f.getNom() + " " +f.getPaDepense() + "/" + f.getPaNecess() + " Terminé par " + p.getPrenom() +  "\n";
-                         listfonctionnalite.Remove(f);
+                        frmJeu.setAvancement(f.getPourcentNote() + (float)frmJeu.getAvancement());
+                        //fini = true;
+                    texte += f.getNom() + " " +f.getPaDepense() + "/" + f.getPaNecess() + " Terminé par " + p.getPrenom() +  "\n";
+                            listfonctionnalite.Remove(f);
                     fonc = f.getNom();
                     }
                     else
@@ -256,7 +276,7 @@ namespace Menu
                     if(listeTache[i].getNom() == fonc)
                     {
                         listeTache.RemoveAt(i);
-                        break;
+                        //break;
                     }
                 }
             }

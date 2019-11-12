@@ -17,9 +17,12 @@ namespace Menu
 
         ArrayList listPerso = new ArrayList();
         int nbTour = 1; //nb de tour pour le projet
+        int nbTourMax = 10;
         bool crunchBool = false;
         // String d'affichage des actoins / jour
         public static string s = "";
+        // Avancement de la progressbar
+        private static float avancement = 0;
         public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4)
         {
             InitializeComponent();
@@ -50,6 +53,8 @@ namespace Menu
 
         public void augmenterNbTour()
         {
+            pbAvancement.Value = (int)avancement;
+            lblDeadLine.Text = pbAvancement.Value + "% Avancement";
             nbTour++;
         }
 
@@ -106,7 +111,7 @@ namespace Menu
 
             // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
             // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
-            if ((nbTour >= 10) || (ControleurJeu.getListeFonctionnalite().Count == 1))
+            if ((nbTour >= nbTourMax) || ( (ControleurJeu.getListeFonctionnalite().Count == 0) && pbAvancement.Value == 100))
             {
                 ControleurJeu.arreterJeu();
                 this.Close();
@@ -194,7 +199,15 @@ namespace Menu
                 initUC(uC_Personnage3, p3);
                 initUC(uC_Personnage4, p4);
 
-               
+                // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
+                // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
+                if ((nbTour >= nbTourMax) || (ControleurJeu.getListeFonctionnalite().Count == 0))
+                {
+                    ControleurJeu.arreterJeu();
+                    this.Close();
+                }
+
+
             }
             catch (NullReferenceException)
             {
@@ -262,6 +275,19 @@ namespace Menu
             initUC(uC_Personnage3, p3);
             initUC(uC_Personnage4, p4);
         }
+
+        public static float getAvancement()
+        {
+            return avancement;
+        }
+
+        public static void setAvancement(float a)
+        {
+            avancement = a;
+        }
+
+
+
 
         private void btnCrunch_Click_1(object sender, EventArgs e)
         {
