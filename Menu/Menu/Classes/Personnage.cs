@@ -174,18 +174,21 @@ namespace Menu.classePersonnage
         }
 
         public void faireAction(Fonctionnalites action){    //tache que le personnage va effectuer
-            if(action.getPaDepense() >= action.getPaNecess())
+            if(action.getPaDepense() >= action.getPaNecess() && action.getStatus() == false)
             {
                 action.setStatus(true); //modif du status pour dire que la tache est terminée
+                
             }
             
             if(action.getStatus() == false)
             {
+                
                 action.setPaDepense(action.getPaDepense() + 1);
-                if (action.getPaDepense() >= action.getPaNecess())
+                if (action.getPaDepense() == action.getPaNecess())
                 {
                     action.setStatus(true); //modif du status pour dire que la tache est terminée
                 }
+                
             }
            // ControleurJeu.mettreAJourListeTache(action);
 

@@ -142,7 +142,6 @@
             this.pbAvancement.Name = "pbAvancement";
             this.pbAvancement.Size = new System.Drawing.Size(1301, 43);
             this.pbAvancement.TabIndex = 1;
-            this.pbAvancement.Value = 1;
             // 
             // rtbActu
             // 
@@ -211,6 +210,7 @@
             this.rtbListeF.Location = new System.Drawing.Point(1561, 379);
             this.rtbListeF.Margin = new System.Windows.Forms.Padding(4);
             this.rtbListeF.Name = "rtbListeF";
+            this.rtbListeF.ReadOnly = true;
             this.rtbListeF.Size = new System.Drawing.Size(436, 240);
             this.rtbListeF.TabIndex = 21;
             this.rtbListeF.Text = "";
