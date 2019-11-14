@@ -42,8 +42,14 @@ namespace Menu
                 {
                     UC_Personnage uC_Perso = new UC_Personnage();
                     uC_Perso.Enabled = true;
+                    
                 }
             }
+        }
+
+        public void tombeMalade(Personnage p)
+        {
+            p.setMalade(true);
         }
 
         public void initUC(UC_Personnage uC, Personnage p)
@@ -54,7 +60,7 @@ namespace Menu
         public void augmenterNbTour()
         {
             pbAvancement.Value = (int)avancement;
-            lblDeadLine.Text = pbAvancement.Value + "% Avancement";
+            lblDeadLine.Text = pbAvancement.Value.ToString() + "% Avancement";
             nbTour++;
         }
 
@@ -70,11 +76,6 @@ namespace Menu
             this.Hide();
         }
 
-        public String recupTxtFichier(String nomFichier, String typeFichier)
-        {
-            String texte = System.IO.File.ReadAllText(@"C:\Users\tieut\myt3\Menu\Menu\" + nomFichier + "." + typeFichier);
-            return texte;
-        }
 
 
         public void ecrireSurConsole()       //controleur de jeu écrit sur le fil d'actualité
@@ -100,14 +101,62 @@ namespace Menu
                             if (c is UC_Personnage)
                             {
                                 UC_Personnage up = (UC_Personnage)c;
+                                up.Enabled = true;
                                 up.crunchDesactive();
                                 crunchBool = false;
-                                    
                             }
                         }
                     }
                 }
             }
+
+                /*TEST MALADIE ------------------------ */
+                foreach (Object o in Controls)
+                {
+                    if (o is Panel)
+                    {
+                        Panel p = (Panel)o;
+                        foreach (Object c in p.Controls)
+                        {
+                            if (c is UC_Personnage)
+                            {
+                                UC_Personnage up = (UC_Personnage)c;
+
+                                up.crunchDesactive();
+                                up.getPersonnage().setMalade(false);
+                                crunchBool = false;
+                                //Si l'avancement est entre 20 et 90% on fait tomber malade un ou plusieurs perso
+                                if (getAvancement() >= 20 && getAvancement() <= 90)
+                                {
+                                    
+                                    Random aleatoire = new Random();
+                                    int rnd = aleatoire.Next(6);
+                                    if(rnd == 0)
+                                {
+
+                                    up.getPersonnage().setMalade(true);
+                                    up.Enabled = false;
+                                    
+                                    
+                                }
+                                    
+                                }
+                            else
+                            {
+                                up.Enabled = true;
+                                up.getPersonnage().setMalade(false);
+                                up.BackColor = Color.AliceBlue;
+                                
+
+                            }
+
+                            }
+                        }
+                    }
+                }
+        
+
+            
 
             // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
             // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
@@ -146,7 +195,7 @@ namespace Menu
             try
             {
                 // REMPLISSAGE DEUXIEME "CONSOLE"
-                rtbListeF.Text += "\n    Journée " + nbTour.ToString() + ":\n";
+                rtbListeF.Text += "\nJournée " + nbTour.ToString() + ":\n";
                 rtbListeF.Text += s;
 
                 s = "";
@@ -170,9 +219,7 @@ namespace Menu
                             {
 
                                 UC_Personnage up = (UC_Personnage)c;
-                                up.cleanCBO();
-                                
-
+                                up.cleanCBO();  
                             }
 
 
@@ -309,6 +356,14 @@ namespace Menu
             }
         }
 
-       
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uC_Personnage2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

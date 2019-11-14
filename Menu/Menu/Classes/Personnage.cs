@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using System.Linq;
+using System.Collections;
 using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Menu.classePersonnage
@@ -18,6 +19,7 @@ namespace Menu.classePersonnage
         private int connaissances = 0;
         private int sociabilite;
         private int pA;
+        private bool malade = false;
 
 
         //Constructeur de la classe personnage
@@ -29,6 +31,23 @@ namespace Menu.classePersonnage
             this.sociabilite = sociabilite;
         }
 
+        public void setMalade(bool malade)
+        {
+            this.malade = malade; 
+        }
+
+        public bool estDisponible()
+        {
+            if(this.malade == false)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
         /* ------------------------------------------- actions ---------------------------- */
         public void realisation(Menu.Fonctionnalites fct, int nbPa)
         {

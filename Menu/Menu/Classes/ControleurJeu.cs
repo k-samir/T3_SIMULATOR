@@ -34,7 +34,6 @@ namespace Menu
         // frmJeu jeu;
 
         private int compteurTours = 0;
-        private Boolean gameON = true;
 
         frmJeu jeu;
         
@@ -58,10 +57,10 @@ namespace Menu
             Fonctionnalites f2 = new Fonctionnalites("Recherche Objectifs Pédagogiques", 1, 0, 0, "Rechercher");
             Fonctionnalites f3 = new Fonctionnalites("Recherche code", 1, 0, 0, "Rechercher");
             Fonctionnalites f4 = new Fonctionnalites("MCD", 1, 0, 0, "Concevoir");
-            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 1, 0, 0, "Concevoir");
-            Fonctionnalites f6 = new Fonctionnalites("Conception3", 1, 0, 0, "Concevoir");
-            Fonctionnalites f7 = new Fonctionnalites("Développement des classes", 1, 0, 0, "Développer");
-            Fonctionnalites f8 = new Fonctionnalites("Développement Controleur", 1, 0, 0, "Développer");
+            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 10, 0, 0, "Concevoir");
+            Fonctionnalites f6 = new Fonctionnalites("GIT", 10, 0, 0, "Concevoir");
+            Fonctionnalites f7 = new Fonctionnalites("Développement des classes", 10, 0, 0, "Développer");
+            Fonctionnalites f8 = new Fonctionnalites("Développement Controleur", 10, 0, 0, "Développer");
             Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 1, 0, 0, "Développer");
 
 
@@ -75,7 +74,7 @@ namespace Menu
             listfonctionnalite.Add(f6);
             listfonctionnalite.Add(f7);
             listfonctionnalite.Add(f8);
-           // listfonctionnalite.Add(f9);
+            listfonctionnalite.Add(f9);
             verifPourcentNote();
 
             listPersonnage.Add(p1);
@@ -86,6 +85,7 @@ namespace Menu
             jeu = new frmJeu(p1, p2, p3, p4);
             jeu.Show();
         }
+        
 
         public Personnage remplirPersonnage(string prenom, double productivite, int stress, int sociabilite) //créer personnage avec attributs en paramètres
         {
@@ -182,6 +182,10 @@ namespace Menu
                 {
                     actu += "\n" + p.getPrenom() + " est trop stressé\nIl ne peut rien faire\n\n";
                 }
+                if (p.estDisponible() == false)
+                {
+                    actu += "Oh non ! " + p.getPrenom() + " est tombé malade.. \n\n"; 
+                }
             }
             return actu;
         }
@@ -207,13 +211,7 @@ namespace Menu
                
             }
         }
-        /**
-        public static List<Fonctionnalites> listeT;
 
-        public static List<Fonctionnalites> getListTache()
-        {
-            return listeT;
-        }**/
         public static void tache(Personnage p, List<Fonctionnalites> listeTache)
         {
 
@@ -227,7 +225,7 @@ namespace Menu
 
             if (afficher != "")
             {
-                MessageBox.Show(afficher);
+                //MessageBox.Show(afficher);
             }
 
 
@@ -291,7 +289,7 @@ namespace Menu
         {
             foreach (Personnage p in listPersonnage)
             {
-                // Lance la méthode repos du personnage p
+               
                 p.repos();
             }
         }
@@ -309,36 +307,16 @@ namespace Menu
         }
 
 
-        public static void mettreAJourListeTache(Fonctionnalites f) //MAJ de la liste de tache d'origin
-        {
-            for (int i = 0; i < listfonctionnalite.Count; i++)
-            {
-                if (listfonctionnalite[i] == f)
-                {
-                    listfonctionnalite.Insert(i, f);
-                }
-            }
-
-        }
     /* ----------------------Accesseurs----------------------------------- */
     public int getCompteurTours()
         {
             return this.compteurTours;
         }
+
         private void setCompteurTours(int noUse)
         {
             this.compteurTours = noUse;
         }
-
-        public bool getGameON()
-        {
-            return this.gameON;
-        }
-        public void setGameON(bool game)
-        {
-            this.gameON = game;
-        }
-
 
         /* -------------------------------------------------------------- */
     }
