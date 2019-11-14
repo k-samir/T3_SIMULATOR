@@ -19,6 +19,11 @@ namespace Menu
         private Personnage perso { get; set; }
 
 
+        public Personnage getPersonnage()
+        {
+            return this.perso;
+        }
+
         public UC_Personnage()
         {
             InitializeComponent();
@@ -71,7 +76,17 @@ namespace Menu
             }
             else
             {
-                this.Enabled = true;
+                if(perso.estDisponible() == false)
+                {
+                    this.Enabled = false;
+                    this.BackColor = Color.Coral;
+                }
+                else
+                {
+                    this.Enabled = true;
+                    this.BackColor = Color.AliceBlue;
+                }
+                
             }
             if (this.perso.getStress() == 100)
             {
