@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Menu.classePersonnage;
 using System.Collections;
+using Menu.Forms;
 
 namespace Menu
 {
@@ -364,6 +365,12 @@ namespace Menu
         private void uC_Personnage2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReunion_Click(object sender, EventArgs e)
+        {
+            frmReunion reunion = new frmReunion();
+            reunion.ShowDialog();
         }
     }
 }

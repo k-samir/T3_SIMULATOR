@@ -61,7 +61,7 @@ namespace Menu
             Fonctionnalites f6 = new Fonctionnalites("GIT", 10, 0, 0, "Concevoir");
             Fonctionnalites f7 = new Fonctionnalites("Développement des classes", 10, 0, 0, "Développer");
             Fonctionnalites f8 = new Fonctionnalites("Développement Controleur", 10, 0, 0, "Développer");
-            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 1, 0, 0, "Développer");
+            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 10, 0, 0, "Développer");
 
 
 

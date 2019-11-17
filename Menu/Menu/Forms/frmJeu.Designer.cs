@@ -31,10 +31,6 @@
             this.btnTourSuivant = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.uC_Personnage3 = new Menu.UC_Personnage();
-            this.uC_Personnage4 = new Menu.UC_Personnage();
-            this.uC_Personnage2 = new Menu.UC_Personnage();
-            this.uC_Personnage1 = new Menu.UC_Personnage();
             this.btnRepos = new System.Windows.Forms.Button();
             this.pbAvancement = new System.Windows.Forms.ProgressBar();
             this.rtbActu = new System.Windows.Forms.RichTextBox();
@@ -43,6 +39,10 @@
             this.btnCrunch = new System.Windows.Forms.Button();
             this.btnReunion = new System.Windows.Forms.Button();
             this.rtbListeF = new System.Windows.Forms.RichTextBox();
+            this.uC_Personnage3 = new Menu.UC_Personnage();
+            this.uC_Personnage4 = new Menu.UC_Personnage();
+            this.uC_Personnage2 = new Menu.UC_Personnage();
+            this.uC_Personnage1 = new Menu.UC_Personnage();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,47 +83,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1163, 729);
             this.panel1.TabIndex = 14;
-            // 
-            // uC_Personnage3
-            // 
-            this.uC_Personnage3.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage3.Location = new System.Drawing.Point(9, 15);
-            this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage3.Name = "uC_Personnage3";
-            this.uC_Personnage3.Size = new System.Drawing.Size(560, 340);
-            this.uC_Personnage3.TabIndex = 11;
-            // 
-            // uC_Personnage4
-            // 
-            this.uC_Personnage4.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage4.Location = new System.Drawing.Point(585, 369);
-            this.uC_Personnage4.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage4.Name = "uC_Personnage4";
-            this.uC_Personnage4.Size = new System.Drawing.Size(562, 340);
-            this.uC_Personnage4.TabIndex = 12;
-            // 
-            // uC_Personnage2
-            // 
-            this.uC_Personnage2.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage2.Location = new System.Drawing.Point(585, 15);
-            this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage2.Name = "uC_Personnage2";
-            this.uC_Personnage2.Size = new System.Drawing.Size(562, 340);
-            this.uC_Personnage2.TabIndex = 10;
-            this.uC_Personnage2.Load += new System.EventHandler(this.uC_Personnage2_Load);
-            // 
-            // uC_Personnage1
-            // 
-            this.uC_Personnage1.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage1.Location = new System.Drawing.Point(9, 369);
-            this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage1.Name = "uC_Personnage1";
-            this.uC_Personnage1.Size = new System.Drawing.Size(560, 340);
-            this.uC_Personnage1.TabIndex = 9;
             // 
             // btnRepos
             // 
@@ -199,6 +158,7 @@
             this.btnReunion.TabIndex = 20;
             this.btnReunion.Text = "Réunion";
             this.btnReunion.UseVisualStyleBackColor = true;
+            this.btnReunion.Click += new System.EventHandler(this.btnReunion_Click);
             // 
             // rtbListeF
             // 
@@ -211,6 +171,47 @@
             this.rtbListeF.Size = new System.Drawing.Size(251, 196);
             this.rtbListeF.TabIndex = 21;
             this.rtbListeF.Text = "";
+            // 
+            // uC_Personnage3
+            // 
+            this.uC_Personnage3.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage3.Location = new System.Drawing.Point(9, 15);
+            this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage3.Name = "uC_Personnage3";
+            this.uC_Personnage3.Size = new System.Drawing.Size(560, 340);
+            this.uC_Personnage3.TabIndex = 11;
+            // 
+            // uC_Personnage4
+            // 
+            this.uC_Personnage4.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage4.Location = new System.Drawing.Point(585, 369);
+            this.uC_Personnage4.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage4.Name = "uC_Personnage4";
+            this.uC_Personnage4.Size = new System.Drawing.Size(562, 340);
+            this.uC_Personnage4.TabIndex = 12;
+            // 
+            // uC_Personnage2
+            // 
+            this.uC_Personnage2.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage2.Location = new System.Drawing.Point(585, 15);
+            this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage2.Name = "uC_Personnage2";
+            this.uC_Personnage2.Size = new System.Drawing.Size(562, 340);
+            this.uC_Personnage2.TabIndex = 10;
+            this.uC_Personnage2.Load += new System.EventHandler(this.uC_Personnage2_Load);
+            // 
+            // uC_Personnage1
+            // 
+            this.uC_Personnage1.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage1.Location = new System.Drawing.Point(9, 369);
+            this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage1.Name = "uC_Personnage1";
+            this.uC_Personnage1.Size = new System.Drawing.Size(560, 340);
+            this.uC_Personnage1.TabIndex = 9;
             // 
             // frmJeu
             // 
