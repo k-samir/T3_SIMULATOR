@@ -88,7 +88,7 @@ namespace Menu.Forms
                 Button button2 = new Button();
                 button2.Size = new System.Drawing.Size(494, 78);
                 button2.Location = new System.Drawing.Point(posGauche, 138);
-                button2.Text = "Analyse de la demande du client et de ses besoins";
+                button2.Text = "Analyse de la demande du client et de ses besoins + Définir un cahier des charges";
                 button2.Cursor = System.Windows.Forms.Cursors.Hand;
                 button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
                 button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -98,8 +98,8 @@ namespace Menu.Forms
 
                 Button button3 = new Button();
                 button3.Size = new System.Drawing.Size(494, 78);
-                button3.Location = new System.Drawing.Point(posGauche, 238);
-                button3.Text = "Définir un cahier des charges";
+                button3.Location = new System.Drawing.Point(posGauche, 338);
+                button3.Text = "Mettre en place un système d'organisation";
                 button3.Cursor = System.Windows.Forms.Cursors.Hand;
                 button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
                 button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -107,33 +107,9 @@ namespace Menu.Forms
                 button3.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 button3.Click += new System.EventHandler(this.lancerNotification);
 
-                Button button4 = new Button();
-                button4.Size = new System.Drawing.Size(494, 78);
-                button4.Location = new System.Drawing.Point(posGauche, 338);
-                button4.Text = "Mettre en place un système d'organisation";
-                button4.Cursor = System.Windows.Forms.Cursors.Hand;
-                button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
-                button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                button4.ForeColor = System.Drawing.Color.Orange;
-                button4.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                button4.Click += new System.EventHandler(this.lancerNotification);
-
-                Button button5 = new Button();
-                button5.Size = new System.Drawing.Size(494, 78);
-                button5.Location = new System.Drawing.Point(posGauche, 338);
-                button5.Text = "Mettre en place un calendrier";
-                button5.Cursor = System.Windows.Forms.Cursors.Hand;
-                button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
-                button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                button5.ForeColor = System.Drawing.Color.Orange;
-                button5.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                button5.Click += new System.EventHandler(this.lancerNotification);
-
                 this.Controls.Add(button1);
                 this.Controls.Add(button2);
                 this.Controls.Add(button3);
-                this.Controls.Add(button4);
-                this.Controls.Add(button5);
             }
 
             if(theme == "Faire le point")
@@ -159,6 +135,8 @@ namespace Menu.Forms
         {
             this.Opacity = 0.3;     //effet flouté pour le popup
             frmReunionPopUp popup = new frmReunionPopUp();
+            Button b = (Button)sender;
+            popup.messagePopUp(b.Text);   //appel méthode du formulaire popup
             DialogResult dr = new DialogResult();
             dr=popup.ShowDialog();
             if(popup.DialogResult == DialogResult.Cancel)
@@ -169,8 +147,8 @@ namespace Menu.Forms
 
             //une fois l'achievement activé on bloque le boutton avec un enable pour dire à l'utilisateur 
             //qu'il n'a plus besoin de s'occuper de cet achievement et que cette derniere a été validé
-            Button b = (Button)sender;
-            b.Enabled = false;  
+            Button b1 = (Button)sender;
+            b1.Enabled = false;  
         }
 
         private void btnRevenir_Click_1(object sender, EventArgs e)

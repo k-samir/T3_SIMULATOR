@@ -1,47 +1,14 @@
-C:\Users\tieut\myt3\Menu\Menu\bin\Debug\Menu.exe.config
-C:\Users\tieut\myt3\Menu\Menu\bin\Debug\Menu.exe
-C:\Users\tieut\myt3\Menu\Menu\bin\Debug\Menu.pdb
-C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.frmMenu.resources
-C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.Properties.Resources.resources
-C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.csproj.GenerateResource.cache
-C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.exe
-C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.pdb
-C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.frmJeu.resources
-C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.UC_Personnage.resources
-C:\Users\tieut\myt3\Menu\Menu\obj\Debug\Menu.csprojAssemblyReference.cache
 C:\Users\k-sam\Documents\myt3\Menu\Menu\bin\Debug\Menu.exe.config
 C:\Users\k-sam\Documents\myt3\Menu\Menu\bin\Debug\Menu.exe
 C:\Users\k-sam\Documents\myt3\Menu\Menu\bin\Debug\Menu.pdb
+C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.Forms.frmButReunion.resources
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.frmJeu.resources
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.frmMenu.resources
+C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.Forms.frmReunion.resources
+C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.Forms.frmReunionPopUp.resources
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.Properties.Resources.resources
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.UC_Personnage.resources
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.csproj.GenerateResource.cache
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.exe
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.pdb
 C:\Users\k-sam\Documents\myt3\Menu\Menu\obj\Debug\Menu.csprojAssemblyReference.cache
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\bin\Debug\Menu.exe.config
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\bin\Debug\Menu.exe
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\bin\Debug\Menu.pdb
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.csprojAssemblyReference.cache
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.frmJeu.resources
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.frmMenu.resources
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.Properties.Resources.resources
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.UC_Personnage.resources
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.csproj.GenerateResource.cache
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.exe
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.pdb
-C:\Users\Valentin\Downloads\myt3-master (4)\myt3-master\Menu\Menu\bin\Debug\Menu.exe.config
-C:\Users\Valentin\Downloads\myt3-master (4)\myt3-master\Menu\Menu\bin\Debug\Menu.exe
-C:\Users\Valentin\Downloads\myt3-master (4)\myt3-master\Menu\Menu\bin\Debug\Menu.pdb
-C:\Users\Valentin\Downloads\myt3-master (4)\myt3-master\Menu\Menu\obj\Debug\Menu.csprojAssemblyReference.cache
-C:\Users\Valentin\Downloads\myt3-master (4)\myt3-master\Menu\Menu\obj\Debug\Menu.frmJeu.resources
-C:\Users\Valentin\Downloads\myt3-master (4)\myt3-master\Menu\Menu\obj\Debug\Menu.frmMenu.resources
-C:\Users\Valentin\Downloads\myt3-master (4)\myt3-master\Menu\Menu\obj\Debug\Menu.Properties.Resources.resources
-C:\Users\Valentin\Downloads\myt3-master (4)\myt3-master\Menu\Menu\obj\Debug\Menu.UC_Personnage.resources
-C:\Users\Valentin\Downloads\myt3-master (4)\myt3-master\Menu\Menu\obj\Debug\Menu.csproj.GenerateResource.cache
-C:\Users\Valentin\Downloads\myt3-master (4)\myt3-master\Menu\Menu\obj\Debug\Menu.exe
-C:\Users\Valentin\Downloads\myt3-master (4)\myt3-master\Menu\Menu\obj\Debug\Menu.pdb
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.Forms.frmButReunion.resources
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.Forms.frmReunion.resources
-D:\Program Files (x86)\Microsoft Visual Studio\2019\Projet\Menu\Menu\obj\Debug\Menu.Forms.frmReunionPopUp.resources
