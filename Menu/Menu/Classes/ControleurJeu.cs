@@ -40,6 +40,9 @@ namespace Menu
         public void lancerJeu(frmMenu fm)
         {
             fm.Hide();
+
+            /*
+             */
             //creation personnage
             p1 = remplirPersonnage("Valentin", 2.0, 0, 82);
             p2 = remplirPersonnage("Aymeric", 2.0, 20, 80);
@@ -48,8 +51,7 @@ namespace Menu
 
 
             /*
-            nom;paNecess;pourcentNote;nvConnaissNecess;paDepense;type;
-            FONCTIONNALITES ( NOM , PANECESS , POURCENTNOTE , NVCONNAIS , PADEPENSE , TYPE)*/
+            FONCTIONNALITES ( NOM , PANECESS , POURCENTNOTE , NVCONNAIS , PADEPENSE , TYPE) */
 
         
 
@@ -57,13 +59,11 @@ namespace Menu
             Fonctionnalites f2 = new Fonctionnalites("Recherche Objectifs Pédagogiques", 1, 0, 0, "Rechercher");
             Fonctionnalites f3 = new Fonctionnalites("Recherche code", 1, 0, 0, "Rechercher");
             Fonctionnalites f4 = new Fonctionnalites("MCD", 1, 0, 0, "Concevoir");
-            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 10, 0, 0, "Concevoir");
-            Fonctionnalites f6 = new Fonctionnalites("GIT", 10, 0, 0, "Concevoir");
-            Fonctionnalites f7 = new Fonctionnalites("Développement des classes", 10, 0, 0, "Développer");
-            Fonctionnalites f8 = new Fonctionnalites("Développement Controleur", 10, 0, 0, "Développer");
-            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 10, 0, 0, "Développer");
-
-
+            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 1, 0, 0, "Concevoir");
+            Fonctionnalites f6 = new Fonctionnalites("GIT", 1, 0, 0, "Concevoir");
+            Fonctionnalites f7 = new Fonctionnalites("Développement des classes", 1, 0, 0, "Développer");
+            Fonctionnalites f8 = new Fonctionnalites("Développement Controleur", 1, 0, 0, "Développer");
+            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 1, 0, 0, "Développer");
 
 
             listfonctionnalite.Add(f1);
@@ -83,6 +83,7 @@ namespace Menu
             listPersonnage.Add(p4);
 
             jeu = new frmJeu(p1, p2, p3, p4);
+            jeu.Refresh();
             jeu.Show();
         }
         
@@ -94,10 +95,16 @@ namespace Menu
 
         public static void arreterJeu()
         {
+            listfonctionnalite.Clear();
+            listPersonnage.Clear();
+
+            
             MessageBox.Show("Fin de la partie");
             frmMenu fm = new frmMenu();
             fm.Show();
         }
+
+       
 
 
         public void main()
@@ -124,8 +131,19 @@ namespace Menu
         {
             foreach (Personnage p in listPersonnage)
             {
-
                 p.setFatigue(p.getFatigue() + 10);
+                // PARCOURS DES ACTIONS SELECTIONNEES
+
+                int v = frmJeu.getNbrActionFaite(p);
+               
+                for (int i =0;i< v; i++)
+                {
+                    p.setFatigue(p.getFatigue() + 5);
+                }
+            
+                
+
+
                 if (p.getFatigue() > 100)
                 {
                     p.setFatigue(100);
@@ -234,28 +252,18 @@ namespace Menu
             foreach (Fonctionnalites f in listeTache)
             {
                 p.faireAction(f);
-                /*if (f.getType() == "Rechercher")
-                {
-                    /////////////::////////////A MODIFIER POUR RECHERCHE///////////////////////////////
-                    p.faireAction(f);
-                    p.recherche();  //à revoir préciser le type de recherche
-                }
-                else
-                {
-                    p.faireAction(f);
-                }
-                */
+                
             }
 
             string fonc = "";
-            //bool fini = false;
+            
                 foreach (Fonctionnalites f in listeTache)
                 {
                     // Si la fonction est finie on l'enleve de la liste et on affiche qui l'a fini
                     if (f.getStatus() == true)
                     {
                         frmJeu.setAvancement(f.getPourcentNote() + (float)frmJeu.getAvancement());
-                        //fini = true;
+                        
                     texte += f.getNom() + " " +f.getPaDepense() + "/" + f.getPaNecess() + " Terminé par " + p.getPrenom() +  "\n";
                             listfonctionnalite.Remove(f);
                     fonc = f.getNom();
@@ -274,7 +282,7 @@ namespace Menu
                     if(listeTache[i].getNom() == fonc)
                     {
                         listeTache.RemoveAt(i);
-                        //break;
+                        
                     }
                 }
             }

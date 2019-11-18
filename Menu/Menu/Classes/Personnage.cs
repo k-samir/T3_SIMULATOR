@@ -18,7 +18,6 @@ namespace Menu.classePersonnage
         private int stress;
         private int connaissances = 0;
         private int sociabilite;
-        private int pA;
         private bool malade = false;
 
 
@@ -77,6 +76,14 @@ namespace Menu.classePersonnage
 
         /* ---------------------------------------------------------------------- */
 
+        /* ------------------------------------------- personnage particularité  ---------------------------- */
+
+
+
+        /* ----------------------------------------------------------------------- */
+
+
+
         /* ------Accesseurs (pour les set, les valeurs acceptées sont comprises entre 0 et 100)  ------------------ */
         public string getPrenom()
         {
@@ -90,16 +97,6 @@ namespace Menu.classePersonnage
         public int getId()
         {
             return this.id;
-        }
-
-
-        public int getPA()
-        {
-            return this.pA;
-        }
-        public void setPA(int pA)
-        {
-            this.pA = pA;
         }
 
 
@@ -209,7 +206,7 @@ namespace Menu.classePersonnage
                 }
                 
             }
-           // ControleurJeu.mettreAJourListeTache(action);
+           
 
         }
 

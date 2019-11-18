@@ -17,6 +17,7 @@ namespace Menu
     {
 
         ArrayList listPerso = new ArrayList();
+
         int nbTour = 1; //nb de tour pour le projet
         int nbTourMax = 10;
         bool crunchBool = false;
@@ -24,13 +25,27 @@ namespace Menu
         public static string s = "";
         // Avancement de la progressbar
         private static float avancement = 0;
+        List<Personnage> listPersonnage = new List<Personnage>();
         public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4)
         {
             InitializeComponent();
+            this.Refresh();
+
+            listPersonnage.Clear();
+            nbTourMax = 10;
+            crunchBool = false;
+
+
 
             lblDeadLine.Text = pbAvancement.Value + "% Avancement";
 
             ArrayList listPerso = ControleurJeu.getListeFonctionnalite();
+            
+            listPersonnage.Add(p1);
+            listPersonnage.Add(p2);
+            listPersonnage.Add(p3);
+            listPersonnage.Add(p4);
+
 
             initUC(uC_Personnage1, p1);
             initUC(uC_Personnage2, p2);
@@ -43,7 +58,7 @@ namespace Menu
                 {
                     UC_Personnage uC_Perso = new UC_Personnage();
                     uC_Perso.Enabled = true;
-                    
+
                 }
             }
         }
@@ -72,9 +87,19 @@ namespace Menu
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
+            foreach(Object  c in Controls)
+            {
+                if(c is UC_Personnage)
+                {
+
+                }
+            }
+
             frmMenu menu = new frmMenu();
             menu.Show();
-            this.Hide();
+            this.Close();
+            
+
         }
 
 
@@ -111,57 +136,54 @@ namespace Menu
                 }
             }
 
-                /*TEST MALADIE ------------------------ */
-                foreach (Object o in Controls)
+            /*-----------------TEST MALADIE ------------------------ */
+            foreach (Object o in Controls)
+            {
+                if (o is Panel)
                 {
-                    if (o is Panel)
+                    Panel p = (Panel)o;
+                    foreach (Object c in p.Controls)
                     {
-                        Panel p = (Panel)o;
-                        foreach (Object c in p.Controls)
+                        if (c is UC_Personnage)
                         {
-                            if (c is UC_Personnage)
-                            {
-                                UC_Personnage up = (UC_Personnage)c;
+                            UC_Personnage up = (UC_Personnage)c;
 
-                                up.crunchDesactive();
-                                up.getPersonnage().setMalade(false);
-                                crunchBool = false;
-                                //Si l'avancement est entre 20 et 90% on fait tomber malade un ou plusieurs perso
-                                if (getAvancement() >= 20 && getAvancement() <= 90)
-                                {
-                                    
-                                    Random aleatoire = new Random();
-                                    int rnd = aleatoire.Next(6);
-                                    if(rnd == 0)
+                            up.crunchDesactive();
+                            up.getPersonnage().setMalade(false);
+                            crunchBool = false;
+                            //Si l'avancement est entre 20 et 90% on fait tomber malade un ou plusieurs perso
+                            if (getAvancement() >= 20 && getAvancement() <= 90)
+                            {
+
+                                Random aleatoire = new Random();
+                                int rnd = aleatoire.Next(6);
+                                if (rnd == 0)
                                 {
 
                                     up.getPersonnage().setMalade(true);
                                     up.Enabled = false;
-                                    
-                                    
+
                                 }
-                                    
-                                }
+
+                            }
                             else
                             {
                                 up.Enabled = true;
                                 up.getPersonnage().setMalade(false);
                                 up.BackColor = Color.AliceBlue;
-                                
-
                             }
 
-                            }
                         }
                     }
                 }
-        
+            }
 
-            
+
+
 
             // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
             // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
-            if ((nbTour >= nbTourMax) || ( (ControleurJeu.getListeFonctionnalite().Count == 0) && pbAvancement.Value == 100))
+            if ((nbTour >= nbTourMax) || ((ControleurJeu.getListeFonctionnalite().Count == 0) && pbAvancement.Value == 100))
             {
                 ControleurJeu.arreterJeu();
                 this.Close();
@@ -179,13 +201,13 @@ namespace Menu
                         if (c is UC_Personnage)
                         {
 
-                            UC_Personnage up = (UC_Personnage)c;               
+                            UC_Personnage up = (UC_Personnage)c;
                             up.donnerTachePerso();
                             // MessageBox.Show("affectation des taches");
-             
+
                         }
-                        
-                        
+
+
                     }
 
                 }
@@ -200,11 +222,6 @@ namespace Menu
                 rtbListeF.Text += s;
 
                 s = "";
-                /** foreach (Fonctionnalites f in ControleurJeu.getListTache())
-                 {
-                     rtbListeF.Text += f.getNom() + "\n";
-
-                 }**/
 
 
                 // MISE A ZERO DES COMBOBOX POUR NE PLUS AVOIR LES ANCIENS CHOIX
@@ -220,7 +237,7 @@ namespace Menu
                             {
 
                                 UC_Personnage up = (UC_Personnage)c;
-                                up.cleanCBO();  
+                                up.cleanCBO();
                             }
 
 
@@ -252,6 +269,7 @@ namespace Menu
                 if ((nbTour >= nbTourMax) || (ControleurJeu.getListeFonctionnalite().Count == 0))
                 {
                     ControleurJeu.arreterJeu();
+
                     this.Close();
                 }
 
@@ -259,7 +277,7 @@ namespace Menu
             }
             catch (NullReferenceException)
             {
-                
+
                 MessageBox.Show("Selectionnez Action");
             }
         }
@@ -269,13 +287,67 @@ namespace Menu
         public static void remplir(string s1)
         {
             s += s1;
+
+
+        }
+
+        public static int getNbrActionFaite(Personnage p)
+        {
+            return 0;
+            /**int nbrres = 0;
             
+                    foreach (Object temp in this.Controls)
+                    {
+                        MessageBox.Show(temp.ToString());
+                        //foreach (Object o in temp.Controls)
+                        //{
+                        if (temp is UC_Personnage)
+                        {
+                            UC_Personnage up = (UC_Personnage)temp;
+                            MessageBox.Show(up.getPersonnage().getPrenom());
+                            
+                            if (up.getPersonnage().getPrenom() == p.getPrenom())
+                            {
+
+                                foreach (Object op in up.Controls)
+                                {
+                                    if (op is ComboBox)
+                                    {
+                                        ComboBox cbo = (ComboBox)op;
+
+                                        if (cbo.Name == "cboAction1" || cbo.Name == "cboAction2")
+                                        {
+                                            nbrres++;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+            }
+        
+    
+               // MessageBox.Show(nbrres.ToString());
+               return nbrres;
+    **/
             
-        } 
-        
-        
+        }
+
+      public void viderCBO()
+        {
+            uC_Personnage1.viderCBO();
+
+            uC_Personnage2.viderCBO();
+
+            uC_Personnage3.viderCBO();
+        }
         private void btnRepos_Click(object sender, EventArgs e)
         {
+            frmRepos repos = new frmRepos(listPersonnage);
+            repos.Show();
             if (crunchBool == true)
             {
                 foreach (Object o in Controls)
@@ -298,6 +370,7 @@ namespace Menu
 
             if (nbTour >= 10)
             {
+                viderCBO();
                 ControleurJeu.arreterJeu();
                 this.Close();
             }
