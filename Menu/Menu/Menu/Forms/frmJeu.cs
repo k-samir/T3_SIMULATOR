@@ -550,7 +550,14 @@ namespace Menu
             uC_Personnage4.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
         }
 
+        private void frmJeu_Load(object sender, EventArgs e)
+        {
 
+        }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -120,6 +120,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="User Control\UC_Personnage.resx">
       <DependentUpon>UC_Personnage.cs</DependentUpon>
@@ -137,6 +138,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\meeting-with-a-friend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\51046.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\510461.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_481167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\53494.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hard-work-png.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\work-hard-png-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\ecc6fc94-0f64-41ac-83a3-39886d177cad_200x200.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
