@@ -38,9 +38,9 @@
             this.lblSociabilite = new System.Windows.Forms.Label();
             this.lblAction1 = new System.Windows.Forms.Label();
             this.grpAction = new System.Windows.Forms.GroupBox();
-            this.cboAction1 = new System.Windows.Forms.ComboBox();
-            this.cboAction3 = new System.Windows.Forms.ComboBox();
-            this.cboAction2 = new System.Windows.Forms.ComboBox();
+            this.btnSupprimerTache3 = new System.Windows.Forms.Button();
+            this.btnSupprimerTache2 = new System.Windows.Forms.Button();
+            this.btnSupprimerTache1 = new System.Windows.Forms.Button();
             this.cboFonctionnalite3 = new System.Windows.Forms.ComboBox();
             this.cboFonctionnalite2 = new System.Windows.Forms.ComboBox();
             this.cboFonctionnalite1 = new System.Windows.Forms.ComboBox();
@@ -138,9 +138,9 @@
             // 
             // grpAction
             // 
-            this.grpAction.Controls.Add(this.cboAction1);
-            this.grpAction.Controls.Add(this.cboAction3);
-            this.grpAction.Controls.Add(this.cboAction2);
+            this.grpAction.Controls.Add(this.btnSupprimerTache3);
+            this.grpAction.Controls.Add(this.btnSupprimerTache2);
+            this.grpAction.Controls.Add(this.btnSupprimerTache1);
             this.grpAction.Controls.Add(this.cboFonctionnalite3);
             this.grpAction.Controls.Add(this.cboFonctionnalite2);
             this.grpAction.Controls.Add(this.cboFonctionnalite1);
@@ -149,62 +149,75 @@
             this.grpAction.Controls.Add(this.lblAction1);
             this.grpAction.Location = new System.Drawing.Point(3, 177);
             this.grpAction.Name = "grpAction";
-            this.grpAction.Size = new System.Drawing.Size(559, 163);
+            this.grpAction.Size = new System.Drawing.Size(458, 163);
             this.grpAction.TabIndex = 11;
             this.grpAction.TabStop = false;
             this.grpAction.Text = "Liste d\'actions à effectuer";
             // 
-            // cboAction1
+            // btnSupprimerTache3
             // 
-            this.cboAction1.FormattingEnabled = true;
-            this.cboAction1.Location = new System.Drawing.Point(80, 40);
-            this.cboAction1.Name = "cboAction1";
-            this.cboAction1.Size = new System.Drawing.Size(148, 37);
-            this.cboAction1.TabIndex = 31;
-            this.cboAction1.SelectedIndexChanged += new System.EventHandler(this.cboAction1_SelectedIndexChanged);
+            this.btnSupprimerTache3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache3.BackgroundImage")));
+            this.btnSupprimerTache3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSupprimerTache3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupprimerTache3.Location = new System.Drawing.Point(424, 116);
+            this.btnSupprimerTache3.Name = "btnSupprimerTache3";
+            this.btnSupprimerTache3.Size = new System.Drawing.Size(28, 32);
+            this.btnSupprimerTache3.TabIndex = 18;
+            this.btnSupprimerTache3.UseVisualStyleBackColor = true;
+            this.btnSupprimerTache3.Visible = false;
+            this.btnSupprimerTache3.Click += new System.EventHandler(this.btnSupprimerTache3_Click);
             // 
-            // cboAction3
+            // btnSupprimerTache2
             // 
-            this.cboAction3.FormattingEnabled = true;
-            this.cboAction3.Location = new System.Drawing.Point(80, 116);
-            this.cboAction3.Name = "cboAction3";
-            this.cboAction3.Size = new System.Drawing.Size(148, 37);
-            this.cboAction3.TabIndex = 33;
-            this.cboAction3.Visible = false;
-            this.cboAction3.SelectedIndexChanged += new System.EventHandler(this.cboAction3_SelectedIndexChanged);
+            this.btnSupprimerTache2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache2.BackgroundImage")));
+            this.btnSupprimerTache2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSupprimerTache2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupprimerTache2.Location = new System.Drawing.Point(424, 78);
+            this.btnSupprimerTache2.Name = "btnSupprimerTache2";
+            this.btnSupprimerTache2.Size = new System.Drawing.Size(28, 32);
+            this.btnSupprimerTache2.TabIndex = 17;
+            this.btnSupprimerTache2.UseVisualStyleBackColor = true;
+            this.btnSupprimerTache2.Click += new System.EventHandler(this.btnSupprimerTache2_Click);
             // 
-            // cboAction2
+            // btnSupprimerTache1
             // 
-            this.cboAction2.FormattingEnabled = true;
-            this.cboAction2.Location = new System.Drawing.Point(80, 78);
-            this.cboAction2.Name = "cboAction2";
-            this.cboAction2.Size = new System.Drawing.Size(148, 37);
-            this.cboAction2.TabIndex = 32;
-            this.cboAction2.SelectedIndexChanged += new System.EventHandler(this.cboAction2_SelectedIndexChanged);
+            this.btnSupprimerTache1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSupprimerTache1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache1.BackgroundImage")));
+            this.btnSupprimerTache1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSupprimerTache1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupprimerTache1.Location = new System.Drawing.Point(424, 38);
+            this.btnSupprimerTache1.Name = "btnSupprimerTache1";
+            this.btnSupprimerTache1.Size = new System.Drawing.Size(28, 32);
+            this.btnSupprimerTache1.TabIndex = 16;
+            this.btnSupprimerTache1.UseVisualStyleBackColor = false;
+            this.btnSupprimerTache1.Click += new System.EventHandler(this.btnSupprimerTache1_Click);
             // 
             // cboFonctionnalite3
             // 
+            this.cboFonctionnalite3.Enabled = false;
             this.cboFonctionnalite3.FormattingEnabled = true;
-            this.cboFonctionnalite3.Location = new System.Drawing.Point(234, 116);
+            this.cboFonctionnalite3.Location = new System.Drawing.Point(99, 116);
             this.cboFonctionnalite3.Name = "cboFonctionnalite3";
-            this.cboFonctionnalite3.Size = new System.Drawing.Size(319, 37);
+            this.cboFonctionnalite3.Size = new System.Drawing.Size(353, 37);
             this.cboFonctionnalite3.TabIndex = 15;
             this.cboFonctionnalite3.Visible = false;
             // 
             // cboFonctionnalite2
             // 
+            this.cboFonctionnalite2.Enabled = false;
             this.cboFonctionnalite2.FormattingEnabled = true;
-            this.cboFonctionnalite2.Location = new System.Drawing.Point(234, 78);
+            this.cboFonctionnalite2.Location = new System.Drawing.Point(99, 78);
             this.cboFonctionnalite2.Name = "cboFonctionnalite2";
-            this.cboFonctionnalite2.Size = new System.Drawing.Size(319, 37);
+            this.cboFonctionnalite2.Size = new System.Drawing.Size(353, 37);
             this.cboFonctionnalite2.TabIndex = 14;
             // 
             // cboFonctionnalite1
             // 
+            this.cboFonctionnalite1.Enabled = false;
             this.cboFonctionnalite1.FormattingEnabled = true;
-            this.cboFonctionnalite1.Location = new System.Drawing.Point(234, 40);
+            this.cboFonctionnalite1.Location = new System.Drawing.Point(99, 40);
             this.cboFonctionnalite1.Name = "cboFonctionnalite1";
-            this.cboFonctionnalite1.Size = new System.Drawing.Size(319, 37);
+            this.cboFonctionnalite1.Size = new System.Drawing.Size(353, 37);
             this.cboFonctionnalite1.TabIndex = 13;
             // 
             // lblAction3
@@ -294,7 +307,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UC_Personnage";
-            this.Size = new System.Drawing.Size(578, 343);
+            this.Size = new System.Drawing.Size(461, 343);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpAction.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -322,8 +335,8 @@
         private System.Windows.Forms.ComboBox cboFonctionnalite3;
         private System.Windows.Forms.ComboBox cboFonctionnalite2;
         private System.Windows.Forms.ComboBox cboFonctionnalite1;
-        private System.Windows.Forms.ComboBox cboAction1;
-        private System.Windows.Forms.ComboBox cboAction3;
-        private System.Windows.Forms.ComboBox cboAction2;
+        private System.Windows.Forms.Button btnSupprimerTache3;
+        private System.Windows.Forms.Button btnSupprimerTache2;
+        private System.Windows.Forms.Button btnSupprimerTache1;
     }
 }

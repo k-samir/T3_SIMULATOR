@@ -36,40 +36,48 @@
             this.btnTDG = new System.Windows.Forms.Button();
             this.btnDG = new System.Windows.Forms.Button();
             this.btnValider = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Orange;
             this.label1.Location = new System.Drawing.Point(356, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 56);
+            this.label1.Size = new System.Drawing.Size(170, 55);
             this.label1.TabIndex = 0;
             this.label1.Text = "Repos";
             // 
             // lstGauche
             // 
-            this.lstGauche.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstGauche.BackColor = System.Drawing.Color.Orange;
+            this.lstGauche.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstGauche.FormattingEnabled = true;
-            this.lstGauche.ItemHeight = 18;
+            this.lstGauche.ItemHeight = 19;
             this.lstGauche.Location = new System.Drawing.Point(22, 68);
             this.lstGauche.Name = "lstGauche";
-            this.lstGauche.Size = new System.Drawing.Size(235, 94);
+            this.lstGauche.Size = new System.Drawing.Size(235, 80);
             this.lstGauche.TabIndex = 1;
             // 
             // lstDroite
             // 
-            this.lstDroite.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstDroite.BackColor = System.Drawing.Color.Orange;
+            this.lstDroite.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstDroite.FormattingEnabled = true;
-            this.lstDroite.ItemHeight = 18;
+            this.lstDroite.ItemHeight = 19;
             this.lstDroite.Location = new System.Drawing.Point(279, 68);
             this.lstDroite.Name = "lstDroite";
-            this.lstDroite.Size = new System.Drawing.Size(235, 94);
+            this.lstDroite.Size = new System.Drawing.Size(235, 80);
             this.lstDroite.TabIndex = 2;
             // 
             // btnGD
             // 
+            this.btnGD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGD.Font = new System.Drawing.Font("Cooper Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGD.ForeColor = System.Drawing.Color.Orange;
             this.btnGD.Location = new System.Drawing.Point(130, 179);
             this.btnGD.Name = "btnGD";
             this.btnGD.Size = new System.Drawing.Size(53, 46);
@@ -80,6 +88,9 @@
             // 
             // btnTGD
             // 
+            this.btnTGD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTGD.Font = new System.Drawing.Font("Cooper Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTGD.ForeColor = System.Drawing.Color.Orange;
             this.btnTGD.Location = new System.Drawing.Point(204, 179);
             this.btnTGD.Name = "btnTGD";
             this.btnTGD.Size = new System.Drawing.Size(53, 46);
@@ -90,6 +101,9 @@
             // 
             // btnTDG
             // 
+            this.btnTDG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTDG.Font = new System.Drawing.Font("Cooper Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTDG.ForeColor = System.Drawing.Color.Orange;
             this.btnTDG.Location = new System.Drawing.Point(279, 179);
             this.btnTDG.Name = "btnTDG";
             this.btnTDG.Size = new System.Drawing.Size(53, 46);
@@ -100,6 +114,9 @@
             // 
             // btnDG
             // 
+            this.btnDG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDG.Font = new System.Drawing.Font("Cooper Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDG.ForeColor = System.Drawing.Color.Orange;
             this.btnDG.Location = new System.Drawing.Point(354, 179);
             this.btnDG.Name = "btnDG";
             this.btnDG.Size = new System.Drawing.Size(53, 46);
@@ -110,19 +127,35 @@
             // 
             // btnValider
             // 
-            this.btnValider.Location = new System.Drawing.Point(490, 213);
+            this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValider.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValider.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnValider.Location = new System.Drawing.Point(459, 213);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(53, 46);
+            this.btnValider.Size = new System.Drawing.Size(84, 46);
             this.btnValider.TabIndex = 7;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 10F);
+            this.label2.ForeColor = System.Drawing.Color.Orange;
+            this.label2.Location = new System.Drawing.Point(103, 243);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(334, 16);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Les personnages se reposeront au tour suivant.";
+            // 
             // frmRepos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(555, 271);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.btnDG);
             this.Controls.Add(this.btnTDG);
@@ -135,7 +168,7 @@
             this.MinimizeBox = false;
             this.Name = "frmRepos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Repos";
+            this.Text = "Sélectionnez les personnages qui se reposeront.";
             this.TransparencyKey = System.Drawing.Color.Silver;
             this.Load += new System.EventHandler(this.Repos_Load);
             this.ResumeLayout(false);
@@ -153,5 +186,6 @@
         private System.Windows.Forms.Button btnTDG;
         private System.Windows.Forms.Button btnDG;
         private System.Windows.Forms.Button btnValider;
+        private System.Windows.Forms.Label label2;
     }
 }

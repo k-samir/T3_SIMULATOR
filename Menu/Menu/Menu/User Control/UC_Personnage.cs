@@ -28,12 +28,6 @@ namespace Menu
         {
             InitializeComponent();
             
-            ArrayList tabAction = new ArrayList();
-          //  MessageBox.Show(tabAction.Count.ToString());
-            tabAction.Clear();
-            tabAction.Add("Concevoir");
-            tabAction.Add("Développer");
-            tabAction.Add("Rechercher");
 
             /*cboAction1.Items.Clear();
             cboAction2.Items.Clear();
@@ -43,26 +37,18 @@ namespace Menu
             cboFonctionnalite1.Items.Clear();
             cboFonctionnalite1.Items.Clear();
 
-            for (int i = 0; i < tabAction.Count; i++)
-            {
-                cboAction1.Items.Add(tabAction[i]);
-                cboAction2.Items.Add(tabAction[i]);
-                cboAction3.Items.Add(tabAction[i]);
-            }
-
         }
 
 
         // Remise a zero des combobox
         public void cleanCBO()
         {
-            cboAction1.Text = "";
-            cboAction2.Text = "";
-            cboAction3.Text = "";
-
-            cboFonctionnalite1.Text = "";
-            cboFonctionnalite2.Text = "";
-            cboFonctionnalite3.Text = "";
+            cboFonctionnalite1.Controls.Clear();
+            cboFonctionnalite1.SelectedIndex = -1;
+            cboFonctionnalite2.Controls.Clear();
+            cboFonctionnalite2.SelectedIndex = -1;
+            cboFonctionnalite3.Controls.Clear();
+            cboFonctionnalite3.SelectedIndex = -1;
         }
 
         public void viderCBO()
@@ -88,10 +74,19 @@ namespace Menu
             }
             else
             {
-                if (perso.estDisponible() == false)
+                if (perso.estDisponible() == false && perso.getMalade() == true)
                 {
                     this.Enabled = false;
                     this.BackColor = Color.Coral;
+                    perso.setMalade(false);
+                    perso.setDisponible(true);
+                }
+
+                else if(perso.estDisponible() == false && perso.getMalade() == false)
+                {
+                    this.Enabled = false;
+                    this.BackColor = Color.Blue;
+                    perso.setDisponible(true);
                 }
                 else
                 {
@@ -104,7 +99,9 @@ namespace Menu
             {
                 //this.setProductivite();
                 this.Enabled = false;
+                
             }
+            copiFonc();
 
 
 
@@ -144,42 +141,62 @@ namespace Menu
             lblValSociabilite.Text = String.Empty;
             lblValSociabilite.Text = sociabilite.ToString() + "   /100";
         }
-
-        private void cboAction1_SelectedIndexChanged(object sender, EventArgs e)
+        public void copiFonc()
         {
-            remplirComboBox(cboAction1.Text, cboFonctionnalite1);
+            cboFonctionnalite1.Items.Clear();
+
+            cboFonctionnalite2.Items.Clear();
+            for (int i = 0; i < listfonctionnalite.Count; i++)
+            {
+                Fonctionnalites f = (Fonctionnalites)listfonctionnalite[i];
+
+                cboFonctionnalite1.Items.Add(f.getNom() + " (" + f.getNvConnaissNecces() + ")");
+                cboFonctionnalite2.Items.Add(f.getNom() + " (" + f.getNvConnaissNecces() + ")");
+                cboFonctionnalite3.Items.Add(f.getNom() + " (" + f.getNvConnaissNecces() + ")");
+
+            }
+
         }
 
-
-        public void remplirComboBox(String action, ComboBox b)
+        int index = -1;
+        public void remplirComboBox(String action)
         {
 
-            b.Items.Clear();
-            foreach (Fonctionnalites f in listfonctionnalite)
-            {
-                if (f.getType() == action)
-                {
-                    if (f.getPaDepense() < f.getPaNecess() && f.getStatus() == false)
-                    {
-                        b.Items.Add(f.getNom() + " (" + f.getNvConnaissNecces() + ")");
+            //si le crunch est activé ajouté la tache dans cette derniere sauf si il n'y a rien dans les combox box précédents
+            //int index = 0;
 
-                    }
+            foreach (String s in cboFonctionnalite1.Items)
+            {
+                if (s == action)
+                {
+                    index = cboFonctionnalite1.Items.IndexOf(s);
                 }
             }
+
+            if (cboFonctionnalite1.SelectedIndex == -1)
+            {
+                cboFonctionnalite1.SelectedIndex = index;
+            }
+            else if (cboFonctionnalite2.SelectedIndex == -1)
+            {
+                cboFonctionnalite2.SelectedIndex = index;
+            }
+            else if (cboFonctionnalite3.Visible && cboFonctionnalite3.SelectedIndex == -1)
+            {
+                cboFonctionnalite3.SelectedIndex = index;
+            }
+
+
+
+
+
+
+
         }
 
-            private void cboAction2_SelectedIndexChanged(object sender, EventArgs e)
-            {
-                remplirComboBox(cboAction2.Text, cboFonctionnalite2);
-            }
-
-            private void cboAction3_SelectedIndexChanged(object sender, EventArgs e)
-            {
-                remplirComboBox(cboAction3.Text, cboFonctionnalite3);
-            }
 
 
-            public void recherche(Personnage perso)
+        public void recherche(Personnage perso)
             {
                 perso.setConnaissances(perso.getConnaissances() + 10);
             }
@@ -187,16 +204,15 @@ namespace Menu
             public void crunchActive()
             {
                 this.lblAction3.Visible = true;
-                this.cboAction3.Visible = true;
                 this.cboFonctionnalite3.Visible = true;
-
+                this.btnSupprimerTache3.Visible = true;
             }
 
             public void crunchDesactive()
             {
                 this.lblAction3.Visible = false;
-                this.cboAction3.Visible = false;
                 this.cboFonctionnalite3.Visible = false;
+                this.btnSupprimerTache3.Visible = false;
             }
 
 
@@ -233,8 +249,23 @@ namespace Menu
 
             }
 
-
-
+        private void btnSupprimerTache1_Click(object sender, EventArgs e)
+        {
+            cboFonctionnalite1.Controls.Clear();
+            cboFonctionnalite1.SelectedIndex = -1;
         }
+
+        private void btnSupprimerTache2_Click(object sender, EventArgs e)
+        {
+            cboFonctionnalite2.Controls.Clear();
+            cboFonctionnalite2.SelectedIndex = -1;
+        }
+
+        private void btnSupprimerTache3_Click(object sender, EventArgs e)
+        {
+            cboFonctionnalite3.Controls.Clear();
+            cboFonctionnalite3.SelectedIndex = -1;
+        }
+    }
     }
 

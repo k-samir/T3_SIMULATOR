@@ -14,7 +14,7 @@ namespace Menu.Forms
     public partial class frmRepos : Form
     {
         List<Personnage> list_perso = new List<Personnage>();
-        List<Personnage> list_repos = new List<Personnage>();
+        private static List<String> list_repos = new List<String>();
         public frmRepos(List<Personnage> listePersonnage)
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace Menu.Forms
             }
             else
             {
-                MessageBox.Show("Vous avez mis tous les personnages au repos !");
+                
             }
 
         }
@@ -52,7 +52,7 @@ namespace Menu.Forms
             }
             else
             {
-                MessageBox.Show("Vous n'avez mis aucun personnage au repos !");
+                
             }
         }
 
@@ -70,7 +70,25 @@ namespace Menu.Forms
 
         private void btnValider_Click(object sender, EventArgs e)
         {
+            for(int i=0; i<lstDroite.Items.Count; i++)
+            {
+                //list_repos.Add(lstDroite.Items[i].ToString());
 
+                foreach (Personnage p in list_perso)
+                {
+                    if (p.getPrenom() == (string)lstDroite.Items[i])
+                    {
+                        p.setFatigue(0);
+                        p.setDisponible(false);
+                    }
+                }
+               
+            }
+            list_repos.Clear();
+
+
+            this.Close();
         }
+
     }
 }
