@@ -85,7 +85,7 @@ namespace Menu
                 else if(perso.estDisponible() == false && perso.getMalade() == false)
                 {
                     this.Enabled = false;
-                    this.BackColor = Color.Blue;
+                    this.BackColor = Color.SpringGreen;
                     perso.setDisponible(true);
                 }
                 else

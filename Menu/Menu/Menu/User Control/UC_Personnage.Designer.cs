@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Personnage));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPrenom = new System.Windows.Forms.Label();
             this.lblFatigue = new System.Windows.Forms.Label();
             this.lblProductivite = new System.Windows.Forms.Label();
@@ -38,9 +37,6 @@
             this.lblSociabilite = new System.Windows.Forms.Label();
             this.lblAction1 = new System.Windows.Forms.Label();
             this.grpAction = new System.Windows.Forms.GroupBox();
-            this.btnSupprimerTache3 = new System.Windows.Forms.Button();
-            this.btnSupprimerTache2 = new System.Windows.Forms.Button();
-            this.btnSupprimerTache1 = new System.Windows.Forms.Button();
             this.cboFonctionnalite3 = new System.Windows.Forms.ComboBox();
             this.cboFonctionnalite2 = new System.Windows.Forms.ComboBox();
             this.cboFonctionnalite1 = new System.Windows.Forms.ComboBox();
@@ -51,24 +47,17 @@
             this.lblValStress = new System.Windows.Forms.Label();
             this.lblValConnaissance = new System.Windows.Forms.Label();
             this.lblValSociabilite = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnSupprimerTache3 = new System.Windows.Forms.Button();
+            this.btnSupprimerTache2 = new System.Windows.Forms.Button();
+            this.btnSupprimerTache1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpAction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(30, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(125, 132);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // lblPrenom
             // 
-            this.lblPrenom.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrenom.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrenom.Location = new System.Drawing.Point(6, 134);
             this.lblPrenom.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPrenom.Name = "lblPrenom";
@@ -113,7 +102,7 @@
             this.lblConnaissance.Name = "lblConnaissance";
             this.lblConnaissance.Size = new System.Drawing.Size(127, 26);
             this.lblConnaissance.TabIndex = 5;
-            this.lblConnaissance.Text = "Connaissance:";
+            this.lblConnaissance.Text = "Connaissances:";
             this.lblConnaissance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblSociabilite
@@ -154,70 +143,35 @@
             this.grpAction.TabStop = false;
             this.grpAction.Text = "Liste d\'actions à effectuer";
             // 
-            // btnSupprimerTache3
-            // 
-            this.btnSupprimerTache3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache3.BackgroundImage")));
-            this.btnSupprimerTache3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSupprimerTache3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerTache3.Location = new System.Drawing.Point(424, 116);
-            this.btnSupprimerTache3.Name = "btnSupprimerTache3";
-            this.btnSupprimerTache3.Size = new System.Drawing.Size(28, 32);
-            this.btnSupprimerTache3.TabIndex = 18;
-            this.btnSupprimerTache3.UseVisualStyleBackColor = true;
-            this.btnSupprimerTache3.Visible = false;
-            this.btnSupprimerTache3.Click += new System.EventHandler(this.btnSupprimerTache3_Click);
-            // 
-            // btnSupprimerTache2
-            // 
-            this.btnSupprimerTache2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache2.BackgroundImage")));
-            this.btnSupprimerTache2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSupprimerTache2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerTache2.Location = new System.Drawing.Point(424, 78);
-            this.btnSupprimerTache2.Name = "btnSupprimerTache2";
-            this.btnSupprimerTache2.Size = new System.Drawing.Size(28, 32);
-            this.btnSupprimerTache2.TabIndex = 17;
-            this.btnSupprimerTache2.UseVisualStyleBackColor = true;
-            this.btnSupprimerTache2.Click += new System.EventHandler(this.btnSupprimerTache2_Click);
-            // 
-            // btnSupprimerTache1
-            // 
-            this.btnSupprimerTache1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnSupprimerTache1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache1.BackgroundImage")));
-            this.btnSupprimerTache1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSupprimerTache1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerTache1.Location = new System.Drawing.Point(424, 38);
-            this.btnSupprimerTache1.Name = "btnSupprimerTache1";
-            this.btnSupprimerTache1.Size = new System.Drawing.Size(28, 32);
-            this.btnSupprimerTache1.TabIndex = 16;
-            this.btnSupprimerTache1.UseVisualStyleBackColor = false;
-            this.btnSupprimerTache1.Click += new System.EventHandler(this.btnSupprimerTache1_Click);
-            // 
             // cboFonctionnalite3
             // 
             this.cboFonctionnalite3.Enabled = false;
+            this.cboFonctionnalite3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFonctionnalite3.FormattingEnabled = true;
             this.cboFonctionnalite3.Location = new System.Drawing.Point(99, 116);
             this.cboFonctionnalite3.Name = "cboFonctionnalite3";
-            this.cboFonctionnalite3.Size = new System.Drawing.Size(353, 37);
+            this.cboFonctionnalite3.Size = new System.Drawing.Size(262, 31);
             this.cboFonctionnalite3.TabIndex = 15;
             this.cboFonctionnalite3.Visible = false;
             // 
             // cboFonctionnalite2
             // 
             this.cboFonctionnalite2.Enabled = false;
+            this.cboFonctionnalite2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFonctionnalite2.FormattingEnabled = true;
             this.cboFonctionnalite2.Location = new System.Drawing.Point(99, 78);
             this.cboFonctionnalite2.Name = "cboFonctionnalite2";
-            this.cboFonctionnalite2.Size = new System.Drawing.Size(353, 37);
+            this.cboFonctionnalite2.Size = new System.Drawing.Size(262, 31);
             this.cboFonctionnalite2.TabIndex = 14;
             // 
             // cboFonctionnalite1
             // 
             this.cboFonctionnalite1.Enabled = false;
+            this.cboFonctionnalite1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFonctionnalite1.FormattingEnabled = true;
             this.cboFonctionnalite1.Location = new System.Drawing.Point(99, 40);
             this.cboFonctionnalite1.Name = "cboFonctionnalite1";
-            this.cboFonctionnalite1.Size = new System.Drawing.Size(353, 37);
+            this.cboFonctionnalite1.Size = new System.Drawing.Size(262, 31);
             this.cboFonctionnalite1.TabIndex = 13;
             // 
             // lblAction3
@@ -286,9 +240,58 @@
             this.lblValSociabilite.TabIndex = 16;
             this.lblValSociabilite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnSupprimerTache3
+            // 
+            this.btnSupprimerTache3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache3.BackgroundImage")));
+            this.btnSupprimerTache3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSupprimerTache3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupprimerTache3.Location = new System.Drawing.Point(333, 116);
+            this.btnSupprimerTache3.Name = "btnSupprimerTache3";
+            this.btnSupprimerTache3.Size = new System.Drawing.Size(28, 32);
+            this.btnSupprimerTache3.TabIndex = 18;
+            this.btnSupprimerTache3.UseVisualStyleBackColor = true;
+            this.btnSupprimerTache3.Visible = false;
+            this.btnSupprimerTache3.Click += new System.EventHandler(this.btnSupprimerTache3_Click);
+            // 
+            // btnSupprimerTache2
+            // 
+            this.btnSupprimerTache2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache2.BackgroundImage")));
+            this.btnSupprimerTache2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSupprimerTache2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupprimerTache2.Location = new System.Drawing.Point(333, 78);
+            this.btnSupprimerTache2.Name = "btnSupprimerTache2";
+            this.btnSupprimerTache2.Size = new System.Drawing.Size(28, 32);
+            this.btnSupprimerTache2.TabIndex = 17;
+            this.btnSupprimerTache2.UseVisualStyleBackColor = true;
+            this.btnSupprimerTache2.Click += new System.EventHandler(this.btnSupprimerTache2_Click);
+            // 
+            // btnSupprimerTache1
+            // 
+            this.btnSupprimerTache1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSupprimerTache1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache1.BackgroundImage")));
+            this.btnSupprimerTache1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSupprimerTache1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupprimerTache1.Location = new System.Drawing.Point(333, 40);
+            this.btnSupprimerTache1.Name = "btnSupprimerTache1";
+            this.btnSupprimerTache1.Size = new System.Drawing.Size(28, 32);
+            this.btnSupprimerTache1.TabIndex = 16;
+            this.btnSupprimerTache1.UseVisualStyleBackColor = false;
+            this.btnSupprimerTache1.Click += new System.EventHandler(this.btnSupprimerTache1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(30, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(125, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // UC_Personnage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Controls.Add(this.lblValSociabilite);
@@ -307,9 +310,9 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UC_Personnage";
-            this.Size = new System.Drawing.Size(461, 343);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Size = new System.Drawing.Size(427, 343);
             this.grpAction.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
