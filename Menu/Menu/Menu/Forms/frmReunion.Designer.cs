@@ -111,6 +111,7 @@
             this.Name = "frmReunion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmReunion";
+            this.Load += new System.EventHandler(this.frmReunion_Load);
             this.ResumeLayout(false);
 
         }

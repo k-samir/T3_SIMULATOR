@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Collections;
 using System.Text;
-
+using Menu.Forms;
 
 namespace Menu.classePersonnage
 {
@@ -13,12 +13,13 @@ namespace Menu.classePersonnage
         //Attributs d'un personnage 
         private int id;
         private string prenom;
-        private int fatigue = 0;
+        private int fatigue = 50;
         private double productivite;
         private int stress;
         private int connaissances = 0;
         private int sociabilite;
         private bool malade = false;
+        private bool estDispo = true;
 
 
         //Constructeur de la classe personnage
@@ -35,9 +36,9 @@ namespace Menu.classePersonnage
             this.malade = malade; 
         }
 
-        public bool estDisponible()
+        public bool getMalade()
         {
-            if(this.malade == false)
+            if (this.malade == true)
             {
                 return true;
             }
@@ -45,6 +46,26 @@ namespace Menu.classePersonnage
             {
                 return false;
             }
+        }
+
+        public bool estDisponible()
+        {
+            if(this.malade == false && this.estDispo == true)
+            {
+                return true;
+            }
+            else
+            {
+                this.estDispo = false;
+                return false;
+            }
+
+            
+        }
+
+        public void setDisponible(bool res)
+        {
+            this.estDispo = res;
         }
         
         /* ------------------------------------------- actions ---------------------------- */

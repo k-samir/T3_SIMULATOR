@@ -62,5 +62,10 @@ namespace Menu.Forms
                 this.Show();
             }
         }
+
+        private void frmReunion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Menu.classePersonnage;
-using System.Collections;
+using System.Collections.Generic;
 using Menu.Forms;
 
 namespace Menu
@@ -17,6 +17,8 @@ namespace Menu
     {
 
         ArrayList listPerso = new ArrayList();
+
+
 
         int nbTour = 1; //nb de tour pour le projet
         int nbTourMax = 10;
@@ -29,6 +31,19 @@ namespace Menu
         public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4)
         {
             InitializeComponent();
+            foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
+            {
+                if (f.getPaDepense() < f.getPaNecess() && f.getStatus() == false)
+                {
+                    lstTache.Items.Add(f.getNom() + " (" + f.getNvConnaissNecces() + ")");
+                }
+            }
+            lstTache.AllowDrop = true;
+            uC_Personnage1.AllowDrop = true;
+            uC_Personnage2.AllowDrop = true;
+            uC_Personnage3.AllowDrop = true;
+            uC_Personnage4.AllowDrop = true;
+
             this.Refresh();
 
             listPersonnage.Clear();
@@ -37,10 +52,10 @@ namespace Menu
 
 
 
-            lblDeadLine.Text = pbAvancement.Value + "% Avancement";
+           // lblDeadLine.Text = pbAvancement.Value + "% Avancement";
 
             ArrayList listPerso = ControleurJeu.getListeFonctionnalite();
-            
+
             listPersonnage.Add(p1);
             listPersonnage.Add(p2);
             listPersonnage.Add(p3);
@@ -75,8 +90,8 @@ namespace Menu
 
         public void augmenterNbTour()
         {
-            pbAvancement.Value = (int)avancement;
-            lblDeadLine.Text = pbAvancement.Value.ToString() + "% Avancement";
+            //pbAvancement.Value = (int)avancement;
+            //lblDeadLine.Text = pbAvancement.Value.ToString() + "% Avancement";
             nbTour++;
         }
 
@@ -87,9 +102,9 @@ namespace Menu
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
-            foreach(Object  c in Controls)
+            foreach (Object c in Controls)
             {
-                if(c is UC_Personnage)
+                if (c is UC_Personnage)
                 {
 
                 }
@@ -98,7 +113,7 @@ namespace Menu
             frmMenu menu = new frmMenu();
             menu.Show();
             this.Close();
-            
+
 
         }
 
@@ -135,7 +150,6 @@ namespace Menu
                     }
                 }
             }
-
             /*-----------------TEST MALADIE ------------------------ */
             foreach (Object o in Controls)
             {
@@ -152,7 +166,7 @@ namespace Menu
                             up.getPersonnage().setMalade(false);
                             crunchBool = false;
                             //Si l'avancement est entre 20 et 90% on fait tomber malade un ou plusieurs perso
-                            if (getAvancement() >= 20 && getAvancement() <= 90)
+                            if (getAvancement() >= 0 && getAvancement() <= 100)
                             {
 
                                 Random aleatoire = new Random();
@@ -170,6 +184,7 @@ namespace Menu
                             {
                                 up.Enabled = true;
                                 up.getPersonnage().setMalade(false);
+                                up.getPersonnage().setDisponible(true);
                                 up.BackColor = Color.AliceBlue;
                             }
 
@@ -183,7 +198,7 @@ namespace Menu
 
             // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
             // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
-            if ((nbTour >= nbTourMax) || ((ControleurJeu.getListeFonctionnalite().Count == 0) && pbAvancement.Value == 100))
+            if ((nbTour >= nbTourMax) || ((ControleurJeu.getListeFonctionnalite().Count == 0)))
             {
                 ControleurJeu.arreterJeu();
                 this.Close();
@@ -240,7 +255,6 @@ namespace Menu
                                 up.cleanCBO();
                             }
 
-
                         }
 
                     }
@@ -264,6 +278,11 @@ namespace Menu
                 initUC(uC_Personnage3, p3);
                 initUC(uC_Personnage4, p4);
 
+                uC_Personnage1.cleanCBO();
+                uC_Personnage2.cleanCBO();
+                uC_Personnage3.cleanCBO();
+                uC_Personnage4.cleanCBO();
+
                 // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
                 // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
                 if ((nbTour >= nbTourMax) || (ControleurJeu.getListeFonctionnalite().Count == 0))
@@ -277,9 +296,20 @@ namespace Menu
             }
             catch (NullReferenceException)
             {
-
                 MessageBox.Show("Selectionnez Action");
             }
+
+
+            //Mettre à jour la liste des tâches à effectuer, c'est-à-dire que l'on vérifie si la tâche est complété ou non. Si c'est le cas alors on l'enlève de la liste
+            lstTache.Items.Clear();
+            foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
+            {
+                if (f.getPaDepense() < f.getPaNecess() && f.getStatus() == false)
+                {
+                    lstTache.Items.Add(f.getNom() + " (" + f.getNvConnaissNecces() + ")");
+                }
+            }
+
         }
 
 
@@ -375,13 +405,7 @@ namespace Menu
                 this.Close();
             }
 
-            //tous les persos se reposent
-
             rtbActu.Text = String.Empty;
-
-            ControleurJeu.repos();
-            rtbActu.Text = "Repos Activé\nTout le monde se repose\nPersonne ne s'avance sur le projet\nEt donc tout le monde revient moins fatigué et moins stressé\nTour effectué " + this.getNbTour() + " / 10 ";
-            this.augmenterNbTour();   //incremente nb de tour
 
             ArrayList listPerso = ControleurJeu.getListePersonnage();
 
@@ -409,7 +433,6 @@ namespace Menu
 
 
 
-
         private void btnCrunch_Click_1(object sender, EventArgs e)
         {
             foreach (Object o in Controls)
@@ -430,20 +453,104 @@ namespace Menu
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uC_Personnage2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnReunion_Click(object sender, EventArgs e)
         {
             frmReunion reunion = new frmReunion();
             reunion.ShowDialog();
         }
+
+        private void btnVider_Click(object sender, EventArgs e)
+        {
+            uC_Personnage1.cleanCBO();
+            uC_Personnage2.cleanCBO();
+            uC_Personnage3.cleanCBO();
+            uC_Personnage4.cleanCBO();
+        }
+
+
+
+        //SYSTEME GLISSER DÉPOSER
+
+        private void lstTache_MouseDown(object sender, MouseEventArgs e)
+        {
+            uC_Personnage3.DoDragDrop(lstTache.SelectedItem.ToString(), DragDropEffects.Copy);
+
+        }
+
+        //Systeme Glisser-Déposer pour le UC_Personnage3 --> 1er en haut à gauche
+        private void uC_Personnage3_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void uC_Personnage3_DragDrop(object sender, DragEventArgs e)
+        {
+
+            uC_Personnage3.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
+        }
+
+        //Systeme Glisser-Déposer pour le UC_Personnage2
+        private void uC_Personnage2_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void uC_Personnage2_DragDrop(object sender, DragEventArgs e)
+        {
+            uC_Personnage2.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
+        }
+
+        //Systeme Glisser-Déposer pour le UC_Personnage1
+        private void uC_Personnage1_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void uC_Personnage1_DragDrop(object sender, DragEventArgs e)
+        {
+            uC_Personnage1.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
+        }
+
+        //Systeme Glisser-Déposer pour le UC_Personnage4
+        private void uC_Personnage4_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void uC_Personnage4_DragDrop(object sender, DragEventArgs e)
+        {
+            uC_Personnage4.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
+        }
+
+
+
     }
 }

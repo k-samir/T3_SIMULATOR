@@ -55,14 +55,14 @@ namespace Menu
 
         
 
-            Fonctionnalites f1 = new Fonctionnalites("Recherche dans Cahier des Charges", 1, 0, 0, "Rechercher");
-            Fonctionnalites f2 = new Fonctionnalites("Recherche Objectifs Pédagogiques", 1, 0, 0, "Rechercher");
-            Fonctionnalites f3 = new Fonctionnalites("Recherche code", 1, 0, 0, "Rechercher");
+            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 1, 0, 0, "Rechercher");
+            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 1, 0, 0, "Rechercher");
+            Fonctionnalites f3 = new Fonctionnalites("Code", 1, 0, 0, "Rechercher");
             Fonctionnalites f4 = new Fonctionnalites("MCD", 1, 0, 0, "Concevoir");
             Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 1, 0, 0, "Concevoir");
             Fonctionnalites f6 = new Fonctionnalites("GIT", 1, 0, 0, "Concevoir");
-            Fonctionnalites f7 = new Fonctionnalites("Développement des classes", 1, 0, 0, "Développer");
-            Fonctionnalites f8 = new Fonctionnalites("Développement Controleur", 1, 0, 0, "Développer");
+            Fonctionnalites f7 = new Fonctionnalites("Classes", 1, 0, 0, "Développer");
+            Fonctionnalites f8 = new Fonctionnalites("Controleur", 1, 0, 0, "Développer");
             Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 1, 0, 0, "Développer");
 
 
@@ -115,15 +115,6 @@ namespace Menu
         public static void nouveauTour()
         {
             calculsAttributs();     //actualise les attributs des persos après avoir effectué des taches
-
-            foreach (Personnage p in listPersonnage)
-            {
-                //MessageBox.Show(p.getPrenom());
-            }
-            foreach (Fonctionnalites f in listfonctionnalite)
-            {
-                //MessageBox.Show(f.getNom() + f.getPaDepense() + f.getType());
-            }
         }
 
         //Modification de tous les attributs
@@ -200,9 +191,14 @@ namespace Menu
                 {
                     actu += "\n" + p.getPrenom() + " est trop stressé\nIl ne peut rien faire\n\n";
                 }
-                if (p.estDisponible() == false)
+                if (p.estDisponible() == false && p.getMalade() == true)
                 {
                     actu += "Oh non ! " + p.getPrenom() + " est tombé malade.. \n\n"; 
+                }
+
+                if (p.estDisponible() == false && p.getMalade() == false)
+                {
+                    actu += p.getPrenom() + " se repose, sa fatigue a diminué ! \n\n";
                 }
             }
             return actu;
@@ -252,46 +248,48 @@ namespace Menu
             foreach (Fonctionnalites f in listeTache)
             {
                 p.faireAction(f);
-                
+
             }
 
             string fonc = "";
-            
-                foreach (Fonctionnalites f in listeTache)
-                {
-                    // Si la fonction est finie on l'enleve de la liste et on affiche qui l'a fini
-                    if (f.getStatus() == true)
-                    {
-                        frmJeu.setAvancement(f.getPourcentNote() + (float)frmJeu.getAvancement());
-                        
-                    texte += f.getNom() + " " +f.getPaDepense() + "/" + f.getPaNecess() + " Terminé par " + p.getPrenom() +  "\n";
-                            listfonctionnalite.Remove(f);
-                    fonc = f.getNom();
-                    }
-                    else
-                    {
-                    texte += f.getNom() + " " +f.getPaDepense() + "/" + f.getPaNecess()+ " "  + p.getPrenom() + "\n";
-                    }
-                }
 
-        // SUPPRESION DANS LA LISTE DES FONCTIONNALITES LES FONCTION FINIES
-            if(fonc != "")
+            foreach (Fonctionnalites f in listeTache)
             {
-                for(int i =0;i<listeTache.Count;i++)
+                // Si la fonction est finie on l'enleve de la liste et on affiche qui l'a fini
+                if (f.getStatus() == true)
                 {
-                    if(listeTache[i].getNom() == fonc)
+                    frmJeu.setAvancement(f.getPourcentNote() + (float)frmJeu.getAvancement());
+
+                    texte += f.getNom() + " " + f.getPaDepense() + "/" + f.getPaNecess() + " Terminé par " + p.getPrenom() + "\n";
+                    listfonctionnalite.Remove(f);
+
+
+                    fonc = f.getNom();
+                }
+                else
+                {
+                    texte += f.getNom() + " " + f.getPaDepense() + "/" + f.getPaNecess() + " " + p.getPrenom() + "\n";
+                }
+            }
+
+            // SUPPRESION DANS LA LISTE DES FONCTIONNALITES LES FONCTION FINIES
+            if (fonc != "")
+            {
+                for (int i = 0; i < listeTache.Count; i++)
+                {
+                    if (listeTache[i].getNom() == fonc)
                     {
                         listeTache.RemoveAt(i);
-                        
+
                     }
                 }
             }
 
             // ENVOIE DU TEXTE A AFFICHER DANS LE FRMJEU
             frmJeu.remplir(texte);
-        
 
-            }
+
+        }
 
         public static void repos()
         {
