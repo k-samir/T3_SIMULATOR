@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnCommencer = new System.Windows.Forms.Button();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,9 +86,14 @@
             this.btnCommencer.MouseEnter += new System.EventHandler(this.btnCommencer_MouseEnter);
             this.btnCommencer.MouseLeave += new System.EventHandler(this.btnCommencer_MouseLeave);
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -111,6 +118,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnCommencer;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }
 

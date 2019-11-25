@@ -49,12 +49,7 @@ namespace Menu
 
             /*
              */
-            //creation personnage
-            p1 = remplirPersonnage("Valentin", 2.0, 0, 82);
-            p2 = remplirPersonnage("Aymeric", 2.0, 20, 80);
-            p3 = remplirPersonnage("Mathieu", 3.3, 40, 50);
-            p4 = remplirPersonnage("Samir", 4.2, 10, 45);
-
+           
             /* ---------------- qualites et defauts ---------------- */
             Random aleatoire = new Random();
 
@@ -67,7 +62,7 @@ namespace Menu
             listeQualites.Add("Concepteur né");        //conception *1,5
             listeQualites.Add("Chercheur né");        //recherche *1,5
             listeQualites.Add("Diplomate");            //relations +10 points
-            listeQualites.Add("Chercheur");            //relations +10 points
+           
 
             listeDefauts.Add("Stressé");                    //stress monte plus vite
             listeDefauts.Add("Fatigué");                //fatigue monte plus vite
@@ -77,41 +72,31 @@ namespace Menu
             listeDefauts.Add("Mauvaise chercheur");     //recherche * 0,5
             listeDefauts.Add("Asocial");                //relations -10 points
 
-            foreach (Personnage p in listPersonnage)
-            {
-                for (int i = 0; i < nbQualites; i++)
-                {
-                    int rand1 = aleatoire.Next(listeQualites.Count);   //de 0 à X-1
-                    p.qualites.Add(listeQualites[rand1]);
-                }
 
-                for (int i = 0; i < nbDefauts; i++)
-                {
-                    int rand2 = aleatoire.Next(listeDefauts.Count);   //de 0 à X-1
-                                                                      //while (rand2 == rand1)
-                                                                      //{
-                                                                      //rand2 = aleatoire.Next(listeDefauts.Count);  //on fait cela car les qualites et defauts avec le meme argument sont opposés et incompatibles irl
-                                                                      //}
-                    p.defauts.Add(listeDefauts[rand2]);
-                }
+            //creation personnage
+            p1 = remplirPersonnage("Valentin", 2.0, 0, 82);
+            p2 = remplirPersonnage("Aymeric", 2.0, 20, 80);
+            p3 = remplirPersonnage("Mathieu", 3.3, 40, 50);
+            p4 = remplirPersonnage("Samir", 4.2, 10, 45);
 
 
-            }
+
+            
 
             /*
             FONCTIONNALITES ( NOM , PANECESS , POURCENTNOTE , NVCONNAIS , PADEPENSE , TYPE) */
 
 
 
-            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 1, 0, 0, "Rechercher");
-            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 1, 0, 0, "Rechercher");
-            Fonctionnalites f3 = new Fonctionnalites("Code", 1, 0, 0, "Rechercher");
-            Fonctionnalites f4 = new Fonctionnalites("MCD", 1, 0, 0, "Concevoir");
-            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 1, 0, 0, "Concevoir");
-            Fonctionnalites f6 = new Fonctionnalites("GIT", 1, 0, 0, "Concevoir");
-            Fonctionnalites f7 = new Fonctionnalites("Classes", 1, 0, 0, "Développer");
-            Fonctionnalites f8 = new Fonctionnalites("Controleur", 1, 0, 0, "Développer");
-            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 1, 0, 0, "Développer");
+            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 10, 0, 0, "Rechercher");
+            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 10, 0, 0, "Rechercher");
+            Fonctionnalites f3 = new Fonctionnalites("Code", 10, 0, 0, "Rechercher");
+            Fonctionnalites f4 = new Fonctionnalites("MCD", 10, 0, 0, "Concevoir");
+            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 10, 0, 0, "Concevoir");
+            Fonctionnalites f6 = new Fonctionnalites("GIT", 10, 0, 0, "Concevoir");
+            Fonctionnalites f7 = new Fonctionnalites("Classes", 10, 0, 0, "Développer");
+            Fonctionnalites f8 = new Fonctionnalites("Controleur", 10, 0, 0, "Développer");
+            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 10, 0, 0, "Développer");
 
             //REUNION(THEME DE LA REUNION) et le statut de cette réunion est par défaut à false
             Reunion r1 = new Reunion("Faire connaissance");
@@ -150,6 +135,29 @@ namespace Menu
             listPersonnage.Add(p3);
             listPersonnage.Add(p4);
 
+
+            foreach (Personnage p in listPersonnage)
+            {
+                for (int i = 0; i < nbQualites; i++)
+                {
+                    int rand1 = aleatoire.Next(listeQualites.Count);   //de 0 à X-1
+                    p.qualites.Add(listeQualites[rand1]);
+                }
+
+                for (int i = 0; i < nbDefauts; i++)
+                {
+                    int rand2 = aleatoire.Next(listeDefauts.Count);   //de 0 à X-1
+                                                                      //while (rand2 == rand1)
+                                                                      //{
+                                                                      //rand2 = aleatoire.Next(listeDefauts.Count);  //on fait cela car les qualites et defauts avec le meme argument sont opposés et incompatibles irl
+                                                                      //}
+                    p.defauts.Add(listeDefauts[rand2]);
+                }
+
+
+            }
+
+            MessageBox.Show(p1.qualites[0].ToString());
             jeu = new frmJeu(p1, p2, p3, p4);
             jeu.Refresh();
             jeu.Show();
