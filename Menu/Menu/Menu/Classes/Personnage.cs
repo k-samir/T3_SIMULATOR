@@ -21,6 +21,8 @@ namespace Menu.classePersonnage
         private bool malade = false;
         private bool estDispo = true;
 
+        public ArrayList qualites = new ArrayList();
+        public ArrayList defauts = new ArrayList();
 
         //Constructeur de la classe personnage
         public Personnage(string prenom, double productivite, int stress, int sociabilite)

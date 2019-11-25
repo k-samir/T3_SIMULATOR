@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pgConception = new System.Windows.Forms.ProgressBar();
+            this.pgDeveloppement = new System.Windows.Forms.ProgressBar();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pgRecherches = new System.Windows.Forms.ProgressBar();
             this.btnVider = new System.Windows.Forms.Button();
             this.lblLstTache = new System.Windows.Forms.Label();
             this.lstTache = new System.Windows.Forms.ListBox();
             this.rtbActu = new System.Windows.Forms.RichTextBox();
             this.lblActu = new System.Windows.Forms.Label();
             this.rtbListeF = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTacheReal = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pgRecherches = new System.Windows.Forms.ProgressBar();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pgDeveloppement = new System.Windows.Forms.ProgressBar();
-            this.pgConception = new System.Windows.Forms.ProgressBar();
             this.btnRepos = new System.Windows.Forms.Button();
             this.btnCrunch = new System.Windows.Forms.Button();
             this.btnReunion = new System.Windows.Forms.Button();
@@ -73,12 +73,82 @@
             this.panel1.Controls.Add(this.uC_Personnage4);
             this.panel1.Controls.Add(this.uC_Personnage2);
             this.panel1.Controls.Add(this.uC_Personnage1);
-            this.panel1.Location = new System.Drawing.Point(2, 11);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(3, 14);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1221, 731);
+            this.panel1.Size = new System.Drawing.Size(1628, 900);
             this.panel1.TabIndex = 14;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pgConception
+            // 
+            this.pgConception.Location = new System.Drawing.Point(607, 833);
+            this.pgConception.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pgConception.Name = "pgConception";
+            this.pgConception.Size = new System.Drawing.Size(176, 28);
+            this.pgConception.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.pgConception.TabIndex = 28;
+            this.pgConception.Value = 50;
+            // 
+            // pgDeveloppement
+            // 
+            this.pgDeveloppement.Location = new System.Drawing.Point(847, 833);
+            this.pgDeveloppement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pgDeveloppement.Name = "pgDeveloppement";
+            this.pgDeveloppement.Size = new System.Drawing.Size(176, 28);
+            this.pgDeveloppement.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.pgDeveloppement.TabIndex = 27;
+            this.pgDeveloppement.Value = 50;
+            // 
+            // label4
+            // 
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label4.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label4.Location = new System.Drawing.Point(841, 793);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(187, 37);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Développement";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label3.Location = new System.Drawing.Point(619, 793);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 37);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Conception";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label2.Location = new System.Drawing.Point(715, 720);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 37);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Recherches ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pgRecherches
+            // 
+            this.pgRecherches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
+            this.pgRecherches.Location = new System.Drawing.Point(715, 761);
+            this.pgRecherches.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pgRecherches.Name = "pgRecherches";
+            this.pgRecherches.Size = new System.Drawing.Size(176, 28);
+            this.pgRecherches.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.pgRecherches.TabIndex = 23;
+            this.pgRecherches.Value = 50;
             // 
             // btnVider
             // 
@@ -86,9 +156,10 @@
             this.btnVider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVider.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVider.ForeColor = System.Drawing.Color.OrangeRed;
-            this.btnVider.Location = new System.Drawing.Point(512, 490);
+            this.btnVider.Location = new System.Drawing.Point(683, 603);
+            this.btnVider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVider.Name = "btnVider";
-            this.btnVider.Size = new System.Drawing.Size(201, 44);
+            this.btnVider.Size = new System.Drawing.Size(268, 54);
             this.btnVider.TabIndex = 22;
             this.btnVider.Text = "Tout annuler";
             this.btnVider.UseVisualStyleBackColor = true;
@@ -99,9 +170,10 @@
             this.lblLstTache.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLstTache.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLstTache.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblLstTache.Location = new System.Drawing.Point(474, 216);
+            this.lblLstTache.Location = new System.Drawing.Point(632, 266);
+            this.lblLstTache.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLstTache.Name = "lblLstTache";
-            this.lblLstTache.Size = new System.Drawing.Size(276, 30);
+            this.lblLstTache.Size = new System.Drawing.Size(368, 37);
             this.lblLstTache.TabIndex = 22;
             this.lblLstTache.Text = "Tâches à glisser/déposer";
             this.lblLstTache.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,10 +183,11 @@
             this.lstTache.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lstTache.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstTache.FormattingEnabled = true;
-            this.lstTache.ItemHeight = 21;
-            this.lstTache.Location = new System.Drawing.Point(477, 249);
+            this.lstTache.ItemHeight = 27;
+            this.lstTache.Location = new System.Drawing.Point(636, 306);
+            this.lstTache.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstTache.Name = "lstTache";
-            this.lstTache.Size = new System.Drawing.Size(273, 235);
+            this.lstTache.Size = new System.Drawing.Size(363, 274);
             this.lstTache.TabIndex = 13;
             this.lstTache.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstTache_MouseDown);
             // 
@@ -124,9 +197,10 @@
             this.rtbActu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbActu.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbActu.ForeColor = System.Drawing.Color.Black;
-            this.rtbActu.Location = new System.Drawing.Point(1228, 42);
+            this.rtbActu.Location = new System.Drawing.Point(1637, 52);
+            this.rtbActu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtbActu.Name = "rtbActu";
-            this.rtbActu.Size = new System.Drawing.Size(204, 157);
+            this.rtbActu.Size = new System.Drawing.Size(272, 193);
             this.rtbActu.TabIndex = 16;
             this.rtbActu.Text = "";
             // 
@@ -134,9 +208,10 @@
             // 
             this.lblActu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblActu.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActu.Location = new System.Drawing.Point(1247, 9);
+            this.lblActu.Location = new System.Drawing.Point(1663, 11);
+            this.lblActu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblActu.Name = "lblActu";
-            this.lblActu.Size = new System.Drawing.Size(196, 30);
+            this.lblActu.Size = new System.Drawing.Size(261, 37);
             this.lblActu.TabIndex = 17;
             this.lblActu.Text = "Actu Projet";
             this.lblActu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -147,22 +222,25 @@
             this.rtbListeF.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbListeF.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbListeF.ForeColor = System.Drawing.Color.Black;
-            this.rtbListeF.Location = new System.Drawing.Point(1228, 242);
+            this.rtbListeF.Location = new System.Drawing.Point(1637, 298);
+            this.rtbListeF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtbListeF.Name = "rtbListeF";
             this.rtbListeF.ReadOnly = true;
-            this.rtbListeF.Size = new System.Drawing.Size(204, 500);
+            this.rtbListeF.Size = new System.Drawing.Size(272, 615);
             this.rtbListeF.TabIndex = 21;
             this.rtbListeF.Text = "";
             // 
-            // label1
+            // lblTacheReal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 17.25F);
-            this.label1.Location = new System.Drawing.Point(1235, 202);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 26);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Tâches réalisées";
+            this.lblTacheReal.AutoSize = true;
+            this.lblTacheReal.Font = new System.Drawing.Font("Cooper Black", 20.25F);
+            this.lblTacheReal.Location = new System.Drawing.Point(1686, 255);
+            this.lblTacheReal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTacheReal.Name = "lblTacheReal";
+            this.lblTacheReal.Size = new System.Drawing.Size(291, 39);
+            this.lblTacheReal.TabIndex = 22;
+            this.lblTacheReal.Text = "Tâches réalisées";
+            this.lblTacheReal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -172,74 +250,11 @@
             this.panel2.Controls.Add(this.btnReunion);
             this.panel2.Controls.Add(this.btnQuitter);
             this.panel2.Controls.Add(this.btnTourSuivant);
-            this.panel2.Location = new System.Drawing.Point(2, 741);
+            this.panel2.Location = new System.Drawing.Point(3, 912);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1441, 141);
+            this.panel2.Size = new System.Drawing.Size(1921, 174);
             this.panel2.TabIndex = 23;
-            // 
-            // pgRecherches
-            // 
-            this.pgRecherches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
-            this.pgRecherches.Location = new System.Drawing.Point(536, 618);
-            this.pgRecherches.Name = "pgRecherches";
-            this.pgRecherches.Size = new System.Drawing.Size(132, 23);
-            this.pgRecherches.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.pgRecherches.TabIndex = 23;
-            this.pgRecherches.Value = 50;
-            // 
-            // label2
-            // 
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label2.Location = new System.Drawing.Point(536, 585);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 30);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Recherches ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label3.Location = new System.Drawing.Point(464, 644);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 30);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Conception";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label4.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label4.Location = new System.Drawing.Point(631, 644);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 30);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Développement";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pgDeveloppement
-            // 
-            this.pgDeveloppement.Location = new System.Drawing.Point(635, 677);
-            this.pgDeveloppement.Name = "pgDeveloppement";
-            this.pgDeveloppement.Size = new System.Drawing.Size(132, 23);
-            this.pgDeveloppement.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.pgDeveloppement.TabIndex = 27;
-            this.pgDeveloppement.Value = 50;
-            // 
-            // pgConception
-            // 
-            this.pgConception.Location = new System.Drawing.Point(455, 677);
-            this.pgConception.Name = "pgConception";
-            this.pgConception.Size = new System.Drawing.Size(132, 23);
-            this.pgConception.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.pgConception.TabIndex = 28;
-            this.pgConception.Value = 50;
             // 
             // btnRepos
             // 
@@ -248,9 +263,10 @@
             this.btnRepos.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRepos.Image = global::Menu.Properties.Resources.img_481167;
             this.btnRepos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRepos.Location = new System.Drawing.Point(383, 10);
+            this.btnRepos.Location = new System.Drawing.Point(511, 12);
+            this.btnRepos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRepos.Name = "btnRepos";
-            this.btnRepos.Size = new System.Drawing.Size(125, 44);
+            this.btnRepos.Size = new System.Drawing.Size(167, 54);
             this.btnRepos.TabIndex = 15;
             this.btnRepos.Text = "Repos";
             this.btnRepos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -264,9 +280,10 @@
             this.btnCrunch.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrunch.Image = global::Menu.Properties.Resources.work_hard_png_2;
             this.btnCrunch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCrunch.Location = new System.Drawing.Point(544, 10);
+            this.btnCrunch.Location = new System.Drawing.Point(725, 12);
+            this.btnCrunch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCrunch.Name = "btnCrunch";
-            this.btnCrunch.Size = new System.Drawing.Size(124, 44);
+            this.btnCrunch.Size = new System.Drawing.Size(165, 54);
             this.btnCrunch.TabIndex = 19;
             this.btnCrunch.Text = "Crunch";
             this.btnCrunch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -280,9 +297,10 @@
             this.btnReunion.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReunion.Image = global::Menu.Properties.Resources.meeting_with_a_friend;
             this.btnReunion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReunion.Location = new System.Drawing.Point(713, 10);
+            this.btnReunion.Location = new System.Drawing.Point(951, 12);
+            this.btnReunion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReunion.Name = "btnReunion";
-            this.btnReunion.Size = new System.Drawing.Size(138, 44);
+            this.btnReunion.Size = new System.Drawing.Size(184, 54);
             this.btnReunion.TabIndex = 20;
             this.btnReunion.Text = "Réunion";
             this.btnReunion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,9 +314,10 @@
             this.btnQuitter.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitter.Image = global::Menu.Properties.Resources._53494;
             this.btnQuitter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQuitter.Location = new System.Drawing.Point(1306, 7);
+            this.btnQuitter.Location = new System.Drawing.Point(1741, 9);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(124, 44);
+            this.btnQuitter.Size = new System.Drawing.Size(165, 54);
             this.btnQuitter.TabIndex = 8;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -312,9 +331,10 @@
             this.btnTourSuivant.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTourSuivant.Image = global::Menu.Properties.Resources._510461;
             this.btnTourSuivant.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTourSuivant.Location = new System.Drawing.Point(1037, 10);
+            this.btnTourSuivant.Location = new System.Drawing.Point(1383, 12);
+            this.btnTourSuivant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTourSuivant.Name = "btnTourSuivant";
-            this.btnTourSuivant.Size = new System.Drawing.Size(184, 44);
+            this.btnTourSuivant.Size = new System.Drawing.Size(245, 54);
             this.btnTourSuivant.TabIndex = 7;
             this.btnTourSuivant.Text = "Tour suivant";
             this.btnTourSuivant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -325,10 +345,10 @@
             // 
             this.uC_Personnage3.BackColor = System.Drawing.Color.AliceBlue;
             this.uC_Personnage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage3.Location = new System.Drawing.Point(13, 17);
-            this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage3.Location = new System.Drawing.Point(17, 21);
+            this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.uC_Personnage3.Name = "uC_Personnage3";
-            this.uC_Personnage3.Size = new System.Drawing.Size(433, 331);
+            this.uC_Personnage3.Size = new System.Drawing.Size(577, 407);
             this.uC_Personnage3.TabIndex = 11;
             this.uC_Personnage3.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragDrop);
             this.uC_Personnage3.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragEnter);
@@ -337,10 +357,10 @@
             // 
             this.uC_Personnage4.BackColor = System.Drawing.Color.AliceBlue;
             this.uC_Personnage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage4.Location = new System.Drawing.Point(776, 371);
-            this.uC_Personnage4.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage4.Location = new System.Drawing.Point(1035, 457);
+            this.uC_Personnage4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.uC_Personnage4.Name = "uC_Personnage4";
-            this.uC_Personnage4.Size = new System.Drawing.Size(429, 329);
+            this.uC_Personnage4.Size = new System.Drawing.Size(572, 405);
             this.uC_Personnage4.TabIndex = 12;
             this.uC_Personnage4.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragDrop);
             this.uC_Personnage4.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragEnter);
@@ -349,10 +369,10 @@
             // 
             this.uC_Personnage2.BackColor = System.Drawing.Color.AliceBlue;
             this.uC_Personnage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage2.Location = new System.Drawing.Point(776, 17);
-            this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage2.Location = new System.Drawing.Point(1035, 21);
+            this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.uC_Personnage2.Name = "uC_Personnage2";
-            this.uC_Personnage2.Size = new System.Drawing.Size(429, 331);
+            this.uC_Personnage2.Size = new System.Drawing.Size(572, 407);
             this.uC_Personnage2.TabIndex = 10;
             this.uC_Personnage2.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragDrop);
             this.uC_Personnage2.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragEnter);
@@ -361,26 +381,27 @@
             // 
             this.uC_Personnage1.BackColor = System.Drawing.Color.AliceBlue;
             this.uC_Personnage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage1.Location = new System.Drawing.Point(13, 371);
-            this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage1.Location = new System.Drawing.Point(17, 457);
+            this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.uC_Personnage1.Name = "uC_Personnage1";
-            this.uC_Personnage1.Size = new System.Drawing.Size(433, 329);
+            this.uC_Personnage1.Size = new System.Drawing.Size(577, 405);
             this.uC_Personnage1.TabIndex = 9;
             this.uC_Personnage1.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragDrop);
             this.uC_Personnage1.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragEnter);
             // 
             // frmJeu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(1444, 881);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTacheReal);
             this.Controls.Add(this.rtbListeF);
             this.Controls.Add(this.lblActu);
             this.Controls.Add(this.rtbActu);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmJeu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T3 Simulator";
@@ -411,7 +432,7 @@
         private System.Windows.Forms.ListBox lstTache;
         private System.Windows.Forms.Label lblLstTache;
         private System.Windows.Forms.Button btnVider;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTacheReal;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ProgressBar pgRecherches;
         private System.Windows.Forms.ProgressBar pgConception;

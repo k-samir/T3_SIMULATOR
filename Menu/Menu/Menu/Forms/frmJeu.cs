@@ -31,6 +31,23 @@ namespace Menu
         public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4)
         {
             InitializeComponent();
+
+            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+     
+            this.Size = new Size(screenWidth, screenHeight);
+
+            int X = lblActu.Location.X;
+            int Y = lblActu.Location.Y;
+
+            lblActu.Size = new Size(((screenWidth - lblActu.Location.X) - lblActu.Size.Width) + lblActu.Size.Width, lblActu.Size.Height);       
+            rtbActu.Size = new Size(((screenWidth - rtbActu.Location.X) - rtbActu.Size.Width) + rtbActu.Size.Width - 9, rtbActu.Size.Height);
+            lblTacheReal.Size = new Size(((screenWidth - lblTacheReal.Location.X) - lblTacheReal.Size.Width) + lblTacheReal.Size.Width, lblTacheReal.Size.Height - 5);
+            rtbListeF.Size = new Size(((screenWidth - rtbListeF.Location.X) - rtbListeF.Size.Width) + rtbListeF.Size.Width - 9, rtbListeF.Size.Height - 5);
+            panel2.Size = new Size(screenWidth, panel2.Height);
+
+
+
             foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
             {
                 if (f.getPaDepense() < f.getPaNecess() && f.getStatus() == false)
@@ -200,9 +217,11 @@ namespace Menu
             // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
             if ((nbTour >= nbTourMax) || ((ControleurJeu.getListeFonctionnalite().Count == 0)))
             {
-                ControleurJeu.arreterJeu();
+                ControleurJeu.arreterJeu(rtbListeF.Text);
                 this.Close();
             }
+
+
 
             //modification des taches des user controls
             foreach (Object o in Controls)
@@ -287,7 +306,7 @@ namespace Menu
                 // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
                 if ((nbTour >= nbTourMax) || (ControleurJeu.getListeFonctionnalite().Count == 0))
                 {
-                    ControleurJeu.arreterJeu();
+                    ControleurJeu.arreterJeu(rtbListeF.Text);
 
                     this.Close();
                 }
@@ -398,13 +417,16 @@ namespace Menu
                 }
             }
 
+
             if (nbTour >= 10)
             {
                 viderCBO();
-                ControleurJeu.arreterJeu();
+                ControleurJeu.arreterJeu(rtbListeF.Text);
                 this.Close();
             }
 
+
+            MessageBox.Show(rtbActu.Text);
             rtbActu.Text = String.Empty;
 
             ArrayList listPerso = ControleurJeu.getListePersonnage();

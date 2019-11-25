@@ -5,6 +5,7 @@ using System.Linq;
 using System.Collections;
 using System.Text;
 using Menu.classePersonnage;
+using Menu.Classes;
 
 namespace Menu
 {
@@ -22,7 +23,12 @@ namespace Menu
         //variable globale
         private static ArrayList listfonctionnalite = new ArrayList();
         private static ArrayList listPersonnage = new ArrayList();
-         
+        private static ArrayList listReunion = new ArrayList();
+        private static ArrayList listeQualites = new ArrayList();
+        private static int nbQualites = 1;
+        private static ArrayList listeDefauts = new ArrayList();
+        private static int nbDefauts = nbQualites;   //deux variables pour pouvoir mettre plus de qualites que de defauts ou inversement
+
 
         Personnage p1;
         Personnage p2;
@@ -49,11 +55,53 @@ namespace Menu
             p3 = remplirPersonnage("Mathieu", 3.3, 40, 50);
             p4 = remplirPersonnage("Samir", 4.2, 10, 45);
 
+            /* ---------------- qualites et defauts ---------------- */
+            Random aleatoire = new Random();
+
+
+
+            listeQualites.Add("Sang-froid");        //stress monte moins vite
+            listeQualites.Add("Inépuisable");       //fatigue monte moins vite
+            listeQualites.Add("Talentueux");        //ttes les actions *1,5
+            listeQualites.Add("Développeur né");    //dv *1,5
+            listeQualites.Add("Concepteur né");        //conception *1,5
+            listeQualites.Add("Chercheur né");        //recherche *1,5
+            listeQualites.Add("Diplomate");            //relations +10 points
+            listeQualites.Add("Chercheur");            //relations +10 points
+
+            listeDefauts.Add("Stressé");                    //stress monte plus vite
+            listeDefauts.Add("Fatigué");                //fatigue monte plus vite
+            listeDefauts.Add("Incompétent notoire");    //ttes les actions *1,5
+            listeDefauts.Add("Mauvais développeur");    //dv * 0,5
+            listeDefauts.Add("Mauvais concepteur");     //conception * 0,5
+            listeDefauts.Add("Mauvaise chercheur");     //recherche * 0,5
+            listeDefauts.Add("Asocial");                //relations -10 points
+
+            foreach (Personnage p in listPersonnage)
+            {
+                for (int i = 0; i < nbQualites; i++)
+                {
+                    int rand1 = aleatoire.Next(listeQualites.Count);   //de 0 à X-1
+                    p.qualites.Add(listeQualites[rand1]);
+                }
+
+                for (int i = 0; i < nbDefauts; i++)
+                {
+                    int rand2 = aleatoire.Next(listeDefauts.Count);   //de 0 à X-1
+                                                                      //while (rand2 == rand1)
+                                                                      //{
+                                                                      //rand2 = aleatoire.Next(listeDefauts.Count);  //on fait cela car les qualites et defauts avec le meme argument sont opposés et incompatibles irl
+                                                                      //}
+                    p.defauts.Add(listeDefauts[rand2]);
+                }
+
+
+            }
 
             /*
             FONCTIONNALITES ( NOM , PANECESS , POURCENTNOTE , NVCONNAIS , PADEPENSE , TYPE) */
 
-        
+
 
             Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 1, 0, 0, "Rechercher");
             Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 1, 0, 0, "Rechercher");
@@ -64,6 +112,26 @@ namespace Menu
             Fonctionnalites f7 = new Fonctionnalites("Classes", 1, 0, 0, "Développer");
             Fonctionnalites f8 = new Fonctionnalites("Controleur", 1, 0, 0, "Développer");
             Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 1, 0, 0, "Développer");
+
+            //REUNION(THEME DE LA REUNION) et le statut de cette réunion est par défaut à false
+            Reunion r1 = new Reunion("Faire connaissance");
+            Reunion r2 = new Reunion("Évaluer le potentiel du groupe");
+            Reunion r3 = new Reunion("Révèle les qualités et les défauts");
+            Reunion r4 = new Reunion("Analyse des affinités de chacun");
+            Reunion r5 = new Reunion("Découvrir le projet");
+            Reunion r6 = new Reunion("Analyse de la demande du client et de ses besoins + Définir un cahier des charges");
+            Reunion r7 = new Reunion("Mettre en place un système d'organisation");
+            Reunion r8 = new Reunion("Mettre en commun le travail et l'avancement de chacun");
+
+
+            listReunion.Add(r1);
+            listReunion.Add(r2);
+            listReunion.Add(r3);
+            listReunion.Add(r4);
+            listReunion.Add(r5);
+            listReunion.Add(r6);
+            listReunion.Add(r7);
+            listReunion.Add(r8);
 
 
             listfonctionnalite.Add(f1);
@@ -93,15 +161,34 @@ namespace Menu
             return new Personnage(prenom, productivite, stress, sociabilite);
         }
 
-        public static void arreterJeu()
+        public static ArrayList getListeReunion()
+        {
+            return listReunion;
+        }
+
+        public static void changerStatutReunion(String themeReunion)        //parcourt la liste des réunions pour changer son statut en true et pour dire que ce thème a été abordée
+        {
+            foreach (Reunion r in listReunion)
+            {
+                if (r.getThemeReunion() == themeReunion)
+                {
+                    r.setStatut(true);
+                }
+            }
+        }
+
+        public static void arreterJeu(String s)
         {
             listfonctionnalite.Clear();
             listPersonnage.Clear();
 
             
             MessageBox.Show("Fin de la partie");
-            frmMenu fm = new frmMenu();
-            fm.Show();
+            Forms.FrmEnd e = new Forms.FrmEnd(s);
+            e.Show();
+
+            
+            
         }
 
        
@@ -109,7 +196,7 @@ namespace Menu
 
         public void main()
         {
-            arreterJeu();
+            //arreterJeu();
         }
 
         public static void nouveauTour()
