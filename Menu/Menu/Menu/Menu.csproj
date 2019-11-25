@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,11 +49,18 @@
   <ItemGroup>
     <Compile Include="Classes\ControleurJeu.cs" />
     <Compile Include="Classes\Fonctionnalites.cs" />
+    <Compile Include="Classes\Reunion.cs" />
     <Compile Include="Forms\frmButReunion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmButReunion.Designer.cs">
       <DependentUpon>frmButReunion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEnd.Designer.cs">
+      <DependentUpon>FrmEnd.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmJeu.cs">
       <SubType>Form</SubType>
@@ -96,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\frmButReunion.resx">
       <DependentUpon>frmButReunion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEnd.resx">
+      <DependentUpon>FrmEnd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmJeu.resx">
       <DependentUpon>frmJeu.cs</DependentUpon>
