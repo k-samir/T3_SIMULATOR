@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Menu.classePersonnage;
 using System.Collections.Generic;
 using Menu.Forms;
+using Menu.Classes;
 
 namespace Menu
 {
@@ -478,7 +479,49 @@ namespace Menu
         private void btnReunion_Click(object sender, EventArgs e)
         {
             frmReunion reunion = new frmReunion();
-            reunion.ShowDialog();
+            DialogResult dr = new DialogResult();
+            dr = reunion.ShowDialog();
+            if(dr == DialogResult.OK)   //lorsqu'on revient du formulaire Réunion alors on parcourt la liste des thèmes de la réunion pour mettre à jour le formulaire
+            {
+                foreach(Reunion r in ControleurJeu.getListeReunion())
+                {
+                    if(r.getStatut())       //active les effets des achievementsli débloqués lors de la réunion
+                    {
+                        if(r.getThemeReunion() == "Faire connaissance")
+                        {
+
+                        }
+                        if (r.getThemeReunion() == "Évaluer le potentiel du groupe")
+                        {
+
+                        }
+                        if (r.getThemeReunion() == "Révèle les qualités et les défauts")
+                        {
+
+                        }
+                        if (r.getThemeReunion() == "Analyse des affinités de chacun")
+                        {
+
+                        }
+                        if (r.getThemeReunion() == "Découvrir le projet")
+                        {
+
+                        }
+                        if (r.getThemeReunion() == "Analyse de la demande du client et de ses besoins + Définir un cahier des charge")
+                        {
+
+                        }
+                        if (r.getThemeReunion() == "Mettre en place un système d'organisation")
+                        {
+
+                        }
+                        if (r.getThemeReunion() == "Mettre en commun le travail et l'avancement de chacun")
+                        {
+
+                        }
+                    }
+                }
+            }
         }
 
         private void btnVider_Click(object sender, EventArgs e)

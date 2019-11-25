@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJeu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pgConception = new System.Windows.Forms.ProgressBar();
             this.pgDeveloppement = new System.Windows.Forms.ProgressBar();
@@ -48,6 +50,8 @@
             this.btnReunion = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnTourSuivant = new System.Windows.Forms.Button();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.uC_Personnage3 = new Menu.UC_Personnage();
             this.uC_Personnage4 = new Menu.UC_Personnage();
             this.uC_Personnage2 = new Menu.UC_Personnage();
@@ -60,6 +64,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
+            this.panel1.Controls.Add(this.bunifuCircleProgressbar1);
             this.panel1.Controls.Add(this.pgConception);
             this.panel1.Controls.Add(this.pgDeveloppement);
             this.panel1.Controls.Add(this.label4);
@@ -83,7 +88,7 @@
             // pgConception
             // 
             this.pgConception.Location = new System.Drawing.Point(607, 833);
-            this.pgConception.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pgConception.Margin = new System.Windows.Forms.Padding(4);
             this.pgConception.Name = "pgConception";
             this.pgConception.Size = new System.Drawing.Size(176, 28);
             this.pgConception.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -93,7 +98,7 @@
             // pgDeveloppement
             // 
             this.pgDeveloppement.Location = new System.Drawing.Point(847, 833);
-            this.pgDeveloppement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pgDeveloppement.Margin = new System.Windows.Forms.Padding(4);
             this.pgDeveloppement.Name = "pgDeveloppement";
             this.pgDeveloppement.Size = new System.Drawing.Size(176, 28);
             this.pgDeveloppement.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -143,7 +148,7 @@
             // 
             this.pgRecherches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
             this.pgRecherches.Location = new System.Drawing.Point(715, 761);
-            this.pgRecherches.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pgRecherches.Margin = new System.Windows.Forms.Padding(4);
             this.pgRecherches.Name = "pgRecherches";
             this.pgRecherches.Size = new System.Drawing.Size(176, 28);
             this.pgRecherches.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -157,7 +162,7 @@
             this.btnVider.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVider.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnVider.Location = new System.Drawing.Point(683, 603);
-            this.btnVider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVider.Margin = new System.Windows.Forms.Padding(4);
             this.btnVider.Name = "btnVider";
             this.btnVider.Size = new System.Drawing.Size(268, 54);
             this.btnVider.TabIndex = 22;
@@ -185,7 +190,7 @@
             this.lstTache.FormattingEnabled = true;
             this.lstTache.ItemHeight = 27;
             this.lstTache.Location = new System.Drawing.Point(636, 306);
-            this.lstTache.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstTache.Margin = new System.Windows.Forms.Padding(4);
             this.lstTache.Name = "lstTache";
             this.lstTache.Size = new System.Drawing.Size(363, 274);
             this.lstTache.TabIndex = 13;
@@ -198,7 +203,7 @@
             this.rtbActu.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbActu.ForeColor = System.Drawing.Color.Black;
             this.rtbActu.Location = new System.Drawing.Point(1637, 52);
-            this.rtbActu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtbActu.Margin = new System.Windows.Forms.Padding(4);
             this.rtbActu.Name = "rtbActu";
             this.rtbActu.Size = new System.Drawing.Size(272, 193);
             this.rtbActu.TabIndex = 16;
@@ -223,7 +228,7 @@
             this.rtbListeF.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbListeF.ForeColor = System.Drawing.Color.Black;
             this.rtbListeF.Location = new System.Drawing.Point(1637, 298);
-            this.rtbListeF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtbListeF.Margin = new System.Windows.Forms.Padding(4);
             this.rtbListeF.Name = "rtbListeF";
             this.rtbListeF.ReadOnly = true;
             this.rtbListeF.Size = new System.Drawing.Size(272, 615);
@@ -251,7 +256,7 @@
             this.panel2.Controls.Add(this.btnQuitter);
             this.panel2.Controls.Add(this.btnTourSuivant);
             this.panel2.Location = new System.Drawing.Point(3, 912);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1921, 174);
             this.panel2.TabIndex = 23;
@@ -264,7 +269,7 @@
             this.btnRepos.Image = global::Menu.Properties.Resources.img_481167;
             this.btnRepos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRepos.Location = new System.Drawing.Point(511, 12);
-            this.btnRepos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRepos.Margin = new System.Windows.Forms.Padding(4);
             this.btnRepos.Name = "btnRepos";
             this.btnRepos.Size = new System.Drawing.Size(167, 54);
             this.btnRepos.TabIndex = 15;
@@ -281,7 +286,7 @@
             this.btnCrunch.Image = global::Menu.Properties.Resources.work_hard_png_2;
             this.btnCrunch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCrunch.Location = new System.Drawing.Point(725, 12);
-            this.btnCrunch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCrunch.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrunch.Name = "btnCrunch";
             this.btnCrunch.Size = new System.Drawing.Size(165, 54);
             this.btnCrunch.TabIndex = 19;
@@ -298,7 +303,7 @@
             this.btnReunion.Image = global::Menu.Properties.Resources.meeting_with_a_friend;
             this.btnReunion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReunion.Location = new System.Drawing.Point(951, 12);
-            this.btnReunion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReunion.Margin = new System.Windows.Forms.Padding(4);
             this.btnReunion.Name = "btnReunion";
             this.btnReunion.Size = new System.Drawing.Size(184, 54);
             this.btnReunion.TabIndex = 20;
@@ -315,7 +320,7 @@
             this.btnQuitter.Image = global::Menu.Properties.Resources._53494;
             this.btnQuitter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuitter.Location = new System.Drawing.Point(1741, 9);
-            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(165, 54);
             this.btnQuitter.TabIndex = 8;
@@ -332,7 +337,7 @@
             this.btnTourSuivant.Image = global::Menu.Properties.Resources._510461;
             this.btnTourSuivant.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTourSuivant.Location = new System.Drawing.Point(1383, 12);
-            this.btnTourSuivant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTourSuivant.Margin = new System.Windows.Forms.Padding(4);
             this.btnTourSuivant.Name = "btnTourSuivant";
             this.btnTourSuivant.Size = new System.Drawing.Size(245, 54);
             this.btnTourSuivant.TabIndex = 7;
@@ -340,6 +345,33 @@
             this.btnTourSuivant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTourSuivant.UseVisualStyleBackColor = true;
             this.btnTourSuivant.Click += new System.EventHandler(this.btnTourSuivant_Click);
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // bunifuCircleProgressbar1
+            // 
+            this.bunifuCircleProgressbar1.animated = false;
+            this.bunifuCircleProgressbar1.animationIterval = 5;
+            this.bunifuCircleProgressbar1.animationSpeed = 300;
+            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
+            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCircleProgressbar1.LabelVisible = true;
+            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
+            this.bunifuCircleProgressbar1.LineThickness = 5;
+            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(715, 30);
+            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.bunifuCircleProgressbar1.MaxValue = 100;
+            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
+            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(201, 201);
+            this.bunifuCircleProgressbar1.TabIndex = 29;
+            this.bunifuCircleProgressbar1.Value = 0;
             // 
             // uC_Personnage3
             // 
@@ -401,7 +433,8 @@
             this.Controls.Add(this.lblActu);
             this.Controls.Add(this.rtbActu);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmJeu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T3 Simulator";
@@ -440,5 +473,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
     }
 }

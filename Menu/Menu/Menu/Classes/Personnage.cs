@@ -31,6 +31,7 @@ namespace Menu.classePersonnage
             this.productivite = productivite;
             this.stress = stress;
             this.sociabilite = sociabilite;
+
         }
 
         public void setMalade(bool malade)
@@ -221,14 +222,75 @@ namespace Menu.classePersonnage
             
             if(action.getStatus() == false)
             {
-                
-                action.setPaDepense(action.getPaDepense() + 1);
-                if (action.getPaDepense() == action.getPaNecess())
+                int ajoutPA = 10;
+
+                for (int i = 0; i < qualites.Count; i++)
+                {
+                    if (qualites[i] == "Talentueux")
+                    {
+                        ajoutPA += (ajoutPA / 2); //+50%
+                    }
+                    if (qualites[i] == "Développeur né")
+                    {
+                        if (action.getType() == "Développer")
+                        {
+                            ajoutPA += (ajoutPA / 2); //+50%
+                        }
+                    }
+                    if (qualites[i] == "Concepteur né")
+                    {
+                        if (action.getType() == "Concevoir")
+                        {
+                            ajoutPA += (ajoutPA / 2); //+50%
+                        }
+                    }
+                    if (qualites[i] == "Chercheur né")
+                    {
+                        if (action.getType() == "Rechercher")
+                        {
+                            ajoutPA += (ajoutPA / 2); //+50%
+                        }
+                    }
+                }
+                for (int i = 0; i < defauts.Count; i++)
+                {
+                    if (defauts[i] == "Incompétent notoire")
+                    {
+                        ajoutPA -= (ajoutPA / 2); //-50%
+                    }
+                    if (defauts[i] == "Mauvais développeur")
+                    {
+                        if (action.getType() == "Développer")
+                        {
+                            ajoutPA -= (ajoutPA / 2); //-50%
+                        }
+                    }
+                    if (defauts[i] == "Mauvais concepteur")
+                    {
+                        if (action.getType() == "Concevoir")
+                        {
+                            ajoutPA -= (ajoutPA / 2); //-50%
+                        }
+                    }
+                    if (defauts[i] == "Mauvais chercheur")
+                    {
+                        if (action.getType() == "Rechercher")
+                        {
+                            ajoutPA -= (ajoutPA / 2); //-50%
+                        }
+                    }
+                }
+
+                action.setPaDepense(action.getPaDepense() + ajoutPA);
+
+                if (action.getPaDepense() >= action.getPaNecess())
                 {
                     action.setStatus(true); //modif du status pour dire que la tache est terminée
                 }
-                
+
             }
+
+
            
 
         }

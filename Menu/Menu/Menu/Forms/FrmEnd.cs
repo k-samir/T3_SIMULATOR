@@ -12,18 +12,39 @@ namespace Menu.Forms
 {
     public partial class FrmEnd : Form
     {
+        private string s = "";
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(s);
+        }
+
+        private void bunifuGauge1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuProgressBar1_progressChanged(object sender, EventArgs e)
+        {
+
+        }
+
         public FrmEnd()
         {
 
         }
 
-        public FrmEnd(String s)
+        public FrmEnd(String si)
         {
             InitializeComponent();
             //bunifuCustomLabel1.Text = s;
+            s = si;
+
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+    
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             frmMenu fm = new frmMenu();
             this.Dispose();
