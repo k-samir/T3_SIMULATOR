@@ -1,0 +1,40 @@
+int myArray[]= new int[4] {1, 2, 3, 4};
+
+
+
+projet
+nom, tempsLimite, nbFonctionnalite
+[Jeu1, 12, 3, Jeu2, 12, 3]
+
+fonctionnalite
+nom, nvSavoirNecess, paDepense, paNecess, pourcentNote, status
+[Fct1, 40, 0, 0, 3, False, Fct2, 40, 0, 0, 3, False]
+
+
+        public void realisation(Fonctionnalite fct, int nbPa)
+        {
+            if (fct.getPaNecess > fct.getPaDepense() + nbPa)
+            {
+                fct.setPaDepense(fct.getPaDepense() + nbPa);
+            }
+            else
+            {
+                fct.setPaDepense(fct.getPaNecess());
+            }
+        }
+
+        public void recherche(Personnage id, int nbPa)
+        {
+            id.setNvConnaissNecess(id.getNvConnaissNecess() + nbPa);
+        }
+        public void repos(Personnage id, int nbPa)
+        {
+            id.setStress(id.getStress() - nbPa);
+            id.setFatigue(id.getFatigue() - nbPa);
+
+        }
+
+        public void reunion()
+        {
+            //ouvrir page réunion
+        }
