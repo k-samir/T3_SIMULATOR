@@ -33,6 +33,7 @@ namespace Menu.Forms
 
         private void btnRevenir_Click(object sender, EventArgs e)
         {
+            
             this.Close();
         }
 

@@ -47,12 +47,17 @@
             this.lblValStress = new System.Windows.Forms.Label();
             this.lblValConnaissance = new System.Windows.Forms.Label();
             this.lblValSociabilite = new System.Windows.Forms.Label();
+            this.affinite = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pbCoeur = new System.Windows.Forms.PictureBox();
             this.btnSupprimerTache3 = new System.Windows.Forms.Button();
             this.btnSupprimerTache2 = new System.Windows.Forms.Button();
             this.btnSupprimerTache1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbCacheur = new System.Windows.Forms.PictureBox();
             this.grpAction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCacheur)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPrenom
@@ -64,6 +69,7 @@
             this.lblPrenom.Size = new System.Drawing.Size(176, 24);
             this.lblPrenom.TabIndex = 1;
             this.lblPrenom.Text = "Prénom du Perso";
+            this.lblPrenom.Visible = false;
             // 
             // lblFatigue
             // 
@@ -240,6 +246,28 @@
             this.lblValSociabilite.TabIndex = 16;
             this.lblValSociabilite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // affinite
+            // 
+            this.affinite.AutoSize = true;
+            this.affinite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.affinite.Location = new System.Drawing.Point(207, 158);
+            this.affinite.Name = "affinite";
+            this.affinite.Size = new System.Drawing.Size(86, 16);
+            this.affinite.TabIndex = 17;
+            this.affinite.Text = "Affinité avec :";
+            this.affinite.Visible = false;
+            // 
+            // pbCoeur
+            // 
+            this.pbCoeur.BackgroundImage = global::Menu.Properties.Resources._30571;
+            this.pbCoeur.Location = new System.Drawing.Point(343, 151);
+            this.pbCoeur.Name = "pbCoeur";
+            this.pbCoeur.Size = new System.Drawing.Size(25, 23);
+            this.pbCoeur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoeur.TabIndex = 19;
+            this.pbCoeur.TabStop = false;
+            this.pbCoeur.Visible = false;
+            // 
             // btnSupprimerTache3
             // 
             this.btnSupprimerTache3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache3.BackgroundImage")));
@@ -289,11 +317,22 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pbCacheur
+            // 
+            this.pbCacheur.Location = new System.Drawing.Point(175, 9);
+            this.pbCacheur.Name = "pbCacheur";
+            this.pbCacheur.Size = new System.Drawing.Size(249, 129);
+            this.pbCacheur.TabIndex = 20;
+            this.pbCacheur.TabStop = false;
+            // 
             // UC_Personnage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.pbCacheur);
+            this.Controls.Add(this.pbCoeur);
+            this.Controls.Add(this.affinite);
             this.Controls.Add(this.lblValSociabilite);
             this.Controls.Add(this.lblValConnaissance);
             this.Controls.Add(this.lblValStress);
@@ -312,8 +351,11 @@
             this.Name = "UC_Personnage";
             this.Size = new System.Drawing.Size(427, 343);
             this.grpAction.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCacheur)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -341,5 +383,8 @@
         private System.Windows.Forms.Button btnSupprimerTache3;
         private System.Windows.Forms.Button btnSupprimerTache2;
         private System.Windows.Forms.Button btnSupprimerTache1;
+        private Bunifu.Framework.UI.BunifuCustomLabel affinite;
+        private System.Windows.Forms.PictureBox pbCoeur;
+        private System.Windows.Forms.PictureBox pbCacheur;
     }
 }

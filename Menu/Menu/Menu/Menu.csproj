@@ -34,7 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\..\Desktop\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\Bunifu_UI_v1.52.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -176,6 +177,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\ecc6fc94-0f64-41ac-83a3-39886d177cad_200x200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b9859a35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b9859a351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30571.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

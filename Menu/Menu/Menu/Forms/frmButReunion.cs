@@ -184,6 +184,7 @@ namespace Menu.Forms
             //qu'il n'a plus besoin de s'occuper de cet achievement et que cette derniere a été validé
             //puis dans la liste des thèmes des réunions du controleur de jeu on met le statut du theme de la réunion à true pour dire que cette derniere a été abordée
             b.Enabled = false;
+            //MessageBox.Show("Texte bouton : " + b.Text); fonctionne
             ControleurJeu.changerStatutReunion(b.Text);
         }
 

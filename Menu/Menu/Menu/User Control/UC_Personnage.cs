@@ -65,6 +65,7 @@ namespace Menu
             this.setFatigue(perso.getFatigue());
             this.setSociabilite(perso.getSociabilite());
             this.setConnaissances(perso.getConnaissances());
+            this.setAffinite(perso.getAffinite());
 
             listfonctionnalite = ControleurJeu.getListeFonctionnalite(); //remet à jour la liste de fonctionnalité
 
@@ -120,6 +121,11 @@ namespace Menu
         {
             lblValFatigue.Text = String.Empty;
             lblValFatigue.Text = fatigue.ToString() + "   /100";
+        }
+
+        public void setAffinite(Personnage p)
+        {
+            affinite.Text = "Affinité avec " + p.getPrenom();
         }
         public void setProductivite(double productivite)
         {
@@ -214,6 +220,22 @@ namespace Menu
                 this.cboFonctionnalite3.Visible = false;
                 this.btnSupprimerTache3.Visible = false;
             }
+
+        public void rendreAffinitesVisible()
+        {
+            affinite.Visible = true;
+            pbCoeur.Visible = true;
+        }
+
+        public void rendrePrenomsVisible()
+        {
+            lblPrenom.Visible = true;
+        }
+
+        public void rendreAttributsVisible()
+        {
+            pbCacheur.Visible = false;
+        }
 
 
 
