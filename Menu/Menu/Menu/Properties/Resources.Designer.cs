@@ -63,6 +63,16 @@ namespace Menu.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _30571 {
+            get {
+                object obj = ResourceManager.GetObject("30571", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _51046 {
             get {
                 object obj = ResourceManager.GetObject("51046", resourceCulture);
@@ -86,6 +96,26 @@ namespace Menu.Properties {
         internal static System.Drawing.Bitmap _53494 {
             get {
                 object obj = ResourceManager.GetObject("53494", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap b9859a35 {
+            get {
+                object obj = ResourceManager.GetObject("b9859a35", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap b9859a351 {
+            get {
+                object obj = ResourceManager.GetObject("b9859a351", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

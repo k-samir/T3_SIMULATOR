@@ -73,15 +73,15 @@ namespace Menu
             listeDefauts.Add("Asocial");                //relations -10 points
 
 
+
+
             //creation personnage
-            p1 = remplirPersonnage("Valentin", 2.0, 0, 82);
-            p2 = remplirPersonnage("Aymeric", 2.0, 20, 80);
-            p3 = remplirPersonnage("Mathieu", 3.3, 40, 50);
-            p4 = remplirPersonnage("Samir", 4.2, 10, 45);
+            p1 = remplirPersonnage("Valentin", 2.0, 0, 82, null);
+            p2 = remplirPersonnage("Aymeric", 2.0, 20, 80, null);
+            p3 = remplirPersonnage("Mathieu", 3.3, 40, 50, null);
+            p4 = remplirPersonnage("Samir", 4.2, 10, 45, null);
 
 
-
-            
 
             /*
             FONCTIONNALITES ( NOM , PANECESS , POURCENTNOTE , NVCONNAIS , PADEPENSE , TYPE) */
@@ -136,6 +136,8 @@ namespace Menu
             listPersonnage.Add(p4);
 
 
+
+
             foreach (Personnage p in listPersonnage)
             {
                 for (int i = 0; i < nbQualites; i++)
@@ -154,19 +156,31 @@ namespace Menu
                     p.defauts.Add(listeDefauts[rand2]);
                 }
 
+                int randAffinite = aleatoire.Next(4);
+
+                if(listPersonnage[randAffinite] != p)
+                {
+                    p.setAffinite((Personnage)listPersonnage[randAffinite]);
+                }
+                else
+                {
+                    p.setAffinite((Personnage)listPersonnage[aleatoire.Next(4)]);
+                }
+                
+                
+
 
             }
 
-            MessageBox.Show(p1.qualites[0].ToString());
             jeu = new frmJeu(p1, p2, p3, p4);
             jeu.Refresh();
             jeu.Show();
         }
-        
 
-        public Personnage remplirPersonnage(string prenom, double productivite, int stress, int sociabilite) //créer personnage avec attributs en paramètres
+
+        public Personnage remplirPersonnage(string prenom, double productivite, int stress, int sociabilite, Personnage affinite) //créer personnage avec attributs en paramètres
         {
-            return new Personnage(prenom, productivite, stress, sociabilite);
+            return new Personnage(prenom, productivite, stress, sociabilite, affinite);
         }
 
         public static ArrayList getListeReunion()
@@ -180,6 +194,7 @@ namespace Menu
             {
                 if (r.getThemeReunion() == themeReunion)
                 {
+                    //MessageBox.Show("Thème réunion : " + r.getThemeReunion()); fonctionne
                     r.setStatut(true);
                 }
             }
@@ -385,6 +400,8 @@ namespace Menu
 
 
         }
+
+
 
         public static void repos()
         {

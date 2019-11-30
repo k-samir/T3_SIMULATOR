@@ -48,6 +48,11 @@ namespace Menu
             panel2.Size = new Size(screenWidth, panel2.Height);
 
 
+           rtbActu.Text += "Bienvenue dans T3 Simulator ! On est un peu perdu là, non ? Une petite réunion arrangerait bien des choses...";
+
+            
+            
+
 
             foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
             {
@@ -139,6 +144,7 @@ namespace Menu
 
         public void ecrireSurConsole()       //controleur de jeu écrit sur le fil d'actualité
         {
+            
             rtbActu.Text = String.Empty;
             rtbActu.Text = ControleurJeu.filActualite();
             rtbActu.Text += "Tour effectué " + this.getNbTour() + " / 10 ";
@@ -458,6 +464,7 @@ namespace Menu
 
         private void btnCrunch_Click_1(object sender, EventArgs e)
         {
+            btnCrunch.Enabled = false;
             foreach (Object o in Controls)
             {
                 if (o is Panel)
@@ -479,29 +486,73 @@ namespace Menu
         private void btnReunion_Click(object sender, EventArgs e)
         {
             frmReunion reunion = new frmReunion();
-            DialogResult dr = new DialogResult();
-            dr = reunion.ShowDialog();
-            if(dr == DialogResult.OK)   //lorsqu'on revient du formulaire Réunion alors on parcourt la liste des thèmes de la réunion pour mettre à jour le formulaire
-            {
+            DialogResult dr = reunion.ShowDialog();
                 foreach(Reunion r in ControleurJeu.getListeReunion())
                 {
-                    if(r.getStatut())       //active les effets des achievementsli débloqués lors de la réunion
+                if (r.getStatut())       //active les effets des achievements débloqués lors de la réunion
+                {
+
+                    if (r.getThemeReunion() == "Faire connaissance")
                     {
-                        if(r.getThemeReunion() == "Faire connaissance")
+                        foreach (Object o in Controls)
                         {
+                            if (o is Panel)
+                            {
+                                Panel p = (Panel)o;
+                                foreach (Object c in p.Controls)
+                                {
+                                    if (c is UC_Personnage)
+                                    {
+                                        UC_Personnage up = (UC_Personnage)c;
 
+                                        up.rendrePrenomsVisible();
+                                    }
+                                }
+                            }
                         }
-                        if (r.getThemeReunion() == "Évaluer le potentiel du groupe")
+                    }
+                    if (r.getThemeReunion() == "Évaluer le potentiel du groupe")
+                    {
+                        foreach (Object o in Controls)
                         {
+                            if (o is Panel)
+                            {
+                                Panel p = (Panel)o;
+                                foreach (Object c in p.Controls)
+                                {
+                                    if (c is UC_Personnage)
+                                    {
+                                        UC_Personnage up = (UC_Personnage)c;
 
+                                        up.rendreAttributsVisible();
+                                    }
+                                }
+                            }
                         }
+                    }
                         if (r.getThemeReunion() == "Révèle les qualités et les défauts")
                         {
-
+                            //A faire
                         }
                         if (r.getThemeReunion() == "Analyse des affinités de chacun")
                         {
 
+                            foreach (Object o in Controls)
+                            {
+                                if (o is Panel)
+                                {
+                                    Panel p = (Panel)o;
+                                    foreach (Object c in p.Controls)
+                                    {
+                                        if (c is UC_Personnage)
+                                        {
+                                            UC_Personnage up = (UC_Personnage)c;
+
+                                            up.rendreAffinitesVisible();
+                                        }
+                                    }
+                                }
+                            }
                         }
                         if (r.getThemeReunion() == "Découvrir le projet")
                         {
@@ -520,10 +571,11 @@ namespace Menu
 
                         }
                     }
-                }
+                
             }
         }
 
+        
         private void btnVider_Click(object sender, EventArgs e)
         {
             uC_Personnage1.cleanCBO();
@@ -532,7 +584,7 @@ namespace Menu
             uC_Personnage4.cleanCBO();
         }
 
-
+        
 
         //SYSTEME GLISSER DÉPOSER
 

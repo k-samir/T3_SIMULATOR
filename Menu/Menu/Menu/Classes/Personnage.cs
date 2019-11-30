@@ -13,24 +13,26 @@ namespace Menu.classePersonnage
         //Attributs d'un personnage 
         private int id;
         private string prenom;
-        private int fatigue = 50;
+        private int fatigue = 20;
         private double productivite;
         private int stress;
         private int connaissances = 0;
         private int sociabilite;
         private bool malade = false;
         private bool estDispo = true;
+        private Personnage affinite;
 
         public ArrayList qualites = new ArrayList();
         public ArrayList defauts = new ArrayList();
 
         //Constructeur de la classe personnage
-        public Personnage(string prenom, double productivite, int stress, int sociabilite)
+        public Personnage(string prenom, double productivite, int stress, int sociabilite, Personnage affinite)
         {
             this.prenom = prenom;
             this.productivite = productivite;
             this.stress = stress;
             this.sociabilite = sociabilite;
+            this.affinite = affinite;
 
         }
 
@@ -51,6 +53,17 @@ namespace Menu.classePersonnage
             }
         }
 
+        public void setAffinite(Personnage p)
+        {
+            this.affinite = p;
+
+
+        }
+
+        public Personnage getAffinite()
+        {
+            return this.affinite;
+        }
         public bool estDisponible()
         {
             if(this.malade == false && this.estDispo == true)

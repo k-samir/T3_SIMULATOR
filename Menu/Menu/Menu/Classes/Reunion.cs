@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Menu.Classes
 {
@@ -19,6 +20,7 @@ namespace Menu.Classes
 
         public void setStatut(Boolean statut)
         {
+            
             this.statut = statut;
         }
 

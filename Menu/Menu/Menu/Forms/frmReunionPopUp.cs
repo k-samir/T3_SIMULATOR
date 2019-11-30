@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace Menu.Forms
         {
             InitializeComponent();
         }
+        ArrayList liste_perso = new ArrayList();
 
         private void btnOk_Click(object sender, EventArgs e)
         {
@@ -27,7 +29,7 @@ namespace Menu.Forms
         {
             if(butReunion == "Faire connaissance")
             {
-                lblInfo.Text = "Les noms des personnages sont révelés";
+                lblInfo.Text = "Vous pourrez maintenant mettre un nom sur ces visages mystérieux..";
             }
 
             if (butReunion == "Évaluer le potentiel du groupe")
@@ -41,13 +43,13 @@ namespace Menu.Forms
             }
 
             if (butReunion == "Analyse des affinités de chacun")
-            {
-                lblInfo.Text = "Les affinités entre les personnages sont révelées.\nCliquer sur l'image du personnage dont vous voulez savoir les affinités avec les autres personnages";
+            { 
+                lblInfo.Text = "A la fin de la réunion, les affinités de chacun seront révélées. A vous d'assigner correctement les tâches maintenant !";
             }
 
             if(butReunion == "Découvrir le projet")
             {
-                lblInfo.Text = "Le projet consiste à faire un programme consistant à faire apprendre à l'utilisateur de gérer un projet T3";
+                lblInfo.Text = "Il vous est demandé de réaliser la simulation d'une gestion de projet T3.";
             }
 
             if(butReunion == "Analyse de la demande du client et de ses besoins + Définir un cahier des charges")
