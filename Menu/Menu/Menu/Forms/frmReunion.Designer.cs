@@ -47,6 +47,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Faire le point";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.btnInfo3_Click);
             // 
             // button1
@@ -97,7 +98,7 @@
             // 
             // frmReunion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(328, 476);

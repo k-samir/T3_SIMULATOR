@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,15 @@ namespace Menu.Forms
     public partial class FrmEnd : Form
     {
         private string s = "";
+        
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(s);
+            frmRapportJournalier rapport = new frmRapportJournalier(s);
+           
+            rapport.Show();
+            //this.Hide();
+
         }
 
         private void bunifuGauge1_Load(object sender, EventArgs e)
@@ -34,11 +40,25 @@ namespace Menu.Forms
 
         }
 
-        public FrmEnd(String si)
+        public FrmEnd(String si, ArrayList li,float avancement)
         {
             InitializeComponent();
             //bunifuCustomLabel1.Text = s;
             s = si;
+            //MessageBox.Show(li.Count.ToString());
+            foreach (Fonctionnalites f in li)
+            {
+                listBox1.Items.Add(f.getNom());
+                //MessageBox.Show(f.getNom());
+            }
+            if (avancement != 0) {
+                bunifuGauge1.Value = (int)avancement + 1;
+            }
+            else
+            {
+                bunifuGauge1.Value = (int)avancement;
+            }
+            //listeFonctionNonCode = li;
 
 
         }
@@ -49,6 +69,11 @@ namespace Menu.Forms
             frmMenu fm = new frmMenu();
             this.Dispose();
             fm.Show();
+        }
+
+        private void lblInfo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

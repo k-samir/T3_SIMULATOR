@@ -21,18 +21,18 @@ namespace Menu
 
 
 
-        int nbTour = 1; //nb de tour pour le projet
-        int nbTourMax = 10;
+        int nbTour = 0; //nb de tour pour le projet
+        int nbTourMax;
         bool crunchBool = false;
         // String d'affichage des actoins / jour
         public static string s = "";
         // Avancement de la progressbar
         private static float avancement = 0;
         List<Personnage> listPersonnage = new List<Personnage>();
-        public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4)
+        public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4,int tourmax)
         {
             InitializeComponent();
-
+            nbTourMax = tourmax;
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
      
@@ -71,7 +71,7 @@ namespace Menu
             this.Refresh();
 
             listPersonnage.Clear();
-            nbTourMax = 10;
+           // nbTourMax = 10;
             crunchBool = false;
 
 
@@ -117,7 +117,7 @@ namespace Menu
             /* ------- COMPLETEMENT RANDOM, C'EST A FAIRE ------- */
             Random rnd = new Random();
             int s = rnd.Next(10);
-            score.Value += score.Value + s;
+            //score.Value += score.Value + s;
             nbTour++;
         }
 
@@ -138,7 +138,7 @@ namespace Menu
 
             frmMenu menu = new frmMenu();
             menu.Show();
-            this.Close();
+            this.Dispose();
 
 
         }
@@ -150,7 +150,7 @@ namespace Menu
             
             rtbActu.Text = String.Empty;
             rtbActu.Text = ControleurJeu.filActualite();
-            rtbActu.Text += "Tour effectué " + this.getNbTour() + " / 10 ";
+            rtbActu.Text += "Tour effectué " + this.getNbTour() + " / " + nbTourMax.ToString();
             this.augmenterNbTour();   //incremente nb de tour
 
         }
@@ -178,6 +178,7 @@ namespace Menu
                     }
                 }
             }
+
             /*-----------------TEST MALADIE ------------------------ */
             foreach (Object o in Controls)
             {
@@ -351,52 +352,14 @@ namespace Menu
 
         }
 
-        public static int getNbrActionFaite(Personnage p)
-        {
-            return 0;
-            /**int nbrres = 0;
-            
-                    foreach (Object temp in this.Controls)
-                    {
-                        MessageBox.Show(temp.ToString());
-                        //foreach (Object o in temp.Controls)
-                        //{
-                        if (temp is UC_Personnage)
-                        {
-                            UC_Personnage up = (UC_Personnage)temp;
-                            MessageBox.Show(up.getPersonnage().getPrenom());
-                            
-                            if (up.getPersonnage().getPrenom() == p.getPrenom())
-                            {
+       
 
-                                foreach (Object op in up.Controls)
-                                {
-                                    if (op is ComboBox)
-                                    {
-                                        ComboBox cbo = (ComboBox)op;
 
-                                        if (cbo.Name == "cboAction1" || cbo.Name == "cboAction2")
-                                        {
-                                            nbrres++;
-                                        }
-                                    }
-                                }
-                            }
 
-                        }
-                    }
 
-                }
-            }
-        
-    
-               // MessageBox.Show(nbrres.ToString());
-               return nbrres;
-    **/
-            
-        }
 
-      public void viderCBO()
+
+        public void viderCBO()
         {
             uC_Personnage1.viderCBO();
 
@@ -485,13 +448,16 @@ namespace Menu
             }
         }
 
+
+
+
         private void btnReunion_Click(object sender, EventArgs e)
         {
             btnReunion.Enabled = false;
             frmReunion reunion = new frmReunion();
             reunion.ShowDialog();
-                foreach(Reunion r in ControleurJeu.getListeReunion())
-                {
+            foreach (Reunion r in ControleurJeu.getListeReunion())
+            {
                 if (r.getStatut())       //active les effets des achievements débloqués lors de la réunion
                 {
 
@@ -533,52 +499,60 @@ namespace Menu
                             }
                         }
                     }
-                        if (r.getThemeReunion() == "Révèle les qualités et les défauts")
+                    if (r.getThemeReunion() == "Analyse des affinités de chacun")
+                    {
+                        foreach (Object o in Controls)
                         {
-                            //A faire
-                        }
-                        if (r.getThemeReunion() == "Analyse des affinités de chacun")
-                        {
-
-                            foreach (Object o in Controls)
+                            if (o is Panel)
                             {
-                                if (o is Panel)
+                                Panel p = (Panel)o;
+                                foreach (Object c in p.Controls)
                                 {
-                                    Panel p = (Panel)o;
-                                    foreach (Object c in p.Controls)
+                                    if (c is UC_Personnage)
                                     {
-                                        if (c is UC_Personnage)
-                                        {
-                                            UC_Personnage up = (UC_Personnage)c;
+                                        UC_Personnage up = (UC_Personnage)c;
 
-                                            up.rendreAffinitesVisible();
-                                        }
+                                        up.rendreAffinitesVisible();
                                     }
                                 }
                             }
                         }
-                        if (r.getThemeReunion() == "Découvrir le projet")
-                        {
-
-                        }
-                        if (r.getThemeReunion() == "Analyse de la demande du client et de ses besoins + Définir un cahier des charge")
-                        {
-
-                        }
-                        if (r.getThemeReunion() == "Mettre en place un système d'organisation")
-                        {
-
-                        }
-                        if (r.getThemeReunion() == "Mettre en commun le travail et l'avancement de chacun")
-                        {
-
-                        }
                     }
-                
+                    if (r.getThemeReunion() == "Découvrir le projet")
+                    {
+                        rtbActu.Text += "\n\nIl vous est demandé de réaliser la simulation d'une gestion de projet T3\n";
+                    }
+                    if (r.getThemeReunion() == "Révèle les qualités et les défauts")
+                    {
+                        //à faire
+                    }
+                    if (r.getThemeReunion() == "Mettre en place un système d'organisation")
+                    {
+                        rtbActu.Text += "\n\nLe chef étant désigné, vous pouvez faire les points sur votre avancement du projet lors des réunions\n";
+                    }
+                    if (r.getThemeReunion() == "Analyse de la demande du client et de ses besoins + Définir un cahier des charges")
+                    {
+                        lstTache.Visible = true;
+                        lblLstTache.Visible = true;
+                        rtbActu.Text += "\n\nLa liste des tâches à effecter est disponible";
+                    }
+                    if (r.getThemeReunion() == "Mettre en commun le travail et l'avancement de chacun")
+                    {
+                        lblTacheReal.Visible = true;
+                        rtbListeF.Visible = true;
+                        rtbActu.Text += "\n\nGrâce à la mise en commun lors de la réunion, vous pouvez voir toutes les tâches effectuées";
+                    }
+                    uC_Personnage1.rendreInvisibleTacheMatin();
+                    uC_Personnage2.rendreInvisibleTacheMatin();
+                    uC_Personnage3.rendreInvisibleTacheMatin();
+                    uC_Personnage4.rendreInvisibleTacheMatin();
+                }
+
             }
         }
 
-        
+
+
         private void btnVider_Click(object sender, EventArgs e)
         {
             uC_Personnage1.cleanCBO();
@@ -619,7 +593,7 @@ namespace Menu
 
         private void uC_Personnage3_DragDrop(object sender, DragEventArgs e)
         {
-
+            uC_Personnage3.addNbrAction();
             uC_Personnage3.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
         }
 
@@ -638,6 +612,7 @@ namespace Menu
 
         private void uC_Personnage2_DragDrop(object sender, DragEventArgs e)
         {
+            uC_Personnage2.addNbrAction();
             uC_Personnage2.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
         }
 
@@ -656,6 +631,7 @@ namespace Menu
 
         private void uC_Personnage1_DragDrop(object sender, DragEventArgs e)
         {
+            uC_Personnage1.addNbrAction();
             uC_Personnage1.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
         }
 
@@ -674,6 +650,7 @@ namespace Menu
 
         private void uC_Personnage4_DragDrop(object sender, DragEventArgs e)
         {
+            uC_Personnage4.addNbrAction();
             uC_Personnage4.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
         }
 
@@ -707,6 +684,31 @@ namespace Menu
 
                 rtbActu.BackColor = Color.White;
                 rtbListeF.BackColor = Color.White;
+            }
+        }
+
+        private void timerRepos_Tick(object sender, EventArgs e)
+        {
+           
+            if (this.nbTour == 0)        //permet de signaler à l'utilisateur que lors du premier tour il est conseillé de faire des réunions
+            {
+                timerRepos.Start();
+                if (btnReunion.ForeColor == System.Drawing.Color.OrangeRed)
+                {
+                    btnReunion.ForeColor = System.Drawing.Color.Yellow;
+                    btnReunion.FlatAppearance.BorderSize = 5;
+                }
+                else
+                {
+                    btnReunion.ForeColor = System.Drawing.Color.OrangeRed;
+                    btnReunion.FlatAppearance.BorderSize = 1;
+                }
+            }
+            else
+            {
+                btnReunion.ForeColor = System.Drawing.Color.OrangeRed;
+                btnReunion.FlatAppearance.BorderSize = 1;
+                timerRepos.Dispose();       //libère les ressources liés au timer quand on en a plus besoin
             }
         }
     }

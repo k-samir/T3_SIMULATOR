@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
@@ -16,19 +16,30 @@ namespace Menu
     {
 
         ArrayList listfonctionnalite = ControleurJeu.getListeFonctionnalite();
+        Boolean reunion = false;
         private Personnage perso { get; set; }
-
+       // ArrayList listfonctionnalite = ControleurJeu.getListeFonctionnalite();
+        public int nbrActionFaite = 0;
 
         public Personnage getPersonnage()
         {
             return this.perso;
         }
 
+        public void rendreInvisibleTacheMatin()
+        {
+            lblAction1.Visible = false;
+            btnSupprimerTache1.Visible = false;
+            cboFonctionnalite1.Visible = false;
+            this.reunion = true;
+            
+        }
+
         public UC_Personnage()
         {
             InitializeComponent();
-            
 
+            
             /*cboAction1.Items.Clear();
             cboAction2.Items.Clear();
             cboAction3.Items.Clear();
@@ -63,9 +74,11 @@ namespace Menu
             this.setProductivite(perso.getProductivite());
             this.setStress(perso.getStress());
             this.setFatigue(perso.getFatigue());
-            this.setSociabilite(perso.getSociabilite());
-            this.setConnaissances(perso.getConnaissances());
             this.setAffinite(perso.getAffinite());
+            this.setDeteste(perso.getDeteste());
+            this.cboFonctionnalite1.Visible = true;
+            lblAction1.Visible = true;
+            btnSupprimerTache1.Visible = true;
 
             listfonctionnalite = ControleurJeu.getListeFonctionnalite(); //remet à jour la liste de fonctionnalité
 
@@ -83,7 +96,7 @@ namespace Menu
                     perso.setDisponible(true);
                 }
 
-                else if(perso.estDisponible() == false && perso.getMalade() == false)
+                else if (perso.estDisponible() == false && perso.getMalade() == false)
                 {
                     this.Enabled = false;
                     this.BackColor = Color.SpringGreen;
@@ -100,15 +113,27 @@ namespace Menu
             {
                 //this.setProductivite();
                 this.Enabled = false;
-                
+
             }
             copiFonc();
 
 
+            lblAction1.Visible = true;
+            btnSupprimerTache1.Visible = true;
+            cboFonctionnalite1.Visible = true;
+            this.reunion = false;
 
+        }
+        public void addNbrAction()
+        {
+            perso.setnbrActionFaite(perso.getnbrActionFaite() + 1);
 
         }
 
+        public int getNbrAction()
+        {
+            return nbrActionFaite;
+        }
 
         public void setPrenom(string prenom)
         {
@@ -125,7 +150,30 @@ namespace Menu
 
         public void setAffinite(Personnage p)
         {
-            affinite.Text = "Affinité avec " + p.getPrenom();
+            if (p is null)
+            {
+                affinite.Text = " - ";
+            }
+            else
+            {
+                affinite.Text = p.getPrenom();
+            }
+
+
+        }
+
+        public void setDeteste(Personnage p)
+        {
+            if (p is null)
+            {
+                lblDeteste.Text = " - ";
+
+            }
+            else
+            {
+                lblDeteste.Text = p.getPrenom();
+            }
+
         }
         public void setProductivite(double productivite)
         {
@@ -137,16 +185,7 @@ namespace Menu
             lblValStress.Text = String.Empty;
             lblValStress.Text = stress.ToString() + "   /100";
         }
-        public void setConnaissances(int connaissance)
-        {
-            lblValConnaissance.Text = String.Empty;
-            lblValConnaissance.Text = connaissance.ToString() + "   /100";
-        }
-        public void setSociabilite(int sociabilite)
-        {
-            lblValSociabilite.Text = String.Empty;
-            lblValSociabilite.Text = sociabilite.ToString() + "   /100";
-        }
+
         public void copiFonc()
         {
             cboFonctionnalite1.Items.Clear();
@@ -179,7 +218,7 @@ namespace Menu
                 }
             }
 
-            if (cboFonctionnalite1.SelectedIndex == -1)
+            if (cboFonctionnalite1.SelectedIndex == -1 && reunion == false)
             {
                 cboFonctionnalite1.SelectedIndex = index;
             }
@@ -203,28 +242,30 @@ namespace Menu
 
 
         public void recherche(Personnage perso)
-            {
-                perso.setConnaissances(perso.getConnaissances() + 10);
-            }
+        {
+            perso.setConnaissances(perso.getConnaissances() + 10);
+        }
 
-            public void crunchActive()
-            {
-                this.lblAction3.Visible = true;
-                this.cboFonctionnalite3.Visible = true;
-                this.btnSupprimerTache3.Visible = true;
-            }
+        public void crunchActive()
+        {
+            this.lblAction3.Visible = true;
+            this.cboFonctionnalite3.Visible = true;
+            this.btnSupprimerTache3.Visible = true;
+        }
 
-            public void crunchDesactive()
-            {
-                this.lblAction3.Visible = false;
-                this.cboFonctionnalite3.Visible = false;
-                this.btnSupprimerTache3.Visible = false;
-            }
+        public void crunchDesactive()
+        {
+            this.lblAction3.Visible = false;
+            this.cboFonctionnalite3.Visible = false;
+            this.btnSupprimerTache3.Visible = false;
+        }
 
         public void rendreAffinitesVisible()
         {
             affinite.Visible = true;
             pbCoeur.Visible = true;
+            lblDeteste.Visible = true;
+            pbCoeurNoir.Visible = true;
         }
 
         public void rendrePrenomsVisible()
@@ -237,39 +278,46 @@ namespace Menu
             pbCacheur.Visible = false;
         }
 
+        public void rendreCBO1Visible()
+        {
+            cboFonctionnalite1.Visible = false;
+            lblAction1.Visible = false;
+            btnSupprimerTache1.Visible = false;
+        }
 
 
-            public void donnerTachePerso()
+
+        public void donnerTachePerso()
+        {
+            List<Fonctionnalites> listeTache = new List<Fonctionnalites>();
+
+            //arrayliste des taches que le personnage va effectuer
+
+            foreach (Fonctionnalites f in listfonctionnalite)
             {
-                List<Fonctionnalites> listeTache = new List<Fonctionnalites>();
+                //MessageBox.Show(cboFonctionnalite1.Text);
 
-                //arrayliste des taches que le personnage va effectuer
-
-                foreach (Fonctionnalites f in listfonctionnalite)
+                if (f.getNom() + " (" + f.getNvConnaissNecces() + ")" == cboFonctionnalite1.Text )  // dans une cboFonctionnale on a "nom (NvConnaissNecces)"
                 {
-                    //MessageBox.Show(cboFonctionnalite1.Text);
-
-                    if (f.getNom() + " (" + f.getNvConnaissNecces() + ")" == cboFonctionnalite1.Text)  // dans une cboFonctionnale on a "nom (NvConnaissNecces)"
+                    listeTache.Add(f);
+                }
+                if (f.getNom() + " (" + f.getNvConnaissNecces() + ")" == cboFonctionnalite2.Text)
                 {
-                        listeTache.Add(f);
-                    }
-                    if (f.getNom() + " (" + f.getNvConnaissNecces() + ")" == cboFonctionnalite2.Text)
+                    listeTache.Add(f);
+                }
+                if (cboFonctionnalite3.Visible != false)  //si le crunch est activé alors ajouter une tache en plus
+                {
+                    if (f.getNom() + " (" + f.getNvConnaissNecces() + ")" == cboFonctionnalite3.Text)
                     {
                         listeTache.Add(f);
-                    }
-                    if (cboFonctionnalite3.Visible != false)  //si le crunch est activé alors ajouter une tache en plus
-                    {
-                        if (f.getNom() + " (" + f.getNvConnaissNecces() + ")" == cboFonctionnalite3.Text)
-                        {
-                            listeTache.Add(f);
-                        }
                     }
                 }
-
-                ControleurJeu.tache(this.perso, listeTache);
-
-
             }
+
+            ControleurJeu.tache(this.perso, listeTache);
+
+
+        }
 
         private void btnSupprimerTache1_Click(object sender, EventArgs e)
         {
@@ -288,6 +336,11 @@ namespace Menu
             cboFonctionnalite3.Controls.Clear();
             cboFonctionnalite3.SelectedIndex = -1;
         }
+
+        private void UC_Personnage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}
 
