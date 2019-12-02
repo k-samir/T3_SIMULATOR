@@ -50,14 +50,17 @@
             this.lblValStress = new System.Windows.Forms.Label();
             this.lblValConnaissance = new System.Windows.Forms.Label();
             this.lblValSociabilite = new System.Windows.Forms.Label();
-            this.affinite = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.pbCoeur = new System.Windows.Forms.PictureBox();
+            this.lblDeteste = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pbCoeurNoir = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbCacheur = new System.Windows.Forms.PictureBox();
+            this.pbCoeur = new System.Windows.Forms.PictureBox();
+            this.affinite = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.grpAction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoeurNoir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCacheur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPrenom
@@ -194,7 +197,7 @@
             this.cboFonctionnalite3.FormattingEnabled = true;
             this.cboFonctionnalite3.Location = new System.Drawing.Point(99, 116);
             this.cboFonctionnalite3.Name = "cboFonctionnalite3";
-            this.cboFonctionnalite3.Size = new System.Drawing.Size(262, 31);
+            this.cboFonctionnalite3.Size = new System.Drawing.Size(262, 37);
             this.cboFonctionnalite3.TabIndex = 15;
             this.cboFonctionnalite3.Visible = false;
             // 
@@ -205,7 +208,7 @@
             this.cboFonctionnalite2.FormattingEnabled = true;
             this.cboFonctionnalite2.Location = new System.Drawing.Point(99, 78);
             this.cboFonctionnalite2.Name = "cboFonctionnalite2";
-            this.cboFonctionnalite2.Size = new System.Drawing.Size(262, 31);
+            this.cboFonctionnalite2.Size = new System.Drawing.Size(262, 37);
             this.cboFonctionnalite2.TabIndex = 14;
             // 
             // cboFonctionnalite1
@@ -215,7 +218,7 @@
             this.cboFonctionnalite1.FormattingEnabled = true;
             this.cboFonctionnalite1.Location = new System.Drawing.Point(99, 40);
             this.cboFonctionnalite1.Name = "cboFonctionnalite1";
-            this.cboFonctionnalite1.Size = new System.Drawing.Size(262, 31);
+            this.cboFonctionnalite1.Size = new System.Drawing.Size(262, 37);
             this.cboFonctionnalite1.TabIndex = 13;
             // 
             // lblAction3
@@ -284,27 +287,27 @@
             this.lblValSociabilite.TabIndex = 16;
             this.lblValSociabilite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // affinite
+            // lblDeteste
             // 
-            this.affinite.AutoSize = true;
-            this.affinite.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.affinite.Location = new System.Drawing.Point(255, 167);
-            this.affinite.Name = "affinite";
-            this.affinite.Size = new System.Drawing.Size(94, 17);
-            this.affinite.TabIndex = 17;
-            this.affinite.Text = "Affinité avec :";
-            this.affinite.Visible = false;
+            this.lblDeteste.AutoSize = true;
+            this.lblDeteste.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeteste.Location = new System.Drawing.Point(255, 176);
+            this.lblDeteste.Name = "lblDeteste";
+            this.lblDeteste.Size = new System.Drawing.Size(87, 22);
+            this.lblDeteste.TabIndex = 17;
+            this.lblDeteste.Text = "Deteste :";
+            this.lblDeteste.Visible = false;
             // 
-            // pbCoeur
+            // pbCoeurNoir
             // 
-            this.pbCoeur.BackgroundImage = global::Menu.Properties.Resources._30571;
-            this.pbCoeur.Location = new System.Drawing.Point(399, 161);
-            this.pbCoeur.Name = "pbCoeur";
-            this.pbCoeur.Size = new System.Drawing.Size(25, 23);
-            this.pbCoeur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoeur.TabIndex = 19;
-            this.pbCoeur.TabStop = false;
-            this.pbCoeur.Visible = false;
+            this.pbCoeurNoir.BackgroundImage = global::Menu.Properties.Resources._30571;
+            this.pbCoeurNoir.Location = new System.Drawing.Point(387, 176);
+            this.pbCoeurNoir.Name = "pbCoeurNoir";
+            this.pbCoeurNoir.Size = new System.Drawing.Size(25, 23);
+            this.pbCoeurNoir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoeurNoir.TabIndex = 19;
+            this.pbCoeurNoir.TabStop = false;
+            this.pbCoeurNoir.Visible = false;
             // 
             // pictureBox1
             // 
@@ -325,14 +328,39 @@
             this.pbCacheur.TabIndex = 20;
             this.pbCacheur.TabStop = false;
             // 
+            // pbCoeur
+            // 
+            this.pbCoeur.BackgroundImage = global::Menu.Properties.Resources._30571;
+            this.pbCoeur.Image = ((System.Drawing.Image)(resources.GetObject("pbCoeur.Image")));
+            this.pbCoeur.Location = new System.Drawing.Point(387, 150);
+            this.pbCoeur.Name = "pbCoeur";
+            this.pbCoeur.Size = new System.Drawing.Size(25, 23);
+            this.pbCoeur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoeur.TabIndex = 22;
+            this.pbCoeur.TabStop = false;
+            this.pbCoeur.Visible = false;
+            // 
+            // affinite
+            // 
+            this.affinite.AutoSize = true;
+            this.affinite.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.affinite.Location = new System.Drawing.Point(255, 152);
+            this.affinite.Name = "affinite";
+            this.affinite.Size = new System.Drawing.Size(124, 22);
+            this.affinite.TabIndex = 21;
+            this.affinite.Text = "Affinité avec :";
+            this.affinite.Visible = false;
+            // 
             // UC_Personnage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Controls.Add(this.pbCacheur);
             this.Controls.Add(this.pbCoeur);
             this.Controls.Add(this.affinite);
+            this.Controls.Add(this.pbCacheur);
+            this.Controls.Add(this.pbCoeurNoir);
+            this.Controls.Add(this.lblDeteste);
             this.Controls.Add(this.lblValSociabilite);
             this.Controls.Add(this.lblValConnaissance);
             this.Controls.Add(this.lblValStress);
@@ -351,9 +379,10 @@
             this.Name = "UC_Personnage";
             this.Size = new System.Drawing.Size(430, 343);
             this.grpAction.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoeurNoir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCacheur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,8 +412,10 @@
         private System.Windows.Forms.Button btnSupprimerTache3;
         private System.Windows.Forms.Button btnSupprimerTache2;
         private System.Windows.Forms.Button btnSupprimerTache1;
-        private Bunifu.Framework.UI.BunifuCustomLabel affinite;
-        private System.Windows.Forms.PictureBox pbCoeur;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblDeteste;
+        private System.Windows.Forms.PictureBox pbCoeurNoir;
         private System.Windows.Forms.PictureBox pbCacheur;
+        private System.Windows.Forms.PictureBox pbCoeur;
+        private Bunifu.Framework.UI.BunifuCustomLabel affinite;
     }
 }

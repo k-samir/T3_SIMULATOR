@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Menu.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,18 @@ namespace Menu.Forms
         public frmReunion()
         {
             InitializeComponent();
+            foreach (Reunion r in ControleurJeu.getListeReunion())
+            {
+                if (r.getStatut() && r.getThemeReunion() == "Mettre en place un système d'organisation")
+                {
+                    button3.Visible = true;     //si un système d'organisation a été mis en place et qu'un chef de groupe a été désigné alors on peut désormais faire le point
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmButReunion fbr = new frmButReunion(this);
+            frmButReunion fbr = new frmButReunion();
             //this.Hide();
             fbr.themeReunion(button1.Text);     //pour faire passer un theme au formulaire frmbutreunion
             DialogResult dr = new DialogResult();
@@ -39,7 +47,7 @@ namespace Menu.Forms
 
         private void btnInfo2_Click(object sender, EventArgs e)
         {
-            frmButReunion fbr = new frmButReunion(this);
+            frmButReunion fbr = new frmButReunion();
            // this.Hide();
             fbr.themeReunion(button2.Text);     //pour faire passer un theme au formulaire frmbutreunion
             DialogResult dr = new DialogResult();
@@ -53,7 +61,7 @@ namespace Menu.Forms
 
         private void btnInfo3_Click(object sender, EventArgs e)
         {
-            frmButReunion fbr = new frmButReunion(this);
+            frmButReunion fbr = new frmButReunion();
           //  this.Hide();
             fbr.themeReunion(button3.Text);         //pour faire passer un theme au formulaire frmbutreunion
             DialogResult dr = new DialogResult();

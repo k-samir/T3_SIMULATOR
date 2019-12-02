@@ -9,25 +9,32 @@ using Menu.Classes;
 
 namespace Menu
 {
+
     public class ControleurJeu
     {
-        public Projet Projet
-        {
-            get => default;
-            set
-            {
-            }
-        }
+      
                              
 
         //variable globale
         private static ArrayList listfonctionnalite = new ArrayList();
         private static ArrayList listPersonnage = new ArrayList();
         private static ArrayList listReunion = new ArrayList();
+
         private static ArrayList listeQualites = new ArrayList();
         private static int nbQualites = 1;
         private static ArrayList listeDefauts = new ArrayList();
         private static int nbDefauts = nbQualites;   //deux variables pour pouvoir mettre plus de qualites que de defauts ou inversement
+
+
+        //a priori on n'aura qu'un seul point fort et point faible : on met sous forme d'arraylist pour l'évolutivité de l'application, si j'amais on décide d'en metre plus d'un
+        private static ArrayList listePointsForts = new ArrayList();
+        private static int nbPointsForts = 1;
+        private static ArrayList listePointsFaibles = new ArrayList();
+        private static int nbPointsFaibles = nbPointsForts;   //deux variables pour pouvoir mettre plus de points forts que de points faibles ou inversement
+
+        //on y stockera les indices de chaque qualites et defauts afin de ne pas avoir de qualités/défauts doublons ou opposés
+        private static ArrayList listeRand1 = new ArrayList();
+        private static ArrayList listeRand2 = new ArrayList();
 
 
         Personnage p1;
@@ -35,13 +42,14 @@ namespace Menu
         Personnage p3;
         Personnage p4;
 
+        frmJeu jeu;
 
 
         // frmJeu jeu;
 
         private int compteurTours = 0;
 
-        frmJeu jeu;
+        
         
         public void lancerJeu(frmMenu fm)
         {
@@ -55,6 +63,277 @@ namespace Menu
 
 
 
+            //creation personnage
+            p1 = remplirPersonnage("Valentin", 2.0, 0, 82, null,null);
+            p2 = remplirPersonnage("Aymeric", 2.0, 20, 80, null,null);
+            p3 = remplirPersonnage("Mathieu", 3.3, 40, 50, null,null);
+            p4 = remplirPersonnage("Samir", 4.2, 10, 45, null,null);
+
+
+
+            /*
+            FONCTIONNALITES ( NOM , PANECESS , POURCENTNOTE , NVCONNAIS , PADEPENSE , TYPE) */
+
+
+
+            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 10, 0, 0, "Rechercher");
+            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 10, 0, 0, "Rechercher");
+            Fonctionnalites f3 = new Fonctionnalites("Code", 10, 0, 0, "Rechercher");
+            Fonctionnalites f4 = new Fonctionnalites("MCD", 10, 0, 0, "Concevoir");
+            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 10, 0, 0, "Concevoir");
+            Fonctionnalites f6 = new Fonctionnalites("GIT", 10, 0, 0, "Concevoir");
+            Fonctionnalites f7 = new Fonctionnalites("Classes", 10, 0, 0, "Développer");
+            Fonctionnalites f8 = new Fonctionnalites("Controleur", 10, 0, 0, "Développer");
+            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 10, 0, 0, "Développer");
+
+            //REUNION(THEME DE LA REUNION) et le statut de cette réunion est par défaut à false
+            Reunion r1 = new Reunion("Faire connaissance");
+            Reunion r2 = new Reunion("Évaluer le potentiel du groupe");
+            Reunion r3 = new Reunion("Révèle les qualités et les défauts");
+            Reunion r4 = new Reunion("Analyse des affinités de chacun");
+            Reunion r5 = new Reunion("Découvrir le projet");
+            Reunion r6 = new Reunion("Analyse de la demande du client et de ses besoins + Définir un cahier des charges");
+            Reunion r7 = new Reunion("Mettre en place un système d'organisation");
+            Reunion r8 = new Reunion("Mettre en commun le travail et l'avancement de chacun");
+
+
+            listReunion.Add(r1);
+            listReunion.Add(r2);
+            listReunion.Add(r3);
+            listReunion.Add(r4);
+            listReunion.Add(r5);
+            listReunion.Add(r6);
+            listReunion.Add(r7);
+            listReunion.Add(r8);
+
+
+            listfonctionnalite.Add(f1);
+            listfonctionnalite.Add(f2);
+            listfonctionnalite.Add(f3);
+            listfonctionnalite.Add(f4);
+            listfonctionnalite.Add(f5);
+            listfonctionnalite.Add(f6);
+            listfonctionnalite.Add(f7);
+            listfonctionnalite.Add(f8);
+            listfonctionnalite.Add(f9);
+            verifPourcentNote();
+
+            listPersonnage.Add(p1);
+            listPersonnage.Add(p2);
+            listPersonnage.Add(p3);
+            listPersonnage.Add(p4);
+
+
+
+
+            foreach (Personnage p in listPersonnage)
+            {
+                
+
+                int randAffinite = aleatoire.Next(4);
+                int randDeteste = aleatoire.Next(4);
+
+                if (listPersonnage[randAffinite] != p)
+                {
+                    p.setAffinite((Personnage)listPersonnage[randAffinite]);
+                }
+
+
+
+
+                if (listPersonnage[randDeteste] != p && listPersonnage[randDeteste] != p.getAffinite())
+                {
+                    p.setDeteste((Personnage)listPersonnage[randDeteste]);
+                }
+
+
+
+
+            }
+            jeu = new frmJeu(p1, p2, p3, p4,10);
+            
+            jeu.Refresh();
+            jeu.Show();
+        }
+
+        public static void attributionQualitesDefautsPointsFortsEtFaibles()
+        {
+            /* ---------------- qualites, defauts, points forts et faibles (setup listes) ---------------- */
+
+
+            listeQualites.Add("Sang-froid");        //stress monte moins vite
+            listeQualites.Add("Inépuisable");       //fatigue monte moins vite
+            listeQualites.Add("Diplomate");         //sociabilité +20 points
+
+
+            listeDefauts.Add("Stressé");                    //stress monte plus vite
+            listeDefauts.Add("Fatigué");                //fatigue monte plus vite
+            listeDefauts.Add("Asocial");                //sociabilité -20 points
+
+            listePointsForts.Add("Talentueux");        //ttes les actions *1,5
+            listePointsForts.Add("Développeur né");    //dv *1,5
+            listePointsForts.Add("Concepteur né");        //conception *1,5
+            listePointsForts.Add("Chercheur né");        //recherche *1,5
+
+            listePointsFaibles.Add("Incompétent notoire");    //ttes les actions *1,5
+            listePointsFaibles.Add("Mauvais développeur");    //dv * 0,5
+            listePointsFaibles.Add("Mauvais concepteur");     //conception * 0,5
+            listePointsFaibles.Add("Mauvaise chercheur");     //recherche * 0,5
+
+            //bug si les listeRand sont vides : donc on initialise une valeur
+            listeRand1[0] = -1;
+            listeRand2[0] = -1;
+            /* -------------------------------- */
+
+            /* ----------------  qualites, defauts, points forts et faibles (distribution) ---------------- */
+
+            Random aleatoire = new Random();
+
+            foreach (Personnage p in listPersonnage)
+            {
+                //qualités
+                for (int i = 0; i < nbQualites; i++)
+                {
+                    int rand1 = aleatoire.Next(listeQualites.Count);   //de 0 à Count-1
+
+                    //verifie nouvelle qualité
+                    bool ok = false;
+                    while (ok == false)
+                    {
+                        ok = true;
+                        for (int j = 0; j < listeRand1.Count; j++)
+                        {
+                            if (rand1 == (int)listeRand1[j])
+                            {
+                                ok = false;
+                                rand1 = aleatoire.Next(listeQualites.Count);
+                            }
+                        }
+
+                    }
+                    p.qualites.Add(listeQualites[rand1]);
+                    listeRand1[i] = rand1;
+
+                }
+                //défauts
+                for (int i = 0; i < nbDefauts; i++)
+                {
+                    int rand2 = aleatoire.Next(listeDefauts.Count);   //de 0 à Count-1
+                    bool ok = false;
+
+                    //dans cette boucle on vérifie que le défaut est nouveau pour ce personnage et qu'il est compatible avec les qualites de ce personnage (même argument (rand) => incompatibles)
+                    while (ok == false)
+                    {
+                        ok = true;
+                        //verifie compatible avec qualites
+                        for (int j = 0; j < nbQualites; j++)
+                        {
+                            if (rand2 == (int)listeRand1[j])
+                            {
+                                ok = false;
+                                rand2 = aleatoire.Next(listeDefauts.Count);
+                            }
+                        }
+                        //verifie nouveau defaut
+                        for (int j = 0; j < listeRand2.Count; j++)
+                        {
+                            if (rand2 == (int)listeRand2[j])
+                            {
+                                ok = false;
+                                rand2 = aleatoire.Next(listeDefauts.Count);
+                            }
+                        }
+                    }
+                    p.defauts.Add(listeDefauts[rand2]);
+                    listeRand2[i] = rand2;
+                }
+
+                //on "vide" les liste rand pour les réutiliser pour points forts et faibles
+                for (int j = 0; j < nbQualites; j++)
+                {
+                    listeRand1[j] = -1;
+                }
+                for (int j = 0; j < nbDefauts; j++)
+                {
+                    listeRand2[j] = -1;
+                }
+
+
+                //points forts
+                for (int i = 0; i < nbPointsForts; i++)
+                {
+                    int rand1 = aleatoire.Next(listePointsForts.Count);   //de 0 à Count-1
+
+                    //verifie nouveau point fort
+                    bool ok = false;
+                    while (ok == false)
+                    {
+                        ok = true;
+                        for (int j = 0; j < listeRand1.Count; j++)
+                        {
+                            if (rand1 == (int)listeRand1[j])
+                            {
+                                ok = false;
+                                rand1 = aleatoire.Next(listePointsForts.Count);
+                            }
+                        }
+                    }
+                    p.pointsForts.Add(listePointsForts[rand1]);
+                    listeRand1[i] = rand1;
+
+
+                }
+
+                //points faibles
+                for (int i = 0; i < nbPointsFaibles; i++)
+                {
+                    int rand2 = aleatoire.Next(listePointsFaibles.Count);   //de 0 à Count-1
+
+                    bool ok = false;
+                    //dans cette boucle on vérifie que le point faible est nouveau pour ce personnage et qu'il est compatible avec les points forts de ce personnage (même argument (rand) => incompatibles)
+                    while (ok == false)
+                    {
+                        ok = true;
+                        //verifie compatible avec pointsForts
+                        for (int j = 0; j < nbPointsForts; j++)
+                        {
+                            if (rand2 == (int)listeRand1[j])
+                            {
+                                ok = false;
+                                rand2 = aleatoire.Next(listePointsFaibles.Count);
+                            }
+                        }
+                        //verifie nouveau pointFaible
+                        for (int j = 0; j < listeRand2.Count; j++)
+                        {
+                            if (rand2 == (int)listeRand2[j])
+                            {
+                                ok = false;
+                                rand2 = aleatoire.Next(listePointsFaibles.Count);
+                            }
+                        }
+                    }
+                    p.pointsFaibles.Add(listePointsFaibles[rand2]);
+                    listeRand2[i] = rand2;
+                }
+
+            }
+            /* -------------------------------- */
+        }
+
+
+        public void lancerJeu2(frmMenu fm)
+        {
+            fm.Hide();
+
+            /*
+             */
+
+            /* ---------------- qualites et defauts ---------------- */
+            Random aleatoire = new Random();
+
+
+
             listeQualites.Add("Sang-froid");        //stress monte moins vite
             listeQualites.Add("Inépuisable");       //fatigue monte moins vite
             listeQualites.Add("Talentueux");        //ttes les actions *1,5
@@ -62,7 +341,7 @@ namespace Menu
             listeQualites.Add("Concepteur né");        //conception *1,5
             listeQualites.Add("Chercheur né");        //recherche *1,5
             listeQualites.Add("Diplomate");            //relations +10 points
-           
+
 
             listeDefauts.Add("Stressé");                    //stress monte plus vite
             listeDefauts.Add("Fatigué");                //fatigue monte plus vite
@@ -76,10 +355,10 @@ namespace Menu
 
 
             //creation personnage
-            p1 = remplirPersonnage("Valentin", 2.0, 0, 82, null);
-            p2 = remplirPersonnage("Aymeric", 2.0, 20, 80, null);
-            p3 = remplirPersonnage("Mathieu", 3.3, 40, 50, null);
-            p4 = remplirPersonnage("Samir", 4.2, 10, 45, null);
+            p1 = remplirPersonnage("Valentin", 2.0, 0, 82, null, null);
+            p2 = remplirPersonnage("Aymeric", 2.0, 20, 80, null, null);
+            p3 = remplirPersonnage("Mathieu", 3.3, 40, 50, null, null);
+            p4 = remplirPersonnage("Samir", 4.2, 10, 45, null, null);
 
 
 
@@ -157,30 +436,37 @@ namespace Menu
                 }
 
                 int randAffinite = aleatoire.Next(4);
+                int randDeteste = aleatoire.Next(4);
 
-                if(listPersonnage[randAffinite] != p)
+                if (listPersonnage[randAffinite] != p)
                 {
                     p.setAffinite((Personnage)listPersonnage[randAffinite]);
                 }
-                else
+
+
+
+
+                if (listPersonnage[randDeteste] != p && listPersonnage[randDeteste] != p.getAffinite())
                 {
-                    p.setAffinite((Personnage)listPersonnage[aleatoire.Next(4)]);
+                    p.setDeteste((Personnage)listPersonnage[randDeteste]);
                 }
-                
-                
+
+
 
 
             }
 
-            jeu = new frmJeu(p1, p2, p3, p4);
+            jeu = new frmJeu(p1, p2, p3, p4,20);
+
             jeu.Refresh();
             jeu.Show();
         }
 
 
-        public Personnage remplirPersonnage(string prenom, double productivite, int stress, int sociabilite, Personnage affinite) //créer personnage avec attributs en paramètres
+
+        public Personnage remplirPersonnage(string prenom, double productivite, int stress, int sociabilite, Personnage affinite, Personnage deteste) //créer personnage avec attributs en paramètres
         {
-            return new Personnage(prenom, productivite, stress, sociabilite, affinite);
+            return new Personnage(prenom, productivite, stress, sociabilite, affinite,deteste);
         }
 
         public static ArrayList getListeReunion()
@@ -202,12 +488,12 @@ namespace Menu
 
         public static void arreterJeu(String s)
         {
-            listfonctionnalite.Clear();
-            listPersonnage.Clear();
+           // listfonctionnalite.Clear();
+           // listPersonnage.Clear();
 
             
             MessageBox.Show("Fin de la partie");
-            Forms.FrmEnd e = new Forms.FrmEnd(s);
+            Forms.FrmEnd e = new Forms.FrmEnd(s,listfonctionnalite,frmJeu.getAvancement());
             e.Show();
 
             
@@ -236,15 +522,54 @@ namespace Menu
             }
         }
 
+       /* public int getNbrActionFaite(Personnage p)
+        {
+
+            int nbrres = 0;
+
+            foreach (Object temp in Controls)
+            {
+                MessageBox.Show(temp.ToString());
+                //foreach (Object o in temp.Controls)
+                //{
+                if (temp is UC_Personnage)
+                {
+                    UC_Personnage up = (UC_Personnage)temp;
+                    MessageBox.Show(up.getPersonnage().getPrenom());
+
+                    if (up.getPersonnage().getPrenom() == p.getPrenom())
+                    {
+
+                        foreach (Object op in up.Controls)
+                        {
+                            if (op is ComboBox)
+                            {
+                                ComboBox cbo = (ComboBox)op;
+
+                                if (cbo.Name == "cboAction1" || cbo.Name == "cboAction2")
+                                {
+                                    nbrres++;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+            
+
+        }*/
         //Modification de tous les attributs
         public static void calculsAttributs()
         {
             foreach (Personnage p in listPersonnage)
             {
-                p.setFatigue(p.getFatigue() + 10);
+               // p.setFatigue(p.getFatigue() + 10);
                 // PARCOURS DES ACTIONS SELECTIONNEES
 
-                int v = frmJeu.getNbrActionFaite(p);
+                int v = p.getnbrActionFaite();
+                //MessageBox.Show(p.getPrenom() + " : " + p.getnbrActionFaite().ToString());
+                
                
                 for (int i =0;i< v; i++)
                 {

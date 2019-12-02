@@ -13,7 +13,7 @@ namespace Menu.classePersonnage
         //Attributs d'un personnage 
         //private int id;
         private string prenom;
-        private int fatigue = 20;
+        private int fatigue = 0;
         private double productivite;
         private int stress;
         private int connaissances = 0;
@@ -21,24 +21,51 @@ namespace Menu.classePersonnage
         private bool malade = false;
         private bool estDispo = true;
         private Personnage affinite;
+        private Personnage deteste;
+
+        public int nbrActionFaite = 0;
 
         public ArrayList qualites = new ArrayList();
         public ArrayList defauts = new ArrayList();
 
+        public ArrayList pointsForts = new ArrayList();
+        public ArrayList pointsFaibles = new ArrayList();
+
+
         //Constructeur de la classe personnage
-        public Personnage(string prenom, double productivite, int stress, int sociabilite, Personnage affinite)
+        public Personnage(string prenom, double productivite, int stress, int sociabilite, Personnage affinite, Personnage deteste)
         {
             this.prenom = prenom;
             this.productivite = productivite;
             this.stress = stress;
             this.sociabilite = sociabilite;
             this.affinite = affinite;
+            this.deteste = deteste;
 
+        }
+        public void setDeteste(Personnage p)
+        {
+            this.deteste = p;
+        }
+
+        public Personnage getDeteste()
+        {
+            return this.deteste;
+        }
+
+        public int getnbrActionFaite()
+        {
+            return nbrActionFaite;
+        }
+
+        public void setnbrActionFaite(int a)
+        {
+            nbrActionFaite = a;
         }
 
         public void setMalade(bool malade)
         {
-            this.malade = malade; 
+            this.malade = malade;
         }
 
         public bool getMalade()
@@ -66,7 +93,7 @@ namespace Menu.classePersonnage
         }
         public bool estDisponible()
         {
-            if(this.malade == false && this.estDispo == true)
+            if (this.malade == false && this.estDispo == true)
             {
                 return true;
             }
@@ -76,14 +103,14 @@ namespace Menu.classePersonnage
                 return false;
             }
 
-            
+
         }
 
         public void setDisponible(bool res)
         {
             this.estDispo = res;
         }
-        
+
         /* ------------------------------------------- actions ---------------------------- */
         public void realisation(Menu.Fonctionnalites fct, int nbPa)
         {
@@ -223,38 +250,42 @@ namespace Menu.classePersonnage
             this.productivite = productivite;
         }
 
-        public void faireAction(Fonctionnalites action){    //tache que le personnage va effectuer
-            if(action.getPaDepense() >= action.getPaNecess() && action.getStatus() == false)
+
+
+        public void faireAction(Fonctionnalites action)
+        {    //tache que le personnage va effectuer
+            if (action.getPaDepense() >= action.getPaNecess() && action.getStatus() == false)
             {
                 action.setStatus(true); //modif du status pour dire que la tache est terminée
-                
+
             }
-            
-            if(action.getStatus() == false)
+
+            if (action.getStatus() == false)
             {
+
                 int ajoutPA = 10;
 
-                for (int i = 0; i < qualites.Count; i++)
+                for (int i = 0; i < pointsForts.Count; i++)
                 {
-                    if (qualites[i] == "Talentueux")
+                    if (pointsForts[i] == "Talentueux")
                     {
                         ajoutPA += (ajoutPA / 2); //+50%
                     }
-                    if (qualites[i] == "Développeur né")
+                    if (pointsForts[i] == "Développeur né")
                     {
                         if (action.getType() == "Développer")
                         {
                             ajoutPA += (ajoutPA / 2); //+50%
                         }
                     }
-                    if (qualites[i] == "Concepteur né")
+                    if (pointsForts[i] == "Concepteur né")
                     {
                         if (action.getType() == "Concevoir")
                         {
                             ajoutPA += (ajoutPA / 2); //+50%
                         }
                     }
-                    if (qualites[i] == "Chercheur né")
+                    if (pointsForts[i] == "Chercheur né")
                     {
                         if (action.getType() == "Rechercher")
                         {
@@ -262,27 +293,27 @@ namespace Menu.classePersonnage
                         }
                     }
                 }
-                for (int i = 0; i < defauts.Count; i++)
+                for (int i = 0; i < pointsFaibles.Count; i++)
                 {
-                    if (defauts[i] == "Incompétent notoire")
+                    if (pointsFaibles[i] == "Incompétent notoire")
                     {
                         ajoutPA -= (ajoutPA / 2); //-50%
                     }
-                    if (defauts[i] == "Mauvais développeur")
+                    if (pointsFaibles[i] == "Mauvais développeur")
                     {
                         if (action.getType() == "Développer")
                         {
                             ajoutPA -= (ajoutPA / 2); //-50%
                         }
                     }
-                    if (defauts[i] == "Mauvais concepteur")
+                    if (pointsFaibles[i] == "Mauvais concepteur")
                     {
                         if (action.getType() == "Concevoir")
                         {
                             ajoutPA -= (ajoutPA / 2); //-50%
                         }
                     }
-                    if (defauts[i] == "Mauvais chercheur")
+                    if (pointsFaibles[i] == "Mauvais chercheur")
                     {
                         if (action.getType() == "Rechercher")
                         {
@@ -297,16 +328,15 @@ namespace Menu.classePersonnage
                 {
                     action.setStatus(true); //modif du status pour dire que la tache est terminée
                 }
-
             }
-
-
-           
-
         }
-
-
-
     }
+    
+
+
+
+
+
+            
 
 }

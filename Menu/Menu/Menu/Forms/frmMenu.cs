@@ -77,5 +77,12 @@ namespace Menu
             btnDifficile.Size = new System.Drawing.Size(200, 68);
             btnDifficile.Margin = new System.Windows.Forms.Padding(6);
         }
+
+        private void btnDifficile_Click(object sender, EventArgs e)
+        {
+            ControleurJeu j = new ControleurJeu();
+
+            j.lancerJeu2(this);
+        }
     }
 }
