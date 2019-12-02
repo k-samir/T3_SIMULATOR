@@ -61,7 +61,7 @@
             this.MinimumSize = new System.Drawing.Size(633, 520);
             this.Name = "frmButReunion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmButReunion";
+            this.Text = "But de la réunion";
             this.ResumeLayout(false);
 
         }

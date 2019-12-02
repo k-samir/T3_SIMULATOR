@@ -11,7 +11,7 @@ namespace Menu.classePersonnage
     public class Personnage
     {
         //Attributs d'un personnage 
-        private int id;
+        //private int id;
         private string prenom;
         private int fatigue = 20;
         private double productivite;
@@ -131,10 +131,7 @@ namespace Menu.classePersonnage
             this.prenom = prenom;
         }
 
-        public int getId()
-        {
-            return this.id;
-        }
+
 
 
         public int getFatigue()

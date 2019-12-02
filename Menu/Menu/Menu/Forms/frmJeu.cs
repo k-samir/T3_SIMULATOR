@@ -60,6 +60,7 @@ namespace Menu
                 {
                     lstTache.Items.Add(f.getNom() + " (" + f.getNvConnaissNecces() + ")");
                 }
+
             }
             lstTache.AllowDrop = true;
             uC_Personnage1.AllowDrop = true;
@@ -113,8 +114,10 @@ namespace Menu
 
         public void augmenterNbTour()
         {
-            //pbAvancement.Value = (int)avancement;
-            //lblDeadLine.Text = pbAvancement.Value.ToString() + "% Avancement";
+            /* ------- COMPLETEMENT RANDOM, C'EST A FAIRE ------- */
+            Random rnd = new Random();
+            int s = rnd.Next(10);
+            score.Value += score.Value + s;
             nbTour++;
         }
 
@@ -154,6 +157,7 @@ namespace Menu
 
         private void btnTourSuivant_Click(object sender, EventArgs e)
         {
+            btnReunion.Enabled = true;
             if (crunchBool == true)
             {
                 foreach (Object o in Controls)
@@ -433,8 +437,6 @@ namespace Menu
             }
 
 
-            MessageBox.Show(rtbActu.Text);
-            rtbActu.Text = String.Empty;
 
             ArrayList listPerso = ControleurJeu.getListePersonnage();
 
@@ -485,8 +487,9 @@ namespace Menu
 
         private void btnReunion_Click(object sender, EventArgs e)
         {
+            btnReunion.Enabled = false;
             frmReunion reunion = new frmReunion();
-            DialogResult dr = reunion.ShowDialog();
+            reunion.ShowDialog();
                 foreach(Reunion r in ControleurJeu.getListeReunion())
                 {
                 if (r.getStatut())       //active les effets des achievements débloqués lors de la réunion
@@ -590,8 +593,15 @@ namespace Menu
 
         private void lstTache_MouseDown(object sender, MouseEventArgs e)
         {
-            uC_Personnage3.DoDragDrop(lstTache.SelectedItem.ToString(), DragDropEffects.Copy);
-
+            try
+            {
+                uC_Personnage3.DoDragDrop(lstTache.SelectedItem.ToString(), DragDropEffects.Copy);
+            }
+            
+            catch(System.NullReferenceException exception)
+            {
+                MessageBox.Show("Veuillez drag & drop les tâches sur des personnages !");
+            }
         }
 
         //Systeme Glisser-Déposer pour le UC_Personnage3 --> 1er en haut à gauche
@@ -675,6 +685,29 @@ namespace Menu
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void switchColor_Click(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.PaleTurquoise)
+            {
+                this.BackColor = Color.Black;
+                lblTacheReal.ForeColor = Color.White;
+                lblActu.ForeColor = Color.White;
+                panel2.BackColor = Color.Gray;
+                rtbActu.BackColor = Color.Gray;
+                rtbListeF.BackColor = Color.Gray;
+            }
+            else
+            {
+                this.BackColor = Color.PaleTurquoise;
+                lblTacheReal.ForeColor = Color.Black;
+                lblActu.ForeColor = Color.Black;
+                panel2.BackColor = Color.DarkCyan;
+
+                rtbActu.BackColor = Color.White;
+                rtbListeF.BackColor = Color.White;
+            }
         }
     }
 }

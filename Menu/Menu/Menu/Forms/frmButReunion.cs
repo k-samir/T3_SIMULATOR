@@ -13,8 +13,10 @@ namespace Menu.Forms
 {
     public partial class frmButReunion : Form
     {
-        public frmButReunion()
+        frmReunion reu;
+        public frmButReunion(frmReunion f)
         {
+            this.reu = f;
             InitializeComponent();
         }
 
@@ -169,7 +171,7 @@ namespace Menu.Forms
         public void lancerNotification(object sender, EventArgs e)
         {
             this.Opacity = 0.3;     //effet flouté pour le popup
-            frmReunionPopUp popup = new frmReunionPopUp();
+            frmReunionPopUp popup = new frmReunionPopUp(reu, this);
             Button b = (Button)sender;
             popup.messagePopUp(b.Text);   //appel méthode du formulaire popup
             DialogResult dr = new DialogResult();
