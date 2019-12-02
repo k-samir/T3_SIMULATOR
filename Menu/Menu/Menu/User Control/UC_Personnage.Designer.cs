@@ -37,6 +37,9 @@
             this.lblSociabilite = new System.Windows.Forms.Label();
             this.lblAction1 = new System.Windows.Forms.Label();
             this.grpAction = new System.Windows.Forms.GroupBox();
+            this.btnSupprimerTache3 = new System.Windows.Forms.Button();
+            this.btnSupprimerTache2 = new System.Windows.Forms.Button();
+            this.btnSupprimerTache1 = new System.Windows.Forms.Button();
             this.cboFonctionnalite3 = new System.Windows.Forms.ComboBox();
             this.cboFonctionnalite2 = new System.Windows.Forms.ComboBox();
             this.cboFonctionnalite1 = new System.Windows.Forms.ComboBox();
@@ -49,9 +52,6 @@
             this.lblValSociabilite = new System.Windows.Forms.Label();
             this.affinite = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pbCoeur = new System.Windows.Forms.PictureBox();
-            this.btnSupprimerTache3 = new System.Windows.Forms.Button();
-            this.btnSupprimerTache2 = new System.Windows.Forms.Button();
-            this.btnSupprimerTache1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbCacheur = new System.Windows.Forms.PictureBox();
             this.grpAction.SuspendLayout();
@@ -142,12 +142,50 @@
             this.grpAction.Controls.Add(this.lblAction3);
             this.grpAction.Controls.Add(this.lblAction2);
             this.grpAction.Controls.Add(this.lblAction1);
-            this.grpAction.Location = new System.Drawing.Point(3, 177);
+            this.grpAction.Location = new System.Drawing.Point(3, 187);
             this.grpAction.Name = "grpAction";
-            this.grpAction.Size = new System.Drawing.Size(458, 163);
+            this.grpAction.Size = new System.Drawing.Size(458, 153);
             this.grpAction.TabIndex = 11;
             this.grpAction.TabStop = false;
-            this.grpAction.Text = "Liste d\'actions à effectuer";
+            this.grpAction.Text = "Tâches à effectuer";
+            // 
+            // btnSupprimerTache3
+            // 
+            this.btnSupprimerTache3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache3.BackgroundImage")));
+            this.btnSupprimerTache3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSupprimerTache3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupprimerTache3.Location = new System.Drawing.Point(333, 116);
+            this.btnSupprimerTache3.Name = "btnSupprimerTache3";
+            this.btnSupprimerTache3.Size = new System.Drawing.Size(28, 32);
+            this.btnSupprimerTache3.TabIndex = 18;
+            this.btnSupprimerTache3.UseVisualStyleBackColor = true;
+            this.btnSupprimerTache3.Visible = false;
+            this.btnSupprimerTache3.Click += new System.EventHandler(this.btnSupprimerTache3_Click);
+            // 
+            // btnSupprimerTache2
+            // 
+            this.btnSupprimerTache2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache2.BackgroundImage")));
+            this.btnSupprimerTache2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSupprimerTache2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupprimerTache2.Location = new System.Drawing.Point(333, 78);
+            this.btnSupprimerTache2.Name = "btnSupprimerTache2";
+            this.btnSupprimerTache2.Size = new System.Drawing.Size(28, 32);
+            this.btnSupprimerTache2.TabIndex = 17;
+            this.btnSupprimerTache2.UseVisualStyleBackColor = true;
+            this.btnSupprimerTache2.Click += new System.EventHandler(this.btnSupprimerTache2_Click);
+            // 
+            // btnSupprimerTache1
+            // 
+            this.btnSupprimerTache1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSupprimerTache1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache1.BackgroundImage")));
+            this.btnSupprimerTache1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSupprimerTache1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupprimerTache1.Location = new System.Drawing.Point(333, 40);
+            this.btnSupprimerTache1.Name = "btnSupprimerTache1";
+            this.btnSupprimerTache1.Size = new System.Drawing.Size(28, 32);
+            this.btnSupprimerTache1.TabIndex = 16;
+            this.btnSupprimerTache1.UseVisualStyleBackColor = false;
+            this.btnSupprimerTache1.Click += new System.EventHandler(this.btnSupprimerTache1_Click);
             // 
             // cboFonctionnalite3
             // 
@@ -249,10 +287,10 @@
             // affinite
             // 
             this.affinite.AutoSize = true;
-            this.affinite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.affinite.Location = new System.Drawing.Point(207, 158);
+            this.affinite.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.affinite.Location = new System.Drawing.Point(255, 167);
             this.affinite.Name = "affinite";
-            this.affinite.Size = new System.Drawing.Size(86, 16);
+            this.affinite.Size = new System.Drawing.Size(94, 17);
             this.affinite.TabIndex = 17;
             this.affinite.Text = "Affinité avec :";
             this.affinite.Visible = false;
@@ -260,51 +298,13 @@
             // pbCoeur
             // 
             this.pbCoeur.BackgroundImage = global::Menu.Properties.Resources._30571;
-            this.pbCoeur.Location = new System.Drawing.Point(343, 151);
+            this.pbCoeur.Location = new System.Drawing.Point(399, 161);
             this.pbCoeur.Name = "pbCoeur";
             this.pbCoeur.Size = new System.Drawing.Size(25, 23);
             this.pbCoeur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCoeur.TabIndex = 19;
             this.pbCoeur.TabStop = false;
             this.pbCoeur.Visible = false;
-            // 
-            // btnSupprimerTache3
-            // 
-            this.btnSupprimerTache3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache3.BackgroundImage")));
-            this.btnSupprimerTache3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSupprimerTache3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerTache3.Location = new System.Drawing.Point(333, 116);
-            this.btnSupprimerTache3.Name = "btnSupprimerTache3";
-            this.btnSupprimerTache3.Size = new System.Drawing.Size(28, 32);
-            this.btnSupprimerTache3.TabIndex = 18;
-            this.btnSupprimerTache3.UseVisualStyleBackColor = true;
-            this.btnSupprimerTache3.Visible = false;
-            this.btnSupprimerTache3.Click += new System.EventHandler(this.btnSupprimerTache3_Click);
-            // 
-            // btnSupprimerTache2
-            // 
-            this.btnSupprimerTache2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache2.BackgroundImage")));
-            this.btnSupprimerTache2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSupprimerTache2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerTache2.Location = new System.Drawing.Point(333, 78);
-            this.btnSupprimerTache2.Name = "btnSupprimerTache2";
-            this.btnSupprimerTache2.Size = new System.Drawing.Size(28, 32);
-            this.btnSupprimerTache2.TabIndex = 17;
-            this.btnSupprimerTache2.UseVisualStyleBackColor = true;
-            this.btnSupprimerTache2.Click += new System.EventHandler(this.btnSupprimerTache2_Click);
-            // 
-            // btnSupprimerTache1
-            // 
-            this.btnSupprimerTache1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnSupprimerTache1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache1.BackgroundImage")));
-            this.btnSupprimerTache1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSupprimerTache1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerTache1.Location = new System.Drawing.Point(333, 40);
-            this.btnSupprimerTache1.Name = "btnSupprimerTache1";
-            this.btnSupprimerTache1.Size = new System.Drawing.Size(28, 32);
-            this.btnSupprimerTache1.TabIndex = 16;
-            this.btnSupprimerTache1.UseVisualStyleBackColor = false;
-            this.btnSupprimerTache1.Click += new System.EventHandler(this.btnSupprimerTache1_Click);
             // 
             // pictureBox1
             // 
@@ -349,7 +349,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UC_Personnage";
-            this.Size = new System.Drawing.Size(427, 343);
+            this.Size = new System.Drawing.Size(430, 343);
             this.grpAction.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

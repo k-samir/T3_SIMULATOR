@@ -13,15 +13,22 @@ namespace Menu.Forms
 {
     public partial class frmReunionPopUp : Form
     {
-        public frmReunionPopUp()
+        frmReunion reu;
+        frmButReunion but;
+        public frmReunionPopUp(frmReunion f, frmButReunion fb)
         {
+            this.reu = f;
+            this.but = fb;
             InitializeComponent();
         }
         ArrayList liste_perso = new ArrayList();
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            reu.Close();
+            but.Close();
             this.Close();
+            
             lblInfo.Text = String.Empty;    //remet à zero le lblInfo
         }
 

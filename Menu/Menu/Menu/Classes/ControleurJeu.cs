@@ -225,6 +225,15 @@ namespace Menu
         public static void nouveauTour()
         {
             calculsAttributs();     //actualise les attributs des persos après avoir effectué des taches
+
+            Random aleatoire = new Random();
+            int rnd = aleatoire.Next(5);
+            if(rnd == 0)
+            {
+                Fonctionnalites f10 = new Fonctionnalites("Nouvelle demande client", 10, 0, 0, "Développer");
+                listfonctionnalite.Add(f10);
+                
+            }
         }
 
         //Modification de tous les attributs
@@ -290,7 +299,14 @@ namespace Menu
         public static String filActualite()     //renvoi toute les info à savoir sur l'actu du projet et des perso 
         {
             string actu = "";
-            foreach (Personnage p in listPersonnage)
+            foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
+            {
+                if(f.getNom() == "Nouvelle demande client")
+                {
+                    actu += "Nouvelle demande du client à traiter ! \n";
+                }
+            }
+                foreach (Personnage p in listPersonnage)
             {
                 if (p.getFatigue() == 100)
                 {

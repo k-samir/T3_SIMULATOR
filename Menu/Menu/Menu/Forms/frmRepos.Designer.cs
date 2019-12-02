@@ -53,7 +53,7 @@
             // 
             // lstGauche
             // 
-            this.lstGauche.BackColor = System.Drawing.Color.Orange;
+            this.lstGauche.BackColor = System.Drawing.Color.Snow;
             this.lstGauche.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstGauche.FormattingEnabled = true;
             this.lstGauche.ItemHeight = 19;
@@ -64,7 +64,7 @@
             // 
             // lstDroite
             // 
-            this.lstDroite.BackColor = System.Drawing.Color.Orange;
+            this.lstDroite.BackColor = System.Drawing.Color.SpringGreen;
             this.lstDroite.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstDroite.FormattingEnabled = true;
             this.lstDroite.ItemHeight = 19;

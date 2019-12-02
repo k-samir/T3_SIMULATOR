@@ -34,6 +34,7 @@
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnCommencer = new System.Windows.Forms.Button();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnDifficile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuitter.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(36)))), ((int)(((byte)(64)))));
-            this.btnQuitter.Location = new System.Drawing.Point(298, 362);
+            this.btnQuitter.Location = new System.Drawing.Point(298, 426);
             this.btnQuitter.Margin = new System.Windows.Forms.Padding(6);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(200, 70);
@@ -75,12 +76,12 @@
             this.btnCommencer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommencer.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCommencer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(36)))), ((int)(((byte)(64)))));
-            this.btnCommencer.Location = new System.Drawing.Point(298, 291);
+            this.btnCommencer.Location = new System.Drawing.Point(298, 254);
             this.btnCommencer.Margin = new System.Windows.Forms.Padding(6);
             this.btnCommencer.Name = "btnCommencer";
             this.btnCommencer.Size = new System.Drawing.Size(200, 68);
             this.btnCommencer.TabIndex = 3;
-            this.btnCommencer.Text = "Lancer une partie";
+            this.btnCommencer.Text = "Easy";
             this.btnCommencer.UseVisualStyleBackColor = false;
             this.btnCommencer.Click += new System.EventHandler(this.btnCommencer_Click);
             this.btnCommencer.MouseEnter += new System.EventHandler(this.btnCommencer_MouseEnter);
@@ -91,13 +92,32 @@
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // btnDifficile
+            // 
+            this.btnDifficile.BackColor = System.Drawing.Color.Transparent;
+            this.btnDifficile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDifficile.FlatAppearance.BorderSize = 0;
+            this.btnDifficile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDifficile.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDifficile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(36)))), ((int)(((byte)(64)))));
+            this.btnDifficile.Location = new System.Drawing.Point(298, 334);
+            this.btnDifficile.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDifficile.Name = "btnDifficile";
+            this.btnDifficile.Size = new System.Drawing.Size(200, 81);
+            this.btnDifficile.TabIndex = 5;
+            this.btnDifficile.Text = "Hard";
+            this.btnDifficile.UseVisualStyleBackColor = false;
+            this.btnDifficile.MouseEnter += new System.EventHandler(this.btnDifficile_MouseEnter);
+            this.btnDifficile.MouseLeave += new System.EventHandler(this.btnDifficile_MouseLeave);
+            // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(794, 511);
+            this.Controls.Add(this.btnDifficile);
             this.Controls.Add(this.btnCommencer);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.pictureBox1);
@@ -119,6 +139,7 @@
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnCommencer;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.Button btnDifficile;
     }
 }
 

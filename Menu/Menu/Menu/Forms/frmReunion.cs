@@ -19,7 +19,7 @@ namespace Menu.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmButReunion fbr = new frmButReunion();
+            frmButReunion fbr = new frmButReunion(this);
             //this.Hide();
             fbr.themeReunion(button1.Text);     //pour faire passer un theme au formulaire frmbutreunion
             DialogResult dr = new DialogResult();
@@ -39,7 +39,7 @@ namespace Menu.Forms
 
         private void btnInfo2_Click(object sender, EventArgs e)
         {
-            frmButReunion fbr = new frmButReunion();
+            frmButReunion fbr = new frmButReunion(this);
            // this.Hide();
             fbr.themeReunion(button2.Text);     //pour faire passer un theme au formulaire frmbutreunion
             DialogResult dr = new DialogResult();
@@ -53,7 +53,7 @@ namespace Menu.Forms
 
         private void btnInfo3_Click(object sender, EventArgs e)
         {
-            frmButReunion fbr = new frmButReunion();
+            frmButReunion fbr = new frmButReunion(this);
           //  this.Hide();
             fbr.themeReunion(button3.Text);         //pour faire passer un theme au formulaire frmbutreunion
             DialogResult dr = new DialogResult();
