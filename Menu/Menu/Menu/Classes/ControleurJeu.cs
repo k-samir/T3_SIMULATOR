@@ -6,6 +6,7 @@ using System.Collections;
 using System.Text;
 using Menu.classePersonnage;
 using Menu.Classes;
+using Menu.Forms;
 
 namespace Menu
 {
@@ -150,10 +151,14 @@ namespace Menu
 
 
             }
+
             jeu = new frmJeu(p1, p2, p3, p4,10);
             
+
             jeu.Refresh();
             jeu.Show();
+            frmReunionPopUp popup = new frmReunionPopUp();
+            popup.ShowDialog();
         }
 
         public static void attributionQualitesDefautsPointsFortsEtFaibles()

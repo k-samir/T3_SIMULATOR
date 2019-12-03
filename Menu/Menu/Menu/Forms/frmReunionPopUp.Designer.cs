@@ -48,15 +48,15 @@
             // lblInfo
             // 
             this.lblInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblInfo.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo.ForeColor = System.Drawing.Color.Black;
             this.lblInfo.Location = new System.Drawing.Point(0, 76);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(800, 165);
             this.lblInfo.TabIndex = 2;
-            this.lblInfo.Text = "notif dans lequel on annonce à l\'utilisateur qu\'il a débloqué qqch genre par exem" +
-    "ple \"Félécitation mtn vous connaissez le prénom de vos personnages ainsi que leu" +
-    "r statut\"";
+            this.lblInfo.Text = "Bienvenue dans T3 Simulator ! Votre projet vient de démarrer, mais par où commenc" +
+    "er ? Une petite réunion ne serait pas du luxe..";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnOk
@@ -80,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(800, 241);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.lblInfo);

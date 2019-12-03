@@ -15,7 +15,8 @@ namespace Menu
     public partial class UC_Personnage : UserControl
     {
 
-        ArrayList listfonctionnalite = ControleurJeu.getListeFonctionnalite();
+
+         ArrayList listfonctionnalite = ControleurJeu.getListeFonctionnalite();
         Boolean reunion = false;
         private Personnage perso { get; set; }
        // ArrayList listfonctionnalite = ControleurJeu.getListeFonctionnalite();
@@ -39,7 +40,7 @@ namespace Menu
         {
             InitializeComponent();
 
-            
+
             /*cboAction1.Items.Clear();
             cboAction2.Items.Clear();
             cboAction3.Items.Clear();
@@ -67,8 +68,14 @@ namespace Menu
             listfonctionnalite.Clear();
 
         }
-        public void initialisationUCPerso(Personnage p)
+        public void initialisationUCPerso(Personnage p, Image img)
         {
+
+
+
+            this.pictureBox1.Image = img;
+           
+            
             this.perso = p;
             this.setPrenom(perso.getPrenom());
             this.setProductivite(perso.getProductivite());

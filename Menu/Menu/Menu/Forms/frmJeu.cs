@@ -19,6 +19,10 @@ namespace Menu
 
         ArrayList listPerso = new ArrayList();
 
+        ImageList imgLst = new ImageList
+        {
+            ImageSize = new Size(119, 119)
+        };
 
 
         int nbTour = 0; //nb de tour pour le projet
@@ -32,6 +36,8 @@ namespace Menu
         public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4,int tourmax)
         {
             InitializeComponent();
+            
+            
             nbTourMax = tourmax;
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
@@ -47,8 +53,9 @@ namespace Menu
             rtbListeF.Size = new Size(((screenWidth - rtbListeF.Location.X) - rtbListeF.Size.Width) + rtbListeF.Size.Width - 9, rtbListeF.Size.Height - 5);
             panel2.Size = new Size(screenWidth, panel2.Height);
 
+            
 
-           rtbActu.Text += "Bienvenue dans T3 Simulator ! On est un peu perdu là, non ? Une petite réunion arrangerait bien des choses...";
+          
 
             
             
@@ -109,7 +116,16 @@ namespace Menu
 
         public void initUC(UC_Personnage uC, Personnage p)
         {
-            uC.initialisationUCPerso(p);
+            
+            /* IMAGES DES PERSOS */
+            imgLst.Images.Add("perso1", Image.FromFile(@"perso1.png"));
+            imgLst.Images.Add("perso2", Image.FromFile(@"perso2.png"));
+            imgLst.Images.Add("perso3", Image.FromFile(@"perso3.png"));
+            imgLst.Images.Add("perso4", Image.FromFile(@"perso4.png"));
+
+            imgLst.Images.RemoveAt(0);
+            uC.initialisationUCPerso(p, imgLst.Images[0]);
+            
         }
 
         public void augmenterNbTour()
@@ -155,8 +171,13 @@ namespace Menu
 
         }
 
-        private void btnTourSuivant_Click(object sender, EventArgs e)
-        {
+        private void btnTourSuivant_Click(object sender, EventArgs e) { 
+
+
+            timerActuProjet.Enabled = false;
+            timerActuProjet.Stop();
+            timerActuProjet.Dispose();
+
             btnReunion.Enabled = true;
             if (crunchBool == true)
             {
@@ -194,12 +215,12 @@ namespace Menu
                             up.crunchDesactive();
                             up.getPersonnage().setMalade(false);
                             crunchBool = false;
-                            //Si l'avancement est entre 20 et 90% on fait tomber malade un ou plusieurs perso
+                            
                             if (getAvancement() >= 0 && getAvancement() <= 100)
                             {
 
                                 Random aleatoire = new Random();
-                                int rnd = aleatoire.Next(6);
+                                int rnd = aleatoire.Next(9);
                                 if (rnd == 0)
                                 {
 
@@ -453,13 +474,22 @@ namespace Menu
 
         private void btnReunion_Click(object sender, EventArgs e)
         {
-            btnReunion.Enabled = false;
+
             frmReunion reunion = new frmReunion();
             reunion.ShowDialog();
+            
+            lblIntro.Visible = false;
+           
+            
+            btnTourSuivant.Visible = true;
+            btnRepos.Visible = true;
+            btnCrunch.Visible = true;
+            timerRepos.Enabled = false;
             foreach (Reunion r in ControleurJeu.getListeReunion())
             {
                 if (r.getStatut())       //active les effets des achievements débloqués lors de la réunion
                 {
+                    btnReunion.Enabled = false;
 
                     if (r.getThemeReunion() == "Faire connaissance")
                     {
@@ -521,6 +551,8 @@ namespace Menu
                     if (r.getThemeReunion() == "Découvrir le projet")
                     {
                         rtbActu.Text += "\n\nIl vous est demandé de réaliser la simulation d'une gestion de projet T3\n";
+                        timerActuProjet.Enabled = true;
+                        timerActuProjet.Start();
                     }
                     if (r.getThemeReunion() == "Révèle les qualités et les défauts")
                     {
@@ -528,16 +560,23 @@ namespace Menu
                     }
                     if (r.getThemeReunion() == "Mettre en place un système d'organisation")
                     {
+                        timerActuProjet.Enabled = true;
+                        timerActuProjet.Start();
                         rtbActu.Text += "\n\nLe chef étant désigné, vous pouvez faire les points sur votre avancement du projet lors des réunions\n";
                     }
                     if (r.getThemeReunion() == "Analyse de la demande du client et de ses besoins + Définir un cahier des charges")
                     {
                         lstTache.Visible = true;
+                        btnVider.Visible = true;
                         lblLstTache.Visible = true;
-                        rtbActu.Text += "\n\nLa liste des tâches à effecter est disponible";
+                        timerActuProjet.Enabled = true;
+                        timerActuProjet.Start();
+                        rtbActu.Text += "\n\nLa liste des tâches à effectuer est disponible";
                     }
                     if (r.getThemeReunion() == "Mettre en commun le travail et l'avancement de chacun")
                     {
+                        timerActuProjet.Enabled = true;
+                        timerActuProjet.Start();
                         lblTacheReal.Visible = true;
                         rtbListeF.Visible = true;
                         rtbActu.Text += "\n\nGrâce à la mise en commun lors de la réunion, vous pouvez voir toutes les tâches effectuées";
@@ -709,6 +748,18 @@ namespace Menu
                 btnReunion.ForeColor = System.Drawing.Color.OrangeRed;
                 btnReunion.FlatAppearance.BorderSize = 1;
                 timerRepos.Dispose();       //libère les ressources liés au timer quand on en a plus besoin
+            }
+        }
+
+        private void timerActuProjet_Tick(object sender, EventArgs e)
+        {
+            if (rtbActu.BackColor == Color.Gainsboro)
+            {
+                rtbActu.BackColor = Color.White;
+            }
+            else
+            {
+                rtbActu.BackColor = Color.Gainsboro;
             }
         }
     }
