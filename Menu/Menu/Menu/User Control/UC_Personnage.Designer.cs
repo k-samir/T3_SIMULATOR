@@ -33,8 +33,6 @@
             this.lblFatigue = new System.Windows.Forms.Label();
             this.lblProductivite = new System.Windows.Forms.Label();
             this.lblStress = new System.Windows.Forms.Label();
-            this.lblConnaissance = new System.Windows.Forms.Label();
-            this.lblSociabilite = new System.Windows.Forms.Label();
             this.lblAction1 = new System.Windows.Forms.Label();
             this.grpAction = new System.Windows.Forms.GroupBox();
             this.btnSupprimerTache3 = new System.Windows.Forms.Button();
@@ -65,11 +63,11 @@
             // 
             // lblPrenom
             // 
-            this.lblPrenom.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrenom.Location = new System.Drawing.Point(6, 134);
+            this.lblPrenom.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrenom.Location = new System.Drawing.Point(-1, 135);
             this.lblPrenom.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPrenom.Name = "lblPrenom";
-            this.lblPrenom.Size = new System.Drawing.Size(176, 24);
+            this.lblPrenom.Size = new System.Drawing.Size(150, 24);
             this.lblPrenom.TabIndex = 1;
             this.lblPrenom.Text = "Prénom du Perso";
             this.lblPrenom.Visible = false;
@@ -104,30 +102,10 @@
             this.lblStress.Text = "Stress:";
             this.lblStress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblConnaissance
-            // 
-            this.lblConnaissance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConnaissance.Location = new System.Drawing.Point(206, 88);
-            this.lblConnaissance.Name = "lblConnaissance";
-            this.lblConnaissance.Size = new System.Drawing.Size(127, 26);
-            this.lblConnaissance.TabIndex = 5;
-            this.lblConnaissance.Text = "Connaissances:";
-            this.lblConnaissance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblSociabilite
-            // 
-            this.lblSociabilite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSociabilite.Location = new System.Drawing.Point(206, 114);
-            this.lblSociabilite.Name = "lblSociabilite";
-            this.lblSociabilite.Size = new System.Drawing.Size(102, 26);
-            this.lblSociabilite.TabIndex = 6;
-            this.lblSociabilite.Text = "Sociabilité:";
-            this.lblSociabilite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lblAction1
             // 
             this.lblAction1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAction1.Location = new System.Drawing.Point(6, 37);
+            this.lblAction1.Location = new System.Drawing.Point(6, 25);
             this.lblAction1.Name = "lblAction1";
             this.lblAction1.Size = new System.Drawing.Size(101, 38);
             this.lblAction1.TabIndex = 10;
@@ -145,9 +123,9 @@
             this.grpAction.Controls.Add(this.lblAction3);
             this.grpAction.Controls.Add(this.lblAction2);
             this.grpAction.Controls.Add(this.lblAction1);
-            this.grpAction.Location = new System.Drawing.Point(3, 187);
+            this.grpAction.Location = new System.Drawing.Point(3, 186);
             this.grpAction.Name = "grpAction";
-            this.grpAction.Size = new System.Drawing.Size(458, 153);
+            this.grpAction.Size = new System.Drawing.Size(424, 144);
             this.grpAction.TabIndex = 11;
             this.grpAction.TabStop = false;
             this.grpAction.Text = "Tâches à effectuer";
@@ -157,7 +135,7 @@
             this.btnSupprimerTache3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache3.BackgroundImage")));
             this.btnSupprimerTache3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSupprimerTache3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerTache3.Location = new System.Drawing.Point(333, 116);
+            this.btnSupprimerTache3.Location = new System.Drawing.Point(333, 106);
             this.btnSupprimerTache3.Name = "btnSupprimerTache3";
             this.btnSupprimerTache3.Size = new System.Drawing.Size(28, 32);
             this.btnSupprimerTache3.TabIndex = 18;
@@ -170,7 +148,7 @@
             this.btnSupprimerTache2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache2.BackgroundImage")));
             this.btnSupprimerTache2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSupprimerTache2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerTache2.Location = new System.Drawing.Point(333, 78);
+            this.btnSupprimerTache2.Location = new System.Drawing.Point(333, 65);
             this.btnSupprimerTache2.Name = "btnSupprimerTache2";
             this.btnSupprimerTache2.Size = new System.Drawing.Size(28, 32);
             this.btnSupprimerTache2.TabIndex = 17;
@@ -183,7 +161,7 @@
             this.btnSupprimerTache1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache1.BackgroundImage")));
             this.btnSupprimerTache1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSupprimerTache1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerTache1.Location = new System.Drawing.Point(333, 40);
+            this.btnSupprimerTache1.Location = new System.Drawing.Point(333, 27);
             this.btnSupprimerTache1.Name = "btnSupprimerTache1";
             this.btnSupprimerTache1.Size = new System.Drawing.Size(28, 32);
             this.btnSupprimerTache1.TabIndex = 16;
@@ -193,38 +171,38 @@
             // cboFonctionnalite3
             // 
             this.cboFonctionnalite3.Enabled = false;
-            this.cboFonctionnalite3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFonctionnalite3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFonctionnalite3.FormattingEnabled = true;
-            this.cboFonctionnalite3.Location = new System.Drawing.Point(99, 116);
+            this.cboFonctionnalite3.Location = new System.Drawing.Point(99, 107);
             this.cboFonctionnalite3.Name = "cboFonctionnalite3";
-            this.cboFonctionnalite3.Size = new System.Drawing.Size(262, 37);
+            this.cboFonctionnalite3.Size = new System.Drawing.Size(262, 30);
             this.cboFonctionnalite3.TabIndex = 15;
             this.cboFonctionnalite3.Visible = false;
             // 
             // cboFonctionnalite2
             // 
             this.cboFonctionnalite2.Enabled = false;
-            this.cboFonctionnalite2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFonctionnalite2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFonctionnalite2.FormattingEnabled = true;
-            this.cboFonctionnalite2.Location = new System.Drawing.Point(99, 78);
+            this.cboFonctionnalite2.Location = new System.Drawing.Point(99, 66);
             this.cboFonctionnalite2.Name = "cboFonctionnalite2";
-            this.cboFonctionnalite2.Size = new System.Drawing.Size(262, 37);
+            this.cboFonctionnalite2.Size = new System.Drawing.Size(262, 30);
             this.cboFonctionnalite2.TabIndex = 14;
             // 
             // cboFonctionnalite1
             // 
             this.cboFonctionnalite1.Enabled = false;
-            this.cboFonctionnalite1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFonctionnalite1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFonctionnalite1.FormattingEnabled = true;
-            this.cboFonctionnalite1.Location = new System.Drawing.Point(99, 40);
+            this.cboFonctionnalite1.Location = new System.Drawing.Point(99, 28);
             this.cboFonctionnalite1.Name = "cboFonctionnalite1";
-            this.cboFonctionnalite1.Size = new System.Drawing.Size(262, 37);
+            this.cboFonctionnalite1.Size = new System.Drawing.Size(262, 30);
             this.cboFonctionnalite1.TabIndex = 13;
             // 
             // lblAction3
             // 
             this.lblAction3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAction3.Location = new System.Drawing.Point(6, 113);
+            this.lblAction3.Location = new System.Drawing.Point(6, 105);
             this.lblAction3.Name = "lblAction3";
             this.lblAction3.Size = new System.Drawing.Size(101, 38);
             this.lblAction3.TabIndex = 12;
@@ -235,7 +213,7 @@
             // lblAction2
             // 
             this.lblAction2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAction2.Location = new System.Drawing.Point(6, 75);
+            this.lblAction2.Location = new System.Drawing.Point(6, 64);
             this.lblAction2.Name = "lblAction2";
             this.lblAction2.Size = new System.Drawing.Size(101, 38);
             this.lblAction2.TabIndex = 11;
@@ -291,9 +269,9 @@
             // 
             this.lblDeteste.AutoSize = true;
             this.lblDeteste.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeteste.Location = new System.Drawing.Point(255, 176);
+            this.lblDeteste.Location = new System.Drawing.Point(175, 117);
             this.lblDeteste.Name = "lblDeteste";
-            this.lblDeteste.Size = new System.Drawing.Size(87, 22);
+            this.lblDeteste.Size = new System.Drawing.Size(67, 17);
             this.lblDeteste.TabIndex = 17;
             this.lblDeteste.Text = "Deteste :";
             this.lblDeteste.Visible = false;
@@ -301,7 +279,7 @@
             // pbCoeurNoir
             // 
             this.pbCoeurNoir.BackgroundImage = global::Menu.Properties.Resources._30571;
-            this.pbCoeurNoir.Location = new System.Drawing.Point(387, 176);
+            this.pbCoeurNoir.Location = new System.Drawing.Point(244, 112);
             this.pbCoeurNoir.Name = "pbCoeurNoir";
             this.pbCoeurNoir.Size = new System.Drawing.Size(25, 23);
             this.pbCoeurNoir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -312,19 +290,19 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(30, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 10);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(125, 132);
+            this.pictureBox1.Size = new System.Drawing.Size(119, 119);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // pbCacheur
             // 
-            this.pbCacheur.Location = new System.Drawing.Point(175, 9);
+            this.pbCacheur.Location = new System.Drawing.Point(178, 3);
             this.pbCacheur.Name = "pbCacheur";
-            this.pbCacheur.Size = new System.Drawing.Size(249, 129);
+            this.pbCacheur.Size = new System.Drawing.Size(249, 79);
             this.pbCacheur.TabIndex = 20;
             this.pbCacheur.TabStop = false;
             // 
@@ -332,7 +310,7 @@
             // 
             this.pbCoeur.BackgroundImage = global::Menu.Properties.Resources._30571;
             this.pbCoeur.Image = ((System.Drawing.Image)(resources.GetObject("pbCoeur.Image")));
-            this.pbCoeur.Location = new System.Drawing.Point(387, 150);
+            this.pbCoeur.Location = new System.Drawing.Point(244, 91);
             this.pbCoeur.Name = "pbCoeur";
             this.pbCoeur.Size = new System.Drawing.Size(25, 23);
             this.pbCoeur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -344,16 +322,16 @@
             // 
             this.affinite.AutoSize = true;
             this.affinite.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.affinite.Location = new System.Drawing.Point(255, 152);
+            this.affinite.Location = new System.Drawing.Point(175, 93);
             this.affinite.Name = "affinite";
-            this.affinite.Size = new System.Drawing.Size(124, 22);
+            this.affinite.Size = new System.Drawing.Size(94, 17);
             this.affinite.TabIndex = 21;
             this.affinite.Text = "Affinité avec :";
             this.affinite.Visible = false;
             // 
             // UC_Personnage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Controls.Add(this.pbCoeur);
@@ -367,8 +345,6 @@
             this.Controls.Add(this.lblValProductivite);
             this.Controls.Add(this.lblValFatigue);
             this.Controls.Add(this.grpAction);
-            this.Controls.Add(this.lblSociabilite);
-            this.Controls.Add(this.lblConnaissance);
             this.Controls.Add(this.lblStress);
             this.Controls.Add(this.lblProductivite);
             this.Controls.Add(this.lblFatigue);
@@ -395,8 +371,6 @@
         private System.Windows.Forms.Label lblFatigue;
         private System.Windows.Forms.Label lblProductivite;
         private System.Windows.Forms.Label lblStress;
-        private System.Windows.Forms.Label lblConnaissance;
-        private System.Windows.Forms.Label lblSociabilite;
         private System.Windows.Forms.Label lblAction1;
         private System.Windows.Forms.GroupBox grpAction;
         private System.Windows.Forms.Label lblAction3;

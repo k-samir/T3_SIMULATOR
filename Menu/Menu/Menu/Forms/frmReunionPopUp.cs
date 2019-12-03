@@ -38,22 +38,22 @@ namespace Menu.Forms
 
             if (butReunion == "Évaluer le potentiel du groupe")
             {
-                lblInfo.Text = "Les attributs des personnages sont révelés";
+                lblInfo.Text = "Les attributs des personnages seront révelés";
             }
 
             if (butReunion == "Révèle les qualités et les défauts")
             {
-                lblInfo.Text = "Les qualités et les défauts de chaque personnage sont révelés";
+                lblInfo.Text = "Les qualités et les défauts de chaque personnage seront révelés";
             }
 
             if (butReunion == "Analyse des affinités de chacun")
             {
-                lblInfo.Text = "A la fin de la réunion, les affinités de chacun seront révélées. A vous d'assigner correctement les tâches maintenant !";
+                lblInfo.Text = "A la fin de la réunion, les affinités de chacun seront révélées. Vous devrez assigner les tâches correctement !";
             }
 
             if (butReunion == "Découvrir le projet")
             {
-                lblInfo.Text = "Il vous est demandé de réaliser la simulation d'une gestion de projet T3";
+                lblInfo.Text = "Il vous est demandé de réaliser la simulation d'une gestion de projet T3. Le but du jeu est donc de terminer le projet, pour cela vous devrez assigner les tâches situées au centre aux membres, astucieusement.";
             }
 
             if (butReunion == "Analyse de la demande du client et de ses besoins + Définir un cahier des charges")
