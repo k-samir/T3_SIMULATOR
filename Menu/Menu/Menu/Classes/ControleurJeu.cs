@@ -51,7 +51,29 @@ namespace Menu
         private int compteurTours = 0;
 
         
-        
+        public void init()
+        {
+            listfonctionnalite.Clear();
+            listPersonnage.Clear();
+            listReunion.Clear();
+            listeQualites.Clear();
+            nbQualites = 1;
+            listeDefauts.Clear();
+            nbDefauts = nbQualites;
+            listePointsForts.Clear();
+            nbPointsForts = 1;
+            listePointsFaibles.Clear();
+            nbPointsFaibles = nbPointsForts;
+            listeRand1.Clear();
+            listeRand2.Clear();
+
+            p1 = null;
+            p2 = null;
+            p3 = null;
+            p4 = null;
+            jeu = null;
+            compteurTours = 0;
+    }
         public void lancerJeu(frmMenu fm)
         {
             fm.Hide();
@@ -495,10 +517,11 @@ namespace Menu
         {
            // listfonctionnalite.Clear();
            // listPersonnage.Clear();
+           // Get SCORE
 
             
             MessageBox.Show("Fin de la partie");
-            Forms.FrmEnd e = new Forms.FrmEnd(s,listfonctionnalite,frmJeu.getAvancement());
+            Forms.FrmEnd e = new Forms.FrmEnd(s,listfonctionnalite,frmJeu.getAvancement(),200);
             e.Show();
 
             

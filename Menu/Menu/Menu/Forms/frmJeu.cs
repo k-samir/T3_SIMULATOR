@@ -154,7 +154,9 @@ namespace Menu
 
             frmMenu menu = new frmMenu();
             menu.Show();
-            this.Dispose();
+
+            //this.Dispose();
+            this.Close();
 
 
         }

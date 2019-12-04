@@ -16,9 +16,16 @@ namespace Menu
         String journalier;
         public frmRapportJournalier(string s)
         {
+            
             InitializeComponent();
-            journalier = s;
-            MessageBox.Show(journalier);
+
+            bunifuCustomLabel1.Text = s;
+            
+            
+            
+            
+            /*journalier = s;
+            MessageBox.Show(journalier);*/
         }
         
 
