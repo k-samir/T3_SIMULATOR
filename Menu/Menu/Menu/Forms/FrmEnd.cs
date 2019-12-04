@@ -14,6 +14,7 @@ namespace Menu.Forms
     public partial class FrmEnd : Form
     {
         private string s = "";
+        private int score;
         
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -40,8 +41,9 @@ namespace Menu.Forms
 
         }
 
-        public FrmEnd(String si, ArrayList li,float avancement)
+        public FrmEnd(String si, ArrayList li,float avancement,int score)
         {
+            int avanc = (int)avancement;
             InitializeComponent();
             //bunifuCustomLabel1.Text = s;
             s = si;
@@ -51,15 +53,24 @@ namespace Menu.Forms
                 listBox1.Items.Add(f.getNom());
                 //MessageBox.Show(f.getNom());
             }
-            if (avancement != 0) {
-                bunifuGauge1.Value = (int)avancement + 1;
+            if (avanc != 0) {
+                bunifuGauge1.Value = avanc;
             }
             else
             {
-                bunifuGauge1.Value = (int)avancement;
+                bunifuGauge1.Value = avanc;
             }
             //listeFonctionNonCode = li;
-
+            
+            if(avanc == 99)
+            {
+                bunifuGauge1.Value = 100;
+                label3.Text = "Vous avez Gagnez ! Score :" + score;
+            }
+            else
+            {
+                label3.Text += score;
+            }
 
         }
 

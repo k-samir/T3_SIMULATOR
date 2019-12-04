@@ -33,8 +33,12 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblTitre = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -45,6 +49,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
+            this.panel1.Controls.Add(this.lblTitre);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.bunifuImageButton2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
@@ -65,6 +71,40 @@
             this.bunifuImageButton2.Zoom = 10;
             this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(22, 16);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(233, 29);
+            this.bunifuCustomLabel1.TabIndex = 34;
+            this.bunifuCustomLabel1.Text = "bunifuCustomLabel1";
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.bunifuCustomLabel1);
+            this.panel2.Location = new System.Drawing.Point(49, 125);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(653, 276);
+            this.panel2.TabIndex = 35;
+            // 
+            // lblTitre
+            // 
+            this.lblTitre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
+            this.lblTitre.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblTitre.Font = new System.Drawing.Font("Cooper Black", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblTitre.Location = new System.Drawing.Point(-8, 23);
+            this.lblTitre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(743, 56);
+            this.lblTitre.TabIndex = 36;
+            this.lblTitre.Text = "Rapport Journalier";
+            this.lblTitre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmRapportJournalier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -78,6 +118,8 @@
             this.Text = "frmRapportJournalier";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -87,5 +129,8 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblTitre;
     }
 }

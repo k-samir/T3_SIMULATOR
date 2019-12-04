@@ -24,8 +24,9 @@ namespace Menu
 
         private void btnCommencer_Click(object sender, EventArgs e)
         {
-            ControleurJeu j = new ControleurJeu();
 
+            ControleurJeu j = new ControleurJeu();
+            j.init();
             j.lancerJeu(this);
         }
 
