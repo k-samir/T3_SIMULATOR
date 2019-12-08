@@ -14,11 +14,15 @@ namespace Menu.Forms
     public partial class frmRepos : Form
     {
         List<Personnage> list_perso = new List<Personnage>();
-        private static List<String> list_repos = new List<String>();
-        public frmRepos(List<Personnage> listePersonnage)
+        private static List<Personnage> list_repos = new List<Personnage>();
+        private frmJeu frmJ;
+        public frmRepos(List<Personnage> listePersonnage, frmJeu frmParent)
         {
+            
             InitializeComponent();
             list_perso = listePersonnage;
+            this.frmJ = frmParent;
+            
         }
 
         private void Repos_Load(object sender, EventArgs e)
@@ -70,6 +74,7 @@ namespace Menu.Forms
 
         private void btnValider_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             for(int i=0; i<lstDroite.Items.Count; i++)
             {
                 //list_repos.Add(lstDroite.Items[i].ToString());
@@ -78,10 +83,11 @@ namespace Menu.Forms
                 {
                     if (p.getPrenom() == (string)lstDroite.Items[i])
                     {
-                        p.setFatigue(0);
-                        p.setDisponible(false);
+                        frmJ.setRepos(p);
                     }
                 }
+
+
                
             }
             list_repos.Clear();

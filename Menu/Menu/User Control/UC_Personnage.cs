@@ -71,8 +71,6 @@ namespace Menu
         public void initialisationUCPerso(Personnage p, Image img)
         {
 
-
-
             this.pictureBox1.Image = img;
            
             

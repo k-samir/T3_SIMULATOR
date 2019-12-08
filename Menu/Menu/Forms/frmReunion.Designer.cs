@@ -98,7 +98,7 @@
             // 
             // frmReunion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(328, 476);
@@ -112,7 +112,6 @@
             this.Name = "frmReunion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmReunion";
-            this.Load += new System.EventHandler(this.frmReunion_Load);
             this.ResumeLayout(false);
 
         }

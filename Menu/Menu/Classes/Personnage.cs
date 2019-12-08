@@ -322,7 +322,16 @@ namespace Menu.classePersonnage
                     }
                 }
 
-                action.setPaDepense(action.getPaDepense() + ajoutPA);
+
+                foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
+                {
+                    int index = 0;
+                    if(f.getNom() == action.getNom())
+                    {
+                        f.setPaDepense(action.getPaDepense() + ajoutPA);  //permet de modifier les pa dépensés
+                    }
+                }
+                
 
                 if (action.getPaDepense() >= action.getPaNecess())
                 {

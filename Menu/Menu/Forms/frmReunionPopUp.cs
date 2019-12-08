@@ -31,6 +31,7 @@ namespace Menu.Forms
 
         public void messagePopUp(String butReunion)
         {
+            lblNotification.Text = "Félicitations";
             if (butReunion == "Faire connaissance")
             {
                 lblInfo.Text = "Vous pourrez maintenant mettre un nom sur ces visages mystérieux..";
@@ -74,6 +75,12 @@ namespace Menu.Forms
             if (butReunion == "Mettre en commun le travail et l'avancement de chacun")
             {
                 lblInfo.Text = "Vous pouvez voir toutes les tâches terminées sur la console";
+            }
+
+            if(butReunion == "Nombre de réunion dépassé")
+            {
+                lblNotification.Text = "Limite atteinte";
+                lblInfo.Text = "Vous ne pouvez pas aborder plus de 3 thématiques lors des réunions";
             }
         }
     }

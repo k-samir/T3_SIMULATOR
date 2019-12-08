@@ -11,11 +11,13 @@ namespace Menu.Classes
     {
         private String themeReunion;
         private Boolean statut = false;
+        private String categorie;
 
-        public Reunion(String themeReunion)
+        public Reunion(String themeReunion, String categorie)
         {
             this.themeReunion = themeReunion;
             this.statut = false;
+            this.categorie = categorie;
         }
 
         public void setStatut(Boolean statut)
@@ -32,6 +34,11 @@ namespace Menu.Classes
         public String getThemeReunion()
         {
             return this.themeReunion;
+        }
+
+        public String getCategorie()
+        {
+            return this.categorie;
         }
     }
 

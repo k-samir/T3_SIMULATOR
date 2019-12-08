@@ -36,7 +36,6 @@
             this.btnTDG = new System.Windows.Forms.Button();
             this.btnDG = new System.Windows.Forms.Button();
             this.btnValider = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -138,24 +137,12 @@
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 10F);
-            this.label2.ForeColor = System.Drawing.Color.Orange;
-            this.label2.Location = new System.Drawing.Point(103, 243);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(334, 16);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Les personnages se reposeront au tour suivant.";
-            // 
             // frmRepos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(555, 271);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.btnDG);
             this.Controls.Add(this.btnTDG);
@@ -187,6 +174,5 @@
         private System.Windows.Forms.Button btnTDG;
         private System.Windows.Forms.Button btnDG;
         private System.Windows.Forms.Button btnValider;
-        private System.Windows.Forms.Label label2;
     }
 }

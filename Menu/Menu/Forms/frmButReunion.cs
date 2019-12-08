@@ -13,11 +13,12 @@ namespace Menu.Forms
 {
     public partial class frmButReunion : Form
     {
-        
-        public frmButReunion()
+        private frmReunion reunion;
+        public frmButReunion(frmReunion fr)
         {
-            
             InitializeComponent();
+            this.reunion = fr;
+            update();
         }
 
         public void themeReunion(String theme)
@@ -161,15 +162,14 @@ namespace Menu.Forms
                     button1.Enabled = false;
                 }
 
-
                 this.Controls.Add(button1);
             }
 
         }
 
-
         public void lancerNotification(object sender, EventArgs e)
         {
+            this.reunion.incrementerNbReunion();    //incrementer le nb de thématique de réunions abordé
             this.Opacity = 0.3;     //effet flouté pour le popup
             frmReunionPopUp popup = new frmReunionPopUp();
             Button b = (Button)sender;
@@ -188,6 +188,7 @@ namespace Menu.Forms
             b.Enabled = false;
             //MessageBox.Show("Texte bouton : " + b.Text); fonctionne
             ControleurJeu.changerStatutReunion(b.Text);
+            update();
         }
 
         private void btnRevenir_Click_1(object sender, EventArgs e)
@@ -206,6 +207,26 @@ namespace Menu.Forms
                 }
             }
             return verif;
+        }
+
+        public void update()
+        {
+            if (reunion.getNbReunion() >= 3)
+            {
+                frmReunionPopUp popup = new frmReunionPopUp();
+                popup.messagePopUp("Nombre de réunion dépassé");
+                popup.ShowDialog();
+                foreach(Object o in Controls)
+                {
+                    if(o is Button) {
+                        Button b = (Button)o;
+                        if(b.Name != "btnRevenir")
+                        {
+                            b.Enabled = false;
+                        }
+                    }
+                }
+            }
         }
     }
 }

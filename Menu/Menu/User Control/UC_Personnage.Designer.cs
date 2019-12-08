@@ -54,6 +54,8 @@
             this.pbCacheur = new System.Windows.Forms.PictureBox();
             this.pbCoeur = new System.Windows.Forms.PictureBox();
             this.affinite = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblPointFort = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblPointFaible = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.grpAction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeurNoir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -135,7 +137,7 @@
             this.btnSupprimerTache3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache3.BackgroundImage")));
             this.btnSupprimerTache3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSupprimerTache3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerTache3.Location = new System.Drawing.Point(333, 106);
+            this.btnSupprimerTache3.Location = new System.Drawing.Point(381, 107);
             this.btnSupprimerTache3.Name = "btnSupprimerTache3";
             this.btnSupprimerTache3.Size = new System.Drawing.Size(28, 32);
             this.btnSupprimerTache3.TabIndex = 18;
@@ -148,7 +150,7 @@
             this.btnSupprimerTache2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache2.BackgroundImage")));
             this.btnSupprimerTache2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSupprimerTache2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerTache2.Location = new System.Drawing.Point(333, 65);
+            this.btnSupprimerTache2.Location = new System.Drawing.Point(381, 64);
             this.btnSupprimerTache2.Name = "btnSupprimerTache2";
             this.btnSupprimerTache2.Size = new System.Drawing.Size(28, 32);
             this.btnSupprimerTache2.TabIndex = 17;
@@ -161,7 +163,7 @@
             this.btnSupprimerTache1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSupprimerTache1.BackgroundImage")));
             this.btnSupprimerTache1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSupprimerTache1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerTache1.Location = new System.Drawing.Point(333, 27);
+            this.btnSupprimerTache1.Location = new System.Drawing.Point(381, 27);
             this.btnSupprimerTache1.Name = "btnSupprimerTache1";
             this.btnSupprimerTache1.Size = new System.Drawing.Size(28, 32);
             this.btnSupprimerTache1.TabIndex = 16;
@@ -175,7 +177,7 @@
             this.cboFonctionnalite3.FormattingEnabled = true;
             this.cboFonctionnalite3.Location = new System.Drawing.Point(99, 107);
             this.cboFonctionnalite3.Name = "cboFonctionnalite3";
-            this.cboFonctionnalite3.Size = new System.Drawing.Size(262, 30);
+            this.cboFonctionnalite3.Size = new System.Drawing.Size(310, 30);
             this.cboFonctionnalite3.TabIndex = 15;
             this.cboFonctionnalite3.Visible = false;
             // 
@@ -186,7 +188,7 @@
             this.cboFonctionnalite2.FormattingEnabled = true;
             this.cboFonctionnalite2.Location = new System.Drawing.Point(99, 66);
             this.cboFonctionnalite2.Name = "cboFonctionnalite2";
-            this.cboFonctionnalite2.Size = new System.Drawing.Size(262, 30);
+            this.cboFonctionnalite2.Size = new System.Drawing.Size(310, 30);
             this.cboFonctionnalite2.TabIndex = 14;
             // 
             // cboFonctionnalite1
@@ -196,7 +198,7 @@
             this.cboFonctionnalite1.FormattingEnabled = true;
             this.cboFonctionnalite1.Location = new System.Drawing.Point(99, 28);
             this.cboFonctionnalite1.Name = "cboFonctionnalite1";
-            this.cboFonctionnalite1.Size = new System.Drawing.Size(262, 30);
+            this.cboFonctionnalite1.Size = new System.Drawing.Size(310, 30);
             this.cboFonctionnalite1.TabIndex = 13;
             // 
             // lblAction3
@@ -329,11 +331,35 @@
             this.affinite.Text = "Affinité avec :";
             this.affinite.Visible = false;
             // 
+            // lblPointFort
+            // 
+            this.lblPointFort.AutoSize = true;
+            this.lblPointFort.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPointFort.Location = new System.Drawing.Point(308, 93);
+            this.lblPointFort.Name = "lblPointFort";
+            this.lblPointFort.Size = new System.Drawing.Size(66, 17);
+            this.lblPointFort.TabIndex = 23;
+            this.lblPointFort.Text = "Point fort";
+            this.lblPointFort.Visible = false;
+            // 
+            // lblPointFaible
+            // 
+            this.lblPointFaible.AutoSize = true;
+            this.lblPointFaible.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPointFaible.Location = new System.Drawing.Point(308, 118);
+            this.lblPointFaible.Name = "lblPointFaible";
+            this.lblPointFaible.Size = new System.Drawing.Size(79, 17);
+            this.lblPointFaible.TabIndex = 24;
+            this.lblPointFaible.Text = "Point faible";
+            this.lblPointFaible.Visible = false;
+            // 
             // UC_Personnage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.lblPointFaible);
+            this.Controls.Add(this.lblPointFort);
             this.Controls.Add(this.pbCoeur);
             this.Controls.Add(this.affinite);
             this.Controls.Add(this.pbCacheur);
@@ -353,7 +379,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UC_Personnage";
-            this.Size = new System.Drawing.Size(430, 343);
+            this.Size = new System.Drawing.Size(439, 343);
             this.grpAction.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeurNoir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -391,5 +417,7 @@
         private System.Windows.Forms.PictureBox pbCacheur;
         private System.Windows.Forms.PictureBox pbCoeur;
         private Bunifu.Framework.UI.BunifuCustomLabel affinite;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblPointFort;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblPointFaible;
     }
 }

@@ -62,7 +62,7 @@ namespace Menu.Forms
             }
             //listeFonctionNonCode = li;
             
-            if(avanc == 99)
+            if(avanc >= 99)
             {
                 bunifuGauge1.Value = 100;
                 label3.Text = "Vous avez Gagnez ! Score :" + score;
