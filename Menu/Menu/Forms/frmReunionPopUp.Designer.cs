@@ -39,7 +39,7 @@
             this.lblNotification.AutoSize = true;
             this.lblNotification.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotification.ForeColor = System.Drawing.Color.Black;
-            this.lblNotification.Location = new System.Drawing.Point(226, 9);
+            this.lblNotification.Location = new System.Drawing.Point(242, 9);
             this.lblNotification.Name = "lblNotification";
             this.lblNotification.Size = new System.Drawing.Size(330, 55);
             this.lblNotification.TabIndex = 1;

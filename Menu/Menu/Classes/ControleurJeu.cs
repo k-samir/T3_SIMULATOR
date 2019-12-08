@@ -542,7 +542,6 @@ namespace Menu
             }
 
 
-            MessageBox.Show("Fin de la partie");
             Forms.FrmEnd e = new Forms.FrmEnd(s,tacheNonCodé,frmJeu.getAvancement(),200);
             e.Show();
 

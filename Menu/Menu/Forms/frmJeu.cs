@@ -27,6 +27,7 @@ namespace Menu
 
 
         int nbTour = 0; //nb de tour pour le projet
+        
         int nbTourMax;
         bool crunchBool = false;
         // String d'affichage des actions / jour
@@ -37,7 +38,6 @@ namespace Menu
         public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4,int tourmax)
         {
             InitializeComponent();
-            
             
             nbTourMax = tourmax;
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
@@ -184,6 +184,7 @@ namespace Menu
         }
 
         private void btnTourSuivant_Click(object sender, EventArgs e) {
+            lblTour.Text = "Tour " + nbTour.ToString() + "/10";
             btnReunion.Enabled = true;
             btnRepos.Enabled = true;
             if (crunchBool == true)
@@ -206,48 +207,6 @@ namespace Menu
                     }
                 }
             }
-
-            /*-----------------TEST MALADIE ------------------------ */
-            foreach (Object o in Controls)
-            {
-                if (o is Panel)
-                {
-                    Panel p = (Panel)o;
-                    foreach (Object c in p.Controls)
-                    {
-                        if (c is UC_Personnage)
-                        {
-                            UC_Personnage up = (UC_Personnage)c;
-
-                            up.crunchDesactive();
-                            up.getPersonnage().setMalade(false);
-                            crunchBool = false;
-                            
-                            if (getAvancement() >= 0 && getAvancement() <= 100)
-                            {
-
-                                Random aleatoire = new Random();
-                                int rnd = aleatoire.Next(9);
-                                if (rnd == 0)
-                                {
-                                    //up.getPersonnage().setMalade(true);
-                                    //up.Enabled = false;
-                                }
-                            }
-                            else
-                            {
-                                up.Enabled = true;
-                                up.getPersonnage().setMalade(false);
-                                up.getPersonnage().setDisponible(true);
-                                up.BackColor = Color.AliceBlue;
-                            }
-
-                        }
-                    }
-                }
-            }
-
-
 
 
             // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
@@ -314,6 +273,8 @@ namespace Menu
 
                 ControleurJeu.nouveauTour();
 
+
+
                 ecrireSurConsole();
 
                 ArrayList listPerso = ControleurJeu.getListePersonnage();
@@ -329,10 +290,26 @@ namespace Menu
                 initUC(uC_Personnage3, p3);
                 initUC(uC_Personnage4, p4);
 
+                List<UC_Personnage> listUC = new List<UC_Personnage>();
+                listUC.Add(uC_Personnage1);
+                listUC.Add(uC_Personnage2);
+                listUC.Add(uC_Personnage3);
+                listUC.Add(uC_Personnage4);
+
                 uC_Personnage1.cleanCBO();
                 uC_Personnage2.cleanCBO();
                 uC_Personnage3.cleanCBO();
                 uC_Personnage4.cleanCBO();
+
+                Random rnd = new Random();
+                int alea = rnd.Next(20);
+                if(alea <= 3)
+                {
+                    UC_Personnage u = listUC[alea];
+                    u.getPersonnage().setMalade(true);
+                    u.getPersonnage().setDisponible(false);
+                }
+
 
                 // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
                 // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
@@ -412,11 +389,11 @@ namespace Menu
         }
         private void btnRepos_Click(object sender, EventArgs e)
         {
-            List<Personnage> listRepos = new List<Personnage>();
+            
             frmRepos repos = new frmRepos(listPersonnage, this);
             DialogResult dr = new DialogResult();
            
-            btnRepos.Enabled = false;
+            
 
             dr = repos.ShowDialog();
             if (crunchBool == true)
@@ -443,12 +420,19 @@ namespace Menu
             if (nbTour >= 10)
             {
                 viderCBO();
+                
                 ControleurJeu.arreterJeu(rtbListeF.Text);
+                
                 this.Close();
             }
 
             if (dr == DialogResult.OK)
             {
+                if(listRepos.Count() != 0)
+                {
+                    btnRepos.Enabled = false;
+                }
+                
                 ArrayList listPerso = ControleurJeu.getListePersonnage();
 
                 Personnage p1 = (Personnage)listPerso[0];
@@ -457,10 +441,38 @@ namespace Menu
                 Personnage p4 = (Personnage)listPerso[3];
 
                 //mise a jour des persos apres avoir effectue les taches
-                initUC(uC_Personnage1, p1);
-                initUC(uC_Personnage2, p2);
-                initUC(uC_Personnage3, p3);
-                initUC(uC_Personnage4, p4);
+
+                
+                //On met a jour les uC concernés 
+                foreach(Personnage perso in listRepos)
+                {
+                    if(uC_Personnage1.getPersonnage() == perso)
+                    {
+                        initUC(uC_Personnage1, perso);
+                        uC_Personnage1.rendreCBO1Visible();
+                    }
+                    else if(uC_Personnage2.getPersonnage() == perso)
+                    {
+                        initUC(uC_Personnage2, perso);
+                        uC_Personnage2.rendreCBO1Visible();
+                    }
+                    else if (uC_Personnage3.getPersonnage() == perso)
+                    {
+                        initUC(uC_Personnage3, perso);
+                        uC_Personnage3.rendreCBO1Visible();
+                    }
+                    else if (uC_Personnage4.getPersonnage() == perso)
+                    {
+                        initUC(uC_Personnage4, perso);
+                        uC_Personnage4.rendreCBO1Visible();
+                    }
+                    else
+                    {
+                        MessageBox.Show("PERSONNE NE DOIT SE REPOSER, TROP DE TRAVAIL");
+                    }
+                }
+                listRepos.Clear();
+
             }
 
             
@@ -480,6 +492,7 @@ namespace Menu
 
         private void btnCrunch_Click_1(object sender, EventArgs e)
         {
+            MessageBox.Show("ATTENTION VOUS N'AVEZ DROIT QU'A UN CRUNCH DANS LA PARTIE");
             btnCrunch.Enabled = false;
             foreach (Object o in Controls)
             {
@@ -501,8 +514,10 @@ namespace Menu
 
         public void setRepos(Personnage p)
         {
-            p.setFatigue(0);
+            p.setFatigue(p.getFatigue()/2);
             p.setDisponible(false);
+            p.setMalade(false);
+            listRepos.Add(p);
         }
 
 
