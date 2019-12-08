@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\..\..\Desktop\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>.\Bunifu_UI_v1.52.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

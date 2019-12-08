@@ -18,6 +18,7 @@ namespace Menu
     {
 
         ArrayList listPerso = new ArrayList();
+        public static List<Personnage> listRepos = new List<Personnage>();
 
         ImageList imgLst = new ImageList
         {
@@ -28,7 +29,7 @@ namespace Menu
         int nbTour = 0; //nb de tour pour le projet
         int nbTourMax;
         bool crunchBool = false;
-        // String d'affichage des actoins / jour
+        // String d'affichage des actions / jour
         public static string s = "";
         // Avancement de la progressbar
         private static float avancement = 0;
@@ -50,17 +51,10 @@ namespace Menu
             lblActu.Size = new Size(((screenWidth - lblActu.Location.X) - lblActu.Size.Width) + lblActu.Size.Width, lblActu.Size.Height);       
             rtbActu.Size = new Size(((screenWidth - rtbActu.Location.X) - rtbActu.Size.Width) + rtbActu.Size.Width - 9, rtbActu.Size.Height);
             lblTacheReal.Size = new Size(((screenWidth - lblTacheReal.Location.X) - lblTacheReal.Size.Width) + lblTacheReal.Size.Width, lblTacheReal.Size.Height - 5);
-            rtbListeF.Size = new Size(((screenWidth - rtbListeF.Location.X) - rtbListeF.Size.Width) + rtbListeF.Size.Width - 9, rtbListeF.Size.Height - 5);
+            pnlProgressBarTache.Size = new Size(((screenWidth - pnlProgressBarTache.Location.X) - pnlProgressBarTache.Size.Width) + pnlProgressBarTache.Size.Width, pnlProgressBarTache.Size.Height - 5);
             panel2.Size = new Size(screenWidth, panel2.Height);
 
             
-
-          
-
-            
-            
-
-
             foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
             {
                 if (f.getPaDepense() < f.getPaNecess() && f.getStatus() == false)
@@ -78,14 +72,10 @@ namespace Menu
             this.Refresh();
 
             listPersonnage.Clear();
-           // nbTourMax = 10;
             crunchBool = false;
 
 
-
-           // lblDeadLine.Text = pbAvancement.Value + "% Avancement";
-
-            ArrayList listPerso = ControleurJeu.getListeFonctionnalite();
+            ArrayList listPerso = ControleurJeu.getListePersonnage();
 
             listPersonnage.Add(p1);
             listPersonnage.Add(p2);
@@ -107,6 +97,35 @@ namespace Menu
 
                 }
             }
+
+            ArrayList listTache = ControleurJeu.getListeFonctionnalite();
+            int posBas = 5;
+            //Initialisation ProgressBar pour chaque tache
+            for (int i = 0; i <= listTache.Count-1; i++)
+            {
+                Bunifu.Framework.UI.BunifuProgressBar progressBar = new Bunifu.Framework.UI.BunifuProgressBar();
+                Label l = new Label();
+                Fonctionnalites f = (Fonctionnalites)listTache[i];
+
+                progressBar.BackColor = System.Drawing.Color.Silver;
+                progressBar.BorderRadius = 5;
+                progressBar.Location = new System.Drawing.Point(0, posBas);
+                progressBar.ProgressColor = System.Drawing.Color.Teal;
+                progressBar.Size = new System.Drawing.Size(pnlProgressBarTache.Width-200, 20);
+                progressBar.Tag = i;
+                progressBar.Value = 0;
+
+                l.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                l.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                l.Location = new System.Drawing.Point(pnlProgressBarTache.Width - 200, progressBar.Location.Y);
+                l.Size = new System.Drawing.Size(200, 20);
+                l.Text = f.getNom();
+
+                pnlProgressBarTache.Controls.Add(progressBar);
+                pnlProgressBarTache.Controls.Add(l);
+                posBas += 25;
+            }
+
         }
 
         public void tombeMalade(Personnage p)
@@ -144,14 +163,6 @@ namespace Menu
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
-            foreach (Object c in Controls)
-            {
-                if (c is UC_Personnage)
-                {
-
-                }
-            }
-
             frmMenu menu = new frmMenu();
             menu.Show();
 
@@ -166,21 +177,15 @@ namespace Menu
         public void ecrireSurConsole()       //controleur de jeu écrit sur le fil d'actualité
         {
             
-            rtbActu.Text = String.Empty;
-            rtbActu.Text = ControleurJeu.filActualite();
-            rtbActu.Text += "Tour effectué " + this.getNbTour() + " / " + nbTourMax.ToString();
+            rtbActu.Text += ControleurJeu.filActualite();
+            rtbActu.Text += "\nTour effectué " + this.getNbTour() + " / " + nbTourMax.ToString();
             this.augmenterNbTour();   //incremente nb de tour
 
         }
 
-        private void btnTourSuivant_Click(object sender, EventArgs e) { 
-
-
-            timerActuProjet.Enabled = false;
-            timerActuProjet.Stop();
-            timerActuProjet.Dispose();
-
+        private void btnTourSuivant_Click(object sender, EventArgs e) {
             btnReunion.Enabled = true;
+            btnRepos.Enabled = true;
             if (crunchBool == true)
             {
                 foreach (Object o in Controls)
@@ -225,12 +230,9 @@ namespace Menu
                                 int rnd = aleatoire.Next(9);
                                 if (rnd == 0)
                                 {
-
-                                    up.getPersonnage().setMalade(true);
-                                    up.Enabled = false;
-
+                                    //up.getPersonnage().setMalade(true);
+                                    //up.Enabled = false;
                                 }
-
                             }
                             else
                             {
@@ -250,7 +252,7 @@ namespace Menu
 
             // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
             // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
-            if ((nbTour >= nbTourMax) || ((ControleurJeu.getListeFonctionnalite().Count == 0)))
+            if ((nbTour >= nbTourMax) || ((ControleurJeu.getListeFonctionnalite().Count == 0)) || lstTache.Items.Count == 0)
             {
                 ControleurJeu.arreterJeu(rtbListeF.Text);
                 this.Close();
@@ -272,13 +274,8 @@ namespace Menu
 
                             UC_Personnage up = (UC_Personnage)c;
                             up.donnerTachePerso();
-                            // MessageBox.Show("affectation des taches");
-
                         }
-
-
                     }
-
                 }
 
             }
@@ -339,12 +336,6 @@ namespace Menu
 
                 // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
                 // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
-                if ((nbTour >= nbTourMax) || (ControleurJeu.getListeFonctionnalite().Count == 0))
-                {
-                    ControleurJeu.arreterJeu(rtbListeF.Text);
-
-                    this.Close();
-                }
 
 
             }
@@ -364,6 +355,42 @@ namespace Menu
                 }
             }
 
+
+
+            //Actualiser les progressBars pour chaque tache
+            ArrayList listFonctionnalite = ControleurJeu.getListeFonctionnalite();
+            for (int i = 0; i <= listFonctionnalite.Count - 1; i++)
+            {
+                foreach (Object o in Controls)
+                {
+                    if (o is Panel)
+                    {
+                        Panel p = (Panel)o;
+                        foreach (Object ob in p.Controls)
+                        {
+                            if (ob is Bunifu.Framework.UI.BunifuProgressBar)
+                            {
+                                Bunifu.Framework.UI.BunifuProgressBar pb = (Bunifu.Framework.UI.BunifuProgressBar)ob;
+                                if ((int)pb.Tag == i)
+                                {
+                                    Fonctionnalites f = (Fonctionnalites)listFonctionnalite[i];
+                                    foreach (Fonctionnalites ft in ControleurJeu.getListeFonctionnalite())
+                                    {
+                                        if (f.getNom() == ft.getNom())
+                                        {
+                                            float val1 = (float)ft.getPaDepense();
+                                            float val2 = (float)ft.getPaNecess();
+                                            float res = (val1 / val2) * 100;
+                                            pb.Value = (int)res;
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -371,14 +398,7 @@ namespace Menu
         public static void remplir(string s1)
         {
             s += s1;
-
-
         }
-
-       
-
-
-
 
 
 
@@ -392,8 +412,13 @@ namespace Menu
         }
         private void btnRepos_Click(object sender, EventArgs e)
         {
-            frmRepos repos = new frmRepos(listPersonnage);
-            repos.Show();
+            List<Personnage> listRepos = new List<Personnage>();
+            frmRepos repos = new frmRepos(listPersonnage, this);
+            DialogResult dr = new DialogResult();
+           
+            btnRepos.Enabled = false;
+
+            dr = repos.ShowDialog();
             if (crunchBool == true)
             {
                 foreach (Object o in Controls)
@@ -422,20 +447,23 @@ namespace Menu
                 this.Close();
             }
 
+            if (dr == DialogResult.OK)
+            {
+                ArrayList listPerso = ControleurJeu.getListePersonnage();
 
+                Personnage p1 = (Personnage)listPerso[0];
+                Personnage p2 = (Personnage)listPerso[1];
+                Personnage p3 = (Personnage)listPerso[2];
+                Personnage p4 = (Personnage)listPerso[3];
 
-            ArrayList listPerso = ControleurJeu.getListePersonnage();
+                //mise a jour des persos apres avoir effectue les taches
+                initUC(uC_Personnage1, p1);
+                initUC(uC_Personnage2, p2);
+                initUC(uC_Personnage3, p3);
+                initUC(uC_Personnage4, p4);
+            }
 
-            Personnage p1 = (Personnage)listPerso[0];
-            Personnage p2 = (Personnage)listPerso[1];
-            Personnage p3 = (Personnage)listPerso[2];
-            Personnage p4 = (Personnage)listPerso[3];
-
-            //mise a jour des persos apres avoir effectue les taches
-            initUC(uC_Personnage1, p1);
-            initUC(uC_Personnage2, p2);
-            initUC(uC_Personnage3, p3);
-            initUC(uC_Personnage4, p4);
+            
         }
 
         public static float getAvancement()
@@ -471,6 +499,12 @@ namespace Menu
             }
         }
 
+        public void setRepos(Personnage p)
+        {
+            p.setFatigue(0);
+            p.setDisponible(false);
+        }
+
 
 
 
@@ -478,8 +512,11 @@ namespace Menu
         {
 
             frmReunion reunion = new frmReunion();
-            reunion.ShowDialog();
             
+            if(reunion.ShowDialog() == DialogResult.OK)
+            {
+                reunion.remettreCompteurAZero();
+            }
             lblIntro.Visible = false;
            
             
@@ -552,36 +589,28 @@ namespace Menu
                     }
                     if (r.getThemeReunion() == "Découvrir le projet")
                     {
-                        rtbActu.Text += "\n\nIl vous est demandé de réaliser la simulation d'une gestion de projet T3\n";
-                        timerActuProjet.Enabled = true;
-                        timerActuProjet.Start();
+                        rtbActu.Text += "\nIl vous est demandé de réaliser la simulation d'une gestion de projet T3\n";
                     }
                     if (r.getThemeReunion() == "Révèle les qualités et les défauts")
                     {
-                        //à faire
+                        //à FAIRE
                     }
                     if (r.getThemeReunion() == "Mettre en place un système d'organisation")
                     {
-                        timerActuProjet.Enabled = true;
-                        timerActuProjet.Start();
-                        rtbActu.Text += "\n\nLe chef étant désigné, vous pouvez faire les points sur votre avancement du projet lors des réunions\n";
+                        rtbActu.Text += "\n\nLe chef étant désigné, vous pouvez faire les points sur votre avancement du projet lors des réunions";
                     }
                     if (r.getThemeReunion() == "Analyse de la demande du client et de ses besoins + Définir un cahier des charges")
                     {
                         lstTache.Visible = true;
                         btnVider.Visible = true;
                         lblLstTache.Visible = true;
-                        timerActuProjet.Enabled = true;
-                        timerActuProjet.Start();
-                        rtbActu.Text += "\n\nLa liste des tâches à effectuer est disponible";
+                        rtbActu.Text += "\nLa liste des tâches à effectuer est disponible";
                     }
                     if (r.getThemeReunion() == "Mettre en commun le travail et l'avancement de chacun")
                     {
-                        timerActuProjet.Enabled = true;
-                        timerActuProjet.Start();
                         lblTacheReal.Visible = true;
-                        rtbListeF.Visible = true;
-                        rtbActu.Text += "\n\nGrâce à la mise en commun lors de la réunion, vous pouvez voir toutes les tâches effectuées";
+                        pnlProgressBarTache.Visible = true;
+                        rtbActu.Text += "\nGrâce à la mise en commun lors de la réunion, vous pouvez voir toutes les tâches effectuées";
                     }
                     uC_Personnage1.rendreInvisibleTacheMatin();
                     uC_Personnage2.rendreInvisibleTacheMatin();
@@ -695,11 +724,6 @@ namespace Menu
             uC_Personnage4.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
         }
 
-        private void frmJeu_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -728,6 +752,7 @@ namespace Menu
             }
         }
 
+
         private void timerRepos_Tick(object sender, EventArgs e)
         {
            
@@ -737,7 +762,7 @@ namespace Menu
                 if (btnReunion.ForeColor == System.Drawing.Color.OrangeRed)
                 {
                     btnReunion.ForeColor = System.Drawing.Color.Yellow;
-                    btnReunion.FlatAppearance.BorderSize = 5;
+                    btnReunion.FlatAppearance.BorderSize = 3;
                 }
                 else
                 {
@@ -753,16 +778,5 @@ namespace Menu
             }
         }
 
-        private void timerActuProjet_Tick(object sender, EventArgs e)
-        {
-            if (rtbActu.BackColor == Color.Gainsboro)
-            {
-                rtbActu.BackColor = Color.White;
-            }
-            else
-            {
-                rtbActu.BackColor = Color.Gainsboro;
-            }
-        }
     }
 }

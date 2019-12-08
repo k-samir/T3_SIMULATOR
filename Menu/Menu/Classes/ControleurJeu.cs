@@ -18,6 +18,7 @@ namespace Menu
 
         //variable globale
         private static ArrayList listfonctionnalite = new ArrayList();
+        private static ArrayList listtransmise = new ArrayList();
         private static ArrayList listPersonnage = new ArrayList();
         private static ArrayList listReunion = new ArrayList();
 
@@ -43,7 +44,7 @@ namespace Menu
         Personnage p3;
         Personnage p4;
 
-        frmJeu jeu;
+        public frmJeu jeu;
 
 
         // frmJeu jeu;
@@ -54,6 +55,7 @@ namespace Menu
         public void init()
         {
             listfonctionnalite.Clear();
+            listtransmise.Clear();
             listPersonnage.Clear();
             listReunion.Clear();
             listeQualites.Clear();
@@ -99,25 +101,25 @@ namespace Menu
 
 
 
-            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 10, 0, 0, "Rechercher");
-            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 10, 0, 0, "Rechercher");
-            Fonctionnalites f3 = new Fonctionnalites("Code", 10, 0, 0, "Rechercher");
-            Fonctionnalites f4 = new Fonctionnalites("MCD", 10, 0, 0, "Concevoir");
-            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 10, 0, 0, "Concevoir");
-            Fonctionnalites f6 = new Fonctionnalites("GIT", 10, 0, 0, "Concevoir");
-            Fonctionnalites f7 = new Fonctionnalites("Classes", 10, 0, 0, "Développer");
-            Fonctionnalites f8 = new Fonctionnalites("Controleur", 10, 0, 0, "Développer");
-            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 10, 0, 0, "Développer");
+            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 40, 0, 0, "Rechercher");
+            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 40, 0, 0, "Rechercher");
+            Fonctionnalites f3 = new Fonctionnalites("Code", 40, 0, 0, "Rechercher");
+            Fonctionnalites f4 = new Fonctionnalites("MCD", 40, 0, 0, "Concevoir");
+            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 40, 0, 0, "Concevoir");
+            Fonctionnalites f6 = new Fonctionnalites("GIT", 40, 0, 0, "Concevoir");
+            Fonctionnalites f7 = new Fonctionnalites("Classes", 40, 0, 0, "Développer");
+            Fonctionnalites f8 = new Fonctionnalites("Controleur", 40, 0, 0, "Développer");
+            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 40, 0, 0, "Développer");
 
             //REUNION(THEME DE LA REUNION) et le statut de cette réunion est par défaut à false
-            Reunion r1 = new Reunion("Faire connaissance");
-            Reunion r2 = new Reunion("Évaluer le potentiel du groupe");
-            Reunion r3 = new Reunion("Révèle les qualités et les défauts");
-            Reunion r4 = new Reunion("Analyse des affinités de chacun");
-            Reunion r5 = new Reunion("Découvrir le projet");
-            Reunion r6 = new Reunion("Analyse de la demande du client et de ses besoins + Définir un cahier des charges");
-            Reunion r7 = new Reunion("Mettre en place un système d'organisation");
-            Reunion r8 = new Reunion("Mettre en commun le travail et l'avancement de chacun");
+            Reunion r1 = new Reunion("Faire connaissance", "Découvir l'équipe");
+            Reunion r2 = new Reunion("Évaluer le potentiel du groupe", "Découvir l'équipe");
+            Reunion r3 = new Reunion("Révèle les qualités et les défauts", "Découvir l'équipe");
+            Reunion r4 = new Reunion("Analyse des affinités de chacun", "Découvir l'équipe");
+            Reunion r5 = new Reunion("Découvrir le projet", "Examiner le projet");
+            Reunion r6 = new Reunion("Analyse de la demande du client et de ses besoins + Définir un cahier des charges", "Examiner le projet");
+            Reunion r7 = new Reunion("Mettre en place un système d'organisation", "Examiner le projet");
+            Reunion r8 = new Reunion("Mettre en commun le travail et l'avancement de chacun", "Faire le point");
 
 
             listReunion.Add(r1);
@@ -140,6 +142,10 @@ namespace Menu
             listfonctionnalite.Add(f8);
             listfonctionnalite.Add(f9);
             verifPourcentNote();
+            foreach (Fonctionnalites f in listfonctionnalite)
+            {
+                listtransmise.Add(f);
+            }
 
             listPersonnage.Add(p1);
             listPersonnage.Add(p2);
@@ -394,25 +400,25 @@ namespace Menu
 
 
 
-            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 10, 0, 0, "Rechercher");
-            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 10, 0, 0, "Rechercher");
-            Fonctionnalites f3 = new Fonctionnalites("Code", 10, 0, 0, "Rechercher");
-            Fonctionnalites f4 = new Fonctionnalites("MCD", 10, 0, 0, "Concevoir");
-            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 10, 0, 0, "Concevoir");
-            Fonctionnalites f6 = new Fonctionnalites("GIT", 10, 0, 0, "Concevoir");
-            Fonctionnalites f7 = new Fonctionnalites("Classes", 10, 0, 0, "Développer");
-            Fonctionnalites f8 = new Fonctionnalites("Controleur", 10, 0, 0, "Développer");
-            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 10, 0, 0, "Développer");
+            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 40, 0, 0, "Rechercher");
+            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 40, 0, 0, "Rechercher");
+            Fonctionnalites f3 = new Fonctionnalites("Code", 40, 0, 0, "Rechercher");
+            Fonctionnalites f4 = new Fonctionnalites("MCD", 40, 0, 0, "Concevoir");
+            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 40, 0, 0, "Concevoir");
+            Fonctionnalites f6 = new Fonctionnalites("GIT", 40, 0, 0, "Concevoir");
+            Fonctionnalites f7 = new Fonctionnalites("Classes", 40, 0, 0, "Développer");
+            Fonctionnalites f8 = new Fonctionnalites("Controleur", 40, 0, 0, "Développer");
+            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 40, 0, 0, "Développer");
 
             //REUNION(THEME DE LA REUNION) et le statut de cette réunion est par défaut à false
-            Reunion r1 = new Reunion("Faire connaissance");
-            Reunion r2 = new Reunion("Évaluer le potentiel du groupe");
-            Reunion r3 = new Reunion("Révèle les qualités et les défauts");
-            Reunion r4 = new Reunion("Analyse des affinités de chacun");
-            Reunion r5 = new Reunion("Découvrir le projet");
-            Reunion r6 = new Reunion("Analyse de la demande du client et de ses besoins + Définir un cahier des charges");
-            Reunion r7 = new Reunion("Mettre en place un système d'organisation");
-            Reunion r8 = new Reunion("Mettre en commun le travail et l'avancement de chacun");
+            Reunion r1 = new Reunion("Faire connaissance", "Découvir l'équipe");
+            Reunion r2 = new Reunion("Évaluer le potentiel du groupe", "Découvir l'équipe");
+            Reunion r3 = new Reunion("Révèle les qualités et les défauts", "Découvir l'équipe");
+            Reunion r4 = new Reunion("Analyse des affinités de chacun", "Découvir l'équipe");
+            Reunion r5 = new Reunion("Découvrir le projet", "Examiner le projet");
+            Reunion r6 = new Reunion("Analyse de la demande du client et de ses besoins + Définir un cahier des charges", "Examiner le projet");
+            Reunion r7 = new Reunion("Mettre en place un système d'organisation", "Examiner le projet");
+            Reunion r8 = new Reunion("Mettre en commun le travail et l'avancement de chacun", "Faire le point");
 
 
             listReunion.Add(r1);
@@ -435,6 +441,11 @@ namespace Menu
             listfonctionnalite.Add(f8);
             listfonctionnalite.Add(f9);
             verifPourcentNote();
+
+            foreach (Fonctionnalites f in listfonctionnalite)
+            {
+                listtransmise.Add(f);
+            }
 
             listPersonnage.Add(p1);
             listPersonnage.Add(p2);
@@ -515,13 +526,24 @@ namespace Menu
 
         public static void arreterJeu(String s)
         {
-           // listfonctionnalite.Clear();
-           // listPersonnage.Clear();
-           // Get SCORE
+            // listfonctionnalite.Clear();
+            // listPersonnage.Clear();
+            // Get SCORE
 
-            
+
+            //crée une liste stockant tous les taches non effectué
+            ArrayList tacheNonCodé = new ArrayList();
+            foreach(Fonctionnalites f in getListeFonctionnalite())
+            {
+                if( !(f.getStatus()) )
+                {
+                    tacheNonCodé.Add(f);
+                }
+            }
+
+
             MessageBox.Show("Fin de la partie");
-            Forms.FrmEnd e = new Forms.FrmEnd(s,listfonctionnalite,frmJeu.getAvancement(),200);
+            Forms.FrmEnd e = new Forms.FrmEnd(s,tacheNonCodé,frmJeu.getAvancement(),200);
             e.Show();
 
             
@@ -546,7 +568,7 @@ namespace Menu
             {
                 Fonctionnalites f10 = new Fonctionnalites("Nouvelle demande client", 10, 0, 0, "Développer");
                 listfonctionnalite.Add(f10);
-                
+                listtransmise.Add(f10);
             }
         }
 
@@ -603,8 +625,8 @@ namespace Menu
                 {
                     p.setFatigue(p.getFatigue() + 5);
                 }
-            
-                
+                p.setnbrActionFaite(0);
+
 
 
                 if (p.getFatigue() > 100)
@@ -740,7 +762,8 @@ namespace Menu
                     frmJeu.setAvancement(f.getPourcentNote() + (float)frmJeu.getAvancement());
 
                     texte += f.getNom() + " " + f.getPaDepense() + "/" + f.getPaNecess() + " Terminé par " + p.getPrenom() + "\n";
-                    listfonctionnalite.Remove(f);
+                    //listfonctionnalite.Remove(f);
+                    listtransmise.Remove(f);
 
 
                     fonc = f.getNom();
@@ -749,6 +772,7 @@ namespace Menu
                 {
                     texte += f.getNom() + " " + f.getPaDepense() + "/" + f.getPaNecess() + " " + p.getPrenom() + "\n";
                 }
+
             }
 
             // SUPPRESION DANS LA LISTE DES FONCTIONNALITES LES FONCTION FINIES
@@ -766,7 +790,6 @@ namespace Menu
 
             // ENVOIE DU TEXTE A AFFICHER DANS LE FRMJEU
             frmJeu.remplir(texte);
-
 
         }
 
