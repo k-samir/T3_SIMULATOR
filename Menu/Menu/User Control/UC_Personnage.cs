@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Menu.classePersonnage;
 using System.Collections.Generic;
+using Menu.Forms;
 
 namespace Menu
 {
@@ -82,8 +83,10 @@ namespace Menu
             this.setAffinite(perso.getAffinite());
             this.setDeteste(perso.getDeteste());
             this.cboFonctionnalite1.Visible = true;
+            this.cboFonctionnalite2.Visible = true;
             lblAction1.Visible = true;
             btnSupprimerTache1.Visible = true;
+            btnSupprimerTache2.Visible = true;
 
             listfonctionnalite = ControleurJeu.getListeFonctionnalite(); //remet à jour la liste de fonctionnalité
 
@@ -96,14 +99,24 @@ namespace Menu
                 if (perso.estDisponible() == false && perso.getMalade() == true)
                 {
                     this.Enabled = false;
-                    this.BackColor = Color.Coral;
+                    this.BackColor = Color.Violet;
                     perso.setMalade(false);
                     perso.setDisponible(true);
+                    this.cboFonctionnalite1.Visible = false;
+                    this.btnSupprimerTache1.Visible = false;
+                    this.cboFonctionnalite2.Visible = false;
+                    this.btnSupprimerTache2.Visible = false;
+                    this.lblPrenom.Text = "Absent";
+
+                    frmReunionPopUp frm = new frmReunionPopUp();
+                    frm.messagePopUp(perso.getPrenom());
+                    frm.Show();
+
                 }
 
                 else if (perso.estDisponible() == false && perso.getMalade() == false)
                 {
-                    this.Enabled = false;
+                    
                     this.BackColor = Color.SpringGreen;
                     perso.setDisponible(true);
                 }
@@ -124,8 +137,6 @@ namespace Menu
 
 
             lblAction1.Visible = true;
-            btnSupprimerTache1.Visible = true;
-            cboFonctionnalite1.Visible = true;
             this.reunion = false;
 
         }

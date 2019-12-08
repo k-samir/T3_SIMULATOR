@@ -70,14 +70,7 @@ namespace Menu.classePersonnage
 
         public bool getMalade()
         {
-            if (this.malade == true)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return this.malade;
         }
 
         public void setAffinite(Personnage p)

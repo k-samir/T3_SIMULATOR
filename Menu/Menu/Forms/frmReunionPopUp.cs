@@ -82,6 +82,29 @@ namespace Menu.Forms
                 lblNotification.Text = "Limite atteinte";
                 lblInfo.Text = "Vous ne pouvez pas aborder plus de 3 thématiques lors des réunions";
             }
+
+            if (butReunion == "Aymeric")
+            {
+                lblNotification.Text = "Malheureusement..";
+                lblInfo.Text = "Aymeric a sûrement trop joué hier soir. Il faudra se passer de lui pour ce tour !";
+            }
+            if (butReunion == "Samir")
+            {
+                lblNotification.Text = "Malheureusement..";
+                lblInfo.Text = "Samir a un rendez-vous chez le dentiste. Il sera absent aujourd'hui !";
+            }
+            if (butReunion == "Mathieu")
+            {
+                lblNotification.Text = "Malheureusement..";
+                lblInfo.Text = "Mathieu est tellement sous pression qu'il hésite à démissionner.. Ne comptez pas sur lui pour ce tour.";
+            }
+            if(butReunion == "Valentin")
+            {
+                lblNotification.Text = "Malheureusement..";
+                lblInfo.Text = "Valentin est en plein burn out, il est tombé malade à force de travailler.";
+            }
+
+
         }
     }
 }

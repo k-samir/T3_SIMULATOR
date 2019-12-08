@@ -38,10 +38,6 @@
             this.btnVider = new System.Windows.Forms.Button();
             this.lblLstTache = new System.Windows.Forms.Label();
             this.lstTache = new System.Windows.Forms.ListBox();
-            this.uC_Personnage3 = new Menu.UC_Personnage();
-            this.uC_Personnage4 = new Menu.UC_Personnage();
-            this.uC_Personnage2 = new Menu.UC_Personnage();
-            this.uC_Personnage1 = new Menu.UC_Personnage();
             this.rtbActu = new System.Windows.Forms.RichTextBox();
             this.lblActu = new System.Windows.Forms.Label();
             this.rtbListeF = new System.Windows.Forms.RichTextBox();
@@ -57,6 +53,11 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.timerRepos = new System.Windows.Forms.Timer(this.components);
             this.pnlProgressBarTache = new System.Windows.Forms.Panel();
+            this.lblTour = new System.Windows.Forms.Label();
+            this.uC_Personnage3 = new Menu.UC_Personnage();
+            this.uC_Personnage4 = new Menu.UC_Personnage();
+            this.uC_Personnage2 = new Menu.UC_Personnage();
+            this.uC_Personnage1 = new Menu.UC_Personnage();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
+            this.panel1.Controls.Add(this.lblTour);
             this.panel1.Controls.Add(this.lblIntro);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.score);
@@ -87,11 +89,11 @@
             // 
             this.lblIntro.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIntro.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblIntro.Location = new System.Drawing.Point(512, 343);
+            this.lblIntro.Location = new System.Drawing.Point(512, 306);
             this.lblIntro.Name = "lblIntro";
-            this.lblIntro.Size = new System.Drawing.Size(200, 63);
+            this.lblIntro.Size = new System.Drawing.Size(200, 100);
             this.lblIntro.TabIndex = 30;
-            this.lblIntro.Text = "Un projet commence TOUJOURS par une réunion !";
+            this.lblIntro.Text = "Il faudrait faire une réunion pour déterminer les tâches à effectuer..";
             this.lblIntro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -120,7 +122,7 @@
             this.score.LabelVisible = true;
             this.score.LineProgressThickness = 10;
             this.score.LineThickness = 5;
-            this.score.Location = new System.Drawing.Point(536, 46);
+            this.score.Location = new System.Drawing.Point(530, 51);
             this.score.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.score.MaxValue = 10000;
             this.score.Name = "score";
@@ -168,7 +170,7 @@
             this.lblLstTache.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLstTache.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLstTache.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblLstTache.Location = new System.Drawing.Point(474, 216);
+            this.lblLstTache.Location = new System.Drawing.Point(469, 211);
             this.lblLstTache.Name = "lblLstTache";
             this.lblLstTache.Size = new System.Drawing.Size(276, 30);
             this.lblLstTache.TabIndex = 22;
@@ -192,54 +194,6 @@
             this.lstTache.TabIndex = 13;
             this.lstTache.Visible = false;
             this.lstTache.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstTache_MouseDown);
-            // 
-            // uC_Personnage3
-            // 
-            this.uC_Personnage3.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage3.Location = new System.Drawing.Point(13, 17);
-            this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage3.Name = "uC_Personnage3";
-            this.uC_Personnage3.Size = new System.Drawing.Size(433, 331);
-            this.uC_Personnage3.TabIndex = 11;
-            this.uC_Personnage3.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragDrop);
-            this.uC_Personnage3.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragEnter);
-            // 
-            // uC_Personnage4
-            // 
-            this.uC_Personnage4.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage4.Location = new System.Drawing.Point(776, 371);
-            this.uC_Personnage4.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage4.Name = "uC_Personnage4";
-            this.uC_Personnage4.Size = new System.Drawing.Size(429, 329);
-            this.uC_Personnage4.TabIndex = 12;
-            this.uC_Personnage4.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragDrop);
-            this.uC_Personnage4.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragEnter);
-            // 
-            // uC_Personnage2
-            // 
-            this.uC_Personnage2.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage2.Location = new System.Drawing.Point(776, 17);
-            this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage2.Name = "uC_Personnage2";
-            this.uC_Personnage2.Size = new System.Drawing.Size(429, 331);
-            this.uC_Personnage2.TabIndex = 10;
-            this.uC_Personnage2.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragDrop);
-            this.uC_Personnage2.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragEnter);
-            // 
-            // uC_Personnage1
-            // 
-            this.uC_Personnage1.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage1.Location = new System.Drawing.Point(13, 371);
-            this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage1.Name = "uC_Personnage1";
-            this.uC_Personnage1.Size = new System.Drawing.Size(433, 329);
-            this.uC_Personnage1.TabIndex = 9;
-            this.uC_Personnage1.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragDrop);
-            this.uC_Personnage1.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragEnter);
             // 
             // rtbActu
             // 
@@ -425,18 +379,79 @@
             // 
             // pnlProgressBarTache
             // 
-            this.pnlProgressBarTache.Location = new System.Drawing.Point(1228, 242);
+            this.pnlProgressBarTache.Location = new System.Drawing.Point(1223, 242);
             this.pnlProgressBarTache.Name = "pnlProgressBarTache";
             this.pnlProgressBarTache.Size = new System.Drawing.Size(225, 480);
             this.pnlProgressBarTache.TabIndex = 24;
             this.pnlProgressBarTache.Visible = false;
+            // 
+            // lblTour
+            // 
+            this.lblTour.AutoSize = true;
+            this.lblTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
+            this.lblTour.Font = new System.Drawing.Font("Cooper Black", 11.25F);
+            this.lblTour.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTour.Location = new System.Drawing.Point(566, 152);
+            this.lblTour.Name = "lblTour";
+            this.lblTour.Size = new System.Drawing.Size(93, 17);
+            this.lblTour.TabIndex = 31;
+            this.lblTour.Text = "Tour : 0/10";
+            this.lblTour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uC_Personnage3
+            // 
+            this.uC_Personnage3.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage3.Location = new System.Drawing.Point(13, 17);
+            this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage3.Name = "uC_Personnage3";
+            this.uC_Personnage3.Size = new System.Drawing.Size(433, 331);
+            this.uC_Personnage3.TabIndex = 11;
+            this.uC_Personnage3.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragDrop);
+            this.uC_Personnage3.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragEnter);
+            // 
+            // uC_Personnage4
+            // 
+            this.uC_Personnage4.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage4.Location = new System.Drawing.Point(776, 371);
+            this.uC_Personnage4.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage4.Name = "uC_Personnage4";
+            this.uC_Personnage4.Size = new System.Drawing.Size(429, 329);
+            this.uC_Personnage4.TabIndex = 12;
+            this.uC_Personnage4.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragDrop);
+            this.uC_Personnage4.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragEnter);
+            // 
+            // uC_Personnage2
+            // 
+            this.uC_Personnage2.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage2.Location = new System.Drawing.Point(776, 17);
+            this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage2.Name = "uC_Personnage2";
+            this.uC_Personnage2.Size = new System.Drawing.Size(429, 331);
+            this.uC_Personnage2.TabIndex = 10;
+            this.uC_Personnage2.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragDrop);
+            this.uC_Personnage2.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragEnter);
+            // 
+            // uC_Personnage1
+            // 
+            this.uC_Personnage1.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage1.Location = new System.Drawing.Point(13, 371);
+            this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage1.Name = "uC_Personnage1";
+            this.uC_Personnage1.Size = new System.Drawing.Size(433, 329);
+            this.uC_Personnage1.TabIndex = 9;
+            this.uC_Personnage1.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragDrop);
+            this.uC_Personnage1.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragEnter);
             // 
             // frmJeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(1455, 894);
+            this.ClientSize = new System.Drawing.Size(1460, 920);
             this.Controls.Add(this.pnlProgressBarTache);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblTacheReal);
@@ -486,5 +501,6 @@
         private System.Windows.Forms.Timer timerRepos;
         private System.Windows.Forms.Label lblIntro;
         private System.Windows.Forms.Panel pnlProgressBarTache;
+        private System.Windows.Forms.Label lblTour;
     }
 }
