@@ -357,6 +357,28 @@ namespace Menu
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+           if(frmButReunion.getCompteurEquipe() >= 3)
+            {
+                
+                frmStatPerso f = new frmStatPerso(this);
+                f.ShowDialog();
+            }
+            else
+            {
+                frmReunionPopUp fm = new frmReunionPopUp();
+                fm.messagePopUp("picturebox");
+                fm.ShowDialog();
+            }
+            
+        }
+
+        public Image getImagePerso()
+        {
+            return pictureBox1.Image;
+        }
     }
 }
 

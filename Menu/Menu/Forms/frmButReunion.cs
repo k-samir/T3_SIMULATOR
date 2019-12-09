@@ -14,11 +14,17 @@ namespace Menu.Forms
     public partial class frmButReunion : Form
     {
         private frmReunion reunion;
+        private static int compteurEquipe;
         public frmButReunion(frmReunion fr)
         {
             InitializeComponent();
             this.reunion = fr;
             update();
+        }
+
+        public static int getCompteurEquipe()
+        {
+            return compteurEquipe;
         }
 
         public void themeReunion(String theme)
@@ -27,6 +33,7 @@ namespace Menu.Forms
 
             if (theme == "Découvir l'équipe")
             {
+                
                 Button button1 = new Button();
                 button1.Size = new System.Drawing.Size(494, 78);
                 button1.Location = new System.Drawing.Point(posGauche, 38);
@@ -40,6 +47,8 @@ namespace Menu.Forms
                 if (verifierThemeAborde(button1.Text))   //grise le bouton car le theme de cette réunion a déjà été abordé
                 {
                     button1.Enabled = false;
+                    compteurEquipe++;
+                    
                 }
 
                 Button button2 = new Button();
@@ -55,6 +64,7 @@ namespace Menu.Forms
                 if (verifierThemeAborde(button2.Text))   //grise le bouton car le theme de cette réunion a déjà été abordé
                 {
                     button2.Enabled = false;
+                    compteurEquipe++;
                 }
 
                 Button button3 = new Button();
@@ -70,6 +80,7 @@ namespace Menu.Forms
                 if (verifierThemeAborde(button3.Text))   //grise le bouton car le theme de cette réunion a déjà été abordé
                 {
                     button3.Enabled = false;
+                    compteurEquipe++;
                 }
 
                 Button button4 = new Button();
@@ -85,6 +96,7 @@ namespace Menu.Forms
                 if (verifierThemeAborde(button4.Text))   //grise le bouton car le theme de cette réunion a déjà été abordé
                 {
                     button4.Enabled = false;
+                    compteurEquipe++;
                 }
 
                 this.Controls.Add(button1);
@@ -108,6 +120,7 @@ namespace Menu.Forms
                 if (verifierThemeAborde(button1.Text))   //grise le bouton car le theme de cette réunion a déjà été abordé
                 {
                     button1.Enabled = false;
+                    
                 }
 
                 Button button2 = new Button();

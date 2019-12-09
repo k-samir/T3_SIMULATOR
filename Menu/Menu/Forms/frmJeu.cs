@@ -117,6 +117,7 @@ namespace Menu
 
                 l.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 l.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                l.BackColor = Color.White;
                 l.Location = new System.Drawing.Point(pnlProgressBarTache.Width - 200, progressBar.Location.Y);
                 l.Size = new System.Drawing.Size(200, 20);
                 l.Text = f.getNom();
@@ -185,7 +186,9 @@ namespace Menu
 
         private void btnTourSuivant_Click(object sender, EventArgs e) {
             lblTour.Text = "Tour " + nbTour.ToString() + "/10";
+            lblTour.Visible = true;
             btnReunion.Enabled = true;
+            
             btnRepos.Enabled = true;
             if (crunchBool == true)
             {

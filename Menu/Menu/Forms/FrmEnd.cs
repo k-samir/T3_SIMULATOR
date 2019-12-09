@@ -65,7 +65,7 @@ namespace Menu.Forms
             if(avanc >= 99)
             {
                 bunifuGauge1.Value = 100;
-                label3.Text = "Vous avez Gagnez ! Score :" + score;
+                label3.Text = "Vous avez Gagné ! Score :" + score;
             }
             else
             {
