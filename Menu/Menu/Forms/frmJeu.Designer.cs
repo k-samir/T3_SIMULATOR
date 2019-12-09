@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJeu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTour = new System.Windows.Forms.Label();
             this.lblIntro = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.score = new Bunifu.Framework.UI.BunifuCircleProgressbar();
@@ -53,7 +54,6 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.timerRepos = new System.Windows.Forms.Timer(this.components);
             this.pnlProgressBarTache = new System.Windows.Forms.Panel();
-            this.lblTour = new System.Windows.Forms.Label();
             this.uC_Personnage3 = new Menu.UC_Personnage();
             this.uC_Personnage4 = new Menu.UC_Personnage();
             this.uC_Personnage2 = new Menu.UC_Personnage();
@@ -84,6 +84,20 @@
             this.panel1.Size = new System.Drawing.Size(1221, 815);
             this.panel1.TabIndex = 14;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblTour
+            // 
+            this.lblTour.AutoSize = true;
+            this.lblTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
+            this.lblTour.Font = new System.Drawing.Font("Cooper Black", 11.25F);
+            this.lblTour.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTour.Location = new System.Drawing.Point(566, 152);
+            this.lblTour.Name = "lblTour";
+            this.lblTour.Size = new System.Drawing.Size(93, 17);
+            this.lblTour.TabIndex = 31;
+            this.lblTour.Text = "Tour : 0/10";
+            this.lblTour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTour.Visible = false;
             // 
             // lblIntro
             // 
@@ -384,19 +398,6 @@
             this.pnlProgressBarTache.Size = new System.Drawing.Size(225, 480);
             this.pnlProgressBarTache.TabIndex = 24;
             this.pnlProgressBarTache.Visible = false;
-            // 
-            // lblTour
-            // 
-            this.lblTour.AutoSize = true;
-            this.lblTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
-            this.lblTour.Font = new System.Drawing.Font("Cooper Black", 11.25F);
-            this.lblTour.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTour.Location = new System.Drawing.Point(566, 152);
-            this.lblTour.Name = "lblTour";
-            this.lblTour.Size = new System.Drawing.Size(93, 17);
-            this.lblTour.TabIndex = 31;
-            this.lblTour.Text = "Tour : 0/10";
-            this.lblTour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uC_Personnage3
             // 

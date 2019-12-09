@@ -104,6 +104,12 @@ namespace Menu.Forms
                 lblInfo.Text = "Valentin est en plein burn out, il est tombé malade à force de travailler.";
             }
 
+            if(butReunion == "picturebox")
+            {
+                lblNotification.Text = "Astuce";
+               lblInfo.Text = "Faites connaissance avec les membres du projet, puis revenez ici..";
+            }
+
 
         }
     }

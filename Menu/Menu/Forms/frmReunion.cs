@@ -15,6 +15,7 @@ namespace Menu.Forms
     {
         private int nbReunion = 0;       //compteur de thématiques abordés durant la réunion, et si le nb égale à 3 alors on ne peut plus aborder de réunion
         public frmReunion()
+
         {
             InitializeComponent();
             update();
