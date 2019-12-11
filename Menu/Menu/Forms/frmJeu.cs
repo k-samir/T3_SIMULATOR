@@ -136,13 +136,12 @@ namespace Menu
 
         public void initUC(UC_Personnage uC, Personnage p)
         {
-            
-            /* IMAGES DES PERSOS */
-            imgLst.Images.Add("perso1", Image.FromFile(@"perso1.png"));
-            imgLst.Images.Add("perso2", Image.FromFile(@"perso2.png"));
-            imgLst.Images.Add("perso3", Image.FromFile(@"perso3.png"));
-            imgLst.Images.Add("perso4", Image.FromFile(@"perso4.png"));
 
+            /* IMAGES DES PERSOS */
+            imgLst.Images.Add("perso1", Image.FromFile(@"../../image/perso1.png"));
+            imgLst.Images.Add("perso2", Image.FromFile(@"../../image/perso2.png"));
+            imgLst.Images.Add("perso3", Image.FromFile(@"../../image/perso3.png"));
+            imgLst.Images.Add("perso4", Image.FromFile(@"../../image/perso4.png"));
             imgLst.Images.RemoveAt(0);
             uC.initialisationUCPerso(p, imgLst.Images[0]);
             
@@ -154,7 +153,6 @@ namespace Menu
             Random rnd = new Random();
             int s = rnd.Next(10);
             //score.Value += score.Value + s;
-         
             nbTour++;
         }
 
@@ -500,24 +498,33 @@ namespace Menu
 
         private void btnCrunch_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("ATTENTION VOUS N'AVEZ DROIT QU'A UN CRUNCH DANS LA PARTIE");
-            btnCrunch.Enabled = false;
-            foreach (Object o in Controls)
+            frmCrunch frm = new frmCrunch();
+            frm.ShowDialog();
+            if (frm.DialogResult == DialogResult.OK)
             {
-                if (o is Panel)
+                btnCrunch.Enabled = false;
+                foreach (Object o in Controls)
                 {
-                    Panel p = (Panel)o;
-                    foreach (Object c in p.Controls)
+                    if (o is Panel)
                     {
-                        if (c is UC_Personnage)
+                        Panel p = (Panel)o;
+                        foreach (Object c in p.Controls)
                         {
-                            UC_Personnage up = (UC_Personnage)c;
-                            up.crunchActive();
-                            crunchBool = true;
+                            if (c is UC_Personnage)
+                            {
+                                UC_Personnage up = (UC_Personnage)c;
+                                if (up.getPersonnage().getMalade() == false)
+                                {
+                                    up.crunchActive();
+                                    crunchBool = true;
+                                }
+
+                            }
                         }
                     }
                 }
             }
+
         }
 
         public void setRepos(Personnage p)

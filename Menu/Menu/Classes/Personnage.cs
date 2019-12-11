@@ -50,8 +50,6 @@ namespace Menu.classePersonnage
             this.deteste = p;
         }
 
-
-
         public List<Fonctionnalites> getTacheTour()
         {
             return tacheTour;
@@ -260,21 +258,68 @@ namespace Menu.classePersonnage
             this.productivite = productivite;
         }
 
+        public ArrayList getQualite()
+        {
+            return this.qualites;
+        }
 
+        public ArrayList getDefaut()
+        {
+            return this.defauts;
+        }
+
+        public ArrayList getPointFort()
+        {
+            return this.pointsForts;
+        }
+
+        public ArrayList getPointFaible()
+        {
+            return this.pointsFaibles;
+        }
 
         public void faireAction(Fonctionnalites action)
         {    //tache que le personnage va effectuer
-            if (action.getPaDepense() >= action.getPaNecess() && action.getStatus() == false)
-            {
-                action.setStatus(true); //modif du status pour dire que la tache est terminée
+             /**************************
+             MessageBox.Show(this.getDeteste().getPrenom() + "Deteste");
+             MessageBox.Show(this.getAffinite().getPrenom() + "Affinite");
 
-            }
+             if (action.getPaDepense() >= action.getPaNecess() && action.getStatus() == false)
+             {   
+                 action.setStatus(true); //modif du status pour dire que la tache est terminée
+             }
 
-            if (action.getStatus() == false)
-            {
+             if (action.getStatus() == false)
+             {
+                 int ajoutPA = 10;
 
-                int ajoutPA = 10;
+                 if (this.getDeteste().getPrenom() != "-")
+                 {
+                     for (int i = 0; i < this.getDeteste().getTacheTour().Count; i++)
+                     {
+                         if (this.getDeteste().getTacheTour()[i] == action)
+                         {
+                             ajoutPA -= ajoutPA / 2;
+                             MessageBox.Show(this.getDeteste().getPrenom() + "Deteste");
+                         }
+                     }
+                 }
+                 if (this.getAffinite().getPrenom() != "-")
+                 {
 
+                     for (int i = 0; i < this.getAffinite().getTacheTour().Count; i++)
+
+                     {
+                         MessageBox.Show(this.getAffinite().getTacheTour()[i].getNom());
+                         if (this.getAffinite().getTacheTour()[i] == action)
+                         {
+                             MessageBox.Show(this.getAffinite().getPrenom() + "Deteste");
+                             ajoutPA += ajoutPA / 2;
+                         }
+                     }
+                 }
+                 ***************************************************************************/
+            int ajoutPA = 10;
                 for (int i = 0; i < pointsForts.Count; i++)
                 {
                     if (pointsForts[i] == "Talentueux")
@@ -335,7 +380,7 @@ namespace Menu.classePersonnage
 
                 foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
                 {
-                    int index = 0;
+                    //int index = 0;
                     if(f.getNom() == action.getNom())
                     {
                         f.setPaDepense(action.getPaDepense() + ajoutPA);  //permet de modifier les pa dépensés
@@ -358,4 +403,3 @@ namespace Menu.classePersonnage
 
             
 
-}

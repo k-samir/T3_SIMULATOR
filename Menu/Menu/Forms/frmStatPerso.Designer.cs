@@ -31,8 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStatPerso));
             this.pnlHaut = new System.Windows.Forms.Panel();
             this.lblLstTache = new System.Windows.Forms.Label();
+            this.btnRevenir = new System.Windows.Forms.Button();
             this.lblPrenomPerso = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.grpQualiteDefaut = new System.Windows.Forms.GroupBox();
+            this.lblDéfaut = new System.Windows.Forms.Label();
+            this.lblQualite = new System.Windows.Forms.Label();
             this.pbStress = new Bunifu.Framework.UI.BunifuProgressBar();
             this.pbProductivite = new Bunifu.Framework.UI.BunifuProgressBar();
             this.pbFatigue = new Bunifu.Framework.UI.BunifuProgressBar();
@@ -46,9 +50,9 @@
             this.lblProductivite = new System.Windows.Forms.Label();
             this.lblFatigue = new System.Windows.Forms.Label();
             this.pbPerso = new System.Windows.Forms.PictureBox();
-            this.btnRevenir = new System.Windows.Forms.Button();
             this.pnlHaut.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.grpQualiteDefaut.SuspendLayout();
             this.grpPointFortFaible.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerso)).BeginInit();
@@ -62,7 +66,7 @@
             this.pnlHaut.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHaut.Location = new System.Drawing.Point(0, 0);
             this.pnlHaut.Name = "pnlHaut";
-            this.pnlHaut.Size = new System.Drawing.Size(926, 62);
+            this.pnlHaut.Size = new System.Drawing.Size(951, 62);
             this.pnlHaut.TabIndex = 1;
             // 
             // lblLstTache
@@ -70,20 +74,33 @@
             this.lblLstTache.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLstTache.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLstTache.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblLstTache.Location = new System.Drawing.Point(129, 9);
+            this.lblLstTache.Location = new System.Drawing.Point(151, 9);
             this.lblLstTache.Name = "lblLstTache";
             this.lblLstTache.Size = new System.Drawing.Size(734, 39);
             this.lblLstTache.TabIndex = 23;
             this.lblLstTache.Text = "Description détaillée du personnage";
             this.lblLstTache.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLstTache.Visible = false;
+            // 
+            // btnRevenir
+            // 
+            this.btnRevenir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRevenir.FlatAppearance.BorderSize = 0;
+            this.btnRevenir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRevenir.ForeColor = System.Drawing.Color.OrangeRed;
+            this.btnRevenir.Image = ((System.Drawing.Image)(resources.GetObject("btnRevenir.Image")));
+            this.btnRevenir.Location = new System.Drawing.Point(3, 3);
+            this.btnRevenir.Name = "btnRevenir";
+            this.btnRevenir.Size = new System.Drawing.Size(60, 56);
+            this.btnRevenir.TabIndex = 0;
+            this.btnRevenir.UseVisualStyleBackColor = true;
+            this.btnRevenir.Click += new System.EventHandler(this.btnRevenir_Click);
             // 
             // lblPrenomPerso
             // 
             this.lblPrenomPerso.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblPrenomPerso.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrenomPerso.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblPrenomPerso.Location = new System.Drawing.Point(551, 60);
+            this.lblPrenomPerso.Location = new System.Drawing.Point(-7, 74);
             this.lblPrenomPerso.Name = "lblPrenomPerso";
             this.lblPrenomPerso.Size = new System.Drawing.Size(268, 58);
             this.lblPrenomPerso.TabIndex = 23;
@@ -92,6 +109,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.grpQualiteDefaut);
             this.panel1.Controls.Add(this.pbStress);
             this.panel1.Controls.Add(this.pbProductivite);
             this.panel1.Controls.Add(this.pbFatigue);
@@ -100,10 +118,46 @@
             this.panel1.Controls.Add(this.lblStress);
             this.panel1.Controls.Add(this.lblProductivite);
             this.panel1.Controls.Add(this.lblFatigue);
-            this.panel1.Location = new System.Drawing.Point(376, 121);
+            this.panel1.Location = new System.Drawing.Point(255, 96);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 328);
+            this.panel1.Size = new System.Drawing.Size(684, 311);
             this.panel1.TabIndex = 24;
+            // 
+            // grpQualiteDefaut
+            // 
+            this.grpQualiteDefaut.Controls.Add(this.lblDéfaut);
+            this.grpQualiteDefaut.Controls.Add(this.lblQualite);
+            this.grpQualiteDefaut.ForeColor = System.Drawing.Color.OrangeRed;
+            this.grpQualiteDefaut.Location = new System.Drawing.Point(459, 140);
+            this.grpQualiteDefaut.Name = "grpQualiteDefaut";
+            this.grpQualiteDefaut.Size = new System.Drawing.Size(225, 165);
+            this.grpQualiteDefaut.TabIndex = 34;
+            this.grpQualiteDefaut.TabStop = false;
+            this.grpQualiteDefaut.Text = "Qualité / Défaut";
+            // 
+            // lblDéfaut
+            // 
+            this.lblDéfaut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblDéfaut.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDéfaut.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblDéfaut.Location = new System.Drawing.Point(9, 96);
+            this.lblDéfaut.Name = "lblDéfaut";
+            this.lblDéfaut.Size = new System.Drawing.Size(214, 30);
+            this.lblDéfaut.TabIndex = 33;
+            this.lblDéfaut.Text = "Défaut :";
+            this.lblDéfaut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblQualite
+            // 
+            this.lblQualite.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblQualite.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQualite.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblQualite.Location = new System.Drawing.Point(9, 54);
+            this.lblQualite.Name = "lblQualite";
+            this.lblQualite.Size = new System.Drawing.Size(214, 30);
+            this.lblQualite.TabIndex = 32;
+            this.lblQualite.Text = "Qualité :";
+            this.lblQualite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pbStress
             // 
@@ -114,7 +168,7 @@
             this.pbStress.MaximumValue = 100;
             this.pbStress.Name = "pbStress";
             this.pbStress.ProgressColor = System.Drawing.Color.Teal;
-            this.pbStress.Size = new System.Drawing.Size(386, 18);
+            this.pbStress.Size = new System.Drawing.Size(536, 18);
             this.pbStress.TabIndex = 33;
             this.pbStress.Value = 0;
             // 
@@ -127,7 +181,7 @@
             this.pbProductivite.MaximumValue = 100;
             this.pbProductivite.Name = "pbProductivite";
             this.pbProductivite.ProgressColor = System.Drawing.Color.Teal;
-            this.pbProductivite.Size = new System.Drawing.Size(386, 18);
+            this.pbProductivite.Size = new System.Drawing.Size(540, 18);
             this.pbProductivite.TabIndex = 32;
             this.pbProductivite.Value = 0;
             // 
@@ -140,7 +194,7 @@
             this.pbFatigue.MaximumValue = 100;
             this.pbFatigue.Name = "pbFatigue";
             this.pbFatigue.ProgressColor = System.Drawing.Color.Silver;
-            this.pbFatigue.Size = new System.Drawing.Size(386, 18);
+            this.pbFatigue.Size = new System.Drawing.Size(540, 18);
             this.pbFatigue.TabIndex = 25;
             this.pbFatigue.Value = 20;
             // 
@@ -149,9 +203,9 @@
             this.grpPointFortFaible.Controls.Add(this.lblPointFaible);
             this.grpPointFortFaible.Controls.Add(this.lblPointFort);
             this.grpPointFortFaible.ForeColor = System.Drawing.Color.OrangeRed;
-            this.grpPointFortFaible.Location = new System.Drawing.Point(284, 140);
+            this.grpPointFortFaible.Location = new System.Drawing.Point(222, 140);
             this.grpPointFortFaible.Name = "grpPointFortFaible";
-            this.grpPointFortFaible.Size = new System.Drawing.Size(239, 165);
+            this.grpPointFortFaible.Size = new System.Drawing.Size(225, 165);
             this.grpPointFortFaible.TabIndex = 31;
             this.grpPointFortFaible.TabStop = false;
             this.grpPointFortFaible.Text = "Point fort / faible";
@@ -163,7 +217,7 @@
             this.lblPointFaible.ForeColor = System.Drawing.Color.OrangeRed;
             this.lblPointFaible.Location = new System.Drawing.Point(9, 96);
             this.lblPointFaible.Name = "lblPointFaible";
-            this.lblPointFaible.Size = new System.Drawing.Size(224, 30);
+            this.lblPointFaible.Size = new System.Drawing.Size(214, 30);
             this.lblPointFaible.TabIndex = 33;
             this.lblPointFaible.Text = "Point faible :";
             this.lblPointFaible.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -175,7 +229,7 @@
             this.lblPointFort.ForeColor = System.Drawing.Color.OrangeRed;
             this.lblPointFort.Location = new System.Drawing.Point(9, 54);
             this.lblPointFort.Name = "lblPointFort";
-            this.lblPointFort.Size = new System.Drawing.Size(224, 30);
+            this.lblPointFort.Size = new System.Drawing.Size(214, 30);
             this.lblPointFort.TabIndex = 32;
             this.lblPointFort.Text = "Point fort :";
             this.lblPointFort.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -187,7 +241,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.OrangeRed;
             this.groupBox1.Location = new System.Drawing.Point(6, 140);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(249, 165);
+            this.groupBox1.Size = new System.Drawing.Size(210, 165);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Affinité";
@@ -199,7 +253,7 @@
             this.lblDeteste.ForeColor = System.Drawing.Color.OrangeRed;
             this.lblDeteste.Location = new System.Drawing.Point(6, 96);
             this.lblDeteste.Name = "lblDeteste";
-            this.lblDeteste.Size = new System.Drawing.Size(237, 30);
+            this.lblDeteste.Size = new System.Drawing.Size(198, 30);
             this.lblDeteste.TabIndex = 34;
             this.lblDeteste.Text = "Déteste :";
             this.lblDeteste.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -211,7 +265,7 @@
             this.lblAffinite.ForeColor = System.Drawing.Color.OrangeRed;
             this.lblAffinite.Location = new System.Drawing.Point(6, 54);
             this.lblAffinite.Name = "lblAffinite";
-            this.lblAffinite.Size = new System.Drawing.Size(237, 30);
+            this.lblAffinite.Size = new System.Drawing.Size(198, 30);
             this.lblAffinite.TabIndex = 33;
             this.lblAffinite.Text = "Affinité avec :";
             this.lblAffinite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -254,33 +308,19 @@
             // 
             // pbPerso
             // 
-            this.pbPerso.Location = new System.Drawing.Point(23, 88);
+            this.pbPerso.Location = new System.Drawing.Point(24, 132);
             this.pbPerso.Name = "pbPerso";
-            this.pbPerso.Size = new System.Drawing.Size(282, 361);
+            this.pbPerso.Size = new System.Drawing.Size(198, 275);
             this.pbPerso.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbPerso.TabIndex = 2;
             this.pbPerso.TabStop = false;
-            // 
-            // btnRevenir
-            // 
-            this.btnRevenir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRevenir.FlatAppearance.BorderSize = 0;
-            this.btnRevenir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRevenir.ForeColor = System.Drawing.Color.OrangeRed;
-            this.btnRevenir.Image = ((System.Drawing.Image)(resources.GetObject("btnRevenir.Image")));
-            this.btnRevenir.Location = new System.Drawing.Point(3, 3);
-            this.btnRevenir.Name = "btnRevenir";
-            this.btnRevenir.Size = new System.Drawing.Size(60, 56);
-            this.btnRevenir.TabIndex = 0;
-            this.btnRevenir.UseVisualStyleBackColor = true;
-            this.btnRevenir.Click += new System.EventHandler(this.btnRevenir_Click);
             // 
             // frmStatPerso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(926, 480);
+            this.ClientSize = new System.Drawing.Size(951, 437);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pbPerso);
             this.Controls.Add(this.pnlHaut);
@@ -295,6 +335,7 @@
             this.Text = "frmStatPerso";
             this.pnlHaut.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.grpQualiteDefaut.ResumeLayout(false);
             this.grpPointFortFaible.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPerso)).EndInit();
@@ -322,5 +363,8 @@
         private Bunifu.Framework.UI.BunifuProgressBar pbStress;
         private Bunifu.Framework.UI.BunifuProgressBar pbProductivite;
         private Bunifu.Framework.UI.BunifuProgressBar pbFatigue;
+        private System.Windows.Forms.GroupBox grpQualiteDefaut;
+        private System.Windows.Forms.Label lblDéfaut;
+        private System.Windows.Forms.Label lblQualite;
     }
 }

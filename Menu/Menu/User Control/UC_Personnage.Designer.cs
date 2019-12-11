@@ -56,6 +56,8 @@
             this.affinite = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblPointFort = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblPointFaible = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblQualite = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblDefaut = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.grpAction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeurNoir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -271,7 +273,7 @@
             // 
             this.lblDeteste.AutoSize = true;
             this.lblDeteste.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeteste.Location = new System.Drawing.Point(175, 117);
+            this.lblDeteste.Location = new System.Drawing.Point(291, 93);
             this.lblDeteste.Name = "lblDeteste";
             this.lblDeteste.Size = new System.Drawing.Size(67, 17);
             this.lblDeteste.TabIndex = 17;
@@ -281,7 +283,7 @@
             // pbCoeurNoir
             // 
             this.pbCoeurNoir.BackgroundImage = global::Menu.Properties.Resources._30571;
-            this.pbCoeurNoir.Location = new System.Drawing.Point(244, 112);
+            this.pbCoeurNoir.Location = new System.Drawing.Point(360, 88);
             this.pbCoeurNoir.Name = "pbCoeurNoir";
             this.pbCoeurNoir.Size = new System.Drawing.Size(25, 23);
             this.pbCoeurNoir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -336,7 +338,7 @@
             // 
             this.lblPointFort.AutoSize = true;
             this.lblPointFort.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPointFort.Location = new System.Drawing.Point(308, 93);
+            this.lblPointFort.Location = new System.Drawing.Point(175, 117);
             this.lblPointFort.Name = "lblPointFort";
             this.lblPointFort.Size = new System.Drawing.Size(66, 17);
             this.lblPointFort.TabIndex = 23;
@@ -347,18 +349,42 @@
             // 
             this.lblPointFaible.AutoSize = true;
             this.lblPointFaible.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPointFaible.Location = new System.Drawing.Point(308, 118);
+            this.lblPointFaible.Location = new System.Drawing.Point(291, 117);
             this.lblPointFaible.Name = "lblPointFaible";
             this.lblPointFaible.Size = new System.Drawing.Size(79, 17);
             this.lblPointFaible.TabIndex = 24;
             this.lblPointFaible.Text = "Point faible";
             this.lblPointFaible.Visible = false;
             // 
+            // lblQualite
+            // 
+            this.lblQualite.AutoSize = true;
+            this.lblQualite.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQualite.Location = new System.Drawing.Point(175, 140);
+            this.lblQualite.Name = "lblQualite";
+            this.lblQualite.Size = new System.Drawing.Size(54, 17);
+            this.lblQualite.TabIndex = 25;
+            this.lblQualite.Text = "Qualité";
+            this.lblQualite.Visible = false;
+            // 
+            // lblDefaut
+            // 
+            this.lblDefaut.AutoSize = true;
+            this.lblDefaut.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDefaut.Location = new System.Drawing.Point(291, 140);
+            this.lblDefaut.Name = "lblDefaut";
+            this.lblDefaut.Size = new System.Drawing.Size(51, 17);
+            this.lblDefaut.TabIndex = 26;
+            this.lblDefaut.Text = "Défaut";
+            this.lblDefaut.Visible = false;
+            // 
             // UC_Personnage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.lblDefaut);
+            this.Controls.Add(this.lblQualite);
             this.Controls.Add(this.lblPointFaible);
             this.Controls.Add(this.lblPointFort);
             this.Controls.Add(this.pbCoeur);
@@ -420,5 +446,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel affinite;
         private Bunifu.Framework.UI.BunifuCustomLabel lblPointFort;
         private Bunifu.Framework.UI.BunifuCustomLabel lblPointFaible;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblQualite;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblDefaut;
     }
 }

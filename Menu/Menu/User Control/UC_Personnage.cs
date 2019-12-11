@@ -20,7 +20,6 @@ namespace Menu
          ArrayList listfonctionnalite = ControleurJeu.getListeFonctionnalite();
         Boolean reunion = false;
         private Personnage perso { get; set; }
-       // ArrayList listfonctionnalite = ControleurJeu.getListeFonctionnalite();
         public int nbrActionFaite = 0;
 
         public Personnage getPersonnage()
@@ -42,10 +41,6 @@ namespace Menu
             InitializeComponent();
 
 
-            /*cboAction1.Items.Clear();
-            cboAction2.Items.Clear();
-            cboAction3.Items.Clear();
-            */
             cboFonctionnalite1.Items.Clear();
             cboFonctionnalite1.Items.Clear();
             cboFonctionnalite1.Items.Clear();
@@ -53,7 +48,7 @@ namespace Menu
         }
 
 
-        // Remise a zero des combobox
+        // Remise à zero des combobox
         public void cleanCBO()
         {
             cboFonctionnalite1.Controls.Clear();
@@ -71,11 +66,21 @@ namespace Menu
         }
         public void initialisationUCPerso(Personnage p, Image img)
         {
-
-            this.pictureBox1.Image = img;
-           
-            
             this.perso = p;
+            this.pictureBox1.Image = img;
+
+            ArrayList qualite = p.getQualite();
+            ArrayList defaut = p.getDefaut();
+            ArrayList pointFort = p.getPointFort();
+            ArrayList pointFaible = p.getPointFaible();
+
+            /* 
+            lblQualite.Text = (String)qualite[0];
+            lblDefaut.Text = (String)defaut[0];
+            lblPointFort.Text = (String)pointFort[0];
+            lblPointFaible.Text = (String)pointFaible[0];
+            */
+
             this.setPrenom(perso.getPrenom());
             this.setProductivite(perso.getProductivite());
             this.setStress(perso.getStress());
@@ -329,15 +334,8 @@ namespace Menu
                     }
                 }
             }
-            
-            for(int i = 0; i < listeTache.Count; i++)
-            {
-                this.perso.getTacheTour().Add(listeTache[i]);
-            }
-            //this.perso.setTacheTour(listeTache);
-            ControleurJeu.tache(this.perso, listeTache);
-            this.perso.viderTacheTour();
 
+            ControleurJeu.tache(this.perso, listeTache);
 
 
         }

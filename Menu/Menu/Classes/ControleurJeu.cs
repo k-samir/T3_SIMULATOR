@@ -13,8 +13,7 @@ namespace Menu
 
     public class ControleurJeu
     {
-      
-                             
+                            
 
         //variable globale
         private static ArrayList listfonctionnalite = new ArrayList();
@@ -39,8 +38,6 @@ namespace Menu
         private static ArrayList listeRand2 = new ArrayList();
 
 
-
-
         Personnage p1;
         Personnage p2;
         Personnage p3;
@@ -53,7 +50,6 @@ namespace Menu
 
         private int compteurTours = 0;
 
-        
         public void init()
         {
             listfonctionnalite.Clear();
@@ -180,6 +176,21 @@ namespace Menu
 
             }
 
+            Personnage persov;
+            persov = new Personnage("-", 0, 0, 0, null, null);
+            foreach (Personnage p in listPersonnage)
+            {
+                if(p.getAffinite() == null)
+                {
+                    p.setAffinite(persov);
+                }
+                if(p.getDeteste() == null)
+                {
+                    p.setDeteste(persov);
+                }
+
+            }
+
             jeu = new frmJeu(p1, p2, p3, p4,10);
             
 
@@ -213,9 +224,11 @@ namespace Menu
             listePointsFaibles.Add("Mauvais concepteur");     //conception * 0,5
             listePointsFaibles.Add("Mauvaise chercheur");     //recherche * 0,5
 
+            /*
             //bug si les listeRand sont vides : donc on initialise une valeur
-            listeRand1[0] = -1;
-            listeRand2[0] = -1;
+            listeRand1.Add(-1);
+            listeRand2.Add(-1);
+            */
             /* -------------------------------- */
 
             /* ----------------  qualites, defauts, points forts et faibles (distribution) ---------------- */
@@ -245,7 +258,7 @@ namespace Menu
 
                     }
                     p.qualites.Add(listeQualites[rand1]);
-                    listeRand1[i] = rand1;
+                    listeRand1.Add(rand1);
 
                 }
                 //défauts
@@ -278,9 +291,10 @@ namespace Menu
                         }
                     }
                     p.defauts.Add(listeDefauts[rand2]);
-                    listeRand2[i] = rand2;
+                    listeRand2.Add(rand2);
                 }
 
+                /*
                 //on "vide" les liste rand pour les réutiliser pour points forts et faibles
                 for (int j = 0; j < nbQualites; j++)
                 {
@@ -290,7 +304,9 @@ namespace Menu
                 {
                     listeRand2[j] = -1;
                 }
-
+                */
+                listeRand1.Clear();
+                listeRand2.Clear();
 
                 //points forts
                 for (int i = 0; i < nbPointsForts; i++)
@@ -312,11 +328,11 @@ namespace Menu
                         }
                     }
                     p.pointsForts.Add(listePointsForts[rand1]);
-                    listeRand1[i] = rand1;
+                    listeRand1.Add(rand1);
 
 
                 }
-                
+
                 //points faibles
                 for (int i = 0; i < nbPointsFaibles; i++)
                 {
@@ -347,11 +363,13 @@ namespace Menu
                         }
                     }
                     p.pointsFaibles.Add(listePointsFaibles[rand2]);
-                    listeRand2[i] = rand2;
+                    listeRand2.Add(rand2);
+                    //MessageBox.Show((string)p.pointsFaibles[i]);
                 }
 
             }
-            /* -------------------------------- */
+
+
         }
 
 
@@ -696,35 +714,10 @@ namespace Menu
 
             foreach (Fonctionnalites f in listeTache)
             {
-                if (p.getAffinite() != null)
-                {
-                    if (p.getAffinite().getTacheTour().Count != 0)
-                    {
-                        foreach (Fonctionnalites a in p.getAffinite().getTacheTour())
-                        {
-                           
-                         //   MessageBox.Show(p.getAffinite().getPrenom());
-                         //   MessageBox.Show(p.getAffinite().getTacheTour()[0].getNom());
-                            if (f == a)
-                            {
-                               // MessageBox.Show(p.getPrenom() + "fait" + f.getNom() + "deux fois car" + p.getAffinite().getPrenom() + "le fait aussi");
-                                p.faireAction(f);
-                                p.faireAction(f);
-                            }
-                        }
-
-                    }
-                    else
-                    {
-                        //MessageBox.Show("Affinite pas d'action");
-                        p.faireAction(f);
-                    }
-                }
-                else
-                {
+               
                    // MessageBox.Show("NORMAL");
                     p.faireAction(f);
-                }
+             
             }
 
             string fonc = "";
