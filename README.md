@@ -1,4 +1,4 @@
-# myT3
+# T432_GOJ19_T3_A : T3 Simulator
 
 # Présentation
 Bienvenue sur le git de T3 Simulator !
@@ -7,6 +7,11 @@ Pour y parvenir, le joueur devra enfiler les différentes casquettes d’un chef
 
 Le jeu est stocké localement sur l’ordinateur via un installateur, et disponible exclusivement sur Windows via le partage des développeurs. Il n’y aura donc pas d’hébergement en ligne, ni de serveurs. Le simulateur est développé en C# sur le logiciel Visual Studio en environnement .NET. 
 Il dispose d’une Interface Homme-Machine, simple, intuitive et ergonomique. 
+
+[Cahier des charges](https://docs.google.com/document/d/1Wt1TN2uy75v-5iO5i8XkizberEv1joOm_bvyGyg5HoU/edit)
+
+[Lien de téléchargement de l'application]
+
 
 # Objectifs pédagogiques
 
@@ -44,6 +49,32 @@ En fonction de la capacité de son groupe dans une tâche :
 
 Attention ! Il y aura de multiples aléas durant votre projet, restez prudent !
 
+# Synopsis du jeu
+
+
+
+
 # Installation du jeu
+
+Pour installer le jeu vous devez installer [l'executable]depuis gitlab.
+
+## Executer le jeu
+
+Il suffit de double cliquer sur l'executable que vous venez de télécharger. (Voir image)
+
+### La fin de partie
+
+image fin de partie 
+
+# Technologies utilisés
+
+Le jeu a entièrement été développé sur [Visual Studio](https://visualstudio.microsoft.com) en `C#`.
+
+### Collaborateurs 
+
+*  [Valentin HEIT](https://git.unistra.fr/vheit)
+*  [Mathieu CISSE](https://git.unistra.fr/mathieu.cisse)
+*  [Aymeric AZIDROU](https://git.unistra.fr/azidrou)
+*  [Samir KAMAR](https://git.unistra.fr/skamar)
 
 
