@@ -329,8 +329,15 @@ namespace Menu
                     }
                 }
             }
-
+            
+            for(int i = 0; i < listeTache.Count; i++)
+            {
+                this.perso.getTacheTour().Add(listeTache[i]);
+            }
+            //this.perso.setTacheTour(listeTache);
             ControleurJeu.tache(this.perso, listeTache);
+            this.perso.viderTacheTour();
+
 
 
         }
