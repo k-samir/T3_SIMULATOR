@@ -36,14 +36,14 @@
             // lblNotification
             // 
             this.lblNotification.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNotification.AutoSize = true;
             this.lblNotification.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotification.ForeColor = System.Drawing.Color.Black;
-            this.lblNotification.Location = new System.Drawing.Point(242, 9);
+            this.lblNotification.Location = new System.Drawing.Point(12, 9);
             this.lblNotification.Name = "lblNotification";
-            this.lblNotification.Size = new System.Drawing.Size(330, 55);
+            this.lblNotification.Size = new System.Drawing.Size(776, 55);
             this.lblNotification.TabIndex = 1;
-            this.lblNotification.Text = "Félicitations";
+            this.lblNotification.Text = "Bienvenue sur le projet T3";
+            this.lblNotification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblInfo
             // 
@@ -55,8 +55,8 @@
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(800, 165);
             this.lblInfo.TabIndex = 2;
-            this.lblInfo.Text = "Bienvenue dans T3 Simulator ! Votre projet vient de démarrer, mais par où commenc" +
-    "er ? Une petite réunion ne serait pas du luxe..";
+            this.lblInfo.Text = "Votre projet vient de démarrer, mais par où commencer ? Une petite réunion ne ser" +
+    "ait pas du luxe..";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnOk
@@ -90,7 +90,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReunionDecouverteEquipe";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

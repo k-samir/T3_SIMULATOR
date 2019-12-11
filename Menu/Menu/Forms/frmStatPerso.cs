@@ -37,7 +37,7 @@ namespace Menu.Forms
                 pbFatigue.ProgressColor = Color.Red;
             }
 
-            pbProductivite.Value = (int)p.getProductivite() * 5;
+            pbProductivite.Value = (int)p.getProductivite() * 20;
             if (pbProductivite.Value <= 30)
             {
                 pbProductivite.ProgressColor = Color.Red;

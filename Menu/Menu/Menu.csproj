@@ -60,6 +60,12 @@
     <Compile Include="Forms\frmButReunion.Designer.cs">
       <DependentUpon>frmButReunion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmCrunch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCrunch.Designer.cs">
+      <DependentUpon>frmCrunch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmEnd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\frmButReunion.resx">
       <DependentUpon>frmButReunion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCrunch.resx">
+      <DependentUpon>frmCrunch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmEnd.resx">
       <DependentUpon>FrmEnd.cs</DependentUpon>
