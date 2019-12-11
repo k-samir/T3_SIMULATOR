@@ -234,7 +234,7 @@ namespace Menu
                 }
             }
 
-            if (cboFonctionnalite1.SelectedIndex == -1 && reunion == false)
+            if (cboFonctionnalite1.SelectedIndex == -1 && reunion == false && cboFonctionnalite1.Visible!=false)
             {
                 cboFonctionnalite1.SelectedIndex = index;
             }
@@ -360,7 +360,7 @@ namespace Menu
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-           if(frmButReunion.getCompteurEquipe() >= 3)
+           if(frmButReunion.getCompteurEquipe() >= 2)
             {
                 
                 frmStatPerso f = new frmStatPerso(this);
