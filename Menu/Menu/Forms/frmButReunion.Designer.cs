@@ -39,7 +39,7 @@
             this.btnRevenir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRevenir.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenir.ForeColor = System.Drawing.Color.White;
-            this.btnRevenir.Location = new System.Drawing.Point(489, 425);
+            this.btnRevenir.Location = new System.Drawing.Point(489, 452);
             this.btnRevenir.Margin = new System.Windows.Forms.Padding(0);
             this.btnRevenir.Name = "btnRevenir";
             this.btnRevenir.Size = new System.Drawing.Size(119, 47);
@@ -53,7 +53,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
-            this.ClientSize = new System.Drawing.Size(617, 481);
+            this.ClientSize = new System.Drawing.Size(633, 520);
             this.Controls.Add(this.btnRevenir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;

@@ -38,17 +38,17 @@ namespace Menu.Forms
             }
 
             pbProductivite.Value = (int)p.getProductivite() * 5;
-            if (pbProductivite.Value <= 45)
+            if (pbProductivite.Value <= 30)
             {
-                pbProductivite.ProgressColor = Color.Green;
+                pbProductivite.ProgressColor = Color.Red;
             }
-            if (pbProductivite.Value > 45 && pbProductivite.Value <= 75)
+            if (pbProductivite.Value > 30 && pbProductivite.Value <= 50)
             {
                 pbProductivite.ProgressColor = Color.Orange;
             }
-            if (pbProductivite.Value > 75)
+            if (pbProductivite.Value > 50)
             {
-                pbProductivite.ProgressColor = Color.Red;
+                pbProductivite.ProgressColor = Color.Green;
             }
 
             pbStress.Value = p.getStress();

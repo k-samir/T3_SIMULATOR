@@ -115,7 +115,7 @@ namespace Menu
                 progressBar.Tag = i;
                 progressBar.Value = 0;
 
-                l.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                l.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 l.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
                 l.BackColor = Color.White;
                 l.Location = new System.Drawing.Point(pnlProgressBarTache.Width - 200, progressBar.Location.Y);
@@ -185,6 +185,7 @@ namespace Menu
         }
 
         private void btnTourSuivant_Click(object sender, EventArgs e) {
+
             lblTour.Text = "Tour " + nbTour.ToString() + "/10";
             lblTour.Visible = true;
             btnReunion.Enabled = true;
@@ -214,7 +215,7 @@ namespace Menu
 
             // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
             // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
-            if ((nbTour >= nbTourMax) || ((ControleurJeu.getListeFonctionnalite().Count == 0)) || lstTache.Items.Count == 0)
+            if ((nbTour >= nbTourMax) || ((ControleurJeu.getListeFonctionnalite().Count == 0)) || lstTache.Items.Count == 0 || score.Value >=100)
             {
                 ControleurJeu.arreterJeu(rtbListeF.Text);
                 this.Close();
@@ -361,8 +362,11 @@ namespace Menu
                                             float val1 = (float)ft.getPaDepense();
                                             float val2 = (float)ft.getPaNecess();
                                             float res = (val1 / val2) * 100;
+                                            if (res >= 100)
+                                            {
+                                                res = 100;
+                                            }
                                             pb.Value = (int)res;
-                                            
                                         }
                                     }
                                 }
@@ -370,7 +374,7 @@ namespace Menu
                         }
                     }
                 }
-            }
+            }     
         }
 
 
@@ -518,6 +522,7 @@ namespace Menu
         public void setRepos(Personnage p)
         {
             p.setFatigue(p.getFatigue()/2);
+            p.setStress(p.getStress() / 2);
             p.setDisponible(false);
             p.setMalade(false);
             listRepos.Add(p);
