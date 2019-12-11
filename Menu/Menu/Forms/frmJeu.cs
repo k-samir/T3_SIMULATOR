@@ -154,6 +154,7 @@ namespace Menu
             Random rnd = new Random();
             int s = rnd.Next(10);
             //score.Value += score.Value + s;
+         
             nbTour++;
         }
 

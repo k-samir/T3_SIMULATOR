@@ -31,6 +31,8 @@ namespace Menu.classePersonnage
         public ArrayList pointsForts = new ArrayList();
         public ArrayList pointsFaibles = new ArrayList();
 
+        public List<Fonctionnalites> tacheTour = new List<Fonctionnalites>();
+               
 
         //Constructeur de la classe personnage
         public Personnage(string prenom, double productivite, int stress, int sociabilite, Personnage affinite, Personnage deteste)
@@ -46,6 +48,21 @@ namespace Menu.classePersonnage
         public void setDeteste(Personnage p)
         {
             this.deteste = p;
+        }
+
+
+
+        public List<Fonctionnalites> getTacheTour()
+        {
+            return tacheTour;
+        }
+        public void setTacheTour(List<Fonctionnalites> l)
+        {
+            tacheTour = l;
+        }
+        public void viderTacheTour()
+        {
+            tacheTour.Clear();
         }
 
         public Personnage getDeteste()

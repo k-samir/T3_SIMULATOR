@@ -39,6 +39,8 @@ namespace Menu
         private static ArrayList listeRand2 = new ArrayList();
 
 
+
+
         Personnage p1;
         Personnage p2;
         Personnage p3;
@@ -85,9 +87,7 @@ namespace Menu
            
             /* ---------------- qualites et defauts ---------------- */
             Random aleatoire = new Random();
-
-
-
+            
             //creation personnage
             p1 = remplirPersonnage("Valentin", 2.0, 0, 82, null,null);
             p2 = remplirPersonnage("Aymeric", 2.0, 20, 80, null,null);
@@ -316,7 +316,7 @@ namespace Menu
 
 
                 }
-
+                
                 //points faibles
                 for (int i = 0; i < nbPointsFaibles; i++)
                 {
@@ -571,55 +571,20 @@ namespace Menu
             }
         }
 
-       /* public int getNbrActionFaite(Personnage p)
-        {
-
-            int nbrres = 0;
-
-            foreach (Object temp in Controls)
-            {
-                MessageBox.Show(temp.ToString());
-                //foreach (Object o in temp.Controls)
-                //{
-                if (temp is UC_Personnage)
-                {
-                    UC_Personnage up = (UC_Personnage)temp;
-                    MessageBox.Show(up.getPersonnage().getPrenom());
-
-                    if (up.getPersonnage().getPrenom() == p.getPrenom())
-                    {
-
-                        foreach (Object op in up.Controls)
-                        {
-                            if (op is ComboBox)
-                            {
-                                ComboBox cbo = (ComboBox)op;
-
-                                if (cbo.Name == "cboAction1" || cbo.Name == "cboAction2")
-                                {
-                                    nbrres++;
-                                }
-                            }
-                        }
-                    }
-
-                }
-            }
-            
-
-        }*/
         //Modification de tous les attributs
         public static void calculsAttributs()
         {
             foreach (Personnage p in listPersonnage)
             {
-               // p.setFatigue(p.getFatigue() + 10);
+              
                 // PARCOURS DES ACTIONS SELECTIONNEES
 
                 int v = p.getnbrActionFaite();
                 //MessageBox.Show(p.getPrenom() + " : " + p.getnbrActionFaite().ToString());
                 
                
+
+
                 for (int i =0;i< v; i++)
                 {
                     p.setFatigue(p.getFatigue() + 5);
@@ -704,28 +669,7 @@ namespace Menu
             return actu;
         }
 
-        public static void crunch(Personnage p, List<Fonctionnalites> f1)
-        {
-            calculsAttributs();
-
-            // Parcours de toutes les fonctionallités 
-            foreach (Fonctionnalites f in f1 )
-            {
-            
-                    if (f.getType() == "Rechercher")
-                    {
-                    ////////////////////////////////////////////////////////////
-                        p.faireAction(f);
-                        p.recherche();
-                    }
-                    else
-                    {
-                        p.faireAction(f);
-                    }
-               
-            }
-        }
-
+ 
         public static void tache(Personnage p, List<Fonctionnalites> listeTache)
         {
 
@@ -744,11 +688,43 @@ namespace Menu
 
 
             String texte = "";
+
             // Parcours de toutes les fonctionalités pour que le perso p les fasse
+
+
+            /*****************   A FAIRE ****************/
+
             foreach (Fonctionnalites f in listeTache)
             {
-                p.faireAction(f);
+                if (p.getAffinite() != null)
+                {
+                    if (p.getAffinite().getTacheTour().Count != 0)
+                    {
+                        foreach (Fonctionnalites a in p.getAffinite().getTacheTour())
+                        {
+                           
+                         //   MessageBox.Show(p.getAffinite().getPrenom());
+                         //   MessageBox.Show(p.getAffinite().getTacheTour()[0].getNom());
+                            if (f == a)
+                            {
+                               // MessageBox.Show(p.getPrenom() + "fait" + f.getNom() + "deux fois car" + p.getAffinite().getPrenom() + "le fait aussi");
+                                p.faireAction(f);
+                                p.faireAction(f);
+                            }
+                        }
 
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Affinite pas d'action");
+                        p.faireAction(f);
+                    }
+                }
+                else
+                {
+                   // MessageBox.Show("NORMAL");
+                    p.faireAction(f);
+                }
             }
 
             string fonc = "";
