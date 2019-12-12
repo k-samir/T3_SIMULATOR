@@ -78,17 +78,14 @@ namespace Menu
         {
             fm.Hide();
 
-            /*
-             */
-           
-            /* ---------------- qualites et defauts ---------------- */
+            
             Random aleatoire = new Random();
             
             //creation personnage
-            p1 = remplirPersonnage("Valentin", 20, 0, 82, null,null);
-            p2 = remplirPersonnage("Aymeric", 20, 20, 80, null,null);
-            p3 = remplirPersonnage("Mathieu", 30, 40, 50, null,null);
-            p4 = remplirPersonnage("Samir", 40, 10, 45, null,null);
+            p1 = remplirPersonnage("Valentin", 20, 0, 71, null,null);
+            p2 = remplirPersonnage("Aymeric", 20, 20, 61, null,null);
+            p3 = remplirPersonnage("Mathieu", 30, 40, 32, null,null);
+            p4 = remplirPersonnage("Samir", 40, 10, 23, null,null);
 
 
 
@@ -97,10 +94,13 @@ namespace Menu
 
             /* SUR 900 */
 
-            /* Recherche sur 240*/
-            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 100, 0, 0, "Rechercher");
-            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 60, 0, 0, "Rechercher");
-            Fonctionnalites f3 = new Fonctionnalites("Documentation", 40, 0, 0, "Rechercher");
+            /* Recherche pour obtenir plus de niveau de compétences */
+            Fonctionnalites f0 = new Fonctionnalites("Formation", 100000, 0, 0, "Rechercher");    //n'impacte pas l'avancement du projet, elle sert juste à obtenir plus de compétences
+
+            /* Spécification sur 240*/
+            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 100, 0, 0, "Spécification");
+            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 60, 0, 0, "Spécification");
+            Fonctionnalites f3 = new Fonctionnalites("Documentation", 40, 0, 0, "Spécification");
 
 
             /* Conception sur 120*/
@@ -142,6 +142,7 @@ namespace Menu
             listReunion.Add(r8);
 
 
+            listfonctionnalite.Add(f0);
             listfonctionnalite.Add(f1);
             listfonctionnalite.Add(f2);
             listfonctionnalite.Add(f3);
@@ -164,49 +165,52 @@ namespace Menu
             listPersonnage.Add(p2);
             listPersonnage.Add(p3);
             listPersonnage.Add(p4);
-
-
-
-
-            foreach (Personnage p in listPersonnage)
-            {
-                
-
-                int randAffinite = aleatoire.Next(4);
-                int randDeteste = aleatoire.Next(4);
-
-                if (listPersonnage[randAffinite] != p)
-                {
-                    p.setAffinite((Personnage)listPersonnage[randAffinite]);
-                }
-
-
-
-
-                if (listPersonnage[randDeteste] != p && listPersonnage[randDeteste] != p.getAffinite())
-                {
-                    p.setDeteste((Personnage)listPersonnage[randDeteste]);
-                }
-
-
-
-
-            }
+      
 
             Personnage persov;
-            persov = new Personnage("-", 0, 0, 0, null, null);
+            persov = new Personnage("-", -1, -1, -1, null, null);          
+            
+            int besoinAffinite = 120;
+            int besoinDeteste = 80;
+
+            //les relations sont determinees a 50% par la chance et 50% la sociabilite
             foreach (Personnage p in listPersonnage)
             {
-                if(p.getAffinite() == null)
+                Personnage meilleurAffinite = persov;
+                Personnage pireDeteste = persov;
+
+                foreach (Personnage p1 in listPersonnage)
                 {
-                    p.setAffinite(persov);
+                    if (p1 != p)
+                    {
+                        int rand = aleatoire.Next(101);
+                        if (p1.getSociabilite()+ p.getSociabilite()+ rand >= besoinAffinite) { 
+                                meilleurAffinite = p1; 
+
+                        }
+                        if (p1.getSociabilite() + p.getSociabilite()- rand <= besoinDeteste && p1 != meilleurAffinite && p1.getAffinite() != p) {                           
+                                pireDeteste = p1;                                                       
+                        }
+                            
+                    }
+
                 }
-                if(p.getDeteste() == null)
+               
+                p.setAffinite(meilleurAffinite);
+                p.setDeteste(pireDeteste);
+            }
+
+            //si affinite avec quelqu'un qui nous deteste : on enleve le deteste
+            foreach (Personnage p in listPersonnage)
+            {
+                if((p.getAffinite()).getDeteste() == p) 
                 {
-                    p.setDeteste(persov);
+                    
+                    (p.getAffinite()).setDeteste(persov);
                 }
 
             }
+
 
             attributionQualitesDefautsPointsFortsEtFaibles();
 
@@ -214,8 +218,8 @@ namespace Menu
             
             jeu.Refresh();
             jeu.Show();
-            //frmReunionPopUp popup = new frmReunionPopUp();
-            //popup.ShowDialog();
+            frmReunionPopUp popup = new frmReunionPopUp();
+            popup.Show();
         }
 
         public static Boolean verifierTacheTermine()
@@ -223,7 +227,7 @@ namespace Menu
             Boolean res = true;
             foreach (Fonctionnalites f in listfonctionnalite)
             {
-                if (!(f.getStatus()))
+                if ((!(f.getStatus())) && f.getNom() == "Formation")
                 {
                     res = false;
                 }
@@ -246,20 +250,16 @@ namespace Menu
             listeDefauts.Add("Asocial");                //sociabilité -20 points
 
             listePointsForts.Add("Talentueux");        //ttes les actions *1,5
-            listePointsForts.Add("Développeur né");    //dv *1,5
-            listePointsForts.Add("Concepteur né");        //conception *1,5
-            listePointsForts.Add("Chercheur né");        //recherche *1,5
+            listePointsForts.Add("Développement");    //dv *1,5
+            listePointsForts.Add("Conception");        //conception *1,5
+            listePointsForts.Add("Recherche");        //recherche *1,5
 
-            listePointsFaibles.Add("Incompétent notoire");    //ttes les actions *1,5
-            listePointsFaibles.Add("Mauvais développeur");    //dv * 0,5
-            listePointsFaibles.Add("Mauvais concepteur");     //conception * 0,5
-            listePointsFaibles.Add("Mauvaise chercheur");     //recherche * 0,5
+            listePointsFaibles.Add("Fainéant");    //ttes les actions *1,5
+            listePointsFaibles.Add("Développement");    //dv * 0,5
+            listePointsFaibles.Add("Conception");     //conception * 0,5
+            listePointsFaibles.Add("Recherche");     //recherche * 0,5
 
-            /*
-            //bug si les listeRand sont vides : donc on initialise une valeur
-            listeRand1.Add(-1);
-            listeRand2.Add(-1);
-            */
+            
             /* -------------------------------- */
 
             /* ----------------  qualites, defauts, points forts et faibles (distribution) ---------------- */
@@ -301,10 +301,11 @@ namespace Menu
                     //dans cette boucle on vérifie que le défaut est nouveau pour ce personnage et qu'il est compatible avec les qualites de ce personnage (même argument (rand) => incompatibles)
                     while (ok == false)
                     {
-                        ok = true;
+                        ok = true;         
                         //verifie compatible avec qualites
                         for (int j = 0; j < nbQualites; j++)
                         {
+                            //MessageBox.Show(listeRand1[j].ToString());
                             if (rand2 == (int)listeRand1[j])
                             {
                                 ok = false;
@@ -438,9 +439,11 @@ namespace Menu
 
             // 88 sans le crunch donc en tout 900 
 
-            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 120, 0, 0, "Rechercher");
-            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 40, 0, 0, "Rechercher");
-            Fonctionnalites f3 = new Fonctionnalites("Documentation", 40, 0, 0, "Rechercher");
+
+            Fonctionnalites f0 = new Fonctionnalites("Formation", 100000, 0, 0, "Rechercher");    //n'impacte pas l'avancement du projet, elle sert juste à obtenir plus de compétences
+            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 120, 0, 0, "Spécification");
+            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 40, 0, 0, "Spécification");
+            Fonctionnalites f3 = new Fonctionnalites("Documentation", 40, 0, 0, "Spécification");
             Fonctionnalites f4 = new Fonctionnalites("MCD", 40, 0, 0, "Concevoir");
             Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 40, 0, 0, "Concevoir");
             Fonctionnalites f6 = new Fonctionnalites("GIT", 40, 0, 0, "Concevoir");
@@ -469,6 +472,7 @@ namespace Menu
             listReunion.Add(r8);
 
 
+            listfonctionnalite.Add(f0);
             listfonctionnalite.Add(f1);
             listfonctionnalite.Add(f2);
             listfonctionnalite.Add(f3);

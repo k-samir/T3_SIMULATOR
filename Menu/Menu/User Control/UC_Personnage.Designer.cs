@@ -57,11 +57,13 @@
             this.lblPointFaible = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblQualite = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblDefaut = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pbClic = new System.Windows.Forms.PictureBox();
             this.grpAction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeurNoir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCacheur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClic)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPrenom
@@ -178,7 +180,7 @@
             this.cboFonctionnalite3.FormattingEnabled = true;
             this.cboFonctionnalite3.Location = new System.Drawing.Point(99, 107);
             this.cboFonctionnalite3.Name = "cboFonctionnalite3";
-            this.cboFonctionnalite3.Size = new System.Drawing.Size(310, 35);
+            this.cboFonctionnalite3.Size = new System.Drawing.Size(310, 30);
             this.cboFonctionnalite3.TabIndex = 15;
             this.cboFonctionnalite3.Visible = false;
             // 
@@ -189,7 +191,7 @@
             this.cboFonctionnalite2.FormattingEnabled = true;
             this.cboFonctionnalite2.Location = new System.Drawing.Point(99, 66);
             this.cboFonctionnalite2.Name = "cboFonctionnalite2";
-            this.cboFonctionnalite2.Size = new System.Drawing.Size(310, 35);
+            this.cboFonctionnalite2.Size = new System.Drawing.Size(310, 30);
             this.cboFonctionnalite2.TabIndex = 14;
             // 
             // cboFonctionnalite1
@@ -199,7 +201,7 @@
             this.cboFonctionnalite1.FormattingEnabled = true;
             this.cboFonctionnalite1.Location = new System.Drawing.Point(99, 28);
             this.cboFonctionnalite1.Name = "cboFonctionnalite1";
-            this.cboFonctionnalite1.Size = new System.Drawing.Size(310, 35);
+            this.cboFonctionnalite1.Size = new System.Drawing.Size(310, 30);
             this.cboFonctionnalite1.TabIndex = 13;
             // 
             // lblAction3
@@ -261,12 +263,11 @@
             // 
             // lblDeteste
             // 
-            this.lblDeteste.AutoSize = true;
             this.lblDeteste.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeteste.ForeColor = System.Drawing.Color.Red;
+            this.lblDeteste.ForeColor = System.Drawing.Color.DarkRed;
             this.lblDeteste.Location = new System.Drawing.Point(295, 103);
             this.lblDeteste.Name = "lblDeteste";
-            this.lblDeteste.Size = new System.Drawing.Size(93, 21);
+            this.lblDeteste.Size = new System.Drawing.Size(74, 17);
             this.lblDeteste.TabIndex = 17;
             this.lblDeteste.Text = "Deteste :";
             this.lblDeteste.Visible = false;
@@ -307,7 +308,7 @@
             // 
             this.pbCoeur.BackgroundImage = global::Menu.Properties.Resources._30571;
             this.pbCoeur.Image = ((System.Drawing.Image)(resources.GetObject("pbCoeur.Image")));
-            this.pbCoeur.Location = new System.Drawing.Point(254, 97);
+            this.pbCoeur.Location = new System.Drawing.Point(247, 97);
             this.pbCoeur.Name = "pbCoeur";
             this.pbCoeur.Size = new System.Drawing.Size(25, 23);
             this.pbCoeur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -317,12 +318,11 @@
             // 
             // affinite
             // 
-            this.affinite.AutoSize = true;
             this.affinite.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.affinite.ForeColor = System.Drawing.Color.Green;
-            this.affinite.Location = new System.Drawing.Point(175, 103);
+            this.affinite.Location = new System.Drawing.Point(170, 103);
             this.affinite.Name = "affinite";
-            this.affinite.Size = new System.Drawing.Size(147, 21);
+            this.affinite.Size = new System.Drawing.Size(73, 17);
             this.affinite.TabIndex = 21;
             this.affinite.Text = "Affinité avec :";
             this.affinite.Visible = false;
@@ -331,7 +331,7 @@
             // 
             this.lblPointFort.Font = new System.Drawing.Font("Cooper Black", 11F);
             this.lblPointFort.ForeColor = System.Drawing.Color.Green;
-            this.lblPointFort.Location = new System.Drawing.Point(175, 126);
+            this.lblPointFort.Location = new System.Drawing.Point(169, 126);
             this.lblPointFort.Name = "lblPointFort";
             this.lblPointFort.Size = new System.Drawing.Size(110, 17);
             this.lblPointFort.TabIndex = 23;
@@ -341,8 +341,8 @@
             // lblPointFaible
             // 
             this.lblPointFaible.Font = new System.Drawing.Font("Cooper Black", 11F);
-            this.lblPointFaible.ForeColor = System.Drawing.Color.Red;
-            this.lblPointFaible.Location = new System.Drawing.Point(291, 126);
+            this.lblPointFaible.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblPointFaible.Location = new System.Drawing.Point(294, 126);
             this.lblPointFaible.Name = "lblPointFaible";
             this.lblPointFaible.Size = new System.Drawing.Size(145, 17);
             this.lblPointFaible.TabIndex = 24;
@@ -353,7 +353,7 @@
             // 
             this.lblQualite.Font = new System.Drawing.Font("Cooper Black", 11F);
             this.lblQualite.ForeColor = System.Drawing.Color.Green;
-            this.lblQualite.Location = new System.Drawing.Point(175, 152);
+            this.lblQualite.Location = new System.Drawing.Point(169, 152);
             this.lblQualite.Name = "lblQualite";
             this.lblQualite.Size = new System.Drawing.Size(110, 17);
             this.lblQualite.TabIndex = 25;
@@ -363,19 +363,31 @@
             // lblDefaut
             // 
             this.lblDefaut.Font = new System.Drawing.Font("Cooper Black", 11F);
-            this.lblDefaut.ForeColor = System.Drawing.Color.Red;
-            this.lblDefaut.Location = new System.Drawing.Point(291, 152);
+            this.lblDefaut.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblDefaut.Location = new System.Drawing.Point(295, 152);
             this.lblDefaut.Name = "lblDefaut";
             this.lblDefaut.Size = new System.Drawing.Size(145, 17);
             this.lblDefaut.TabIndex = 26;
             this.lblDefaut.Text = "Défaut";
             this.lblDefaut.Visible = false;
             // 
+            // pbClic
+            // 
+            this.pbClic.Image = ((System.Drawing.Image)(resources.GetObject("pbClic.Image")));
+            this.pbClic.Location = new System.Drawing.Point(120, 94);
+            this.pbClic.Name = "pbClic";
+            this.pbClic.Size = new System.Drawing.Size(37, 40);
+            this.pbClic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbClic.TabIndex = 27;
+            this.pbClic.TabStop = false;
+            this.pbClic.Visible = false;
+            // 
             // UC_Personnage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.pbClic);
             this.Controls.Add(this.lblDefaut);
             this.Controls.Add(this.lblQualite);
             this.Controls.Add(this.lblPointFaible);
@@ -404,8 +416,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCacheur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClic)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -439,5 +451,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblPointFaible;
         private Bunifu.Framework.UI.BunifuCustomLabel lblQualite;
         private Bunifu.Framework.UI.BunifuCustomLabel lblDefaut;
+        private System.Windows.Forms.PictureBox pbClic;
     }
 }

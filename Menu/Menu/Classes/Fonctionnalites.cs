@@ -124,9 +124,9 @@ namespace Menu
             }
             if (getType() == "Développer")
             {
-                foreach (Fonctionnalites f1 in ControleurJeu.getListeFonctionnalite())
+                foreach (Fonctionnalites f2 in ControleurJeu.getListeFonctionnalite())
                 {
-                    if (!(f1.getStatus()) && f1.getType() == "Concevoir")
+                    if (!(f2.getStatus()) && f2.getType() == "Concevoir")
                     {
                         res = false;
                     }
@@ -134,9 +134,9 @@ namespace Menu
             }
             if (getType() == "Recette")
             {
-                foreach (Fonctionnalites f1 in ControleurJeu.getListeFonctionnalite())
+                foreach (Fonctionnalites f3 in ControleurJeu.getListeFonctionnalite())
                 {
-                    if (!(f1.getStatus()) && f1.getType() == "Développer")
+                    if (!(f3.getStatus()) && f3.getType() == "Développer")
                     {
                         res = false;
                     }
@@ -145,9 +145,9 @@ namespace Menu
 
             if (getType() == "Livraison")
             {
-                foreach (Fonctionnalites f1 in ControleurJeu.getListeFonctionnalite())
+                foreach (Fonctionnalites f3 in ControleurJeu.getListeFonctionnalite())
                 {
-                    if (!(f1.getStatus()) && f1.getType() == "Recette")
+                    if (!(f3.getStatus()) && f3.getType() == "Recette")
                     {
                         res = false;
                     }
