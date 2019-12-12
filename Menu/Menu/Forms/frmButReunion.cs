@@ -236,7 +236,7 @@ namespace Menu.Forms
             {
                 frmReunionPopUp popup = new frmReunionPopUp();
                 popup.messagePopUp("Nombre de réunion dépassé");
-                popup.ShowDialog();
+                popup.Show();
                 foreach(Object o in Controls)
                 {
                     if(o is Button) {

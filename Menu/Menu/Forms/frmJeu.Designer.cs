@@ -39,8 +39,10 @@
             this.btnVider = new System.Windows.Forms.Button();
             this.lblLstTache = new System.Windows.Forms.Label();
             this.lstTache = new System.Windows.Forms.ListBox();
-            this.rtbActu = new System.Windows.Forms.RichTextBox();
-            this.lblActu = new System.Windows.Forms.Label();
+            this.uC_Personnage3 = new Menu.UC_Personnage();
+            this.uC_Personnage4 = new Menu.UC_Personnage();
+            this.uC_Personnage2 = new Menu.UC_Personnage();
+            this.uC_Personnage1 = new Menu.UC_Personnage();
             this.rtbListeF = new System.Windows.Forms.RichTextBox();
             this.lblTacheReal = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -54,10 +56,6 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.timerRepos = new System.Windows.Forms.Timer(this.components);
             this.pnlProgressBarTache = new System.Windows.Forms.Panel();
-            this.uC_Personnage3 = new Menu.UC_Personnage();
-            this.uC_Personnage4 = new Menu.UC_Personnage();
-            this.uC_Personnage2 = new Menu.UC_Personnage();
-            this.uC_Personnage1 = new Menu.UC_Personnage();
             this.fonctionnalitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -183,6 +181,7 @@
             // 
             // lblLstTache
             // 
+            this.lblLstTache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
             this.lblLstTache.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLstTache.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLstTache.ForeColor = System.Drawing.Color.OrangeRed;
@@ -211,32 +210,53 @@
             this.lstTache.Visible = false;
             this.lstTache.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstTache_MouseDown);
             // 
-            // rtbActu
+            // uC_Personnage3
             // 
-            this.rtbActu.BackColor = System.Drawing.Color.White;
-            this.rtbActu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbActu.Cursor = System.Windows.Forms.Cursors.No;
-            this.rtbActu.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbActu.ForeColor = System.Drawing.Color.Black;
-            this.rtbActu.Location = new System.Drawing.Point(1228, 42);
-            this.rtbActu.Name = "rtbActu";
-            this.rtbActu.ReadOnly = true;
-            this.rtbActu.Size = new System.Drawing.Size(204, 157);
-            this.rtbActu.TabIndex = 16;
-            this.rtbActu.Text = "";
-            this.rtbActu.Visible = false;
+            this.uC_Personnage3.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage3.Location = new System.Drawing.Point(13, 17);
+            this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage3.Name = "uC_Personnage3";
+            this.uC_Personnage3.Size = new System.Drawing.Size(429, 329);
+            this.uC_Personnage3.TabIndex = 11;
+            this.uC_Personnage3.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragDrop);
+            this.uC_Personnage3.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragEnter);
             // 
-            // lblActu
+            // uC_Personnage4
             // 
-            this.lblActu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblActu.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActu.Location = new System.Drawing.Point(1247, 9);
-            this.lblActu.Name = "lblActu";
-            this.lblActu.Size = new System.Drawing.Size(196, 30);
-            this.lblActu.TabIndex = 17;
-            this.lblActu.Text = "Actu Projet";
-            this.lblActu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblActu.Visible = false;
+            this.uC_Personnage4.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage4.Location = new System.Drawing.Point(776, 371);
+            this.uC_Personnage4.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage4.Name = "uC_Personnage4";
+            this.uC_Personnage4.Size = new System.Drawing.Size(429, 329);
+            this.uC_Personnage4.TabIndex = 12;
+            this.uC_Personnage4.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragDrop);
+            this.uC_Personnage4.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragEnter);
+            // 
+            // uC_Personnage2
+            // 
+            this.uC_Personnage2.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage2.Location = new System.Drawing.Point(776, 17);
+            this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage2.Name = "uC_Personnage2";
+            this.uC_Personnage2.Size = new System.Drawing.Size(429, 329);
+            this.uC_Personnage2.TabIndex = 10;
+            this.uC_Personnage2.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragDrop);
+            this.uC_Personnage2.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragEnter);
+            // 
+            // uC_Personnage1
+            // 
+            this.uC_Personnage1.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage1.Location = new System.Drawing.Point(13, 371);
+            this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(6);
+            this.uC_Personnage1.Name = "uC_Personnage1";
+            this.uC_Personnage1.Size = new System.Drawing.Size(429, 329);
+            this.uC_Personnage1.TabIndex = 9;
+            this.uC_Personnage1.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragDrop);
+            this.uC_Personnage1.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragEnter);
             // 
             // rtbListeF
             // 
@@ -255,10 +275,10 @@
             // lblTacheReal
             // 
             this.lblTacheReal.AutoSize = true;
-            this.lblTacheReal.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTacheReal.Location = new System.Drawing.Point(1228, 212);
+            this.lblTacheReal.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTacheReal.Location = new System.Drawing.Point(1227, 0);
             this.lblTacheReal.Name = "lblTacheReal";
-            this.lblTacheReal.Size = new System.Drawing.Size(208, 27);
+            this.lblTacheReal.Size = new System.Drawing.Size(412, 55);
             this.lblTacheReal.TabIndex = 22;
             this.lblTacheReal.Text = "Tâches réalisées";
             this.lblTacheReal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -397,59 +417,11 @@
             // 
             // pnlProgressBarTache
             // 
-            this.pnlProgressBarTache.Location = new System.Drawing.Point(1223, 242);
+            this.pnlProgressBarTache.Location = new System.Drawing.Point(1224, 49);
             this.pnlProgressBarTache.Name = "pnlProgressBarTache";
-            this.pnlProgressBarTache.Size = new System.Drawing.Size(225, 469);
+            this.pnlProgressBarTache.Size = new System.Drawing.Size(233, 686);
             this.pnlProgressBarTache.TabIndex = 24;
             this.pnlProgressBarTache.Visible = false;
-            // 
-            // uC_Personnage3
-            // 
-            this.uC_Personnage3.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage3.Location = new System.Drawing.Point(13, 17);
-            this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage3.Name = "uC_Personnage3";
-            this.uC_Personnage3.Size = new System.Drawing.Size(429, 329);
-            this.uC_Personnage3.TabIndex = 11;
-            this.uC_Personnage3.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragDrop);
-            this.uC_Personnage3.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragEnter);
-            // 
-            // uC_Personnage4
-            // 
-            this.uC_Personnage4.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage4.Location = new System.Drawing.Point(776, 371);
-            this.uC_Personnage4.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage4.Name = "uC_Personnage4";
-            this.uC_Personnage4.Size = new System.Drawing.Size(429, 329);
-            this.uC_Personnage4.TabIndex = 12;
-            this.uC_Personnage4.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragDrop);
-            this.uC_Personnage4.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragEnter);
-            // 
-            // uC_Personnage2
-            // 
-            this.uC_Personnage2.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage2.Location = new System.Drawing.Point(776, 17);
-            this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage2.Name = "uC_Personnage2";
-            this.uC_Personnage2.Size = new System.Drawing.Size(429, 329);
-            this.uC_Personnage2.TabIndex = 10;
-            this.uC_Personnage2.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragDrop);
-            this.uC_Personnage2.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragEnter);
-            // 
-            // uC_Personnage1
-            // 
-            this.uC_Personnage1.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage1.Location = new System.Drawing.Point(13, 371);
-            this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage1.Name = "uC_Personnage1";
-            this.uC_Personnage1.Size = new System.Drawing.Size(429, 329);
-            this.uC_Personnage1.TabIndex = 9;
-            this.uC_Personnage1.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragDrop);
-            this.uC_Personnage1.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragEnter);
             // 
             // fonctionnalitesBindingSource
             // 
@@ -460,12 +432,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(1460, 920);
+            this.ClientSize = new System.Drawing.Size(1459, 920);
             this.Controls.Add(this.pnlProgressBarTache);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblTacheReal);
-            this.Controls.Add(this.lblActu);
-            this.Controls.Add(this.rtbActu);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmJeu";
@@ -492,8 +462,6 @@
         private UC_Personnage uC_Personnage4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnRepos;
-        private System.Windows.Forms.RichTextBox rtbActu;
-        private System.Windows.Forms.Label lblActu;
         private System.Windows.Forms.Button btnCrunch;
         private System.Windows.Forms.Button btnReunion;
         private System.Windows.Forms.RichTextBox rtbListeF;

@@ -285,9 +285,14 @@ namespace Menu.classePersonnage
             /*************************************************************************************/
             int ajoutPA = 10;
 
-         //   MessageBox.Show(this.prenom + "Deteste" + this.getDeteste().getPrenom());
-          //  MessageBox.Show(this.prenom + "Affinite avec " + this.getAffinite().getPrenom());
-
+            if(action.getNom() == "Formation")  //donne des compétences aux personnages qui font de la recherche
+            {
+                this.setConnaissances(this.getConnaissances() + 10);
+                if(this.getConnaissances() > 100)
+                {
+                    this.setConnaissances(100);
+                }
+            }
 
 
             if (action.getPaDepense() >= action.getPaNecess() && action.getStatus() == false)
@@ -295,7 +300,7 @@ namespace Menu.classePersonnage
                 action.setStatus(true); //modif du status pour dire que la tache est terminée
             }
 
-            if (action.getStatus() == false && action.estRealisable())
+            if (action.getStatus() == false && action.estRealisable() && getConnaissances() > action.getNvConnaissNecces())
             {
 
                 
@@ -306,7 +311,6 @@ namespace Menu.classePersonnage
                         if (this.getDeteste().getTacheTour()[i] == action)
                         {
                             ajoutPA -= ajoutPA / 2;
-                            //MessageBox.Show("DIVISION PAR 2 car" + this.prenom + "travail avec" + this.getDeteste().getPrenom());
                         }
                     }
                 }
@@ -332,23 +336,23 @@ namespace Menu.classePersonnage
                     {
                         ajoutPA += (ajoutPA / 2); //+50%
                     }
-                    if (pointsForts[i].ToString() == "Développeur né")
+                    if (pointsForts[i].ToString() == "Développement")
                     {
                         if (action.getType() == "Développer")
                         {
                             ajoutPA += (ajoutPA / 2); //+50%
                         }
                     }
-                    if (pointsForts[i].ToString() == "Concepteur né")
+                    if (pointsForts[i].ToString() == "Conception")
                     {
                         if (action.getType() == "Concevoir")
                         {
                             ajoutPA += (ajoutPA / 2); //+50%
                         }
                     }
-                    if (pointsForts[i].ToString() == "Chercheur né")
+                    if (pointsForts[i].ToString() == "Recherche")
                     {
-                        if (action.getType() == "Rechercher")
+                        if (action.getType() == "Spécification")
                         {
                             ajoutPA += (ajoutPA / 2); //+50%
                         }
@@ -356,31 +360,46 @@ namespace Menu.classePersonnage
                 }
                 for (int i = 0; i < pointsFaibles.Count; i++)
                 {
-                    if (pointsFaibles[i].ToString() == "Incompétent notoire")
+                    if (pointsFaibles[i].ToString() == "Faiénant")
                     {
                         ajoutPA -= (ajoutPA / 2); //-50%
                     }
-                    if (pointsFaibles[i].ToString() == "Mauvais développeur")
+                    if (pointsFaibles[i].ToString() == "Développement")
                     {
                         if (action.getType() == "Développer")
                         {
                             ajoutPA -= (ajoutPA / 2); //-50%
                         }
                     }
-                    if (pointsFaibles[i].ToString() == "Mauvais concepteur")
+                    if (pointsFaibles[i].ToString() == "Conception")
                     {
                         if (action.getType() == "Concevoir")
                         {
                             ajoutPA -= (ajoutPA / 2); //-50%
                         }
                     }
-                    if (pointsFaibles[i].ToString() == "Mauvais chercheur")
+                    if (pointsFaibles[i].ToString() == "Recherche")
                     {
-                        if (action.getType() == "Rechercher")
+                        if (action.getType() == "Spécification")
                         {
                             ajoutPA -= (ajoutPA / 2); //-50%
                         }
                     }
+                }
+
+                if (this.connaissances + 20 < action.getNvConnaissNecces())
+                {
+                    ajoutPA = 0;
+                }
+                else if (this.connaissances < action.getNvConnaissNecces())
+                {
+                    int diff = action.getNvConnaissNecces() - this.connaissances;
+                    ajoutPA = ajoutPA * (1 - (diff * 5 / 100));  //pour chaque points de connaissance manquant on perd 5% d'efficacite
+                }
+                else if (this.connaissances > action.getNvConnaissNecces())
+                {
+                    int diff = action.getNvConnaissNecces() - this.connaissances;
+                    ajoutPA = ajoutPA * 1 + ((diff * 5 / 100) / 2);  //pour chaque points de connaissance supplementaire on gagne 2,5% d'efficacite
                 }
 
 

@@ -284,6 +284,7 @@ namespace Menu
         public void rendrePrenomsVisible()
         {
             lblPrenom.Visible = true;
+            pbClic.Visible = true;
         }
 
         public void rendreAttributsVisible()

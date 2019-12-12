@@ -11,6 +11,7 @@ using Menu.classePersonnage;
 using System.Collections.Generic;
 using Menu.Forms;
 using Menu.Classes;
+using System.IO;
 
 namespace Menu
 {
@@ -43,11 +44,7 @@ namespace Menu
      
             this.Size = new Size(screenWidth, screenHeight);
 
-            int X = lblActu.Location.X;
-            int Y = lblActu.Location.Y;
 
-            lblActu.Size = new Size(((screenWidth - lblActu.Location.X) - lblActu.Size.Width) + lblActu.Size.Width, lblActu.Size.Height);       
-            rtbActu.Size = new Size(((screenWidth - rtbActu.Location.X) - rtbActu.Size.Width) + rtbActu.Size.Width - 9, rtbActu.Size.Height);
             lblTacheReal.Size = new Size(((screenWidth - lblTacheReal.Location.X) - lblTacheReal.Size.Width) + lblTacheReal.Size.Width, lblTacheReal.Size.Height - 5);
             pnlProgressBarTache.Size = new Size(((screenWidth - pnlProgressBarTache.Location.X) - pnlProgressBarTache.Size.Width) + pnlProgressBarTache.Size.Width, pnlProgressBarTache.Size.Height - 5);
             panel2.Size = new Size(screenWidth, panel2.Height);
@@ -98,6 +95,7 @@ namespace Menu
 
             ArrayList listTache = ControleurJeu.getListeFonctionnalite();
             int posBas = 5;
+            Fonctionnalites fPrecedent = null;
             //Initialisation ProgressBar pour chaque tache
             for (int i = 0; i <= listTache.Count-1; i++)
             {
@@ -105,38 +103,79 @@ namespace Menu
                 Label l = new Label();
                 Fonctionnalites f = (Fonctionnalites)listTache[i];
 
-                progressBar.BackColor = System.Drawing.Color.Silver;
-                progressBar.BorderRadius = 5;
-                progressBar.Location = new System.Drawing.Point(0, posBas);
-                progressBar.ProgressColor = System.Drawing.Color.Teal;
-                progressBar.Size = new System.Drawing.Size(pnlProgressBarTache.Width-200, 20);
-                progressBar.Tag = i;
-                progressBar.Value = 0;
+                if(f.getNom() != "Formation")
+                {
+                    if (fPrecedent == null || f.getType() != fPrecedent.getType())
+                    {
+                        posBas += 25;
+                        Label lblaffichageType = new Label();
+                        lblaffichageType.Text = f.getType();
+                        lblaffichageType.Location = new System.Drawing.Point(0, posBas);
+                        lblaffichageType.Font = new System.Drawing.Font("Cooper Black", 19F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        lblaffichageType.Size = new System.Drawing.Size(200, 45);
+                        lblaffichageType.Tag = 10;  //permet d'identifier les labels titres
+                        posBas += 50;
+                        pnlProgressBarTache.Controls.Add(lblaffichageType);
+                    }
 
-                l.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                l.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                l.BackColor = Color.White;
+                    fPrecedent = f;     //remet à jour la fonctionnalités précédente
 
-                l.Location = new System.Drawing.Point(pnlProgressBarTache.Width - 200, progressBar.Location.Y);
-                l.Size = new System.Drawing.Size(200, 20);
-                l.Text = f.getNom();
+                    l.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    l.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                    l.BackColor = pnlProgressBarTache.BackColor;
+                    l.Location = new System.Drawing.Point(0, posBas);
+                    l.Size = new System.Drawing.Size(220, 20);
+                    l.Text = f.getNom();
+                    if (f.getType() == "Spécification")
+                    {
+                        l.ForeColor = Color.DarkRed;
+                    }
+                    if (f.getType() == "Concevoir")
+                    {
+                        l.ForeColor = Color.Orange;
+                    }
+                    if (f.getType() == "Développer")
+                    {
+                        l.ForeColor = Color.Purple;
+                    }
+                    if (f.getType() == "Recette")
+                    {
+                        l.ForeColor = Color.Blue;
+                    }
+                    if (f.getType() == "Livraison")
+                    {
+                        l.ForeColor = Color.Maroon;
+                    }
 
-                pnlProgressBarTache.Controls.Add(progressBar);
-                pnlProgressBarTache.Controls.Add(l);
-                posBas += 25;
+
+                    progressBar.BackColor = System.Drawing.Color.Silver;
+                    progressBar.BorderRadius = 5;
+                    progressBar.ProgressColor = System.Drawing.Color.Teal;
+                    progressBar.Size = new System.Drawing.Size(pnlProgressBarTache.Width - 200, 20);
+                    progressBar.Location = new System.Drawing.Point(l.Location.X + 200, l.Location.Y);
+                    progressBar.Tag = i;
+                    progressBar.Value = 0;
+
+                    pnlProgressBarTache.Controls.Add(progressBar);
+                    pnlProgressBarTache.Controls.Add(l);
+                    posBas += 25;
+                }
             }
+                
 
         }
 
-
+        public static string Path = Application.StartupPath.ToString();
         public void initUC(UC_Personnage uC, Personnage p)
         {
-
+            string p2 =  Directory.GetParent(Path).ToString()+"\\image\\";
+           // string p3 = Directory.GetParent(p2).ToString() + ;
+           // MessageBox.Show(p3+"\\image\\");
             /* Emplacement des images à revoir IMPORTANT */
-            imgLst.Images.Add("perso1", Image.FromFile(@"../../image/perso1.png"));
-            imgLst.Images.Add("perso2", Image.FromFile(@"../../image/perso2.png"));
-            imgLst.Images.Add("perso3", Image.FromFile(@"../../image/perso3.png"));
-            imgLst.Images.Add("perso4", Image.FromFile(@"../../image/perso4.png"));
+            imgLst.Images.Add("perso1", Image.FromFile(p2+"perso1.png"));
+            imgLst.Images.Add("perso2", Image.FromFile(p2 + "perso2.png"));
+            imgLst.Images.Add("perso3", Image.FromFile(p2 + "perso3.png"));
+            imgLst.Images.Add("perso4", Image.FromFile(p2 + "perso4.png"));
             imgLst.Images.RemoveAt(0);
             uC.initialisationUCPerso(p, imgLst.Images[0]);
             
@@ -167,16 +206,6 @@ namespace Menu
 
         }
 
-
-
-        public void ecrireSurConsole()       //controleur de jeu écrit sur le fil d'actualité
-        {
-            
-            rtbActu.Text += ControleurJeu.filActualite();
-            rtbActu.Text += "\nTour effectué " + this.getNbTour() + " / " + nbTourMax.ToString();
-            this.augmenterNbTour();   //incremente nb de tour
-
-        }
 
         private void btnTourSuivant_Click(object sender, EventArgs e) {
 
@@ -318,7 +347,7 @@ namespace Menu
 
 
 
-                ecrireSurConsole();
+                this.augmenterNbTour();   //incremente nb de tour
 
                 ArrayList listPerso = ControleurJeu.getListePersonnage();
 
@@ -659,34 +688,23 @@ namespace Menu
                             }
                         }
                     }
-                    if (r.getThemeReunion() == "Découvrir le projet")
-                    {
-                        rtbActu.Text += "\nIl vous est demandé de réaliser la simulation d'une gestion de projet T3\n";
-                    }
                     if (r.getThemeReunion() == "Révèle les qualités et les défauts")
-                    {
-                        rtbActu.Text += "\nLes qualités et défauts ainsi ques les points faibles et forts sont visibles";
+                    {;
                         uC_Personnage1.afficherQualiteDefaut();
                         uC_Personnage2.afficherQualiteDefaut();
                         uC_Personnage3.afficherQualiteDefaut();
                         uC_Personnage4.afficherQualiteDefaut();
-                    }
-                    if (r.getThemeReunion() == "Mettre en place un système d'organisation")
-                    {
-                        rtbActu.Text += "\n\nLe chef étant désigné, vous pouvez faire les points sur votre avancement du projet lors des réunions";
                     }
                     if (r.getThemeReunion() == "Analyse de la demande du client et de ses besoins + Définir un cahier des charges")
                     {
                         lstTache.Visible = true;
                         btnVider.Visible = true;
                         lblLstTache.Visible = true;
-                        rtbActu.Text += "\nLa liste des tâches à effectuer est disponible";
                     }
                     if (r.getThemeReunion() == "Mettre en commun le travail et l'avancement de chacun")
                     {
                         lblTacheReal.Visible = true;
                         pnlProgressBarTache.Visible = true;
-                        rtbActu.Text += "\nGrâce à la mise en commun lors de la réunion, vous pouvez voir toutes les tâches effectuées";
                     }
                     uC_Personnage1.rendreInvisibleTacheMatin();
                     uC_Personnage2.rendreInvisibleTacheMatin();
@@ -807,20 +825,39 @@ namespace Menu
             {
                 this.BackColor = Color.Black;
                 lblTacheReal.ForeColor = Color.White;
-                lblActu.ForeColor = Color.White;
                 panel2.BackColor = Color.Gray;
-                rtbActu.BackColor = Color.Gray;
                 rtbListeF.BackColor = Color.Gray;
+                foreach(Object o in pnlProgressBarTache.Controls)
+                {
+                    if(o is Label)
+                    {
+                        Label l = (Label)o;
+                        l.BackColor = pnlProgressBarTache.BackColor;
+                        if( (l.Tag != null) && ((int)l.Tag == 10) )
+                        {
+                            l.ForeColor = Color.White;
+                        }
+                    }
+                }
             }
             else
             {
                 this.BackColor = Color.PaleTurquoise;
                 lblTacheReal.ForeColor = Color.Black;
-                lblActu.ForeColor = Color.Black;
                 panel2.BackColor = Color.DarkCyan;
-
-                rtbActu.BackColor = Color.White;
                 rtbListeF.BackColor = Color.White;
+                foreach (Object o in pnlProgressBarTache.Controls)
+                {
+                    if (o is Label)
+                    {
+                        Label l = (Label)o;
+                        l.BackColor = pnlProgressBarTache.BackColor;
+                        if ((l.Tag != null) && ((int)l.Tag == 10))
+                        {
+                            l.ForeColor = Color.Black;
+                        }
+                    }
+                }
             }
         }
 
