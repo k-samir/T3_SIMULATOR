@@ -58,8 +58,10 @@
             this.uC_Personnage4 = new Menu.UC_Personnage();
             this.uC_Personnage2 = new Menu.UC_Personnage();
             this.uC_Personnage1 = new Menu.UC_Personnage();
+            this.fonctionnalitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fonctionnalitesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -155,9 +157,9 @@
             this.btnReunion.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnReunion.Image = global::Menu.Properties.Resources.meeting_with_a_friend;
             this.btnReunion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReunion.Location = new System.Drawing.Point(544, 609);
+            this.btnReunion.Location = new System.Drawing.Point(546, 643);
             this.btnReunion.Name = "btnReunion";
-            this.btnReunion.Size = new System.Drawing.Size(136, 63);
+            this.btnReunion.Size = new System.Drawing.Size(136, 58);
             this.btnReunion.TabIndex = 20;
             this.btnReunion.Text = "Réunion";
             this.btnReunion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,7 +172,7 @@
             this.btnVider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVider.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVider.ForeColor = System.Drawing.Color.OrangeRed;
-            this.btnVider.Location = new System.Drawing.Point(637, 490);
+            this.btnVider.Location = new System.Drawing.Point(548, 591);
             this.btnVider.Name = "btnVider";
             this.btnVider.Size = new System.Drawing.Size(130, 27);
             this.btnVider.TabIndex = 22;
@@ -184,7 +186,7 @@
             this.lblLstTache.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLstTache.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLstTache.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblLstTache.Location = new System.Drawing.Point(469, 211);
+            this.lblLstTache.Location = new System.Drawing.Point(471, 216);
             this.lblLstTache.Name = "lblLstTache";
             this.lblLstTache.Size = new System.Drawing.Size(276, 30);
             this.lblLstTache.TabIndex = 22;
@@ -203,7 +205,7 @@
             this.lstTache.ItemHeight = 21;
             this.lstTache.Location = new System.Drawing.Point(455, 249);
             this.lstTache.Name = "lstTache";
-            this.lstTache.Size = new System.Drawing.Size(312, 191);
+            this.lstTache.Size = new System.Drawing.Size(312, 338);
             this.lstTache.Sorted = true;
             this.lstTache.TabIndex = 13;
             this.lstTache.Visible = false;
@@ -222,6 +224,7 @@
             this.rtbActu.Size = new System.Drawing.Size(204, 157);
             this.rtbActu.TabIndex = 16;
             this.rtbActu.Text = "";
+            this.rtbActu.Visible = false;
             // 
             // lblActu
             // 
@@ -233,6 +236,7 @@
             this.lblActu.TabIndex = 17;
             this.lblActu.Text = "Actu Projet";
             this.lblActu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblActu.Visible = false;
             // 
             // rtbListeF
             // 
@@ -395,7 +399,7 @@
             // 
             this.pnlProgressBarTache.Location = new System.Drawing.Point(1223, 242);
             this.pnlProgressBarTache.Name = "pnlProgressBarTache";
-            this.pnlProgressBarTache.Size = new System.Drawing.Size(225, 480);
+            this.pnlProgressBarTache.Size = new System.Drawing.Size(225, 469);
             this.pnlProgressBarTache.TabIndex = 24;
             this.pnlProgressBarTache.Visible = false;
             // 
@@ -406,7 +410,7 @@
             this.uC_Personnage3.Location = new System.Drawing.Point(13, 17);
             this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(6);
             this.uC_Personnage3.Name = "uC_Personnage3";
-            this.uC_Personnage3.Size = new System.Drawing.Size(433, 331);
+            this.uC_Personnage3.Size = new System.Drawing.Size(429, 329);
             this.uC_Personnage3.TabIndex = 11;
             this.uC_Personnage3.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragDrop);
             this.uC_Personnage3.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragEnter);
@@ -430,7 +434,7 @@
             this.uC_Personnage2.Location = new System.Drawing.Point(776, 17);
             this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(6);
             this.uC_Personnage2.Name = "uC_Personnage2";
-            this.uC_Personnage2.Size = new System.Drawing.Size(429, 331);
+            this.uC_Personnage2.Size = new System.Drawing.Size(429, 329);
             this.uC_Personnage2.TabIndex = 10;
             this.uC_Personnage2.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragDrop);
             this.uC_Personnage2.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragEnter);
@@ -442,10 +446,14 @@
             this.uC_Personnage1.Location = new System.Drawing.Point(13, 371);
             this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(6);
             this.uC_Personnage1.Name = "uC_Personnage1";
-            this.uC_Personnage1.Size = new System.Drawing.Size(433, 329);
+            this.uC_Personnage1.Size = new System.Drawing.Size(429, 329);
             this.uC_Personnage1.TabIndex = 9;
             this.uC_Personnage1.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragDrop);
             this.uC_Personnage1.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragEnter);
+            // 
+            // fonctionnalitesBindingSource
+            // 
+            this.fonctionnalitesBindingSource.DataSource = typeof(Menu.Fonctionnalites);
             // 
             // frmJeu
             // 
@@ -469,6 +477,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fonctionnalitesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,5 +512,6 @@
         private System.Windows.Forms.Label lblIntro;
         private System.Windows.Forms.Panel pnlProgressBarTache;
         private System.Windows.Forms.Label lblTour;
+        private System.Windows.Forms.BindingSource fonctionnalitesBindingSource;
     }
 }

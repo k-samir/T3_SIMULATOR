@@ -18,8 +18,9 @@ namespace Menu.Forms
         public frmReunionPopUp()
         {
             InitializeComponent();
+            this.Focus();
         }
-        ArrayList liste_perso = new ArrayList();
+
 
         private void btnOk_Click(object sender, EventArgs e)
         {

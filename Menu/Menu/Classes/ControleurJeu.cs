@@ -191,9 +191,10 @@ namespace Menu
 
             }
 
+            attributionQualitesDefautsPointsFortsEtFaibles();
+
             jeu = new frmJeu(p1, p2, p3, p4,10);
             
-
             jeu.Refresh();
             jeu.Show();
             frmReunionPopUp popup = new frmReunionPopUp();
@@ -294,17 +295,6 @@ namespace Menu
                     listeRand2.Add(rand2);
                 }
 
-                /*
-                //on "vide" les liste rand pour les réutiliser pour points forts et faibles
-                for (int j = 0; j < nbQualites; j++)
-                {
-                    listeRand1[j] = -1;
-                }
-                for (int j = 0; j < nbDefauts; j++)
-                {
-                    listeRand2[j] = -1;
-                }
-                */
                 listeRand1.Clear();
                 listeRand2.Clear();
 
@@ -507,10 +497,10 @@ namespace Menu
                     p.setDeteste((Personnage)listPersonnage[randDeteste]);
                 }
 
-
-
-
             }
+
+            attributionQualitesDefautsPointsFortsEtFaibles();
+
 
             jeu = new frmJeu(p1, p2, p3, p4,20);
 
@@ -544,9 +534,7 @@ namespace Menu
 
         public static void arreterJeu(String s)
         {
-            // listfonctionnalite.Clear();
-            // listPersonnage.Clear();
-            // Get SCORE
+
 
 
             //crée une liste stockant tous les taches non effectué
@@ -568,12 +556,6 @@ namespace Menu
         }
 
        
-
-
-        public void main()
-        {
-            //arreterJeu();
-        }
 
         public static void nouveauTour()
         {
@@ -762,15 +744,6 @@ namespace Menu
         }
 
 
-
-        public static void repos()
-        {
-            foreach (Personnage p in listPersonnage)
-            {
-               
-                p.repos();
-            }
-        }
 
   
 

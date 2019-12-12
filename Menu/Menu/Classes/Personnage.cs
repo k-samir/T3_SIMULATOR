@@ -322,25 +322,25 @@ namespace Menu.classePersonnage
             int ajoutPA = 10;
                 for (int i = 0; i < pointsForts.Count; i++)
                 {
-                    if (pointsForts[i] == "Talentueux")
+                    if (pointsForts[i].ToString() == "Talentueux")
                     {
                         ajoutPA += (ajoutPA / 2); //+50%
                     }
-                    if (pointsForts[i] == "Développeur né")
+                    if (pointsForts[i].ToString() == "Développeur né")
                     {
                         if (action.getType() == "Développer")
                         {
                             ajoutPA += (ajoutPA / 2); //+50%
                         }
                     }
-                    if (pointsForts[i] == "Concepteur né")
+                    if (pointsForts[i].ToString() == "Concepteur né")
                     {
                         if (action.getType() == "Concevoir")
                         {
                             ajoutPA += (ajoutPA / 2); //+50%
                         }
                     }
-                    if (pointsForts[i] == "Chercheur né")
+                    if (pointsForts[i].ToString() == "Chercheur né")
                     {
                         if (action.getType() == "Rechercher")
                         {
@@ -350,25 +350,25 @@ namespace Menu.classePersonnage
                 }
                 for (int i = 0; i < pointsFaibles.Count; i++)
                 {
-                    if (pointsFaibles[i] == "Incompétent notoire")
+                    if (pointsFaibles[i].ToString() == "Incompétent notoire")
                     {
                         ajoutPA -= (ajoutPA / 2); //-50%
                     }
-                    if (pointsFaibles[i] == "Mauvais développeur")
+                    if (pointsFaibles[i].ToString() == "Mauvais développeur")
                     {
                         if (action.getType() == "Développer")
                         {
                             ajoutPA -= (ajoutPA / 2); //-50%
                         }
                     }
-                    if (pointsFaibles[i] == "Mauvais concepteur")
+                    if (pointsFaibles[i].ToString() == "Mauvais concepteur")
                     {
                         if (action.getType() == "Concevoir")
                         {
                             ajoutPA -= (ajoutPA / 2); //-50%
                         }
                     }
-                    if (pointsFaibles[i] == "Mauvais chercheur")
+                    if (pointsFaibles[i].ToString() == "Mauvais chercheur")
                     {
                         if (action.getType() == "Rechercher")
                         {

@@ -47,7 +47,6 @@
             this.lblValProductivite = new System.Windows.Forms.Label();
             this.lblValStress = new System.Windows.Forms.Label();
             this.lblValConnaissance = new System.Windows.Forms.Label();
-            this.lblValSociabilite = new System.Windows.Forms.Label();
             this.lblDeteste = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pbCoeurNoir = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -260,22 +259,14 @@
             this.lblValConnaissance.TabIndex = 15;
             this.lblValConnaissance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblValSociabilite
-            // 
-            this.lblValSociabilite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValSociabilite.Location = new System.Drawing.Point(339, 112);
-            this.lblValSociabilite.Name = "lblValSociabilite";
-            this.lblValSociabilite.Size = new System.Drawing.Size(73, 26);
-            this.lblValSociabilite.TabIndex = 16;
-            this.lblValSociabilite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lblDeteste
             // 
             this.lblDeteste.AutoSize = true;
-            this.lblDeteste.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeteste.Location = new System.Drawing.Point(291, 93);
+            this.lblDeteste.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeteste.ForeColor = System.Drawing.Color.Red;
+            this.lblDeteste.Location = new System.Drawing.Point(295, 103);
             this.lblDeteste.Name = "lblDeteste";
-            this.lblDeteste.Size = new System.Drawing.Size(67, 17);
+            this.lblDeteste.Size = new System.Drawing.Size(74, 17);
             this.lblDeteste.TabIndex = 17;
             this.lblDeteste.Text = "Deteste :";
             this.lblDeteste.Visible = false;
@@ -283,7 +274,7 @@
             // pbCoeurNoir
             // 
             this.pbCoeurNoir.BackgroundImage = global::Menu.Properties.Resources._30571;
-            this.pbCoeurNoir.Location = new System.Drawing.Point(360, 88);
+            this.pbCoeurNoir.Location = new System.Drawing.Point(375, 97);
             this.pbCoeurNoir.Name = "pbCoeurNoir";
             this.pbCoeurNoir.Size = new System.Drawing.Size(25, 23);
             this.pbCoeurNoir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -293,6 +284,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
@@ -305,7 +297,7 @@
             // 
             // pbCacheur
             // 
-            this.pbCacheur.Location = new System.Drawing.Point(178, 3);
+            this.pbCacheur.Location = new System.Drawing.Point(178, 6);
             this.pbCacheur.Name = "pbCacheur";
             this.pbCacheur.Size = new System.Drawing.Size(249, 79);
             this.pbCacheur.TabIndex = 20;
@@ -315,7 +307,7 @@
             // 
             this.pbCoeur.BackgroundImage = global::Menu.Properties.Resources._30571;
             this.pbCoeur.Image = ((System.Drawing.Image)(resources.GetObject("pbCoeur.Image")));
-            this.pbCoeur.Location = new System.Drawing.Point(244, 91);
+            this.pbCoeur.Location = new System.Drawing.Point(254, 97);
             this.pbCoeur.Name = "pbCoeur";
             this.pbCoeur.Size = new System.Drawing.Size(25, 23);
             this.pbCoeur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -326,54 +318,55 @@
             // affinite
             // 
             this.affinite.AutoSize = true;
-            this.affinite.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.affinite.Location = new System.Drawing.Point(175, 93);
+            this.affinite.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.affinite.ForeColor = System.Drawing.Color.Green;
+            this.affinite.Location = new System.Drawing.Point(175, 103);
             this.affinite.Name = "affinite";
-            this.affinite.Size = new System.Drawing.Size(94, 17);
+            this.affinite.Size = new System.Drawing.Size(114, 17);
             this.affinite.TabIndex = 21;
             this.affinite.Text = "Affinité avec :";
             this.affinite.Visible = false;
             // 
             // lblPointFort
             // 
-            this.lblPointFort.AutoSize = true;
-            this.lblPointFort.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPointFort.Location = new System.Drawing.Point(175, 117);
+            this.lblPointFort.Font = new System.Drawing.Font("Cooper Black", 11F);
+            this.lblPointFort.ForeColor = System.Drawing.Color.Green;
+            this.lblPointFort.Location = new System.Drawing.Point(175, 126);
             this.lblPointFort.Name = "lblPointFort";
-            this.lblPointFort.Size = new System.Drawing.Size(66, 17);
+            this.lblPointFort.Size = new System.Drawing.Size(110, 17);
             this.lblPointFort.TabIndex = 23;
             this.lblPointFort.Text = "Point fort";
             this.lblPointFort.Visible = false;
             // 
             // lblPointFaible
             // 
-            this.lblPointFaible.AutoSize = true;
-            this.lblPointFaible.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPointFaible.Location = new System.Drawing.Point(291, 117);
+            this.lblPointFaible.Font = new System.Drawing.Font("Cooper Black", 11F);
+            this.lblPointFaible.ForeColor = System.Drawing.Color.Red;
+            this.lblPointFaible.Location = new System.Drawing.Point(291, 126);
             this.lblPointFaible.Name = "lblPointFaible";
-            this.lblPointFaible.Size = new System.Drawing.Size(79, 17);
+            this.lblPointFaible.Size = new System.Drawing.Size(121, 17);
             this.lblPointFaible.TabIndex = 24;
             this.lblPointFaible.Text = "Point faible";
             this.lblPointFaible.Visible = false;
             // 
             // lblQualite
             // 
-            this.lblQualite.AutoSize = true;
-            this.lblQualite.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQualite.Location = new System.Drawing.Point(175, 140);
+            this.lblQualite.Font = new System.Drawing.Font("Cooper Black", 11F);
+            this.lblQualite.ForeColor = System.Drawing.Color.Green;
+            this.lblQualite.Location = new System.Drawing.Point(175, 152);
             this.lblQualite.Name = "lblQualite";
-            this.lblQualite.Size = new System.Drawing.Size(54, 17);
+            this.lblQualite.Size = new System.Drawing.Size(110, 17);
             this.lblQualite.TabIndex = 25;
             this.lblQualite.Text = "Qualité";
             this.lblQualite.Visible = false;
             // 
             // lblDefaut
             // 
-            this.lblDefaut.AutoSize = true;
-            this.lblDefaut.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDefaut.Location = new System.Drawing.Point(291, 140);
+            this.lblDefaut.Font = new System.Drawing.Font("Cooper Black", 11F);
+            this.lblDefaut.ForeColor = System.Drawing.Color.Red;
+            this.lblDefaut.Location = new System.Drawing.Point(291, 152);
             this.lblDefaut.Name = "lblDefaut";
-            this.lblDefaut.Size = new System.Drawing.Size(51, 17);
+            this.lblDefaut.Size = new System.Drawing.Size(121, 17);
             this.lblDefaut.TabIndex = 26;
             this.lblDefaut.Text = "Défaut";
             this.lblDefaut.Visible = false;
@@ -392,7 +385,6 @@
             this.Controls.Add(this.pbCacheur);
             this.Controls.Add(this.pbCoeurNoir);
             this.Controls.Add(this.lblDeteste);
-            this.Controls.Add(this.lblValSociabilite);
             this.Controls.Add(this.lblValConnaissance);
             this.Controls.Add(this.lblValStress);
             this.Controls.Add(this.lblValProductivite);
@@ -432,7 +424,6 @@
         private System.Windows.Forms.Label lblValProductivite;
         private System.Windows.Forms.Label lblValStress;
         private System.Windows.Forms.Label lblValConnaissance;
-        private System.Windows.Forms.Label lblValSociabilite;
         private System.Windows.Forms.ComboBox cboFonctionnalite3;
         private System.Windows.Forms.ComboBox cboFonctionnalite2;
         private System.Windows.Forms.ComboBox cboFonctionnalite1;
