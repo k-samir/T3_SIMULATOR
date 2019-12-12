@@ -172,6 +172,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -509,37 +517,37 @@
                     "Property" = "8:_B64D5C4FD34249DFBC230AFD23207691"
                         "Folders"
                         {
-                        }
-                    }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_93C9246E82E0409A9A4508A3BCF156C8"
-                    {
-                    "Name" = "8:Menu"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_EA826862A9E14E1DA889DBA3DC188942"
-                        "Folders"
-                        {
-                            "{9EF0B969-E518-4E46-987F-47570745A589}:_4058A630AB3548218944959327A8A924"
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_9F061C29FBFC448AA806F0F13B2C4883"
                             {
-                            "Name" = "8:App"
+                            "Name" = "8:Menu"
                             "AlwaysCreate" = "11:FALSE"
                             "Condition" = "8:"
                             "Transitive" = "11:FALSE"
-                            "Property" = "8:_66242FF46A19482EAAC82CC5479AAAC1"
+                            "Property" = "8:_EA826862A9E14E1DA889DBA3DC188942"
                                 "Folders"
                                 {
-                                }
-                            }
-                            "{9EF0B969-E518-4E46-987F-47570745A589}:_F652A3B04D084DE4AACEF37AE3030155"
-                            {
-                            "Name" = "8:image"
-                            "AlwaysCreate" = "11:FALSE"
-                            "Condition" = "8:"
-                            "Transitive" = "11:FALSE"
-                            "Property" = "8:_422E020E87AD4EC1B271FABACC93560B"
-                                "Folders"
-                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_4058A630AB3548218944959327A8A924"
+                                    {
+                                    "Name" = "8:App"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_66242FF46A19482EAAC82CC5479AAAC1"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F652A3B04D084DE4AACEF37AE3030155"
+                                    {
+                                    "Name" = "8:image"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_422E020E87AD4EC1B271FABACC93560B"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -585,7 +593,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup T3 Simulator"
         "ProductCode" = "8:{2F10CDAD-45B4-4C57-B049-45C3CD44513E}"
-        "PackageCode" = "8:{0BADCCF9-4EC3-446D-A0A9-B21C796A36F4}"
+        "PackageCode" = "8:{74029220-1F69-4E39-937D-2D328BBAFE24}"
         "UpgradeCode" = "8:{F3C29928-C078-492C-912A-4B1733B6CA30}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
