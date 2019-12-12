@@ -168,11 +168,11 @@ namespace Menu
         public static string Path = Application.StartupPath.ToString();
         public void initUC(UC_Personnage uC, Personnage p)
         {
-            string p2 =  Directory.GetParent(Path).ToString()+"\\image\\";
-           // string p3 = Directory.GetParent(p2).ToString() + ;
-           // MessageBox.Show(p3+"\\image\\");
+            string p2 = Directory.GetParent(Path).ToString() + "\\image\\";
+         //  string p3 = Directory.GetParent(p2).ToString() +"\\image\\"; 
+            // MessageBox.Show(p3+"\\image\\");
             /* Emplacement des images à revoir IMPORTANT */
-            imgLst.Images.Add("perso1", Image.FromFile(p2+"perso1.png"));
+            imgLst.Images.Add("perso1", Image.FromFile(p2 + "perso1.png"));
             imgLst.Images.Add("perso2", Image.FromFile(p2 + "perso2.png"));
             imgLst.Images.Add("perso3", Image.FromFile(p2 + "perso3.png"));
             imgLst.Images.Add("perso4", Image.FromFile(p2 + "perso4.png"));
