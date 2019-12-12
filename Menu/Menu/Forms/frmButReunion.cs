@@ -184,7 +184,6 @@ namespace Menu.Forms
             popup.TopMost = true;
             Button b = (Button)sender;
             /* Changer la position */
-            popup.StartPosition = FormStartPosition.Manual;
             popup.messagePopUp(b.Text);   //appel méthode du formulaire popup
             popup.Show();
             this.Focus();
@@ -204,6 +203,7 @@ namespace Menu.Forms
         /* Diminue l'opacité du popup de 0.1 à chaque Tick */
         private void fonduPopUp()
         {
+
             if(f != null)
             {
                 f.Opacity -= 0.1; //Peut être changer la valeur
@@ -253,6 +253,15 @@ namespace Menu.Forms
         private void timerPopUp_Tick(object sender, EventArgs e)
         {
             fonduPopUp();
+        }
+
+        private void timerClose_Tick(object sender, EventArgs e)
+        {
+            if(f != null)
+            {
+                f.Close();
+            }
+            
         }
     }
 }

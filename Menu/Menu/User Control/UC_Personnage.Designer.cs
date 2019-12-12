@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Personnage));
             this.lblPrenom = new System.Windows.Forms.Label();
             this.lblFatigue = new System.Windows.Forms.Label();
-            this.lblProductivite = new System.Windows.Forms.Label();
+            this.lblCompetence = new System.Windows.Forms.Label();
             this.lblStress = new System.Windows.Forms.Label();
             this.lblAction1 = new System.Windows.Forms.Label();
             this.grpAction = new System.Windows.Forms.GroupBox();
@@ -44,7 +44,7 @@
             this.lblAction3 = new System.Windows.Forms.Label();
             this.lblAction2 = new System.Windows.Forms.Label();
             this.lblValFatigue = new System.Windows.Forms.Label();
-            this.lblValProductivite = new System.Windows.Forms.Label();
+            this.lblValCompetence = new System.Windows.Forms.Label();
             this.lblValStress = new System.Windows.Forms.Label();
             this.lblValConnaissance = new System.Windows.Forms.Label();
             this.lblDeteste = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -85,15 +85,15 @@
             this.lblFatigue.Text = "Fatigue:";
             this.lblFatigue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblProductivite
+            // lblCompetence
             // 
-            this.lblProductivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductivite.Location = new System.Drawing.Point(206, 36);
-            this.lblProductivite.Name = "lblProductivite";
-            this.lblProductivite.Size = new System.Drawing.Size(102, 26);
-            this.lblProductivite.TabIndex = 3;
-            this.lblProductivite.Text = "Productivité:";
-            this.lblProductivite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCompetence.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompetence.Location = new System.Drawing.Point(206, 36);
+            this.lblCompetence.Name = "lblCompetence";
+            this.lblCompetence.Size = new System.Drawing.Size(102, 26);
+            this.lblCompetence.TabIndex = 3;
+            this.lblCompetence.Text = "Compétence : ";
+            this.lblCompetence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStress
             // 
@@ -178,7 +178,7 @@
             this.cboFonctionnalite3.FormattingEnabled = true;
             this.cboFonctionnalite3.Location = new System.Drawing.Point(99, 107);
             this.cboFonctionnalite3.Name = "cboFonctionnalite3";
-            this.cboFonctionnalite3.Size = new System.Drawing.Size(310, 30);
+            this.cboFonctionnalite3.Size = new System.Drawing.Size(310, 35);
             this.cboFonctionnalite3.TabIndex = 15;
             this.cboFonctionnalite3.Visible = false;
             // 
@@ -189,7 +189,7 @@
             this.cboFonctionnalite2.FormattingEnabled = true;
             this.cboFonctionnalite2.Location = new System.Drawing.Point(99, 66);
             this.cboFonctionnalite2.Name = "cboFonctionnalite2";
-            this.cboFonctionnalite2.Size = new System.Drawing.Size(310, 30);
+            this.cboFonctionnalite2.Size = new System.Drawing.Size(310, 35);
             this.cboFonctionnalite2.TabIndex = 14;
             // 
             // cboFonctionnalite1
@@ -199,7 +199,7 @@
             this.cboFonctionnalite1.FormattingEnabled = true;
             this.cboFonctionnalite1.Location = new System.Drawing.Point(99, 28);
             this.cboFonctionnalite1.Name = "cboFonctionnalite1";
-            this.cboFonctionnalite1.Size = new System.Drawing.Size(310, 30);
+            this.cboFonctionnalite1.Size = new System.Drawing.Size(310, 35);
             this.cboFonctionnalite1.TabIndex = 13;
             // 
             // lblAction3
@@ -232,14 +232,14 @@
             this.lblValFatigue.TabIndex = 12;
             this.lblValFatigue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblValProductivite
+            // lblValCompetence
             // 
-            this.lblValProductivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValProductivite.Location = new System.Drawing.Point(339, 36);
-            this.lblValProductivite.Name = "lblValProductivite";
-            this.lblValProductivite.Size = new System.Drawing.Size(73, 26);
-            this.lblValProductivite.TabIndex = 13;
-            this.lblValProductivite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblValCompetence.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValCompetence.Location = new System.Drawing.Point(339, 36);
+            this.lblValCompetence.Name = "lblValCompetence";
+            this.lblValCompetence.Size = new System.Drawing.Size(73, 26);
+            this.lblValCompetence.TabIndex = 13;
+            this.lblValCompetence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblValStress
             // 
@@ -266,7 +266,7 @@
             this.lblDeteste.ForeColor = System.Drawing.Color.Red;
             this.lblDeteste.Location = new System.Drawing.Point(295, 103);
             this.lblDeteste.Name = "lblDeteste";
-            this.lblDeteste.Size = new System.Drawing.Size(74, 17);
+            this.lblDeteste.Size = new System.Drawing.Size(93, 21);
             this.lblDeteste.TabIndex = 17;
             this.lblDeteste.Text = "Deteste :";
             this.lblDeteste.Visible = false;
@@ -297,7 +297,7 @@
             // 
             // pbCacheur
             // 
-            this.pbCacheur.Location = new System.Drawing.Point(178, 6);
+            this.pbCacheur.Location = new System.Drawing.Point(178, 12);
             this.pbCacheur.Name = "pbCacheur";
             this.pbCacheur.Size = new System.Drawing.Size(249, 79);
             this.pbCacheur.TabIndex = 20;
@@ -322,7 +322,7 @@
             this.affinite.ForeColor = System.Drawing.Color.Green;
             this.affinite.Location = new System.Drawing.Point(175, 103);
             this.affinite.Name = "affinite";
-            this.affinite.Size = new System.Drawing.Size(114, 17);
+            this.affinite.Size = new System.Drawing.Size(147, 21);
             this.affinite.TabIndex = 21;
             this.affinite.Text = "Affinité avec :";
             this.affinite.Visible = false;
@@ -344,7 +344,7 @@
             this.lblPointFaible.ForeColor = System.Drawing.Color.Red;
             this.lblPointFaible.Location = new System.Drawing.Point(291, 126);
             this.lblPointFaible.Name = "lblPointFaible";
-            this.lblPointFaible.Size = new System.Drawing.Size(121, 17);
+            this.lblPointFaible.Size = new System.Drawing.Size(145, 17);
             this.lblPointFaible.TabIndex = 24;
             this.lblPointFaible.Text = "Point faible";
             this.lblPointFaible.Visible = false;
@@ -366,14 +366,14 @@
             this.lblDefaut.ForeColor = System.Drawing.Color.Red;
             this.lblDefaut.Location = new System.Drawing.Point(291, 152);
             this.lblDefaut.Name = "lblDefaut";
-            this.lblDefaut.Size = new System.Drawing.Size(121, 17);
+            this.lblDefaut.Size = new System.Drawing.Size(145, 17);
             this.lblDefaut.TabIndex = 26;
             this.lblDefaut.Text = "Défaut";
             this.lblDefaut.Visible = false;
             // 
             // UC_Personnage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Controls.Add(this.lblDefaut);
@@ -387,11 +387,11 @@
             this.Controls.Add(this.lblDeteste);
             this.Controls.Add(this.lblValConnaissance);
             this.Controls.Add(this.lblValStress);
-            this.Controls.Add(this.lblValProductivite);
+            this.Controls.Add(this.lblValCompetence);
             this.Controls.Add(this.lblValFatigue);
             this.Controls.Add(this.grpAction);
             this.Controls.Add(this.lblStress);
-            this.Controls.Add(this.lblProductivite);
+            this.Controls.Add(this.lblCompetence);
             this.Controls.Add(this.lblFatigue);
             this.Controls.Add(this.lblPrenom);
             this.Controls.Add(this.pictureBox1);
@@ -414,14 +414,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblPrenom;
         private System.Windows.Forms.Label lblFatigue;
-        private System.Windows.Forms.Label lblProductivite;
+        private System.Windows.Forms.Label lblCompetence;
         private System.Windows.Forms.Label lblStress;
         private System.Windows.Forms.Label lblAction1;
         private System.Windows.Forms.GroupBox grpAction;
         private System.Windows.Forms.Label lblAction3;
         private System.Windows.Forms.Label lblAction2;
         private System.Windows.Forms.Label lblValFatigue;
-        private System.Windows.Forms.Label lblValProductivite;
+        private System.Windows.Forms.Label lblValCompetence;
         private System.Windows.Forms.Label lblValStress;
         private System.Windows.Forms.Label lblValConnaissance;
         private System.Windows.Forms.ComboBox cboFonctionnalite3;

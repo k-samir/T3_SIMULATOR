@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.btnRevenir = new System.Windows.Forms.Button();
             this.timerPopUp = new System.Windows.Forms.Timer(this.components);
+            this.timerClose = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnRevenir
@@ -53,8 +54,14 @@
             // timerPopUp
             // 
             this.timerPopUp.Enabled = true;
-            this.timerPopUp.Interval = 1000;
+            this.timerPopUp.Interval = 500;
             this.timerPopUp.Tick += new System.EventHandler(this.timerPopUp_Tick);
+            // 
+            // timerClose
+            // 
+            this.timerClose.Enabled = true;
+            this.timerClose.Interval = 3000;
+            this.timerClose.Tick += new System.EventHandler(this.timerClose_Tick);
             // 
             // frmButReunion
             // 
@@ -79,5 +86,6 @@
 
         private System.Windows.Forms.Button btnRevenir;
         private System.Windows.Forms.Timer timerPopUp;
+        private System.Windows.Forms.Timer timerClose;
     }
 }

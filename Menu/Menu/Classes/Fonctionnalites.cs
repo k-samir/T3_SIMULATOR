@@ -108,6 +108,54 @@ namespace Menu
             return this.type;
         }
 
+        /* Verifie si les fonctionnalités de recherche sont terminées pour effectuer les fonctionnalites de conception */
+        public bool estRealisable()
+        {
+            bool res = true;
+            if (getType() == "Concevoir")
+            {
+                foreach (Fonctionnalites f1 in ControleurJeu.getListeFonctionnalite())
+                {
+                    if (!(f1.getStatus()) && f1.getType() == "Rechercher")
+                    {
+                        res = false;
+                    }
+                }
+            }
+            if (getType() == "Développer")
+            {
+                foreach (Fonctionnalites f1 in ControleurJeu.getListeFonctionnalite())
+                {
+                    if (!(f1.getStatus()) && f1.getType() == "Concevoir")
+                    {
+                        res = false;
+                    }
+                }
+            }
+            if (getType() == "Recette")
+            {
+                foreach (Fonctionnalites f1 in ControleurJeu.getListeFonctionnalite())
+                {
+                    if (!(f1.getStatus()) && f1.getType() == "Développer")
+                    {
+                        res = false;
+                    }
+                }
+            }
+
+            if (getType() == "Livraison")
+            {
+                foreach (Fonctionnalites f1 in ControleurJeu.getListeFonctionnalite())
+                {
+                    if (!(f1.getStatus()) && f1.getType() == "Recette")
+                    {
+                        res = false;
+                    }
+                }
+            }
+            return res;
+        }
+
 
 
 

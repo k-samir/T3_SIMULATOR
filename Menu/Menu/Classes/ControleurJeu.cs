@@ -85,27 +85,41 @@ namespace Menu
             Random aleatoire = new Random();
             
             //creation personnage
-            p1 = remplirPersonnage("Valentin", 2.0, 0, 82, null,null);
-            p2 = remplirPersonnage("Aymeric", 2.0, 20, 80, null,null);
-            p3 = remplirPersonnage("Mathieu", 3.3, 40, 50, null,null);
-            p4 = remplirPersonnage("Samir", 4.2, 10, 45, null,null);
+            p1 = remplirPersonnage("Valentin", 20, 0, 82, null,null);
+            p2 = remplirPersonnage("Aymeric", 20, 20, 80, null,null);
+            p3 = remplirPersonnage("Mathieu", 30, 40, 50, null,null);
+            p4 = remplirPersonnage("Samir", 40, 10, 45, null,null);
 
 
 
             /*
             FONCTIONNALITES ( NOM , PANECESS , POURCENTNOTE , NVCONNAIS , PADEPENSE , TYPE) */
 
+            /* SUR 900 */
+
+            /* Recherche sur 240*/
+            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 100, 0, 0, "Rechercher");
+            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 60, 0, 0, "Rechercher");
+            Fonctionnalites f3 = new Fonctionnalites("Documentation", 40, 0, 0, "Rechercher");
 
 
-            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 40, 0, 0, "Rechercher");
-            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 40, 0, 0, "Rechercher");
-            Fonctionnalites f3 = new Fonctionnalites("Code", 40, 0, 0, "Rechercher");
-            Fonctionnalites f4 = new Fonctionnalites("MCD", 40, 0, 0, "Concevoir");
-            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 40, 0, 0, "Concevoir");
-            Fonctionnalites f6 = new Fonctionnalites("GIT", 40, 0, 0, "Concevoir");
-            Fonctionnalites f7 = new Fonctionnalites("Classes", 40, 0, 0, "Développer");
-            Fonctionnalites f8 = new Fonctionnalites("Controleur", 40, 0, 0, "Développer");
-            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 40, 0, 0, "Développer");
+            /* Conception sur 120*/
+            Fonctionnalites f4 = new Fonctionnalites("MCD", 20, 0, 0, "Concevoir");
+            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 80, 0, 0, "Concevoir");
+            Fonctionnalites f6 = new Fonctionnalites("GIT", 20, 0, 0, "Concevoir");
+
+            /* Developpement sur 450*/
+            Fonctionnalites f7 = new Fonctionnalites("Classes", 150, 0, 0, "Développer");
+            Fonctionnalites f8 = new Fonctionnalites("Controleur", 150, 0, 0, "Développer");
+            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 150, 0, 0, "Développer");
+
+            /* Recette */
+            Fonctionnalites f11 = new Fonctionnalites("Test du code", 20, 0, 0, "Recette");
+            Fonctionnalites f12 = new Fonctionnalites("Faire le point avec le client", 10, 0, 0, "Recette");
+
+            /* Livraison */
+            Fonctionnalites f13 = new Fonctionnalites("Livraison", 10, 0, 0, "Livraison");
+
 
             //REUNION(THEME DE LA REUNION) et le statut de cette réunion est par défaut à false
             Reunion r1 = new Reunion("Faire connaissance", "Découvir l'équipe");
@@ -137,6 +151,9 @@ namespace Menu
             listfonctionnalite.Add(f7);
             listfonctionnalite.Add(f8);
             listfonctionnalite.Add(f9);
+            listfonctionnalite.Add(f11);
+            listfonctionnalite.Add(f12);
+            listfonctionnalite.Add(f13);
             verifPourcentNote();
             foreach (Fonctionnalites f in listfonctionnalite)
             {
@@ -197,8 +214,21 @@ namespace Menu
             
             jeu.Refresh();
             jeu.Show();
-            frmReunionPopUp popup = new frmReunionPopUp();
-            popup.ShowDialog();
+            //frmReunionPopUp popup = new frmReunionPopUp();
+            //popup.ShowDialog();
+        }
+
+        public static Boolean verifierTacheTermine()
+        {
+            Boolean res = true;
+            foreach (Fonctionnalites f in listfonctionnalite)
+            {
+                if (!(f.getStatus()))
+                {
+                    res = false;
+                }
+            }
+            return res;
         }
 
         public static void attributionQualitesDefautsPointsFortsEtFaibles()
@@ -396,27 +426,27 @@ namespace Menu
 
 
             //creation personnage
-            p1 = remplirPersonnage("Valentin", 2.0, 0, 82, null, null);
-            p2 = remplirPersonnage("Aymeric", 2.0, 20, 80, null, null);
-            p3 = remplirPersonnage("Mathieu", 3.3, 40, 50, null, null);
-            p4 = remplirPersonnage("Samir", 4.2, 10, 45, null, null);
+            p1 = remplirPersonnage("Valentin", 20, 0, 82, null, null);
+            p2 = remplirPersonnage("Aymeric", 20, 20, 80, null, null);
+            p3 = remplirPersonnage("Mathieu", 33, 40, 50, null, null);
+            p4 = remplirPersonnage("Samir", 42, 10, 45, null, null);
 
 
 
             /*
             FONCTIONNALITES ( NOM , PANECESS , POURCENTNOTE , NVCONNAIS , PADEPENSE , TYPE) */
 
+            // 88 sans le crunch donc en tout 900 
 
-
-            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 40, 0, 0, "Rechercher");
+            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 120, 0, 0, "Rechercher");
             Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 40, 0, 0, "Rechercher");
-            Fonctionnalites f3 = new Fonctionnalites("Code", 40, 0, 0, "Rechercher");
+            Fonctionnalites f3 = new Fonctionnalites("Documentation", 40, 0, 0, "Rechercher");
             Fonctionnalites f4 = new Fonctionnalites("MCD", 40, 0, 0, "Concevoir");
             Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 40, 0, 0, "Concevoir");
             Fonctionnalites f6 = new Fonctionnalites("GIT", 40, 0, 0, "Concevoir");
             Fonctionnalites f7 = new Fonctionnalites("Classes", 40, 0, 0, "Développer");
-            Fonctionnalites f8 = new Fonctionnalites("Controleur", 40, 0, 0, "Développer");
-            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 40, 0, 0, "Développer");
+            Fonctionnalites f8 = new Fonctionnalites("Controleur", 250, 0, 0, "Développer");
+            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 100, 0, 0, "Développer");
 
             //REUNION(THEME DE LA REUNION) et le statut de cette réunion est par défaut à false
             Reunion r1 = new Reunion("Faire connaissance", "Découvir l'équipe");
@@ -510,9 +540,9 @@ namespace Menu
 
 
 
-        public Personnage remplirPersonnage(string prenom, double productivite, int stress, int sociabilite, Personnage affinite, Personnage deteste) //créer personnage avec attributs en paramètres
+        public Personnage remplirPersonnage(string prenom, int connaissance, int stress, int sociabilite, Personnage affinite, Personnage deteste) //créer personnage avec attributs en paramètres
         {
-            return new Personnage(prenom, productivite, stress, sociabilite, affinite,deteste);
+            return new Personnage(prenom, connaissance, stress, sociabilite, affinite,deteste);
         }
 
         public static ArrayList getListeReunion()
@@ -587,7 +617,7 @@ namespace Menu
 
                 for (int i =0;i< v; i++)
                 {
-                    p.setFatigue(p.getFatigue() + 5);
+                    p.setFatigue(p.getFatigue() + 10);
                 }
                 p.setnbrActionFaite(0);
 
@@ -634,6 +664,8 @@ namespace Menu
                 f.setPourcentNote(pourcentageNouveau);
             }
         }
+
+
 
         public static String filActualite()     //renvoi toute les info à savoir sur l'actu du projet et des perso 
         {
@@ -694,7 +726,9 @@ namespace Menu
 
             /*****************   A FAIRE ****************/
 
-            foreach (Fonctionnalites f in listeTache)
+            
+
+                foreach (Fonctionnalites f in listeTache)
             {
                
                    // MessageBox.Show("NORMAL");
@@ -769,6 +803,8 @@ namespace Menu
             this.compteurTours = noUse;
         }
 
-        /* -------------------------------------------------------------- */
+        
+
+       
     }
 }

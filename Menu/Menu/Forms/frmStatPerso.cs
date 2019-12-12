@@ -47,24 +47,24 @@ namespace Menu.Forms
             {
                 pbFatigue.ProgressColor = Color.Orange;
             }
-            if(pbFatigue.Value > 75)
+            if (pbFatigue.Value > 75)
             {
                 pbFatigue.ProgressColor = Color.Red;
             }
 
-            //productivite
-            pbProductivite.Value = (int)p.getProductivite() * 20;
-            if (pbProductivite.Value <= 30)
+            //niveau de compétence
+            pbCompetence.Value = p.getConnaissances() ;
+            if (pbCompetence.Value <= 20)
             {
-                pbProductivite.ProgressColor = Color.Red;
+                pbCompetence.ProgressColor = Color.Red;
             }
-            if (pbProductivite.Value > 30 && pbProductivite.Value <= 50)
+            if (pbCompetence.Value > 20 && pbCompetence.Value <= 50)
             {
-                pbProductivite.ProgressColor = Color.Orange;
+                pbCompetence.ProgressColor = Color.Orange;
             }
-            if (pbProductivite.Value > 50)
+            if (pbCompetence.Value > 50)
             {
-                pbProductivite.ProgressColor = Color.Green;
+                pbCompetence.ProgressColor = Color.Green;
             }
 
             //stress
@@ -83,7 +83,7 @@ namespace Menu.Forms
             }
 
             //a des affinités avec qqn
-            if(p.getAffinite().getPrenom() == "-")
+            if (p.getAffinite().getPrenom() == "-")
             {
                 lblAffinite.Text = "Affinité avec personne";
             }
@@ -100,16 +100,16 @@ namespace Menu.Forms
             else
             {
                 lblDeteste.Text = "Déteste " + p.getDeteste().getPrenom();
-            } 
-            
+            }
+
             //qualite
-            for(int i = 0; i <= qualite.Count-1; i++)
+            for (int i = 0; i <= qualite.Count - 1; i++)
             {
                 lblQualite.Text += "\n  " + qualite[i];
             }
 
             //defaut
-            for(int i = 0; i<=defaut.Count-1;i++)
+            for (int i = 0; i <= defaut.Count - 1; i++)
             {
                 lblDefaut.Text += "\n   " + defaut[i];
             }

@@ -33,7 +33,7 @@ namespace Menu
             btnSupprimerTache1.Visible = false;
             cboFonctionnalite1.Visible = false;
             this.reunion = true;
-            
+
         }
 
         public UC_Personnage()
@@ -80,7 +80,7 @@ namespace Menu
             lblPointFaible.Text = (String)pointFaible[0];
 
             this.setPrenom(perso.getPrenom());
-            this.setProductivite(perso.getProductivite());
+            this.setConnaissance(perso.getConnaissances());
             this.setStress(perso.getStress());
             this.setFatigue(perso.getFatigue());
             this.setAffinite(perso.getAffinite());
@@ -119,7 +119,7 @@ namespace Menu
 
                 else if (perso.estDisponible() == false && perso.getMalade() == false)
                 {
-                    
+
                     this.BackColor = Color.SpringGreen;
                     perso.setDisponible(true);
                 }
@@ -194,10 +194,10 @@ namespace Menu
             }
 
         }
-        public void setProductivite(double productivite)
+        public void setConnaissance(int connaissance)
         {
-            lblValProductivite.Text = String.Empty;
-            lblValProductivite.Text = productivite.ToString() + "   /5";
+            lblValCompetence.Text = String.Empty;
+            lblValCompetence.Text = connaissance.ToString() + "   /100";
         }
         public void setStress(int stress)
         {
@@ -237,7 +237,7 @@ namespace Menu
                 }
             }
 
-            if (cboFonctionnalite1.SelectedIndex == -1 && reunion == false && cboFonctionnalite1.Visible!=false)
+            if (cboFonctionnalite1.SelectedIndex == -1 && reunion == false && cboFonctionnalite1.Visible != false)
             {
                 cboFonctionnalite1.SelectedIndex = index;
             }
@@ -298,8 +298,41 @@ namespace Menu
             btnSupprimerTache1.Visible = false;
         }
 
+        public void remplirListeAffinite()
+        {
+            //List<Fonctionnalites> listT = new List<Fonctionnalites>();
+
+            this.perso.getTacheTour().Clear();
+            //arrayliste des taches que le personnage va effectuer
+
+            foreach (Fonctionnalites f in listfonctionnalite)
+            {
+                //MessageBox.Show(cboFonctionnalite1.Text);
+
+                if (f.getNom() + " (" + f.getNvConnaissNecces() + ")" == cboFonctionnalite1.Text)  // dans une cboFonctionnale on a "nom (NvConnaissNecces)"
+                {
+                    this.perso.getTacheTour().Add(f);
+                }
+                if (f.getNom() + " (" + f.getNvConnaissNecces() + ")" == cboFonctionnalite2.Text)
+                {
+                    this.perso.getTacheTour().Add(f);
+                }
+                if (cboFonctionnalite3.Visible != false)  //si le crunch est activé alors ajouter une tache en plus
+                {
+                    if (f.getNom() + " (" + f.getNvConnaissNecces() + ")" == cboFonctionnalite3.Text)
+                    {
+                        this.perso.getTacheTour().Add(f);
+                    }
+                }
+            }
 
 
+
+        }
+        public void viderListeAffinite()
+        {
+            this.perso.viderTacheTour();
+        }
         public void donnerTachePerso()
         {
             List<Fonctionnalites> listeTache = new List<Fonctionnalites>();
@@ -310,7 +343,7 @@ namespace Menu
             {
                 //MessageBox.Show(cboFonctionnalite1.Text);
 
-                if (f.getNom() + " (" + f.getNvConnaissNecces() + ")" == cboFonctionnalite1.Text )  // dans une cboFonctionnale on a "nom (NvConnaissNecces)"
+                if (f.getNom() + " (" + f.getNvConnaissNecces() + ")" == cboFonctionnalite1.Text)  // dans une cboFonctionnale on a "nom (NvConnaissNecces)"
                 {
                     listeTache.Add(f);
                 }
@@ -329,6 +362,7 @@ namespace Menu
 
             ControleurJeu.tache(this.perso, listeTache);
         }
+
 
         private void btnSupprimerTache1_Click(object sender, EventArgs e)
         {
@@ -368,7 +402,7 @@ namespace Menu
                 fm.messagePopUp("picturebox");
                 fm.ShowDialog();
             }
-            
+
         }
 
         public Image getImagePerso()
