@@ -10,7 +10,7 @@ Il dispose d’une Interface Homme-Machine, simple, intuitive et ergonomique.
 
 [Cahier des charges](https://docs.google.com/document/d/1Wt1TN2uy75v-5iO5i8XkizberEv1joOm_bvyGyg5HoU/edit)
 
-[Lien de téléchargement de l'application]
+[Lien de téléchargement de l'application](https://git.unistra.fr/projet-t3/myt3/blob/master/Menu/Setup/Setup.msi)
 
 
 # Objectifs pédagogiques
