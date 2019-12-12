@@ -18,7 +18,10 @@ namespace Menu.Forms
         public frmReunionPopUp()
         {
             InitializeComponent();
-            this.Focus();
+            //StartPosition = FormStartPosition.Manual;
+            Rectangle r = Screen.PrimaryScreen.WorkingArea;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - this.Width, Screen.PrimaryScreen.WorkingArea.Height - this.Height);
         }
 
 
@@ -112,6 +115,11 @@ namespace Menu.Forms
             }
 
 
+        }
+
+        private void frmReunionPopUp_Leave(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

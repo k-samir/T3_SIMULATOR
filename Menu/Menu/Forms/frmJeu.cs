@@ -116,6 +116,7 @@ namespace Menu
                 l.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 l.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
                 l.BackColor = Color.White;
+
                 l.Location = new System.Drawing.Point(pnlProgressBarTache.Width - 200, progressBar.Location.Y);
                 l.Size = new System.Drawing.Size(200, 20);
                 l.Text = f.getNom();
@@ -208,12 +209,33 @@ namespace Menu
 
             // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
             // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
-            if ((nbTour >= nbTourMax) || ((ControleurJeu.getListeFonctionnalite().Count == 0)) || lstTache.Items.Count == 0 || score.Value >=100)
+            if ((nbTour >= nbTourMax) || ((ControleurJeu.verifierTacheTermine())))
             {
                 ControleurJeu.arreterJeu(rtbListeF.Text);
                 this.Close();
             }
 
+            // Pre remplissage de toutes les taches pour le tour actuel pour chaque perso
+            foreach (Object o in Controls)
+            {
+                if (o is Panel)
+                {
+                    Panel p = (Panel)o;
+
+                    foreach (Object c in p.Controls)
+                    {
+                        if (c is UC_Personnage)
+                        {
+
+                            UC_Personnage up = (UC_Personnage)c;
+
+                            up.remplirListeAffinite();
+
+                        }
+                    }
+                }
+            }
+           
 
 
             //modification des taches des user controls
@@ -229,12 +251,36 @@ namespace Menu
                         {
 
                             UC_Personnage up = (UC_Personnage)c;
+                            
                             up.donnerTachePerso();
+                            
                         }
                     }
                 }
 
             }
+
+            foreach (Object o in Controls)
+            {
+                if (o is Panel)
+                {
+                    Panel p = (Panel)o;
+
+                    foreach (Object c in p.Controls)
+                    {
+                        if (c is UC_Personnage)
+                        {
+
+                            UC_Personnage up = (UC_Personnage)c;
+
+                            up.viderListeAffinite();
+
+                        }
+                    }
+                }
+            }
+
+
 
 
             try
@@ -323,6 +369,7 @@ namespace Menu
             lstTache.Items.Clear();
             foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
             {
+                
                 if (f.getPaDepense() < f.getPaNecess() && f.getStatus() == false)
                 {
                     lstTache.Items.Add(f.getNom() + " (" + f.getNvConnaissNecces() + ")");

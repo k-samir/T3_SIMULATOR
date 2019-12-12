@@ -8,13 +8,19 @@ using Menu.Forms;
 
 namespace Menu.classePersonnage
 {
+    /*
+     * 
+     * \brief Exemple de Commentaire
+     * 
+     */
     public class Personnage
     {
         //Attributs d'un personnage 
         //private int id;
         private string prenom;
         private int fatigue = 0;
-        private double productivite;
+      //  private double productivite;
+     
         private int stress;
         private int connaissances = 0;
         private int sociabilite;
@@ -32,13 +38,16 @@ namespace Menu.classePersonnage
         public ArrayList pointsFaibles = new ArrayList();
 
         public List<Fonctionnalites> tacheTour = new List<Fonctionnalites>();
-               
+
 
         //Constructeur de la classe personnage
-        public Personnage(string prenom, double productivite, int stress, int sociabilite, Personnage affinite, Personnage deteste)
+        /*
+         * Constructeur Personnage
+         */
+        public Personnage(string prenom, int connaissance, int stress, int sociabilite, Personnage affinite, Personnage deteste)
         {
             this.prenom = prenom;
-            this.productivite = productivite;
+            this.connaissances = connaissance;
             this.stress = stress;
             this.sociabilite = sociabilite;
             this.affinite = affinite;
@@ -249,14 +258,7 @@ namespace Menu.classePersonnage
             }
         }
 
-        public double getProductivite()
-        {
-            return this.productivite;
-        }
-        public void setProductivite(double productivite)
-        {
-            this.productivite = productivite;
-        }
+       
 
         public ArrayList getQualite()
         {
@@ -280,46 +282,50 @@ namespace Menu.classePersonnage
 
         public void faireAction(Fonctionnalites action)
         {    //tache que le personnage va effectuer
-             /**************************
-             MessageBox.Show(this.getDeteste().getPrenom() + "Deteste");
-             MessageBox.Show(this.getAffinite().getPrenom() + "Affinite");
-
-             if (action.getPaDepense() >= action.getPaNecess() && action.getStatus() == false)
-             {   
-                 action.setStatus(true); //modif du status pour dire que la tache est terminée
-             }
-
-             if (action.getStatus() == false)
-             {
-                 int ajoutPA = 10;
-
-                 if (this.getDeteste().getPrenom() != "-")
-                 {
-                     for (int i = 0; i < this.getDeteste().getTacheTour().Count; i++)
-                     {
-                         if (this.getDeteste().getTacheTour()[i] == action)
-                         {
-                             ajoutPA -= ajoutPA / 2;
-                             MessageBox.Show(this.getDeteste().getPrenom() + "Deteste");
-                         }
-                     }
-                 }
-                 if (this.getAffinite().getPrenom() != "-")
-                 {
-
-                     for (int i = 0; i < this.getAffinite().getTacheTour().Count; i++)
-
-                     {
-                         MessageBox.Show(this.getAffinite().getTacheTour()[i].getNom());
-                         if (this.getAffinite().getTacheTour()[i] == action)
-                         {
-                             MessageBox.Show(this.getAffinite().getPrenom() + "Deteste");
-                             ajoutPA += ajoutPA / 2;
-                         }
-                     }
-                 }
-                 ***************************************************************************/
+            /*************************************************************************************/
             int ajoutPA = 10;
+
+         //   MessageBox.Show(this.prenom + "Deteste" + this.getDeteste().getPrenom());
+          //  MessageBox.Show(this.prenom + "Affinite avec " + this.getAffinite().getPrenom());
+
+
+
+            if (action.getPaDepense() >= action.getPaNecess() && action.getStatus() == false)
+            {
+                action.setStatus(true); //modif du status pour dire que la tache est terminée
+            }
+
+            if (action.getStatus() == false && action.estRealisable())
+            {
+
+                
+                if (this.getDeteste().getPrenom() != "-")
+                {
+                    for (int i = 0; i < this.getDeteste().getTacheTour().Count; i++)
+                    {
+                        if (this.getDeteste().getTacheTour()[i] == action)
+                        {
+                            ajoutPA -= ajoutPA / 2;
+                            //MessageBox.Show("DIVISION PAR 2 car" + this.prenom + "travail avec" + this.getDeteste().getPrenom());
+                        }
+                    }
+                }
+                if (this.getAffinite().getPrenom() != "-")
+                {
+
+                    for (int i = 0; i < this.getAffinite().getTacheTour().Count; i++)
+
+                    {
+
+                        if (this.getAffinite().getTacheTour()[i] == action)
+                        {
+                            //MessageBox.Show("MULTIPLICATION PAR 2 car" + this.prenom + "travail avec" + this.getAffinite().getPrenom());
+                            ajoutPA += ajoutPA / 2;
+                        }
+                    }
+                }
+
+
                 for (int i = 0; i < pointsForts.Count; i++)
                 {
                     if (pointsForts[i].ToString() == "Talentueux")
@@ -381,12 +387,12 @@ namespace Menu.classePersonnage
                 foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
                 {
                     //int index = 0;
-                    if(f.getNom() == action.getNom())
+                    if (f.getNom() == action.getNom())
                     {
                         f.setPaDepense(action.getPaDepense() + ajoutPA);  //permet de modifier les pa dépensés
                     }
                 }
-                
+
 
                 if (action.getPaDepense() >= action.getPaNecess())
                 {
@@ -395,6 +401,8 @@ namespace Menu.classePersonnage
             }
         }
     }
+}
+
     
 
 

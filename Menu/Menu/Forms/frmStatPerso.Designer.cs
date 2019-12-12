@@ -38,7 +38,7 @@
             this.lblDefaut = new System.Windows.Forms.Label();
             this.lblQualite = new System.Windows.Forms.Label();
             this.pbStress = new Bunifu.Framework.UI.BunifuProgressBar();
-            this.pbProductivite = new Bunifu.Framework.UI.BunifuProgressBar();
+            this.pbCompetence = new Bunifu.Framework.UI.BunifuProgressBar();
             this.pbFatigue = new Bunifu.Framework.UI.BunifuProgressBar();
             this.grpPointFortFaible = new System.Windows.Forms.GroupBox();
             this.lblPointFaible = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.lblDeteste = new System.Windows.Forms.Label();
             this.lblAffinite = new System.Windows.Forms.Label();
             this.lblStress = new System.Windows.Forms.Label();
-            this.lblProductivite = new System.Windows.Forms.Label();
+            this.lblCompetence = new System.Windows.Forms.Label();
             this.lblFatigue = new System.Windows.Forms.Label();
             this.pbPerso = new System.Windows.Forms.PictureBox();
             this.pnlHaut.SuspendLayout();
@@ -119,12 +119,12 @@
             // 
             this.panel1.Controls.Add(this.grpQualiteDefaut);
             this.panel1.Controls.Add(this.pbStress);
-            this.panel1.Controls.Add(this.pbProductivite);
+            this.panel1.Controls.Add(this.pbCompetence);
             this.panel1.Controls.Add(this.pbFatigue);
             this.panel1.Controls.Add(this.grpPointFortFaible);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.lblStress);
-            this.panel1.Controls.Add(this.lblProductivite);
+            this.panel1.Controls.Add(this.lblCompetence);
             this.panel1.Controls.Add(this.lblFatigue);
             this.panel1.Location = new System.Drawing.Point(255, 96);
             this.panel1.Name = "panel1";
@@ -178,18 +178,18 @@
             this.pbStress.TabIndex = 33;
             this.pbStress.Value = 0;
             // 
-            // pbProductivite
+            // pbCompetence
             // 
-            this.pbProductivite.BackColor = System.Drawing.Color.Silver;
-            this.pbProductivite.BorderRadius = 5;
-            this.pbProductivite.Location = new System.Drawing.Point(115, 67);
-            this.pbProductivite.Margin = new System.Windows.Forms.Padding(15, 8, 15, 8);
-            this.pbProductivite.MaximumValue = 100;
-            this.pbProductivite.Name = "pbProductivite";
-            this.pbProductivite.ProgressColor = System.Drawing.Color.Teal;
-            this.pbProductivite.Size = new System.Drawing.Size(540, 18);
-            this.pbProductivite.TabIndex = 32;
-            this.pbProductivite.Value = 0;
+            this.pbCompetence.BackColor = System.Drawing.Color.Silver;
+            this.pbCompetence.BorderRadius = 5;
+            this.pbCompetence.Location = new System.Drawing.Point(115, 67);
+            this.pbCompetence.Margin = new System.Windows.Forms.Padding(15, 8, 15, 8);
+            this.pbCompetence.MaximumValue = 100;
+            this.pbCompetence.Name = "pbCompetence";
+            this.pbCompetence.ProgressColor = System.Drawing.Color.Teal;
+            this.pbCompetence.Size = new System.Drawing.Size(540, 18);
+            this.pbCompetence.TabIndex = 32;
+            this.pbCompetence.Value = 0;
             // 
             // pbFatigue
             // 
@@ -284,17 +284,17 @@
             this.lblStress.Text = "Stress";
             this.lblStress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblProductivite
+            // lblCompetence
             // 
-            this.lblProductivite.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblProductivite.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductivite.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblProductivite.Location = new System.Drawing.Point(3, 67);
-            this.lblProductivite.Name = "lblProductivite";
-            this.lblProductivite.Size = new System.Drawing.Size(105, 20);
-            this.lblProductivite.TabIndex = 25;
-            this.lblProductivite.Text = "Productivité";
-            this.lblProductivite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCompetence.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblCompetence.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompetence.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblCompetence.Location = new System.Drawing.Point(3, 67);
+            this.lblCompetence.Name = "lblCompetence";
+            this.lblCompetence.Size = new System.Drawing.Size(105, 20);
+            this.lblCompetence.TabIndex = 25;
+            this.lblCompetence.Text = "Compétence";
+            this.lblCompetence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblFatigue
             // 
@@ -319,7 +319,7 @@
             // 
             // frmStatPerso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(951, 437);
@@ -354,7 +354,7 @@
         private System.Windows.Forms.Label lblPrenomPerso;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblStress;
-        private System.Windows.Forms.Label lblProductivite;
+        private System.Windows.Forms.Label lblCompetence;
         private System.Windows.Forms.Label lblFatigue;
         private System.Windows.Forms.Label lblPointFaible;
         private System.Windows.Forms.Label lblPointFort;
@@ -363,7 +363,7 @@
         private System.Windows.Forms.Label lblAffinite;
         private System.Windows.Forms.Label lblDeteste;
         private Bunifu.Framework.UI.BunifuProgressBar pbStress;
-        private Bunifu.Framework.UI.BunifuProgressBar pbProductivite;
+        private Bunifu.Framework.UI.BunifuProgressBar pbCompetence;
         private Bunifu.Framework.UI.BunifuProgressBar pbFatigue;
         private System.Windows.Forms.GroupBox grpQualiteDefaut;
         private System.Windows.Forms.Label lblDefaut;
