@@ -1,5 +1,6 @@
 ﻿using Menu.classePersonnage;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,16 +14,30 @@ namespace Menu.Forms
 {
     public partial class frmStatPerso : Form
     {
+
+        int TogMove;
+        int MValX;
+        int MValY;
+
+
+
         public frmStatPerso(UC_Personnage up)
         {
             InitializeComponent();
 
             pbPerso.Image = up.getImagePerso();
 
+            //perso et ses qualités, défauts, points forts et points faibles
             Personnage p = up.getPersonnage();
+            ArrayList qualite = p.getQualite();
+            ArrayList defaut = p.getDefaut();
+            ArrayList pointFort = p.getPointFort();
+            ArrayList pointFaible = p.getPointFaible();
 
+            //prenom
             lblPrenomPerso.Text = p.getPrenom();
 
+            //fatigue
             pbFatigue.Value = p.getFatigue();
             if (pbFatigue.Value <= 45)
             {
@@ -37,6 +52,7 @@ namespace Menu.Forms
                 pbFatigue.ProgressColor = Color.Red;
             }
 
+            //productivite
             pbProductivite.Value = (int)p.getProductivite() * 20;
             if (pbProductivite.Value <= 30)
             {
@@ -51,6 +67,7 @@ namespace Menu.Forms
                 pbProductivite.ProgressColor = Color.Green;
             }
 
+            //stress
             pbStress.Value = p.getStress();
             if (pbStress.Value <= 45)
             {
@@ -65,7 +82,8 @@ namespace Menu.Forms
                 pbStress.ProgressColor = Color.Red;
             }
 
-            if(p.getAffinite() == null)
+            //a des affinités avec qqn
+            if(p.getAffinite().getPrenom() == "-")
             {
                 lblAffinite.Text = "Affinité avec personne";
             }
@@ -74,24 +92,67 @@ namespace Menu.Forms
                 lblAffinite.Text = "Affinité avec " + p.getAffinite().getPrenom();
             }
 
-
-            if (p.getDeteste() == null)
+            //déteste une personne
+            if (p.getDeteste().getPrenom() == "-")
             {
                 lblDeteste.Text = "Ne déteste personne";
             }
             else
             {
-                lblDeteste.Text = "Déteste "+p.getDeteste().getPrenom();
+                lblDeteste.Text = "Déteste " + p.getDeteste().getPrenom();
+            } 
+            
+            //qualite
+            for(int i = 0; i <= qualite.Count-1; i++)
+            {
+                lblQualite.Text += "\n  " + qualite[i];
             }
 
+            //defaut
+            for(int i = 0; i<=defaut.Count-1;i++)
+            {
+                lblDefaut.Text += "\n   " + defaut[i];
+            }
 
-           
-            
+            //point fort
+            for (int i = 0; i <= pointFort.Count - 1; i++)
+            {
+                lblPointFort.Text += "\n    " + pointFort[i];
+            }
+
+            //point faible
+            for (int i = 0; i <= pointFaible.Count - 1; i++)
+            {
+                lblPointFaible.Text += "\n  " + pointFaible[i];
+            }
         }
 
         private void btnRevenir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
+
+        private void pnlHaut_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            MValX = e.X;
+            MValY = e.Y;
+        }
+
+        private void pnlHaut_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+
+        private void pnlHaut_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
+            }
+        }
+
     }
 }

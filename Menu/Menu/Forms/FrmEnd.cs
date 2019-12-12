@@ -14,7 +14,7 @@ namespace Menu.Forms
     public partial class FrmEnd : Form
     {
         private string s = "";
-        private int score;
+
         
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)

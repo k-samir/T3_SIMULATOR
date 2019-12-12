@@ -14,7 +14,8 @@ namespace Menu.Forms
     public partial class frmButReunion : Form
     {
         private frmReunion reunion;
-        private static int compteurEquipe;
+        private static int compteurEquipe = 0;
+        private frmReunionPopUp f;
         public frmButReunion(frmReunion fr)
         {
             InitializeComponent();
@@ -47,8 +48,6 @@ namespace Menu.Forms
                 if (verifierThemeAborde(button1.Text))   //grise le bouton car le theme de cette réunion a déjà été abordé
                 {
                     button1.Enabled = false;
-                    compteurEquipe++;
-                    
                 }
 
                 Button button2 = new Button();
@@ -64,7 +63,6 @@ namespace Menu.Forms
                 if (verifierThemeAborde(button2.Text))   //grise le bouton car le theme de cette réunion a déjà été abordé
                 {
                     button2.Enabled = false;
-                    compteurEquipe++;
                 }
 
                 Button button3 = new Button();
@@ -80,7 +78,6 @@ namespace Menu.Forms
                 if (verifierThemeAborde(button3.Text))   //grise le bouton car le theme de cette réunion a déjà été abordé
                 {
                     button3.Enabled = false;
-                    compteurEquipe++;
                 }
 
                 Button button4 = new Button();
@@ -96,7 +93,6 @@ namespace Menu.Forms
                 if (verifierThemeAborde(button4.Text))   //grise le bouton car le theme de cette réunion a déjà été abordé
                 {
                     button4.Enabled = false;
-                    compteurEquipe++;
                 }
 
                 this.Controls.Add(button1);
@@ -119,8 +115,7 @@ namespace Menu.Forms
                 button1.Click += new System.EventHandler(this.lancerNotification);
                 if (verifierThemeAborde(button1.Text))   //grise le bouton car le theme de cette réunion a déjà été abordé
                 {
-                    button1.Enabled = false;
-                    
+                    button1.Enabled = false; 
                 }
 
                 Button button2 = new Button();
@@ -180,20 +175,22 @@ namespace Menu.Forms
 
         }
 
+        /* Lancement d'un popup qui disparait progressivement avec le timerPopUp */
         public void lancerNotification(object sender, EventArgs e)
         {
             this.reunion.incrementerNbReunion();    //incrementer le nb de thématique de réunions abordé
-            this.Opacity = 0.3;     //effet flouté pour le popup
             frmReunionPopUp popup = new frmReunionPopUp();
+            this.f = popup;
+            popup.TopMost = true;
             Button b = (Button)sender;
+            /* Changer la position */
+            popup.StartPosition = FormStartPosition.Manual;
             popup.messagePopUp(b.Text);   //appel méthode du formulaire popup
-            DialogResult dr = new DialogResult();
-            dr = popup.ShowDialog();
-            if (popup.DialogResult == DialogResult.Cancel)
-            {
-                //enlever l'effet flouté
-                this.Opacity = 1;
-            }
+            popup.Show();
+            this.Focus();
+            fonduPopUp();
+
+            compteurEquipe++;
 
             //une fois l'achievement activé on bloque le boutton avec un enable pour dire à l'utilisateur 
             //qu'il n'a plus besoin de s'occuper de cet achievement et que cette derniere a été validé
@@ -202,6 +199,17 @@ namespace Menu.Forms
             //MessageBox.Show("Texte bouton : " + b.Text); fonctionne
             ControleurJeu.changerStatutReunion(b.Text);
             update();
+        }
+
+        /* Diminue l'opacité du popup de 0.1 à chaque Tick */
+        private void fonduPopUp()
+        {
+            if(f != null)
+            {
+                f.Opacity -= 0.1; //Peut être changer la valeur
+                /* Egalement modifier la position des forms car superposés on y voit plus rien */
+            }
+            
         }
 
         private void btnRevenir_Click_1(object sender, EventArgs e)
@@ -240,6 +248,11 @@ namespace Menu.Forms
                     }
                 }
             }
+        }
+
+        private void timerPopUp_Tick(object sender, EventArgs e)
+        {
+            fonduPopUp();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Menu
     {
 
 
-         ArrayList listfonctionnalite = ControleurJeu.getListeFonctionnalite();
+        ArrayList listfonctionnalite = ControleurJeu.getListeFonctionnalite();
         Boolean reunion = false;
         private Personnage perso { get; set; }
         public int nbrActionFaite = 0;
@@ -74,12 +74,10 @@ namespace Menu
             ArrayList pointFort = p.getPointFort();
             ArrayList pointFaible = p.getPointFaible();
 
-            /* 
             lblQualite.Text = (String)qualite[0];
             lblDefaut.Text = (String)defaut[0];
             lblPointFort.Text = (String)pointFort[0];
             lblPointFaible.Text = (String)pointFaible[0];
-            */
 
             this.setPrenom(perso.getPrenom());
             this.setProductivite(perso.getProductivite());
@@ -252,12 +250,6 @@ namespace Menu
                 cboFonctionnalite3.SelectedIndex = index;
             }
 
-
-
-
-
-
-
         }
 
 
@@ -336,8 +328,6 @@ namespace Menu
             }
 
             ControleurJeu.tache(this.perso, listeTache);
-
-
         }
 
         private void btnSupprimerTache1_Click(object sender, EventArgs e)
@@ -358,18 +348,19 @@ namespace Menu
             cboFonctionnalite3.SelectedIndex = -1;
         }
 
-        private void UC_Personnage_Load(object sender, EventArgs e)
+        public void afficherQualiteDefaut()     //et point fort et point faible
         {
-
+            lblQualite.Visible = true;
+            lblDefaut.Visible = true;
+            lblPointFaible.Visible = true;
+            lblPointFort.Visible = true;
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-           if(frmButReunion.getCompteurEquipe() >= 2)
+            if (frmButReunion.getCompteurEquipe() >= 2)
             {
-                
                 frmStatPerso f = new frmStatPerso(this);
-                f.ShowDialog();
+                f.Show();
             }
             else
             {

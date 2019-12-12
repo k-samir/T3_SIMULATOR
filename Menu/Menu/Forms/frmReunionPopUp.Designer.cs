@@ -47,6 +47,7 @@
             // 
             // lblInfo
             // 
+            this.lblInfo.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolTip;
             this.lblInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblInfo.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

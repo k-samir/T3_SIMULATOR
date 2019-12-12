@@ -35,7 +35,7 @@
             this.lblPrenomPerso = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grpQualiteDefaut = new System.Windows.Forms.GroupBox();
-            this.lblDéfaut = new System.Windows.Forms.Label();
+            this.lblDefaut = new System.Windows.Forms.Label();
             this.lblQualite = new System.Windows.Forms.Label();
             this.pbStress = new Bunifu.Framework.UI.BunifuProgressBar();
             this.pbProductivite = new Bunifu.Framework.UI.BunifuProgressBar();
@@ -63,23 +63,31 @@
             this.pnlHaut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.pnlHaut.Controls.Add(this.lblLstTache);
             this.pnlHaut.Controls.Add(this.btnRevenir);
+            this.pnlHaut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlHaut.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHaut.Location = new System.Drawing.Point(0, 0);
             this.pnlHaut.Name = "pnlHaut";
             this.pnlHaut.Size = new System.Drawing.Size(951, 62);
             this.pnlHaut.TabIndex = 1;
+            this.pnlHaut.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlHaut_MouseDown);
+            this.pnlHaut.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlHaut_MouseMove);
+            this.pnlHaut.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlHaut_MouseUp);
             // 
             // lblLstTache
             // 
+            this.lblLstTache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.lblLstTache.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLstTache.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLstTache.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblLstTache.Location = new System.Drawing.Point(151, 9);
+            this.lblLstTache.Location = new System.Drawing.Point(236, 9);
             this.lblLstTache.Name = "lblLstTache";
-            this.lblLstTache.Size = new System.Drawing.Size(734, 39);
+            this.lblLstTache.Size = new System.Drawing.Size(508, 39);
             this.lblLstTache.TabIndex = 23;
             this.lblLstTache.Text = "Description détaillée du personnage";
             this.lblLstTache.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLstTache.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlHaut_MouseDown);
+            this.lblLstTache.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlHaut_MouseMove);
+            this.lblLstTache.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlHaut_MouseUp);
             // 
             // btnRevenir
             // 
@@ -125,7 +133,7 @@
             // 
             // grpQualiteDefaut
             // 
-            this.grpQualiteDefaut.Controls.Add(this.lblDéfaut);
+            this.grpQualiteDefaut.Controls.Add(this.lblDefaut);
             this.grpQualiteDefaut.Controls.Add(this.lblQualite);
             this.grpQualiteDefaut.ForeColor = System.Drawing.Color.OrangeRed;
             this.grpQualiteDefaut.Location = new System.Drawing.Point(459, 140);
@@ -135,29 +143,27 @@
             this.grpQualiteDefaut.TabStop = false;
             this.grpQualiteDefaut.Text = "Qualité / Défaut";
             // 
-            // lblDéfaut
+            // lblDefaut
             // 
-            this.lblDéfaut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblDéfaut.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDéfaut.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblDéfaut.Location = new System.Drawing.Point(9, 96);
-            this.lblDéfaut.Name = "lblDéfaut";
-            this.lblDéfaut.Size = new System.Drawing.Size(214, 30);
-            this.lblDéfaut.TabIndex = 33;
-            this.lblDéfaut.Text = "Défaut :";
-            this.lblDéfaut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDefaut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblDefaut.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDefaut.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblDefaut.Location = new System.Drawing.Point(7, 108);
+            this.lblDefaut.Name = "lblDefaut";
+            this.lblDefaut.Size = new System.Drawing.Size(214, 47);
+            this.lblDefaut.TabIndex = 33;
+            this.lblDefaut.Text = "Défaut :";
             // 
             // lblQualite
             // 
             this.lblQualite.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblQualite.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQualite.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblQualite.Location = new System.Drawing.Point(9, 54);
+            this.lblQualite.Location = new System.Drawing.Point(9, 43);
             this.lblQualite.Name = "lblQualite";
-            this.lblQualite.Size = new System.Drawing.Size(214, 30);
+            this.lblQualite.Size = new System.Drawing.Size(214, 56);
             this.lblQualite.TabIndex = 32;
             this.lblQualite.Text = "Qualité :";
-            this.lblQualite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pbStress
             // 
@@ -217,22 +223,20 @@
             this.lblPointFaible.ForeColor = System.Drawing.Color.OrangeRed;
             this.lblPointFaible.Location = new System.Drawing.Point(9, 96);
             this.lblPointFaible.Name = "lblPointFaible";
-            this.lblPointFaible.Size = new System.Drawing.Size(214, 30);
+            this.lblPointFaible.Size = new System.Drawing.Size(214, 59);
             this.lblPointFaible.TabIndex = 33;
             this.lblPointFaible.Text = "Point faible :";
-            this.lblPointFaible.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblPointFort
             // 
             this.lblPointFort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblPointFort.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPointFort.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblPointFort.Location = new System.Drawing.Point(9, 54);
+            this.lblPointFort.Location = new System.Drawing.Point(9, 43);
             this.lblPointFort.Name = "lblPointFort";
-            this.lblPointFort.Size = new System.Drawing.Size(214, 30);
+            this.lblPointFort.Size = new System.Drawing.Size(214, 53);
             this.lblPointFort.TabIndex = 32;
             this.lblPointFort.Text = "Point fort :";
-            this.lblPointFort.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox1
             // 
@@ -256,19 +260,17 @@
             this.lblDeteste.Size = new System.Drawing.Size(198, 30);
             this.lblDeteste.TabIndex = 34;
             this.lblDeteste.Text = "Déteste :";
-            this.lblDeteste.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblAffinite
             // 
             this.lblAffinite.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblAffinite.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAffinite.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblAffinite.Location = new System.Drawing.Point(6, 54);
+            this.lblAffinite.Location = new System.Drawing.Point(6, 43);
             this.lblAffinite.Name = "lblAffinite";
             this.lblAffinite.Size = new System.Drawing.Size(198, 30);
             this.lblAffinite.TabIndex = 33;
             this.lblAffinite.Text = "Affinité avec :";
-            this.lblAffinite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStress
             // 
@@ -364,7 +366,7 @@
         private Bunifu.Framework.UI.BunifuProgressBar pbProductivite;
         private Bunifu.Framework.UI.BunifuProgressBar pbFatigue;
         private System.Windows.Forms.GroupBox grpQualiteDefaut;
-        private System.Windows.Forms.Label lblDéfaut;
+        private System.Windows.Forms.Label lblDefaut;
         private System.Windows.Forms.Label lblQualite;
     }
 }

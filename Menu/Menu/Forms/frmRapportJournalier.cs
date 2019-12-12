@@ -13,7 +13,7 @@ namespace Menu
 {
     public partial class frmRapportJournalier : Form
     {
-        String journalier;
+
         public frmRapportJournalier(string s)
         {
             

@@ -16,8 +16,6 @@ namespace Menu
 {
     public partial class frmJeu : Form
     {
-
-        ArrayList listPerso = new ArrayList();
         public static List<Personnage> listRepos = new List<Personnage>();
 
         ImageList imgLst = new ImageList
@@ -38,7 +36,7 @@ namespace Menu
         public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4,int tourmax)
         {
             InitializeComponent();
-            
+
             nbTourMax = tourmax;
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
@@ -129,15 +127,11 @@ namespace Menu
 
         }
 
-        public void tombeMalade(Personnage p)
-        {
-            p.setMalade(true);
-        }
 
         public void initUC(UC_Personnage uC, Personnage p)
         {
 
-            /* IMAGES DES PERSOS */
+            /* Emplacement des images à revoir IMPORTANT */
             imgLst.Images.Add("perso1", Image.FromFile(@"../../image/perso1.png"));
             imgLst.Images.Add("perso2", Image.FromFile(@"../../image/perso2.png"));
             imgLst.Images.Add("perso3", Image.FromFile(@"../../image/perso3.png"));
@@ -624,7 +618,11 @@ namespace Menu
                     }
                     if (r.getThemeReunion() == "Révèle les qualités et les défauts")
                     {
-                        //à FAIRE
+                        rtbActu.Text += "\nLes qualités et défauts ainsi ques les points faibles et forts sont visibles";
+                        uC_Personnage1.afficherQualiteDefaut();
+                        uC_Personnage2.afficherQualiteDefaut();
+                        uC_Personnage3.afficherQualiteDefaut();
+                        uC_Personnage4.afficherQualiteDefaut();
                     }
                     if (r.getThemeReunion() == "Mettre en place un système d'organisation")
                     {
@@ -675,7 +673,7 @@ namespace Menu
             
             catch(System.NullReferenceException exception)
             {
-                MessageBox.Show("Veuillez drag & drop les tâches sur des personnages !");
+                MessageBox.Show("Veuillez drag & drop les tâches sur des personnages !" + exception.ToString());
             }
         }
 
@@ -755,10 +753,6 @@ namespace Menu
             uC_Personnage4.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void switchColor_Click(object sender, EventArgs e)
         {
@@ -809,5 +803,9 @@ namespace Menu
             }
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
