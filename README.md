@@ -62,6 +62,7 @@ Saurez-vous compléter le projet à temps malgré tout ?
 Pour installer le jeu vous devez installer [l'executable]depuis gitlab.
 [Lien de téléchargement de l'application](https://git.unistra.fr/projet-t3/myt3/blob/master/Menu/Setup/Setup.msi)
 
+
 ![Image de l'exe à double cliquer](Menu/Images GIT/imageGITInstallation.png)
 
 
@@ -74,8 +75,8 @@ Il suffit de double cliquer sur l'executable que vous venez de télécharger. (V
 Vous commencerez la partie sans aucunes informations, car vous venez d'être assigné à un projet et une nouvelle équipe. 
 Vous ne pourrez rien faire sans faire une première réunion : dans celle-ci vous aurez plusieurs choix de thématique mais vous êtes limité à 3 thèmes (par réunion) sur une totalité de 8 thèmes.
 Les informations  sur votre équipe et le projet seront révélées peu à peu au fur et à mesure de vos réunions.
-#screen reunion
 
+![Image d'une réunion](Menu/Images GIT/gitreunion.PNG)
 
 Une fois le cahier des charges établi lors d'une réunion, vous pourrez commencer à travailler sur le projet.
 Pour cela il suffit de faire glisser une fonctionnalité du projet dans un horaire disponible d'un membre de l'équipe de projet.
@@ -85,33 +86,22 @@ Votre choix de fonctionnalité à faire sera limité chaque tours : en effet ils
 Le stress et la fatigue de chaque membre du groupe augmentera au fur et à mesure de la partie, plus ou moins vite en fonction de vos décisions.
 Puis fatalement vous aurez besoin de mettre au repos des membres de votre équipe pour éviter qu'ils ne deviennent complètement inneficaces !
 
-#screen repos ou screen burnout
+![Image du Menu Repos](Menu/Images GIT/screenrepos.PNG)
 
-Aléatoirement ous aurez également une nouvelle demande client
+Aléatoirement vous aurez également une nouvelle demande client
+
+![Déroulement d'une partie](Menu/Images GIT/screenGIT.PNG)
+
+### La fin de partie
 
 Enfin, vous aurez (peut-être) réussi à atteindre la dernière phase du projet : la livraison !
 Dans ce cas, bravo, vous avez réussi à terminer le projet à temps. Vous arriverez donc sur l'écran de fin.
 
-#screen gagné
+![Image de fin Gagné](Menu/Images GIT/screenGagne.png)
 
 Dans le cas où vous n'ayez pas réussi à terminer le projet dans le nombre de tours impartis vous serez renvoyés sur l'écran de fin également... mais vous aurez perdu ! 
 
-
-#screen perdu
-
-
-
-
-![Déroulement d'une partie](Menu/Images GIT/screenGIT.PNG)
-
-
-
-### La fin de partie
-
-Voici un screen de fin de Partie
-
-![Fin de Partie](Menu/Images GIT/finfrm.PNG)
-
+![Image de fin Perdu](Menu/Images GIT/CapturePerdu.PNG)
 
 # Technologies utilisés
 
@@ -121,12 +111,11 @@ Le jeu a entièrement été développé sur [Visual Studio](https://visualstudio
 
 Telecharger le dossier complet depuis git le dézipper.
 
-![Telecharger Dossier](Menu/Images GIT/DownloadGIT.png)
+![Telecharger .zip](Menu/Images GIT/DownloadGIT.png)
 
 et ouvrir le fichier Documentation.lnk situé içi : Documentation/Documentation.lnk
 
-![Ouverture Documentation](Menu/Images GIT/imageClickDoc.png)
-
+![Ouvrir doc](Menu/Images GIT/imageClickDoc.png)
 
 ### Collaborateurs 
 
