@@ -58,7 +58,7 @@ Attention ! Il y aura de multiples aléas durant votre projet, restez prudent !
 
 Pour installer le jeu vous devez installer [l'executable]depuis gitlab.
 
-![Image de l'exe à double cliquer](https://git.unistra.fr/skamar/myt3/raw/master/Menu/Images%20GIT/imageGITInstallation.png)
+![Image de l'exe à double cliquer](Menu/Images GIT/imageGITInstallation.png)
 
 
 ## Executer le jeu
@@ -67,7 +67,7 @@ Il suffit de double cliquer sur l'executable que vous venez de télécharger. (V
 
 ##Déroulement d'une partie
 
-![Déroulement d'une partie](https://git.unistra.fr/skamar/myt3/raw/master/Menu/Images%20GIT/screenGIT.PNG)
+![Déroulement d'une partie](Menu/Images GIT/screenGIT.PNG)
 
 
 
@@ -75,7 +75,8 @@ Il suffit de double cliquer sur l'executable que vous venez de télécharger. (V
 
 Voici un screen de fin de Partie
 
-![Fin de Partie](https://git.unistra.fr/projet-t3/myt3/raw/master/Menu/Images%20GIT/finfrm.PNG)
+![Fin de Partie](Menu/Images GIT/finfrm.PNG)
+
 
 # Technologies utilisés
 
