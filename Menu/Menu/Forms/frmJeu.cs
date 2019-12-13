@@ -209,6 +209,12 @@ namespace Menu
 
         private void btnTourSuivant_Click(object sender, EventArgs e) {
 
+            uC_Personnage1.arreterClignotant();
+            uC_Personnage2.arreterClignotant();
+            uC_Personnage3.arreterClignotant();
+            uC_Personnage4.arreterClignotant();
+
+
             lblTour.Text = "Tour " + nbTour.ToString() + "/10";
             lblTour.Visible = true;
             btnReunion.Enabled = true;
