@@ -54,7 +54,7 @@
             // timerPopUp
             // 
             this.timerPopUp.Enabled = true;
-            this.timerPopUp.Interval = 500;
+            this.timerPopUp.Interval = 900;
             this.timerPopUp.Tick += new System.EventHandler(this.timerPopUp_Tick);
             // 
             // timerClose

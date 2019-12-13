@@ -37,11 +37,9 @@ namespace Menu.classePersonnage
 
 
         /**
-         * 
-		 *\brief exemple de brief
-		 *
-		 ... constructeur text ...
-        */
+         * Constructeur de personnage, possédant un prénom, un niveau de compétences, du stress, de la sociabilité,
+         * des affinités..
+         */
         public Personnage(string prenom, int connaissance, int stress, int sociabilite, Personnage affinite, Personnage deteste)
         {
             this.prenom = prenom;
@@ -52,60 +50,92 @@ namespace Menu.classePersonnage
             this.deteste = deteste;
 
         }
+        /**
+         * Modifie le personnage détesté par l'instance actuelle
+         */
         public void setDeteste(Personnage p)
         {
             this.deteste = p;
         }
 
+        /**
+         * Retourne la liste des fonctionnalités effectuées par l'instance au tour actuel
+         */
         public List<Fonctionnalites> getTacheTour()
         {
             return tacheTour;
         }
+        /**
+         * Met le nombre de tache effectué par l'instance à 1
+         */
         public void setTacheTour(List<Fonctionnalites> l)
         {
             tacheTour = l;
         }
+        /**
+         * Vide la liste de tâches effectuées ce tour
+         */
         public void viderTacheTour()
         {
             tacheTour.Clear();
         }
-
+        /**
+         * Retourne le personnage détesté par l'instance
+         */
         public Personnage getDeteste()
         {
             return this.deteste;
         }
 
+        /**
+         * Retourne le nombre d'action faites par l'instance
+         */
         public int getnbrActionFaite()
         {
             return nbrActionFaite;
         }
-
+        /**
+         * Modifie le nombre d'action faites par l'instance
+         */
         public void setnbrActionFaite(int a)
         {
             nbrActionFaite = a;
         }
 
+        /**
+         * Modifie l'attribut malade de l'instance
+         * true : le personnage est malade, false sinon.
+         */
         public void setMalade(bool malade)
         {
             this.malade = malade;
         }
-
+        /**
+         * Retourne true si l'instance est malade
+         */
         public bool getMalade()
         {
             return this.malade;
         }
-
+        /**
+         * Modifie le personnage avec qui l'instance s'entend bien
+         */
         public void setAffinite(Personnage p)
         {
             this.affinite = p;
 
 
         }
-
+        /**
+         * retourne le personnage avec qui l'instance s'entend bien
+         */
         public Personnage getAffinite()
         {
             return this.affinite;
         }
+        /**
+         * Retourne si l'instance est disponible ou non
+         */
         public bool estDisponible()
         {
             if (this.malade == false && this.estDispo == true)
@@ -120,66 +150,37 @@ namespace Menu.classePersonnage
 
 
         }
-
+        /**
+         * Modifie la valeur de l'attribut 'disponible' de l'instance
+         */
         public void setDisponible(bool res)
         {
             this.estDispo = res;
         }
 
-        /* ------------------------------------------- actions ---------------------------- */
-        public void realisation(Menu.Fonctionnalites fct, int nbPa)
-        {
-            if (fct.getPaNecess() > fct.getPaDepense() + nbPa)
-            {
-                fct.setPaDepense(fct.getPaDepense() + nbPa);
-            }
-            else
-            {
-                fct.setPaDepense(fct.getPaNecess());
-            }
-        }
-
-        public void recherche()
-        {
-            this.setConnaissances(this.getConnaissances() + 10);
-        }
-
-
-        public void repos()
-        {
-
-            this.setStress(this.getStress() - 10);
-            this.setFatigue(this.getFatigue() - 10);
-        }
-
-
-        /* ---------------------------------------------------------------------- */
-
-        /* ------------------------------------------- personnage particularité  ---------------------------- */
-
-
-
-        /* ----------------------------------------------------------------------- */
-
-
 
         /* ------Accesseurs (pour les set, les valeurs acceptées sont comprises entre 0 et 100)  ------------------ */
+        /**
+         * Retourne le prénom de l'instance
+         */
         public string getPrenom()
         {
             return this.prenom;
         }
-        public void setPrenom(string prenom)
-        {
-            this.prenom = prenom;
-        }
+        
 
 
 
-
+        /**
+         * Retourne le niveau de fatigue de l'instance
+         */
         public int getFatigue()
         {
             return this.fatigue;
         }
+        /**
+         * Modifie la fatigue du personnage (ne dépasse pas 100)
+         */
         public void setFatigue(int fatigue)
         {
             if (fatigue >= 0 && fatigue <= 100)
@@ -196,10 +197,16 @@ namespace Menu.classePersonnage
             }
 
         }
+        /**
+         * Retourne le stress du personnage
+         */
         public int getStress()
         {
             return this.stress;
         }
+        /**
+         * Modifie le niveau de stress 
+         */
         public void setStress(int stress)
         {
             if (stress >= 0 && stress <= 100)
@@ -215,11 +222,16 @@ namespace Menu.classePersonnage
                 this.stress = 100;
             }
         }
-
+        /**
+         * Retourne le niveau de connaissances
+         */
         public int getConnaissances()
         {
             return this.connaissances;
         }
+        /**
+         * Modifie le niveau de connaissances
+         */
         public void setConnaissances(int connaissances)
         {
             if (connaissances >= 0 && connaissances <= 100)
@@ -235,49 +247,49 @@ namespace Menu.classePersonnage
                 this.connaissances = 100;
             }
         }
-
+        /**
+         * Retourne le niveau de sociabilité
+         */
         public int getSociabilite()
         {
             return this.sociabilite;
         }
-        public void setSociabilite(int sociabilite)
-        {
-            if (sociabilite >= 0 && sociabilite <= 100)
-            {
-                this.sociabilite = sociabilite;
-            }
-            else if (sociabilite < 0)
-            {
-                this.sociabilite = 0;
-            }
-            else
-            {
-                this.sociabilite = 100;
-            }
-        }
-
-       
-
+      
+        /**
+         * Retourne la qualité du personnage
+         */
         public ArrayList getQualite()
         {
             return this.qualites;
         }
 
+        /**
+         * Retourne le défaut du personnage
+         */
         public ArrayList getDefaut()
         {
             return this.defauts;
         }
 
+        /**
+         * Retourne le point fort du personnage
+         */
         public ArrayList getPointFort()
         {
             return this.pointsForts;
         }
 
+        /**
+         * Retourne le point faible du personnage
+         */
         public ArrayList getPointFaible()
         {
             return this.pointsFaibles;
         }
 
+        /**
+         * Fais faire une action au personnage
+         */
         public void faireAction(Fonctionnalites action)
         {    //tache que le personnage va effectuer
             /*************************************************************************************/
