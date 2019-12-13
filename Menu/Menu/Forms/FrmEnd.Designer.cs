@@ -32,6 +32,7 @@
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.lblTitre = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -39,7 +40,6 @@
             this.bunifuGauge1 = new Bunifu.Framework.UI.BunifuGauge();
             this.label1 = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -88,6 +88,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1057, 584);
             this.panel1.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label3.Location = new System.Drawing.Point(6, 75);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1065, 56);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Vous avez perdu Score : ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -152,7 +166,7 @@
             this.bunifuGauge1.ProgressBgColor = System.Drawing.Color.Gray;
             this.bunifuGauge1.ProgressColor1 = System.Drawing.Color.SeaGreen;
             this.bunifuGauge1.ProgressColor2 = System.Drawing.Color.Tomato;
-            this.bunifuGauge1.Size = new System.Drawing.Size(243, 191);
+            this.bunifuGauge1.Size = new System.Drawing.Size(228, 177);
             this.bunifuGauge1.TabIndex = 30;
             this.bunifuGauge1.Thickness = 30;
             this.bunifuGauge1.Value = 0;
@@ -185,20 +199,6 @@
             this.lblInfo.Text = "Resumé Tour par Tour :";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblInfo.Click += new System.EventHandler(this.lblInfo_Click);
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label3.Location = new System.Drawing.Point(6, 75);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1065, 56);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Vous avez perdu Score : ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmEnd
             // 

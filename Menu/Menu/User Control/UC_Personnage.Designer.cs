@@ -79,7 +79,6 @@
             this.lblPrenom.Size = new System.Drawing.Size(150, 24);
             this.lblPrenom.TabIndex = 1;
             this.lblPrenom.Text = "Prénom du Perso";
-            this.lblPrenom.Visible = false;
             // 
             // lblFatigue
             // 
@@ -96,9 +95,9 @@
             this.lblCompetence.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompetence.Location = new System.Drawing.Point(206, 36);
             this.lblCompetence.Name = "lblCompetence";
-            this.lblCompetence.Size = new System.Drawing.Size(102, 26);
+            this.lblCompetence.Size = new System.Drawing.Size(127, 26);
             this.lblCompetence.TabIndex = 3;
-            this.lblCompetence.Text = "Compétence : ";
+            this.lblCompetence.Text = "Compétences:";
             this.lblCompetence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStress
@@ -269,7 +268,7 @@
             // 
             this.lblDeteste.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeteste.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblDeteste.Location = new System.Drawing.Point(295, 103);
+            this.lblDeteste.Location = new System.Drawing.Point(310, 103);
             this.lblDeteste.Name = "lblDeteste";
             this.lblDeteste.Size = new System.Drawing.Size(74, 17);
             this.lblDeteste.TabIndex = 17;
@@ -279,7 +278,7 @@
             // pbCoeurNoir
             // 
             this.pbCoeurNoir.BackgroundImage = global::Menu.Properties.Resources._30571;
-            this.pbCoeurNoir.Location = new System.Drawing.Point(375, 97);
+            this.pbCoeurNoir.Location = new System.Drawing.Point(402, 97);
             this.pbCoeurNoir.Name = "pbCoeurNoir";
             this.pbCoeurNoir.Size = new System.Drawing.Size(25, 23);
             this.pbCoeurNoir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -302,7 +301,7 @@
             // 
             // pbCacheur
             // 
-            this.pbCacheur.Location = new System.Drawing.Point(178, 12);
+            this.pbCacheur.Location = new System.Drawing.Point(187, 9);
             this.pbCacheur.Name = "pbCacheur";
             this.pbCacheur.Size = new System.Drawing.Size(249, 79);
             this.pbCacheur.TabIndex = 20;
@@ -312,7 +311,7 @@
             // 
             this.pbCoeur.BackgroundImage = global::Menu.Properties.Resources._30571;
             this.pbCoeur.Image = ((System.Drawing.Image)(resources.GetObject("pbCoeur.Image")));
-            this.pbCoeur.Location = new System.Drawing.Point(247, 97);
+            this.pbCoeur.Location = new System.Drawing.Point(270, 97);
             this.pbCoeur.Name = "pbCoeur";
             this.pbCoeur.Size = new System.Drawing.Size(25, 23);
             this.pbCoeur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -326,7 +325,7 @@
             this.affinite.ForeColor = System.Drawing.Color.Green;
             this.affinite.Location = new System.Drawing.Point(170, 103);
             this.affinite.Name = "affinite";
-            this.affinite.Size = new System.Drawing.Size(73, 17);
+            this.affinite.Size = new System.Drawing.Size(94, 17);
             this.affinite.TabIndex = 21;
             this.affinite.Text = "Affinité avec :";
             this.affinite.Visible = false;
@@ -341,6 +340,7 @@
             this.lblPointFort.TabIndex = 23;
             this.lblPointFort.Text = "Point fort";
             this.lblPointFort.Visible = false;
+            this.lblPointFort.Click += new System.EventHandler(this.lblPointFort_Click);
             // 
             // lblPointFaible
             // 

@@ -387,10 +387,12 @@ namespace Menu
 
         public void afficherQualiteDefaut()     //et point fort et point faible
         {
+            /*
             lblQualite.Visible = true;
             lblDefaut.Visible = true;
             lblPointFaible.Visible = true;
             lblPointFort.Visible = true;
+            */
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -431,9 +433,12 @@ namespace Menu
             timerClignotant.Stop();
             timerClignotant.Dispose();
             pnlClignotant.Visible = false;
-            pbClic.Location = new System.Drawing.Point(120, 94);
-            this.Controls.Add(pbClic);
             pbClic.Visible = false;
+
+        }
+
+        private void lblPointFort_Click(object sender, EventArgs e)
+        {
 
         }
     }

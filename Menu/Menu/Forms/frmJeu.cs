@@ -132,7 +132,7 @@ namespace Menu
                     }
                     if (f.getType() == "Concevoir")
                     {
-                        l.ForeColor = Color.Orange;
+                        l.ForeColor = Color.Green;
                     }
                     if (f.getType() == "Développer")
                     {
@@ -140,7 +140,7 @@ namespace Menu
                     }
                     if (f.getType() == "Recette")
                     {
-                        l.ForeColor = Color.Blue;
+                        l.ForeColor = Color.DarkGray;
                     }
                     if (f.getType() == "Livraison")
                     {
@@ -717,8 +717,21 @@ namespace Menu
                     uC_Personnage3.rendreInvisibleTacheMatin();
                     uC_Personnage4.rendreInvisibleTacheMatin();
                 }
-
+                //verifie si toutes les réunions ont été faites si c'est le cas alors on rend invisible le bouton Réunion
+                Boolean etatReunion = true;
+                foreach (Reunion re in ControleurJeu.getListeReunion())
+                {
+                    if (re.getStatut() == false)
+                    {
+                        etatReunion = false;
+                    }               }
+                if (etatReunion)
+                {
+                    btnReunion.Visible = false;
+                }
             }
+           
+
         }
 
 
@@ -894,6 +907,11 @@ namespace Menu
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTacheReal_Click(object sender, EventArgs e)
         {
 
         }

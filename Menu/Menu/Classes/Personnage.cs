@@ -283,25 +283,37 @@ namespace Menu.classePersonnage
             /*************************************************************************************/
             int ajoutPA = 10;
 
-            if(action.getNom() == "Formation")  //donne des compétences aux personnages qui font de la recherche
+            if (action.getNom() == "Formation")  //donne des compétences aux personnages qui font de la recherche
             {
                 this.setConnaissances(this.getConnaissances() + 10);
-                if(this.getConnaissances() > 100)
+                if (this.getConnaissances() > 100)
                 {
                     this.setConnaissances(100);
                 }
             }
-
 
             if (action.getPaDepense() >= action.getPaNecess() && action.getStatus() == false)
             {
                 action.setStatus(true); //modif du status pour dire que la tache est terminée
             }
 
-            if (action.getStatus() == false && action.estRealisable() && getConnaissances() > action.getNvConnaissNecces())
+            
+            if (this.connaissances < action.getNvConnaissNecces())
+            {
+                int diff = action.getNvConnaissNecces() - this.connaissances;
+                ajoutPA -= (diff / 2);           //-10% tous les 2pts
+
+            }
+            else if (this.connaissances > action.getNvConnaissNecces())
+            {
+                int diff = this.connaissances - action.getNvConnaissNecces();
+                ajoutPA += (diff / 4);                          //+10% tous les 4pts
+            }
+
+            if (action.getStatus() == false && action.estRealisable())
             {
 
-                
+
                 if (this.getDeteste().getPrenom() != "-")
                 {
                     for (int i = 0; i < this.getDeteste().getTacheTour().Count; i++)
@@ -389,17 +401,6 @@ namespace Menu.classePersonnage
                 {
                     ajoutPA = 0;
                 }
-                else if (this.connaissances < action.getNvConnaissNecces())
-                {
-                    int diff = action.getNvConnaissNecces() - this.connaissances;
-                    ajoutPA = ajoutPA * (1 - (diff * 5 / 100));  //pour chaque points de connaissance manquant on perd 5% d'efficacite
-                }
-                else if (this.connaissances > action.getNvConnaissNecces())
-                {
-                    int diff = action.getNvConnaissNecces() - this.connaissances;
-                    ajoutPA = ajoutPA * 1 + ((diff * 5 / 100) / 2);  //pour chaque points de connaissance supplementaire on gagne 2,5% d'efficacite
-                }
-
 
                 foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
                 {
