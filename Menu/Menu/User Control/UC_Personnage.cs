@@ -74,11 +74,11 @@ namespace Menu
             ArrayList pointFort = p.getPointFort();
             ArrayList pointFaible = p.getPointFaible();
 
-            lblQualite.Text = (String)qualite[0];
+          /*  lblQualite.Text = (String)qualite[0];
             lblDefaut.Text = (String)defaut[0];
             lblPointFort.Text = (String)pointFort[0];
             lblPointFaible.Text = (String)pointFaible[0];
-
+            */
             this.setPrenom(perso.getPrenom());
             this.setConnaissance(perso.getConnaissances());
             this.setStress(perso.getStress());
@@ -279,6 +279,10 @@ namespace Menu
             pbCoeur.Visible = true;
             lblDeteste.Visible = true;
             pbCoeurNoir.Visible = true;
+
+            pbClic.Visible = true;
+            pnlClignotant.Visible = true;
+            timerClignotant.Start();
         }
 
         public void rendrePrenomsVisible()
