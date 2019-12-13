@@ -26,7 +26,7 @@ namespace Menu
 
 
         int nbTour = 0; //nb de tour pour le projet
-        
+
         int nbTourMax;
         bool crunchBool = false;
         // String d'affichage des actions / jour
@@ -34,14 +34,19 @@ namespace Menu
         // Avancement de la progressbar
         private static float avancement = 0;
         List<Personnage> listPersonnage = new List<Personnage>();
-        public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4,int tourmax)
+
+        /**
+         * Assignation des personnages aux User_Controls, affichage de tous les labels et des progress bar 
+         * qui sont générés dynamiquement.
+         */
+        public frmJeu(Personnage p1, Personnage p2, Personnage p3, Personnage p4, int tourmax)
         {
             InitializeComponent();
 
             nbTourMax = tourmax;
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-     
+
             this.Size = new Size(screenWidth, screenHeight);
 
 
@@ -49,7 +54,7 @@ namespace Menu
             pnlProgressBarTache.Size = new Size(((screenWidth - pnlProgressBarTache.Location.X) - pnlProgressBarTache.Size.Width) + pnlProgressBarTache.Size.Width, pnlProgressBarTache.Size.Height - 5);
             panel2.Size = new Size(screenWidth, panel2.Height);
 
-            
+
             foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
             {
                 if (f.getPaDepense() < f.getPaNecess() && f.getStatus() == false)
@@ -97,13 +102,13 @@ namespace Menu
             int posBas = 5;
             Fonctionnalites fPrecedent = null;
             //Initialisation ProgressBar pour chaque tache
-            for (int i = 0; i <= listTache.Count-1; i++)
+            for (int i = 0; i <= listTache.Count - 1; i++)
             {
                 Bunifu.Framework.UI.BunifuProgressBar progressBar = new Bunifu.Framework.UI.BunifuProgressBar();
                 Label l = new Label();
                 Fonctionnalites f = (Fonctionnalites)listTache[i];
 
-                if(f.getNom() != "Formation")
+                if (f.getNom() != "Formation")
                 {
                     if (fPrecedent == null || f.getType() != fPrecedent.getType())
                     {
@@ -161,15 +166,18 @@ namespace Menu
                     posBas += 25;
                 }
             }
-                
+
 
         }
 
         public static string Path = Application.StartupPath.ToString();
+        /**
+         * Initialise les images des User_Controls
+         */
         public void initUC(UC_Personnage uC, Personnage p)
         {
             string p2 = Directory.GetParent(Path).ToString() + "\\image\\";
-         //  string p3 = Directory.GetParent(p2).ToString() +"\\image\\"; 
+            //  string p3 = Directory.GetParent(p2).ToString() +"\\image\\"; 
             // MessageBox.Show(p3+"\\image\\");
             /* Emplacement des images à revoir IMPORTANT */
             imgLst.Images.Add("perso1", Image.FromFile(p2 + "perso1.png"));
@@ -178,23 +186,21 @@ namespace Menu
             imgLst.Images.Add("perso4", Image.FromFile(p2 + "perso4.png"));
             imgLst.Images.RemoveAt(0);
             uC.initialisationUCPerso(p, imgLst.Images[0]);
-            
+
         }
 
+        /**
+         * Incrémente le nombre de tours
+         */
         public void augmenterNbTour()
         {
-            /* ------- COMPLETEMENT RANDOM, C'EST A FAIRE ------- */
-            Random rnd = new Random();
-            int s = rnd.Next(10);
-            //score.Value += score.Value + s;
             nbTour++;
         }
 
-        public int getNbTour()
-        {
-            return this.nbTour;
-        }
 
+        /**
+         * Quitte la partie
+         */
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             frmMenu menu = new frmMenu();
@@ -206,8 +212,13 @@ namespace Menu
 
         }
 
-
-        private void btnTourSuivant_Click(object sender, EventArgs e) {
+        /**
+         * Tour suivant : Calcul des attributs des personnages et mise à jour des User_Controls. 
+         * Vérification si le crunch est activé ou non, random qui détermine si un personnage
+         * tombe malade. 
+         */
+        private void btnTourSuivant_Click(object sender, EventArgs e)
+        {
 
             uC_Personnage1.arreterClignotant();
             uC_Personnage2.arreterClignotant();
@@ -215,10 +226,9 @@ namespace Menu
             uC_Personnage4.arreterClignotant();
 
 
-            lblTour.Text = "Tour " + nbTour.ToString() + "/10";
             lblTour.Visible = true;
             btnReunion.Enabled = true;
-            
+
             btnRepos.Enabled = true;
             if (crunchBool == true)
             {
@@ -270,7 +280,7 @@ namespace Menu
                     }
                 }
             }
-           
+
 
 
             //modification des taches des user controls
@@ -286,9 +296,9 @@ namespace Menu
                         {
 
                             UC_Personnage up = (UC_Personnage)c;
-                            
+
                             up.donnerTachePerso();
-                            
+
                         }
                     }
                 }
@@ -354,6 +364,7 @@ namespace Menu
 
 
                 this.augmenterNbTour();   //incremente nb de tour
+                lblTour.Text = "Tour : " + nbTour.ToString() + " / " + nbTourMax.ToString();
 
                 ArrayList listPerso = ControleurJeu.getListePersonnage();
 
@@ -381,7 +392,7 @@ namespace Menu
 
                 Random rnd = new Random();
                 int alea = rnd.Next(20);
-                if(alea <= 3)
+                if (alea <= 3)
                 {
                     UC_Personnage u = listUC[alea];
                     u.getPersonnage().setMalade(true);
@@ -404,7 +415,7 @@ namespace Menu
             lstTache.Items.Clear();
             foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
             {
-                
+
                 if (f.getPaDepense() < f.getPaNecess() && f.getStatus() == false)
                 {
                     lstTache.Items.Add(f.getNom() + " (" + f.getNvConnaissNecces() + ")");
@@ -449,18 +460,22 @@ namespace Menu
                         }
                     }
                 }
-            }     
+            }
         }
 
 
-        // METHODE DE CONCATENATION DES ACTIONS DU JOUR
+        /**
+         * Concaténation des actions du jour
+         */
         public static void remplir(string s1)
         {
             s += s1;
         }
 
 
-
+        /**
+         * Vide toutes les comboboxs.
+         */
         public void viderCBO()
         {
             uC_Personnage1.viderCBO();
@@ -469,13 +484,17 @@ namespace Menu
 
             uC_Personnage3.viderCBO();
         }
+
+        /**
+         * Met les personnages définis dans le frmRepos au repos. Leur fatigue et leur stress sont divisés par deux.
+         */
         private void btnRepos_Click(object sender, EventArgs e)
         {
-            
+
             frmRepos repos = new frmRepos(listPersonnage, this);
             DialogResult dr = new DialogResult();
-           
-            
+
+
 
             dr = repos.ShowDialog();
             if (crunchBool == true)
@@ -502,19 +521,19 @@ namespace Menu
             if (nbTour >= 10)
             {
                 viderCBO();
-                
+
                 ControleurJeu.arreterJeu(rtbListeF.Text);
-                
+
                 this.Close();
             }
 
             if (dr == DialogResult.OK)
             {
-                if(listRepos.Count() != 0)
+                if (listRepos.Count() != 0)
                 {
                     btnRepos.Enabled = false;
                 }
-                
+
                 ArrayList listPerso = ControleurJeu.getListePersonnage();
 
                 Personnage p1 = (Personnage)listPerso[0];
@@ -524,16 +543,16 @@ namespace Menu
 
                 //mise a jour des persos apres avoir effectue les taches
 
-                
+
                 //On met a jour les uC concernés 
-                foreach(Personnage perso in listRepos)
+                foreach (Personnage perso in listRepos)
                 {
-                    if(uC_Personnage1.getPersonnage() == perso)
+                    if (uC_Personnage1.getPersonnage() == perso)
                     {
                         initUC(uC_Personnage1, perso);
                         uC_Personnage1.rendreCBO1Visible();
                     }
-                    else if(uC_Personnage2.getPersonnage() == perso)
+                    else if (uC_Personnage2.getPersonnage() == perso)
                     {
                         initUC(uC_Personnage2, perso);
                         uC_Personnage2.rendreCBO1Visible();
@@ -557,13 +576,19 @@ namespace Menu
 
             }
 
-            
-        }
 
+        }
+        /**
+         * Retourne l'avancement actuel du projet
+         */
         public static float getAvancement()
         {
             return avancement;
         }
+
+        /**
+         * Permet de modifier l'avancement actuel du projet
+         */
 
         public static void setAvancement(float a)
         {
@@ -571,7 +596,11 @@ namespace Menu
         }
 
 
-
+        /**
+         * Permet d'activer une troisième combobox. Les personnages sont alors capable de travailler la nuit.
+         * Attention, leur stress et leur fatigue augmente considérablement.
+         * Valable qu'une seule fois dans la partie.
+         */
         private void btnCrunch_Click_1(object sender, EventArgs e)
         {
             frmCrunch frm = new frmCrunch();
@@ -602,10 +631,12 @@ namespace Menu
             }
 
         }
-
+        /**
+         * Modifie le repos d'un personnage p
+         */
         public void setRepos(Personnage p)
         {
-            p.setFatigue(p.getFatigue()/2);
+            p.setFatigue(p.getFatigue() / 2);
             p.setStress(p.getStress() / 2);
             p.setDisponible(false);
             p.setMalade(false);
@@ -614,19 +645,21 @@ namespace Menu
 
 
 
-
+        /**
+         * Affiche le menu des réunions
+         */
         private void btnReunion_Click(object sender, EventArgs e)
         {
 
             frmReunion reunion = new frmReunion();
-            
-            if(reunion.ShowDialog() == DialogResult.OK)
+
+            if (reunion.ShowDialog() == DialogResult.OK)
             {
                 reunion.remettreCompteurAZero();
             }
             lblIntro.Visible = false;
-           
-            
+
+
             btnTourSuivant.Visible = true;
             btnRepos.Visible = true;
             btnCrunch.Visible = true;
@@ -695,7 +728,8 @@ namespace Menu
                         }
                     }
                     if (r.getThemeReunion() == "Révèle les qualités et les défauts")
-                    {;
+                    {
+                        ;
                         uC_Personnage1.afficherQualiteDefaut();
                         uC_Personnage2.afficherQualiteDefaut();
                         uC_Personnage3.afficherQualiteDefaut();
@@ -724,18 +758,20 @@ namespace Menu
                     if (re.getStatut() == false)
                     {
                         etatReunion = false;
-                    }               }
+                    }
+                }
                 if (etatReunion)
                 {
                     btnReunion.Visible = false;
                 }
-            }
-           
 
+            }
         }
 
 
-
+        /**
+         * Vide les combobox de tous les User_Controls
+         */
         private void btnVider_Click(object sender, EventArgs e)
         {
             uC_Personnage1.cleanCBO();
@@ -744,24 +780,28 @@ namespace Menu
             uC_Personnage4.cleanCBO();
         }
 
-        
+
 
         //SYSTEME GLISSER DÉPOSER
-
+        /**
+         * Drag & drop
+         */
         private void lstTache_MouseDown(object sender, MouseEventArgs e)
         {
             try
             {
                 uC_Personnage3.DoDragDrop(lstTache.SelectedItem.ToString(), DragDropEffects.Copy);
             }
-            
-            catch(System.NullReferenceException exception)
+
+            catch (System.NullReferenceException exception)
             {
                 MessageBox.Show("Veuillez drag & drop les tâches sur des personnages !" + exception.ToString());
             }
         }
-
-        //Systeme Glisser-Déposer pour le UC_Personnage3 --> 1er en haut à gauche
+        /**
+         * 
+         *Systeme Glisser-Déposer pour le UC_Personnage3 --> 1er en haut à gauche
+         */
         private void uC_Personnage3_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
@@ -773,14 +813,18 @@ namespace Menu
                 e.Effect = DragDropEffects.None;
             }
         }
-
+        /**
+         * Glisser-déposer pour le uc_Personnage3
+         */
         private void uC_Personnage3_DragDrop(object sender, DragEventArgs e)
         {
             uC_Personnage3.addNbrAction();
             uC_Personnage3.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
         }
 
-        //Systeme Glisser-Déposer pour le UC_Personnage2
+        /**
+         * Systeme Glisser-Déposer pour le UC_Personnage2
+         */
         private void uC_Personnage2_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
@@ -792,14 +836,18 @@ namespace Menu
                 e.Effect = DragDropEffects.None;
             }
         }
-
+        /**
+         * Drag&Drop pour le uc_Personnage2
+         */
         private void uC_Personnage2_DragDrop(object sender, DragEventArgs e)
         {
             uC_Personnage2.addNbrAction();
             uC_Personnage2.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
         }
 
-        //Systeme Glisser-Déposer pour le UC_Personnage1
+        /**
+         * Systeme Glisser-Déposer pour le UC_Personnage1
+         */
         private void uC_Personnage1_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
@@ -811,14 +859,18 @@ namespace Menu
                 e.Effect = DragDropEffects.None;
             }
         }
-
+        /**
+         * Drag & drop pour le uc_Personnage 1
+         */
         private void uC_Personnage1_DragDrop(object sender, DragEventArgs e)
         {
             uC_Personnage1.addNbrAction();
             uC_Personnage1.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
         }
 
-        //Systeme Glisser-Déposer pour le UC_Personnage4
+        /**
+         * Systeme Glisser-Déposer pour le UC_Personnage4
+         */
         private void uC_Personnage4_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
@@ -831,13 +883,18 @@ namespace Menu
             }
         }
 
+        /**
+         * Drag & drop pour le uc_Personnage4
+         */
         private void uC_Personnage4_DragDrop(object sender, DragEventArgs e)
         {
             uC_Personnage4.addNbrAction();
             uC_Personnage4.remplirComboBox((String)e.Data.GetData(DataFormats.Text));
         }
 
-
+        /**
+         * Mode sombre
+         */
         private void switchColor_Click(object sender, EventArgs e)
         {
             if (this.BackColor == Color.PaleTurquoise)
@@ -846,13 +903,13 @@ namespace Menu
                 lblTacheReal.ForeColor = Color.White;
                 panel2.BackColor = Color.Gray;
                 rtbListeF.BackColor = Color.Gray;
-                foreach(Object o in pnlProgressBarTache.Controls)
+                foreach (Object o in pnlProgressBarTache.Controls)
                 {
-                    if(o is Label)
+                    if (o is Label)
                     {
                         Label l = (Label)o;
                         l.BackColor = pnlProgressBarTache.BackColor;
-                        if( (l.Tag != null) && ((int)l.Tag == 10) )
+                        if ((l.Tag != null) && ((int)l.Tag == 10))
                         {
                             l.ForeColor = Color.White;
                         }
@@ -880,10 +937,12 @@ namespace Menu
             }
         }
 
-
+        /**
+         * Timer qui fait clignoter le bouton réunion au tour 1
+         */
         private void timerRepos_Tick(object sender, EventArgs e)
         {
-           
+
             if (this.nbTour == 0)        //permet de signaler à l'utilisateur que lors du premier tour il est conseillé de faire des réunions
             {
                 timerRepos.Start();
@@ -907,11 +966,6 @@ namespace Menu
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblTacheReal_Click(object sender, EventArgs e)
         {
 
         }

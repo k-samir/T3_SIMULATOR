@@ -12,16 +12,26 @@ namespace Menu.Forms
 {
     public partial class frmCrunch : Form
     {
+        /**
+         * Initialise les composants
+         */
         public frmCrunch()
         {
             InitializeComponent();
         }
+
+        /**
+         * Valider le crunch
+         */
 
         private void btnValiderCrunch_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
         }
 
+        /**
+         * Annuler et revenir en arrière
+         */
         private void btnAnnulerCrunch_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

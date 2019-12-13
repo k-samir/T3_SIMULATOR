@@ -16,7 +16,9 @@ namespace Menu.Forms
         private string s = "";
 
         
-
+        /**
+         * Affiche le rapport journalier
+         */
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             frmRapportJournalier rapport = new frmRapportJournalier(s);
@@ -40,7 +42,9 @@ namespace Menu.Forms
         {
 
         }
-
+        /**
+         * Constructeur du formulaire de fin
+         */
         public FrmEnd(String si, ArrayList li,float avancement,int score)
         {
             int avanc = (int)avancement;
@@ -74,7 +78,9 @@ namespace Menu.Forms
 
         }
 
-    
+        /**
+         * Créé un nouveau frmMenu
+         */
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             frmMenu fm = new frmMenu();
