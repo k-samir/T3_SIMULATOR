@@ -22,11 +22,17 @@ namespace Menu
         private Personnage perso { get; set; }
         public int nbrActionFaite = 0;
 
+        /**
+         * Retourne l'instance du personnage du User_Control
+         */
         public Personnage getPersonnage()
         {
             return this.perso;
         }
 
+        /**
+         * Rend la cbo du matin invisible
+         */
         public void rendreInvisibleTacheMatin()
         {
             lblAction1.Visible = false;
@@ -36,6 +42,9 @@ namespace Menu
 
         }
 
+        /**
+         * Constructeur du UC_Personnage
+         */
         public UC_Personnage()
         {
             InitializeComponent();
@@ -48,7 +57,9 @@ namespace Menu
         }
 
 
-        // Remise à zero des combobox
+        /**
+         * Remise à zero des combobox
+         */
         public void cleanCBO()
         {
             cboFonctionnalite1.Controls.Clear();
@@ -59,11 +70,17 @@ namespace Menu
             cboFonctionnalite3.SelectedIndex = -1;
         }
 
+        /**
+         * Vide les comboboxs
+         */
         public void viderCBO()
         {
             listfonctionnalite.Clear();
 
         }
+        /**
+         * Initialisation des UC_Personnages
+         */
         public void initialisationUCPerso(Personnage p, Image img)
         {
             this.perso = p;
@@ -74,10 +91,6 @@ namespace Menu
             ArrayList pointFort = p.getPointFort();
             ArrayList pointFaible = p.getPointFaible();
 
-            lblQualite.Text = (String)qualite[0];
-            lblDefaut.Text = (String)defaut[0];
-            lblPointFort.Text = (String)pointFort[0];
-            lblPointFaible.Text = (String)pointFaible[0];
 
             this.setPrenom(perso.getPrenom());
             this.setConnaissance(perso.getConnaissances());
@@ -181,6 +194,9 @@ namespace Menu
 
         }
 
+        /**
+         * Modifie le label du personnage détesté 
+         */
         public void setDeteste(Personnage p)
         {
             if (p is null)
@@ -194,17 +210,26 @@ namespace Menu
             }
 
         }
+        /** Modifie le label de compétences du personnage
+         */
         public void setConnaissance(int connaissance)
         {
             lblValCompetence.Text = String.Empty;
             lblValCompetence.Text = connaissance.ToString() + "   /100";
         }
+
+        /**
+         * Modifie le label de stress du personnage
+         */
         public void setStress(int stress)
         {
             lblValStress.Text = String.Empty;
             lblValStress.Text = stress.ToString() + "   /100";
         }
 
+        /** 
+         * Affichage des fonctionnalités
+         */
         public void copiFonc()
         {
             cboFonctionnalite1.Items.Clear();
@@ -223,6 +248,10 @@ namespace Menu
         }
 
         int index = -1;
+
+        /**
+         * Remplir combobox
+         */
         public void remplirComboBox(String action)
         {
 
@@ -254,11 +283,10 @@ namespace Menu
 
 
 
-        public void recherche(Personnage perso)
-        {
-            perso.setConnaissances(perso.getConnaissances() + 10);
-        }
 
+        /**
+         * Active le crunch
+         */
         public void crunchActive()
         {
             this.lblAction3.Visible = true;
@@ -266,6 +294,9 @@ namespace Menu
             this.btnSupprimerTache3.Visible = true;
         }
 
+        /**
+         * Crunch desactivé
+         */
         public void crunchDesactive()
         {
             this.lblAction3.Visible = false;
@@ -273,27 +304,40 @@ namespace Menu
             this.btnSupprimerTache3.Visible = false;
         }
 
+        /**
+         * Affinités visibles
+         */
         public void rendreAffinitesVisible()
         {
             affinite.Visible = true;
             pbCoeur.Visible = true;
             lblDeteste.Visible = true;
             pbCoeurNoir.Visible = true;
-        }
-
-        public void rendrePrenomsVisible()
-        {
-            lblPrenom.Visible = true;
             pbClic.Visible = true;
             pnlClignotant.Visible = true;
             timerClignotant.Start();
         }
 
+        /**
+         * Rend les prénoms des user_Controls visibles
+         */
+        public void rendrePrenomsVisible()
+        {
+            lblPrenom.Visible = true;
+
+        }
+
+        /** 
+         * Rend les attributs des personnages visibles
+         */
         public void rendreAttributsVisible()
         {
             pbCacheur.Visible = false;
         }
 
+        /**
+         * Rend la CBO1 du user_Control visible
+         */
         public void rendreCBO1Visible()
         {
             cboFonctionnalite1.Visible = false;
@@ -301,6 +345,9 @@ namespace Menu
             btnSupprimerTache1.Visible = false;
         }
 
+        /**
+         * Rempli la liste des affinités
+         */
         public void remplirListeAffinite()
         {
             //List<Fonctionnalites> listT = new List<Fonctionnalites>();
@@ -332,10 +379,17 @@ namespace Menu
 
 
         }
+        /**
+         * Vide la liste des affinités
+         */
         public void viderListeAffinite()
         {
             this.perso.viderTacheTour();
         }
+
+        /**
+         * Donne une tache au personnage selectionné
+         */
         public void donnerTachePerso()
         {
             List<Fonctionnalites> listeTache = new List<Fonctionnalites>();
@@ -367,24 +421,35 @@ namespace Menu
         }
 
 
+        /**
+         * Supprime la tâche 1
+         */
         private void btnSupprimerTache1_Click(object sender, EventArgs e)
         {
             cboFonctionnalite1.Controls.Clear();
             cboFonctionnalite1.SelectedIndex = -1;
         }
 
+        /** 
+         * Supprimer la tâche 2
+         */
         private void btnSupprimerTache2_Click(object sender, EventArgs e)
         {
             cboFonctionnalite2.Controls.Clear();
             cboFonctionnalite2.SelectedIndex = -1;
         }
 
+        /**
+         * Supprimer la tâche 3
+         */
         private void btnSupprimerTache3_Click(object sender, EventArgs e)
         {
             cboFonctionnalite3.Controls.Clear();
             cboFonctionnalite3.SelectedIndex = -1;
         }
 
+        /** Affiche les qualités et défauts
+         */
         public void afficherQualiteDefaut()     //et point fort et point faible
         {
             /*
@@ -394,6 +459,10 @@ namespace Menu
             lblPointFort.Visible = true;
             */
         }
+
+        /**
+         * Affiche stat perso au clic sur leur photo
+         */
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             arreterClignotant();
@@ -411,14 +480,20 @@ namespace Menu
 
         }
 
+        /**
+         * Retourne l'image du uc_Personnage
+         */
         public Image getImagePerso()
         {
             return pictureBox1.Image;
         }
 
+        /**
+         * Timer clignotant
+         */
         private void timerClignotant_Tick(object sender, EventArgs e)
         {
-            if(pnlClignotant.BackColor == Color.Yellow)
+            if (pnlClignotant.BackColor == Color.Yellow)
             {
                 pnlClignotant.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             }
@@ -428,6 +503,9 @@ namespace Menu
             }
         }
 
+        /**
+         * Arrête le clignotant
+         */
         public void arreterClignotant()
         {
             timerClignotant.Stop();

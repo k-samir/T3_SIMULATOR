@@ -51,8 +51,6 @@ namespace Menu.Forms
                 lblInfo.Text = "Les éventuelles affinités de chacun seront révélées.\nVous devrez assigner les tâches correctement !";
             }
 
-
-
             if (butReunion == "Analyse de la demande du client et de ses besoins + Définir un cahier des charges")
             {
                 lblInfo.Text = "Vous savez maintenant quelles sont les fonctionnalités dont le client a besoin.\nMais attention les tâches sont à faire dans un ordre précis";
@@ -106,6 +104,11 @@ namespace Menu.Forms
                lblInfo.Text = "Faites connaissance avec les membres du projet, puis revenez ici..";
             }
 
+            if(butReunion == "formation")
+            {
+                lblNotification.Text = "Astuce";
+                lblInfo.Text = "La formation sert à obtenir des compétences pour effectuer certaines tâches qui nécessitent un certain niveau de compétence";
+            }
 
         }
 

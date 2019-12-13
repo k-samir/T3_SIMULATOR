@@ -40,9 +40,10 @@
             this.lblCrunch.AutoSize = true;
             this.lblCrunch.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCrunch.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblCrunch.Location = new System.Drawing.Point(205, 9);
+            this.lblCrunch.Location = new System.Drawing.Point(273, 11);
+            this.lblCrunch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCrunch.Name = "lblCrunch";
-            this.lblCrunch.Size = new System.Drawing.Size(248, 55);
+            this.lblCrunch.Size = new System.Drawing.Size(310, 69);
             this.lblCrunch.TabIndex = 0;
             this.lblCrunch.Text = "CRUNCH";
             // 
@@ -67,13 +68,14 @@
             this.btnValiderCrunch.IconVisible = true;
             this.btnValiderCrunch.IconZoom = 90D;
             this.btnValiderCrunch.IsTab = false;
-            this.btnValiderCrunch.Location = new System.Drawing.Point(463, 156);
+            this.btnValiderCrunch.Location = new System.Drawing.Point(617, 192);
+            this.btnValiderCrunch.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnValiderCrunch.Name = "btnValiderCrunch";
             this.btnValiderCrunch.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnValiderCrunch.OnHovercolor = System.Drawing.Color.Orchid;
             this.btnValiderCrunch.OnHoverTextColor = System.Drawing.Color.White;
             this.btnValiderCrunch.selected = false;
-            this.btnValiderCrunch.Size = new System.Drawing.Size(197, 72);
+            this.btnValiderCrunch.Size = new System.Drawing.Size(263, 89);
             this.btnValiderCrunch.TabIndex = 1;
             this.btnValiderCrunch.Text = "Oui, faire un crunch.";
             this.btnValiderCrunch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -102,13 +104,14 @@
             this.btnAnnulerCrunch.IconVisible = true;
             this.btnAnnulerCrunch.IconZoom = 90D;
             this.btnAnnulerCrunch.IsTab = false;
-            this.btnAnnulerCrunch.Location = new System.Drawing.Point(12, 156);
+            this.btnAnnulerCrunch.Location = new System.Drawing.Point(16, 192);
+            this.btnAnnulerCrunch.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnAnnulerCrunch.Name = "btnAnnulerCrunch";
             this.btnAnnulerCrunch.Normalcolor = System.Drawing.Color.Crimson;
             this.btnAnnulerCrunch.OnHovercolor = System.Drawing.Color.Violet;
             this.btnAnnulerCrunch.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAnnulerCrunch.selected = false;
-            this.btnAnnulerCrunch.Size = new System.Drawing.Size(197, 72);
+            this.btnAnnulerCrunch.Size = new System.Drawing.Size(263, 89);
             this.btnAnnulerCrunch.TabIndex = 2;
             this.btnAnnulerCrunch.Text = "J\'annule désolé";
             this.btnAnnulerCrunch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -120,9 +123,10 @@
             // 
             this.label1.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label1.Location = new System.Drawing.Point(12, 86);
+            this.label1.Location = new System.Drawing.Point(16, 106);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(648, 67);
+            this.label1.Size = new System.Drawing.Size(864, 82);
             this.label1.TabIndex = 3;
             this.label1.Text = "Vous n\'aurez droit qu\'à un crunch dans la partie. Vous pourrez donc faire travail" +
     "ler les membres la nuit, mais leur fatigue et leur stress augmenteront cruelleme" +
@@ -130,15 +134,17 @@
             // 
             // frmCrunch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(672, 248);
+            this.ClientSize = new System.Drawing.Size(896, 305);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAnnulerCrunch);
             this.Controls.Add(this.btnValiderCrunch);
             this.Controls.Add(this.lblCrunch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCrunch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "crunch";

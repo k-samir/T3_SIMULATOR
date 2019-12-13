@@ -15,15 +15,17 @@ namespace Menu
         private int nvConnaissNecess;
         private int paDepense;
         private string type;
-        
+
 
 
 
         //false si incomplete , true complete
-        
+
         private Boolean status = false;
 
-        //Constructeur de la classe Fonctionnalites
+        /**
+         * Constructeur de la classe Fonctionnalites : possède un nom, un niveau de connaissances nécessaires
+         */
         public Fonctionnalites(string nom, int paNecess, float pourcentNote, int nvConnaissNeces, string type)
         {
             this.nom = nom;
@@ -33,48 +35,55 @@ namespace Menu
             this.paDepense = 0;
             this.type = type;
         }
-                       
-        public ControleurJeu ControleurJeu
-        {
-            get => default;
-            set
-            {
-            }
-        }
 
-        //Getter et Setter de la classe Fonctionnalites
+
+        /**
+         * Retourne le nom 
+         */
         public string getNom()
         {
             return this.nom;
         }
-        public void setNom(string n)
-        {
-            this.nom = n;
-        }
 
-
+        /**
+         * Retourne le pourcentage de la note
+         */
         public float getPourcentNote()
         {
             return this.pourcentNote;
         }
+        /**
+         * Modifie le pourcentage de la note
+         */
         public void setPourcentNote(float pN)
         {
             this.pourcentNote = pN;
         }
-
+        /**
+         * Retourne le nombre de points d'actions dépensés
+         */
         public int getPaDepense()
         {
             return this.paDepense;
         }
+        /**
+         * Modifie le nombre de PA dépensés par action 
+         */
         public void setPaDepense(int paDepense)
         {
             this.paDepense = paDepense;
         }
 
+        /**
+         * Retourne le niveau de connaissances nécessaires
+         */
         public int getNvConnaissNecces()
         {
             return this.nvConnaissNecess;
         }
+        /**
+         * Modifie le niveau de connaissances nécessaires
+         */
         public void setNvConnaissNecces(int cN)
         {
             this.nvConnaissNecess = cN;
@@ -82,33 +91,49 @@ namespace Menu
 
 
 
+        /**
+         * Modifie le nombre de PA nécessaires
+         */
         public void setPaNecess(int pA)
         {
             this.paNecess = pA;
         }
 
+        /**
+         * Retourne le nombre de PA nécessaires
+         */
         public int getPaNecess()
         {
             return this.paNecess;
         }
 
 
-
+        /**
+         * Retourne le statut de la fonctionnalité
+         */
         public Boolean getStatus()
         {
             return this.status;
         }
+        /**
+         * Modifie le statut de la fonctionnalité
+         */
         public void setStatus(Boolean status)
         {
             this.status = status;
         }
 
+        /**
+         * Retourne le type de la fonctionnalité
+         */
         public String getType()
         {
             return this.type;
         }
 
-        /* Verifie si les fonctionnalités de recherche sont terminées pour effectuer les fonctionnalites de conception */
+        /**
+         * Verifie si les fonctionnalités de recherche sont terminées pour effectuer les fonctionnalites de conception 
+         */
         public bool estRealisable()
         {
             bool res = true;
@@ -116,7 +141,7 @@ namespace Menu
             {
                 foreach (Fonctionnalites f1 in ControleurJeu.getListeFonctionnalite())
                 {
-                    if (!(f1.getStatus()) && f1.getType() == "Rechercher")
+                    if (!(f1.getStatus()) && f1.getType() == "Spécification")
                     {
                         res = false;
                     }
