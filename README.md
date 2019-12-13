@@ -119,8 +119,13 @@ Le jeu a entièrement été développé sur [Visual Studio](https://visualstudio
 
 # Documentation
 
-Cliquez ici pour pouvoir ouvrir la documentation
-[Documentation](https://git.unistra.fr/projet-t3/myt3/blob/master/Documentation%2Fhtml%2Findex.html)
+Telecharger le dossier complet depuis git le dézipper.
+
+image download 
+
+et ouvrir le fichier Documentation.lnk situé içi : Documentation/Documentation.lnk
+
+image ouvrir
 
 ### Collaborateurs 
 
