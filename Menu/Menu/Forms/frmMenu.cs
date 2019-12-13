@@ -12,16 +12,25 @@ namespace Menu
 {
     public partial class frmMenu : Form
     {
+        /**
+         * Constructeur de frmMenu
+         */
         public frmMenu()
         {
             InitializeComponent();
         }
 
+        /**
+         * Quitte l'application
+         */
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /**
+         * Lance la méthode init du controleurJeu
+         */
         private void btnCommencer_Click(object sender, EventArgs e)
         {
 
@@ -30,6 +39,9 @@ namespace Menu
             j.lancerJeu(this);
         }
 
+        /**
+         * Design du bouton commencer
+         */
         private void btnCommencer_MouseEnter(object sender, EventArgs e)
         {
             btnCommencer.BackColor = Color.DarkGray;
@@ -37,13 +49,18 @@ namespace Menu
             btnCommencer.Margin = new System.Windows.Forms.Padding(0);
         }
 
+        /**
+         * Design
+         */
         private void btnCommencer_MouseLeave(object sender, EventArgs e)
         {
             btnCommencer.BackColor = System.Drawing.Color.Transparent;
             btnCommencer.Size = new System.Drawing.Size(200, 68);
             btnCommencer.Margin = new System.Windows.Forms.Padding(6);
         }
-
+        /**
+         * Design du bouton quitter
+         */
         private void btnQuitter_MouseEnter(object sender, EventArgs e)
         {
             btnQuitter.BackColor = Color.DarkGray;
@@ -51,6 +68,9 @@ namespace Menu
             btnQuitter.Margin = new System.Windows.Forms.Padding(0);
         }
 
+        /**
+         * Design
+         */
         private void btnQuitter_MouseLeave(object sender, EventArgs e)
         {
             btnQuitter.BackColor = System.Drawing.Color.Transparent;
@@ -65,6 +85,9 @@ namespace Menu
             j.lancerJeu(this);
         }
 
+        /**
+         * Design du boutton difficile
+         */
         private void btnDifficile_MouseEnter(object sender, EventArgs e)
         {
             btnDifficile.BackColor = Color.DarkGray;
@@ -72,6 +95,9 @@ namespace Menu
             btnDifficile.Margin = new System.Windows.Forms.Padding(0);
         }
 
+        /**
+         * Design mouseLeave du boutton difficile
+         */
         private void btnDifficile_MouseLeave(object sender, EventArgs e)
         {
             btnDifficile.BackColor = System.Drawing.Color.Transparent;
@@ -79,6 +105,9 @@ namespace Menu
             btnDifficile.Margin = new System.Windows.Forms.Padding(6);
         }
 
+        /**
+         * Lance une instance du controleur jeu
+         */
         private void btnDifficile_Click(object sender, EventArgs e)
         {
             ControleurJeu j = new ControleurJeu();

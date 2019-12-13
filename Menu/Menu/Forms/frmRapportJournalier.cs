@@ -14,6 +14,9 @@ namespace Menu
     public partial class frmRapportJournalier : Form
     {
 
+        /**
+         * Constructeur du frmRapportJournalier
+         */
         public frmRapportJournalier(string s)
         {
             
@@ -28,7 +31,9 @@ namespace Menu
             MessageBox.Show(journalier);*/
         }
         
-
+        /**
+         * Dispose
+         */
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             this.Dispose();

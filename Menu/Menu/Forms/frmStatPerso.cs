@@ -20,7 +20,10 @@ namespace Menu.Forms
         int MValY;
 
 
-
+        /**
+         * Constructeur du frmStatPerso
+         * Initialise les attributs des personnages
+         */
         public frmStatPerso(UC_Personnage up)
         {
             InitializeComponent();
@@ -126,26 +129,36 @@ namespace Menu.Forms
                 lblPointFaible.Text += "\n  " + pointFaible[i];
             }
         }
-
+        /**
+         * Ferme le formulaire de statistiques
+         */
         private void btnRevenir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
 
-
+        /**
+         * MouseDown du panel en haut
+         */
         private void pnlHaut_MouseDown(object sender, MouseEventArgs e)
         {
             TogMove = 1;
             MValX = e.X;
             MValY = e.Y;
         }
+        
+        /**
+         * Permet de bouger la fenetre
+         */
 
         private void pnlHaut_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;
         }
-
+        /**
+         * Permet de bouger la fenetre
+         */
         private void pnlHaut_MouseMove(object sender, MouseEventArgs e)
         {
             if (TogMove == 1)

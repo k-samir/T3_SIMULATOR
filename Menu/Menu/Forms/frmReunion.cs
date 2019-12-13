@@ -21,7 +21,9 @@ namespace Menu.Forms
             update();
         }
 
-
+        /**
+         * Créer un nouveau frmButReunion
+         */
         private void button1_Click(object sender, EventArgs e)
         {
             frmButReunion fbr = new frmButReunion(this);
@@ -35,12 +37,17 @@ namespace Menu.Forms
             }
 
         }
-
+        /**
+         * Ferme le formulaire
+         */
         private void btnRevenir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /**
+         * Créé un nouveau frmButReunion avec le theme 2
+         */
         private void btnInfo2_Click(object sender, EventArgs e)
         {
             frmButReunion fbr = new frmButReunion(this);
@@ -55,6 +62,9 @@ namespace Menu.Forms
 
         }
 
+        /**
+         * Créé un nouveau frmButReunion avec le theme 3
+         */
         private void btnInfo3_Click(object sender, EventArgs e)
         {
 
@@ -68,22 +78,33 @@ namespace Menu.Forms
                 update();
             }
         }
-
+        /**
+         * Met le compteur de réunions à 0
+         */
         public void remettreCompteurAZero()
         {
             nbReunion = 0;
         }
 
+        /**
+         * Incrémente le nombre de réunions
+         */
         public void incrementerNbReunion()
         {
             nbReunion++;
         }
-
+        
+        /**
+         * Retourne le nombre de réunions effectuées
+         */
         public int getNbReunion()
         {
             return nbReunion;
         }
 
+        /**
+         * Mise à jour des thèmes, regarde si les réunions sont effectuées ou non
+         */
         public void update()
         {
             Boolean test1 = true;       //verifie que tous les thématiques des réunions de la catégorie "Découvir l'équipe" ont été faites
