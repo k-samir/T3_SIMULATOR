@@ -60,6 +60,7 @@ Saurez-vous compléter le projet à temps malgré tout ?
 # Installation du jeu
 
 Pour installer le jeu vous devez installer [l'executable]depuis gitlab.
+[Lien de téléchargement de l'application](https://git.unistra.fr/projet-t3/myt3/blob/master/Menu/Setup/Setup.msi)
 
 ![Image de l'exe à double cliquer](Menu/Images GIT/imageGITInstallation.png)
 
@@ -80,7 +81,6 @@ Une fois le cahier des charges établi lors d'une réunion, vous pourrez commenc
 Pour cela il suffit de faire glisser une fonctionnalité du projet dans un horaire disponible d'un membre de l'équipe de projet.
 Celui-ci avancera plus ou moins vite en fonction de multiples paramètres : ses qualités, défauts, points forts, points faibles, sa compétence et même sa relation avec d'autres membres de l'équipe qui travaillent sur la même fonctionnalité impacteront l'efficacité et la vitesse à laquelle il travaillera.
 Votre choix de fonctionnalité à faire sera limité chaque tours : en effet ils vous sera nécessaire de finir un ensemble de fonctionnalité liées à une phase précise du projet, avant de pouvoir passer à d'autres fonctionnalités liées à la prochaine phase.
-#screen faireunefonctionnalite
 
 Le stress et la fatigue de chaque membre du groupe augmentera au fur et à mesure de la partie, plus ou moins vite en fonction de vos décisions.
 Puis fatalement vous aurez besoin de mettre au repos des membres de votre équipe pour éviter qu'ils ne deviennent complètement inneficaces !
