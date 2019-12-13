@@ -35,24 +35,11 @@ namespace Menu.Forms
             if (theme == "Découvir l'équipe")
             {
                 
-                Button button1 = new Button();
-                button1.Size = new System.Drawing.Size(494, 78);
-                button1.Location = new System.Drawing.Point(posGauche, 38);
-                button1.Text = "Faire connaissance";
-                button1.Cursor = System.Windows.Forms.Cursors.Hand;
-                button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
-                button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                button1.ForeColor = System.Drawing.Color.Orange;
-                button1.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                button1.Click += new System.EventHandler(this.lancerNotification);
-                if (verifierThemeAborde(button1.Text))   //grise le bouton car le theme de cette réunion a déjà été abordé
-                {
-                    button1.Enabled = false;
-                }
+               
 
                 Button button2 = new Button();
                 button2.Size = new System.Drawing.Size(494, 78);
-                button2.Location = new System.Drawing.Point(posGauche, 138);
+                button2.Location = new System.Drawing.Point(posGauche, 38);
                 button2.Text = "Évaluer le potentiel du groupe";
                 button2.Cursor = System.Windows.Forms.Cursors.Hand;
                 button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
@@ -67,7 +54,7 @@ namespace Menu.Forms
 
                 Button button3 = new Button();
                 button3.Size = new System.Drawing.Size(494, 78);
-                button3.Location = new System.Drawing.Point(posGauche, 238);
+                button3.Location = new System.Drawing.Point(posGauche, 138);
                 button3.Text = "Révèle les qualités et les défauts";
                 button3.Cursor = System.Windows.Forms.Cursors.Hand;
                 button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
@@ -82,7 +69,7 @@ namespace Menu.Forms
 
                 Button button4 = new Button();
                 button4.Size = new System.Drawing.Size(494, 78);
-                button4.Location = new System.Drawing.Point(posGauche, 338);
+                button4.Location = new System.Drawing.Point(posGauche, 238);
                 button4.Text = "Analyse des affinités de chacun";
                 button4.Cursor = System.Windows.Forms.Cursors.Hand;
                 button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
@@ -95,7 +82,7 @@ namespace Menu.Forms
                     button4.Enabled = false;
                 }
 
-                this.Controls.Add(button1);
+                
                 this.Controls.Add(button2);
                 this.Controls.Add(button3);
                 this.Controls.Add(button4);
@@ -103,24 +90,11 @@ namespace Menu.Forms
 
             if (theme == "Examiner le projet")
             {
-                Button button1 = new Button();
-                button1.Size = new System.Drawing.Size(494, 78);
-                button1.Location = new System.Drawing.Point(posGauche, 38);
-                button1.Text = "Découvrir le projet";
-                button1.Cursor = System.Windows.Forms.Cursors.Hand;
-                button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
-                button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                button1.ForeColor = System.Drawing.Color.Orange;
-                button1.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                button1.Click += new System.EventHandler(this.lancerNotification);
-                if (verifierThemeAborde(button1.Text))   //grise le bouton car le theme de cette réunion a déjà été abordé
-                {
-                    button1.Enabled = false; 
-                }
+                
 
                 Button button2 = new Button();
                 button2.Size = new System.Drawing.Size(494, 78);
-                button2.Location = new System.Drawing.Point(posGauche, 138);
+                button2.Location = new System.Drawing.Point(posGauche, 38);
                 button2.Text = "Analyse de la demande du client et de ses besoins + Définir un cahier des charges";
                 button2.Cursor = System.Windows.Forms.Cursors.Hand;
                 button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
@@ -135,7 +109,7 @@ namespace Menu.Forms
 
                 Button button3 = new Button();
                 button3.Size = new System.Drawing.Size(494, 78);
-                button3.Location = new System.Drawing.Point(posGauche, 238);
+                button3.Location = new System.Drawing.Point(posGauche, 138);
                 button3.Text = "Mettre en place un système d'organisation";
                 button3.Cursor = System.Windows.Forms.Cursors.Hand;
                 button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
@@ -148,7 +122,7 @@ namespace Menu.Forms
                     button3.Enabled = false;
                 }
 
-                this.Controls.Add(button1);
+               
                 this.Controls.Add(button2);
                 this.Controls.Add(button3);
             }

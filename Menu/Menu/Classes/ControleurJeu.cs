@@ -13,7 +13,7 @@ namespace Menu
 
     public class ControleurJeu
     {
-                            
+
 
         //variable globale
         private static ArrayList listfonctionnalite = new ArrayList();
@@ -50,6 +50,10 @@ namespace Menu
 
         private int compteurTours = 0;
 
+        /**
+         * Vide les listes de fonctionnalités, de personnages, de réunion, de points forts et de points faibles. Tous les personnages sont initialisés à null.
+         * 
+         */
         public void init()
         {
             listfonctionnalite.Clear();
@@ -73,19 +77,24 @@ namespace Menu
             p4 = null;
             jeu = null;
             compteurTours = 0;
-    }
+        }
+        /** 
+         * remplissage des personnages (affinités et détestés sont à null), initialisation de toutes les fonctionnalités et de 
+         * toutes les réunions.Assignation des affinités aléatoirement.
+         * Assignation des points forts/points faibles aléatoirement.
+         */
         public void lancerJeu(frmMenu fm)
         {
             fm.Hide();
 
-            
+
             Random aleatoire = new Random();
-            
+
             //creation personnage
-            p1 = remplirPersonnage("Valentin", 20, 0, 71, null,null);
-            p2 = remplirPersonnage("Aymeric", 20, 20, 61, null,null);
-            p3 = remplirPersonnage("Mathieu", 30, 40, 32, null,null);
-            p4 = remplirPersonnage("Samir", 40, 10, 23, null,null);
+            p1 = remplirPersonnage("Valentin", 20, 0, 71, null, null);
+            p2 = remplirPersonnage("Aymeric", 20, 20, 61, null, null);
+            p3 = remplirPersonnage("Mathieu", 30, 40, 32, null, null);
+            p4 = remplirPersonnage("Samir", 40, 10, 23, null, null);
 
 
 
@@ -98,45 +107,44 @@ namespace Menu
             Fonctionnalites f0 = new Fonctionnalites("Formation", 100000, 0, 0, "Rechercher");    //n'impacte pas l'avancement du projet, elle sert juste à obtenir plus de compétences
 
             /* Spécification sur 240*/
-            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 100, 0, 0, "Spécification");
-            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 60, 0, 0, "Spécification");
-            Fonctionnalites f3 = new Fonctionnalites("Documentation", 40, 0, 0, "Spécification");
+            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 100, 0, 20, "Spécification");
+            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 60, 0, 10, "Spécification");
+            Fonctionnalites f3 = new Fonctionnalites("Documentation", 40, 0, 20, "Spécification");
 
 
             /* Conception sur 120*/
-            Fonctionnalites f4 = new Fonctionnalites("MCD", 20, 0, 0, "Concevoir");
-            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 80, 0, 0, "Concevoir");
-            Fonctionnalites f6 = new Fonctionnalites("GIT", 20, 0, 0, "Concevoir");
+            Fonctionnalites f4 = new Fonctionnalites("MCD", 20, 0, 40, "Concevoir");
+            Fonctionnalites f5 = new Fonctionnalites("Interface graphique", 80, 0, 50, "Concevoir");
+            Fonctionnalites f6 = new Fonctionnalites("GIT", 20, 0, 20, "Concevoir");
 
             /* Developpement sur 450*/
-            Fonctionnalites f7 = new Fonctionnalites("Classes", 150, 0, 0, "Développer");
-            Fonctionnalites f8 = new Fonctionnalites("Controleur", 150, 0, 0, "Développer");
-            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 150, 0, 0, "Développer");
+            Fonctionnalites f7 = new Fonctionnalites("Classes", 150, 0, 50, "Développer");
+            Fonctionnalites f8 = new Fonctionnalites("Controleur", 150, 0, 65, "Développer");
+            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 150, 0, 50, "Développer");
 
-            /* Recette */
-            Fonctionnalites f11 = new Fonctionnalites("Test du code", 20, 0, 0, "Recette");
-            Fonctionnalites f12 = new Fonctionnalites("Faire le point avec le client", 10, 0, 0, "Recette");
+            /* Recette*/
+            Fonctionnalites f11 = new Fonctionnalites("Test du code", 20, 0, 40, "Recette");
+            Fonctionnalites f12 = new Fonctionnalites("Relation client", 10, 0, 20, "Recette");
 
             /* Livraison */
-            Fonctionnalites f13 = new Fonctionnalites("Livraison", 10, 0, 0, "Livraison");
-
+            Fonctionnalites f13 = new Fonctionnalites("Livraison", 10, 0, 5, "Livraison");
 
             //REUNION(THEME DE LA REUNION) et le statut de cette réunion est par défaut à false
-            Reunion r1 = new Reunion("Faire connaissance", "Découvir l'équipe");
+           
             Reunion r2 = new Reunion("Évaluer le potentiel du groupe", "Découvir l'équipe");
             Reunion r3 = new Reunion("Révèle les qualités et les défauts", "Découvir l'équipe");
             Reunion r4 = new Reunion("Analyse des affinités de chacun", "Découvir l'équipe");
-            Reunion r5 = new Reunion("Découvrir le projet", "Examiner le projet");
+           // Reunion r5 = new Reunion("Découvrir le projet", "Examiner le projet");
             Reunion r6 = new Reunion("Analyse de la demande du client et de ses besoins + Définir un cahier des charges", "Examiner le projet");
             Reunion r7 = new Reunion("Mettre en place un système d'organisation", "Examiner le projet");
             Reunion r8 = new Reunion("Mettre en commun le travail et l'avancement de chacun", "Faire le point");
 
 
-            listReunion.Add(r1);
+            //listReunion.Add(r1);
             listReunion.Add(r2);
             listReunion.Add(r3);
             listReunion.Add(r4);
-            listReunion.Add(r5);
+          //  listReunion.Add(r5);
             listReunion.Add(r6);
             listReunion.Add(r7);
             listReunion.Add(r8);
@@ -165,11 +173,11 @@ namespace Menu
             listPersonnage.Add(p2);
             listPersonnage.Add(p3);
             listPersonnage.Add(p4);
-      
+
 
             Personnage persov;
-            persov = new Personnage("-", -1, -1, -1, null, null);          
-            
+            persov = new Personnage("-", -1, -1, -1, null, null);
+
             int besoinAffinite = 120;
             int besoinDeteste = 80;
 
@@ -184,18 +192,20 @@ namespace Menu
                     if (p1 != p)
                     {
                         int rand = aleatoire.Next(101);
-                        if (p1.getSociabilite()+ p.getSociabilite()+ rand >= besoinAffinite) { 
-                                meilleurAffinite = p1; 
+                        if (p1.getSociabilite() + p.getSociabilite() + rand >= besoinAffinite)
+                        {
+                            meilleurAffinite = p1;
 
                         }
-                        if (p1.getSociabilite() + p.getSociabilite()- rand <= besoinDeteste && p1 != meilleurAffinite && p1.getAffinite() != p) {                           
-                                pireDeteste = p1;                                                       
+                        if (p1.getSociabilite() + p.getSociabilite() - rand <= besoinDeteste && p1 != meilleurAffinite && p1.getAffinite() != p)
+                        {
+                            pireDeteste = p1;
                         }
-                            
+
                     }
 
                 }
-               
+
                 p.setAffinite(meilleurAffinite);
                 p.setDeteste(pireDeteste);
             }
@@ -203,9 +213,9 @@ namespace Menu
             //si affinite avec quelqu'un qui nous deteste : on enleve le deteste
             foreach (Personnage p in listPersonnage)
             {
-                if((p.getAffinite()).getDeteste() == p) 
+                if ((p.getAffinite()).getDeteste() == p)
                 {
-                    
+
                     (p.getAffinite()).setDeteste(persov);
                 }
 
@@ -214,14 +224,16 @@ namespace Menu
 
             attributionQualitesDefautsPointsFortsEtFaibles();
 
-            jeu = new frmJeu(p1, p2, p3, p4,10);
-            
+            jeu = new frmJeu(p1, p2, p3, p4, 10);
+
             jeu.Refresh();
             jeu.Show();
             frmReunionPopUp popup = new frmReunionPopUp();
             popup.Show();
         }
-
+        /**
+         * Vérifie qu'une tâche est bien terminée, sauf si c'est la tâche formation.
+         */
         public static Boolean verifierTacheTermine()
         {
             Boolean res = true;
@@ -234,7 +246,9 @@ namespace Menu
             }
             return res;
         }
-
+        /**
+         * Attribution des qualités, défauts, points forts et points faibles aléatoirement
+         */
         public static void attributionQualitesDefautsPointsFortsEtFaibles()
         {
             /* ---------------- qualites, defauts, points forts et faibles (setup listes) ---------------- */
@@ -259,7 +273,7 @@ namespace Menu
             listePointsFaibles.Add("Conception");     //conception * 0,5
             listePointsFaibles.Add("Recherche");     //recherche * 0,5
 
-            
+
             /* -------------------------------- */
 
             /* ----------------  qualites, defauts, points forts et faibles (distribution) ---------------- */
@@ -301,7 +315,7 @@ namespace Menu
                     //dans cette boucle on vérifie que le défaut est nouveau pour ce personnage et qu'il est compatible avec les qualites de ce personnage (même argument (rand) => incompatibles)
                     while (ok == false)
                     {
-                        ok = true;         
+                        ok = true;
                         //verifie compatible avec qualites
                         for (int j = 0; j < nbQualites; j++)
                         {
@@ -389,11 +403,11 @@ namespace Menu
                 }
 
             }
-
-
         }
 
-
+        /**
+         * Mode hard : pas d'aide et pas de popup pour guider le joueur
+         */
         public void lancerJeu2(frmMenu fm)
         {
             fm.Hide();
@@ -536,24 +550,30 @@ namespace Menu
             attributionQualitesDefautsPointsFortsEtFaibles();
 
 
-            jeu = new frmJeu(p1, p2, p3, p4,20);
+            jeu = new frmJeu(p1, p2, p3, p4, 20);
 
             jeu.Refresh();
             jeu.Show();
         }
 
 
-
+        /**
+         * Rempli les personnages avec toutes les valeurs définies, aucune n'est nulle
+         */
         public Personnage remplirPersonnage(string prenom, int connaissance, int stress, int sociabilite, Personnage affinite, Personnage deteste) //créer personnage avec attributs en paramètres
         {
-            return new Personnage(prenom, connaissance, stress, sociabilite, affinite,deteste);
+            return new Personnage(prenom, connaissance, stress, sociabilite, affinite, deteste);
         }
-
+        /**
+         * Retourne la liste des réunions
+         */
         public static ArrayList getListeReunion()
         {
             return listReunion;
         }
-
+        /**
+         * Change le statut d'une réunion
+         */
         public static void changerStatutReunion(String themeReunion)        //parcourt la liste des réunions pour changer son statut en true et pour dire que ce thème a été abordée
         {
             foreach (Reunion r in listReunion)
@@ -565,7 +585,9 @@ namespace Menu
                 }
             }
         }
-
+        /**
+         * Arrête le jeu et affiche les tâches non codées
+         */
         public static void arreterJeu(String s)
         {
 
@@ -573,31 +595,33 @@ namespace Menu
 
             //crée une liste stockant tous les taches non effectué
             ArrayList tacheNonCodé = new ArrayList();
-            foreach(Fonctionnalites f in getListeFonctionnalite())
+            foreach (Fonctionnalites f in getListeFonctionnalite())
             {
-                if( !(f.getStatus()) )
+                if (!(f.getStatus()))
                 {
                     tacheNonCodé.Add(f);
                 }
             }
 
 
-            Forms.FrmEnd e = new Forms.FrmEnd(s,tacheNonCodé,frmJeu.getAvancement(),200);
+            Forms.FrmEnd e = new Forms.FrmEnd(s, tacheNonCodé, frmJeu.getAvancement(), 200);
             e.Show();
 
-            
-            
+
+
         }
 
-       
 
+        /**
+         * Calcule les attributs et passe au tour suivant
+         */
         public static void nouveauTour()
         {
             calculsAttributs();     //actualise les attributs des persos après avoir effectué des taches
 
             Random aleatoire = new Random();
             int rnd = aleatoire.Next(5);
-            if(rnd == 0)
+            if (rnd == 0)
             {
                 Fonctionnalites f10 = new Fonctionnalites("Nouvelle demande client", 10, 0, 0, "Développer");
                 listfonctionnalite.Add(f10);
@@ -605,21 +629,23 @@ namespace Menu
             }
         }
 
-        //Modification de tous les attributs
+        /**
+         * Modification de tous les attributs des personnages en fonction de leur évolution
+         */
         public static void calculsAttributs()
         {
             foreach (Personnage p in listPersonnage)
             {
-              
+
                 // PARCOURS DES ACTIONS SELECTIONNEES
 
                 int v = p.getnbrActionFaite();
                 //MessageBox.Show(p.getPrenom() + " : " + p.getnbrActionFaite().ToString());
-                
-               
 
 
-                for (int i =0;i< v; i++)
+
+
+                for (int i = 0; i < v; i++)
                 {
                     p.setFatigue(p.getFatigue() + 10);
                 }
@@ -641,10 +667,12 @@ namespace Menu
                     p.setStress(100);
                 }
 
-            } 
+            }
 
         }
-
+        /**
+         * Vérification de la cohérence du pourcentage de la note attribué à chaque tâche
+         */
         public static void verifPourcentNote()  //on vérifie l'addition du pourcentage de note de toute les fonctionnalits soit egal a 100, sinon on appelle nouveauPourcentNote
         {
             float pourcentageActuel = 0;  //addition du pourcentage de la note de chaque fonctionnalite
@@ -659,11 +687,14 @@ namespace Menu
             }
 
         }
+        /**
+         * Si les pourcentages des notes des tâches ne sont pas cohérentes, elles sont à nouveau calculées.
+         */
         public static void nouveauPourcentNote()  //On donne le meme pourcentage de la note a chaque fonctionnalite
         {
             float pourcentageNouveau = 0;
             pourcentageNouveau = 100 / listfonctionnalite.Count;
-                foreach (Fonctionnalites f in listfonctionnalite)
+            foreach (Fonctionnalites f in listfonctionnalite)
             {
                 f.setPourcentNote(pourcentageNouveau);
             }
@@ -671,41 +702,9 @@ namespace Menu
 
 
 
-        public static String filActualite()     //renvoi toute les info à savoir sur l'actu du projet et des perso 
-        {
-            string actu = "";
-            foreach (Fonctionnalites f in ControleurJeu.getListeFonctionnalite())
-            {
-                if(f.getNom() == "Nouvelle demande client")
-                {
-                    actu += "Nouvelle demande du client à traiter ! \n";
-                }
-            }
-                foreach (Personnage p in listPersonnage)
-            {
-                if (p.getFatigue() == 100)
-                {
-                    actu += "\n" + p.getPrenom() + " est trop fatigué\nIl ne peut rien faire tant qu'il\nne se repose pas\n\n";
-                }
-
-                if (p.getStress() == 100)
-                {
-                    actu += "\n" + p.getPrenom() + " est trop stressé\nIl ne peut rien faire\n\n";
-                }
-                if (p.estDisponible() == false && p.getMalade() == true)
-                {
-                    actu += "Oh non ! " + p.getPrenom() + " est tombé malade.. \n\n"; 
-                }
-
-                if (p.estDisponible() == false && p.getMalade() == false)
-                {
-                    actu += p.getPrenom() + " se repose, sa fatigue a diminué ! \n\n";
-                }
-            }
-            return actu;
-        }
-
- 
+        /**
+         * Fait faire les tâches aux personnages
+         */
         public static void tache(Personnage p, List<Fonctionnalites> listeTache)
         {
 
@@ -730,14 +729,14 @@ namespace Menu
 
             /*****************   A FAIRE ****************/
 
-            
 
-                foreach (Fonctionnalites f in listeTache)
+
+            foreach (Fonctionnalites f in listeTache)
             {
-               
-                   // MessageBox.Show("NORMAL");
-                    p.faireAction(f);
-             
+
+                // MessageBox.Show("NORMAL");
+                p.faireAction(f);
+
             }
 
             string fonc = "";
@@ -783,32 +782,21 @@ namespace Menu
 
 
 
-  
 
+        /**
+        * Retourne la liste des fonctionnalités
+        */
         public static ArrayList getListeFonctionnalite()
         {
             return listfonctionnalite;
         }
 
+        /**
+         * Retourne la liste des personnages
+         */
         public static ArrayList getListePersonnage()
         {
             return listPersonnage;
         }
-
-
-    /* ----------------------Accesseurs----------------------------------- */
-    public int getCompteurTours()
-        {
-            return this.compteurTours;
-        }
-
-        private void setCompteurTours(int noUse)
-        {
-            this.compteurTours = noUse;
-        }
-
-        
-
-       
     }
 }

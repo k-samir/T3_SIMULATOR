@@ -39,10 +39,6 @@
             this.btnVider = new System.Windows.Forms.Button();
             this.lblLstTache = new System.Windows.Forms.Label();
             this.lstTache = new System.Windows.Forms.ListBox();
-            this.uC_Personnage3 = new Menu.UC_Personnage();
-            this.uC_Personnage4 = new Menu.UC_Personnage();
-            this.uC_Personnage2 = new Menu.UC_Personnage();
-            this.uC_Personnage1 = new Menu.UC_Personnage();
             this.rtbListeF = new System.Windows.Forms.RichTextBox();
             this.lblTacheReal = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,9 +52,14 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.timerRepos = new System.Windows.Forms.Timer(this.components);
             this.pnlProgressBarTache = new System.Windows.Forms.Panel();
+            this.uC_Personnage3 = new Menu.UC_Personnage();
+            this.uC_Personnage4 = new Menu.UC_Personnage();
+            this.uC_Personnage2 = new Menu.UC_Personnage();
+            this.uC_Personnage1 = new Menu.UC_Personnage();
             this.fonctionnalitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnlProgressBarTache.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fonctionnalitesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,10 +79,10 @@
             this.panel1.Controls.Add(this.uC_Personnage4);
             this.panel1.Controls.Add(this.uC_Personnage2);
             this.panel1.Controls.Add(this.uC_Personnage1);
-            this.panel1.Location = new System.Drawing.Point(2, 11);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(3, 14);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1221, 815);
+            this.panel1.Size = new System.Drawing.Size(1628, 1003);
             this.panel1.TabIndex = 14;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -89,11 +90,12 @@
             // 
             this.lblTour.AutoSize = true;
             this.lblTour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
-            this.lblTour.Font = new System.Drawing.Font("Cooper Black", 11.25F);
+            this.lblTour.Font = new System.Drawing.Font("Cooper Black", 30F);
             this.lblTour.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTour.Location = new System.Drawing.Point(566, 152);
+            this.lblTour.Location = new System.Drawing.Point(652, 123);
+            this.lblTour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTour.Name = "lblTour";
-            this.lblTour.Size = new System.Drawing.Size(93, 17);
+            this.lblTour.Size = new System.Drawing.Size(306, 57);
             this.lblTour.TabIndex = 31;
             this.lblTour.Text = "Tour : 0/10";
             this.lblTour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -103,9 +105,10 @@
             // 
             this.lblIntro.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIntro.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblIntro.Location = new System.Drawing.Point(512, 306);
+            this.lblIntro.Location = new System.Drawing.Point(683, 377);
+            this.lblIntro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIntro.Name = "lblIntro";
-            this.lblIntro.Size = new System.Drawing.Size(200, 100);
+            this.lblIntro.Size = new System.Drawing.Size(267, 123);
             this.lblIntro.TabIndex = 30;
             this.lblIntro.Text = "Il faudrait faire une réunion pour déterminer les tâches à effectuer..";
             this.lblIntro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,12 +119,14 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
             this.label6.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(573, 17);
+            this.label6.Location = new System.Drawing.Point(764, 21);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 27);
+            this.label6.Size = new System.Drawing.Size(108, 35);
             this.label6.TabIndex = 24;
             this.label6.Text = "Score ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.Visible = false;
             // 
             // score
             // 
@@ -136,15 +141,16 @@
             this.score.LabelVisible = true;
             this.score.LineProgressThickness = 10;
             this.score.LineThickness = 5;
-            this.score.Location = new System.Drawing.Point(530, 51);
-            this.score.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.score.Location = new System.Drawing.Point(707, 63);
+            this.score.Margin = new System.Windows.Forms.Padding(11, 9, 11, 9);
             this.score.MaxValue = 10000;
             this.score.Name = "score";
             this.score.ProgressBackColor = System.Drawing.Color.Gainsboro;
             this.score.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.score.Size = new System.Drawing.Size(163, 163);
+            this.score.Size = new System.Drawing.Size(201, 201);
             this.score.TabIndex = 29;
             this.score.Value = 0;
+            this.score.Visible = false;
             // 
             // btnReunion
             // 
@@ -155,9 +161,10 @@
             this.btnReunion.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnReunion.Image = global::Menu.Properties.Resources.meeting_with_a_friend;
             this.btnReunion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReunion.Location = new System.Drawing.Point(546, 643);
+            this.btnReunion.Location = new System.Drawing.Point(728, 791);
+            this.btnReunion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReunion.Name = "btnReunion";
-            this.btnReunion.Size = new System.Drawing.Size(136, 58);
+            this.btnReunion.Size = new System.Drawing.Size(181, 71);
             this.btnReunion.TabIndex = 20;
             this.btnReunion.Text = "Réunion";
             this.btnReunion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,9 +177,10 @@
             this.btnVider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVider.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVider.ForeColor = System.Drawing.Color.OrangeRed;
-            this.btnVider.Location = new System.Drawing.Point(548, 591);
+            this.btnVider.Location = new System.Drawing.Point(731, 727);
+            this.btnVider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVider.Name = "btnVider";
-            this.btnVider.Size = new System.Drawing.Size(130, 27);
+            this.btnVider.Size = new System.Drawing.Size(173, 33);
             this.btnVider.TabIndex = 22;
             this.btnVider.Text = "Tout annuler";
             this.btnVider.UseVisualStyleBackColor = true;
@@ -185,9 +193,10 @@
             this.lblLstTache.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLstTache.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLstTache.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblLstTache.Location = new System.Drawing.Point(471, 216);
+            this.lblLstTache.Location = new System.Drawing.Point(628, 266);
+            this.lblLstTache.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLstTache.Name = "lblLstTache";
-            this.lblLstTache.Size = new System.Drawing.Size(276, 30);
+            this.lblLstTache.Size = new System.Drawing.Size(368, 37);
             this.lblLstTache.TabIndex = 22;
             this.lblLstTache.Text = "Tâches à glisser/déposer";
             this.lblLstTache.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -201,62 +210,15 @@
             this.lstTache.Font = new System.Drawing.Font("Cooper Black", 14.25F);
             this.lstTache.ForeColor = System.Drawing.Color.OrangeRed;
             this.lstTache.FormattingEnabled = true;
-            this.lstTache.ItemHeight = 21;
-            this.lstTache.Location = new System.Drawing.Point(455, 249);
+            this.lstTache.ItemHeight = 27;
+            this.lstTache.Location = new System.Drawing.Point(607, 306);
+            this.lstTache.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstTache.Name = "lstTache";
-            this.lstTache.Size = new System.Drawing.Size(312, 338);
+            this.lstTache.Size = new System.Drawing.Size(415, 407);
             this.lstTache.Sorted = true;
             this.lstTache.TabIndex = 13;
             this.lstTache.Visible = false;
             this.lstTache.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstTache_MouseDown);
-            // 
-            // uC_Personnage3
-            // 
-            this.uC_Personnage3.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage3.Location = new System.Drawing.Point(13, 17);
-            this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage3.Name = "uC_Personnage3";
-            this.uC_Personnage3.Size = new System.Drawing.Size(429, 329);
-            this.uC_Personnage3.TabIndex = 11;
-            this.uC_Personnage3.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragDrop);
-            this.uC_Personnage3.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragEnter);
-            // 
-            // uC_Personnage4
-            // 
-            this.uC_Personnage4.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage4.Location = new System.Drawing.Point(776, 371);
-            this.uC_Personnage4.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage4.Name = "uC_Personnage4";
-            this.uC_Personnage4.Size = new System.Drawing.Size(429, 329);
-            this.uC_Personnage4.TabIndex = 12;
-            this.uC_Personnage4.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragDrop);
-            this.uC_Personnage4.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragEnter);
-            // 
-            // uC_Personnage2
-            // 
-            this.uC_Personnage2.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage2.Location = new System.Drawing.Point(776, 17);
-            this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage2.Name = "uC_Personnage2";
-            this.uC_Personnage2.Size = new System.Drawing.Size(429, 329);
-            this.uC_Personnage2.TabIndex = 10;
-            this.uC_Personnage2.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragDrop);
-            this.uC_Personnage2.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragEnter);
-            // 
-            // uC_Personnage1
-            // 
-            this.uC_Personnage1.BackColor = System.Drawing.Color.AliceBlue;
-            this.uC_Personnage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.uC_Personnage1.Location = new System.Drawing.Point(13, 371);
-            this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(6);
-            this.uC_Personnage1.Name = "uC_Personnage1";
-            this.uC_Personnage1.Size = new System.Drawing.Size(429, 329);
-            this.uC_Personnage1.TabIndex = 9;
-            this.uC_Personnage1.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragDrop);
-            this.uC_Personnage1.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragEnter);
             // 
             // rtbListeF
             // 
@@ -264,10 +226,11 @@
             this.rtbListeF.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbListeF.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbListeF.ForeColor = System.Drawing.Color.Black;
-            this.rtbListeF.Location = new System.Drawing.Point(196, 18);
+            this.rtbListeF.Location = new System.Drawing.Point(261, 22);
+            this.rtbListeF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtbListeF.Name = "rtbListeF";
             this.rtbListeF.ReadOnly = true;
-            this.rtbListeF.Size = new System.Drawing.Size(114, 101);
+            this.rtbListeF.Size = new System.Drawing.Size(152, 124);
             this.rtbListeF.TabIndex = 21;
             this.rtbListeF.Text = "";
             this.rtbListeF.Visible = false;
@@ -275,14 +238,16 @@
             // lblTacheReal
             // 
             this.lblTacheReal.AutoSize = true;
-            this.lblTacheReal.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTacheReal.Location = new System.Drawing.Point(1227, 0);
+            this.lblTacheReal.Font = new System.Drawing.Font("Cooper Black", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTacheReal.Location = new System.Drawing.Point(39, -7);
+            this.lblTacheReal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTacheReal.Name = "lblTacheReal";
-            this.lblTacheReal.Size = new System.Drawing.Size(412, 55);
+            this.lblTacheReal.Size = new System.Drawing.Size(329, 44);
             this.lblTacheReal.TabIndex = 22;
             this.lblTacheReal.Text = "Tâches réalisées";
             this.lblTacheReal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTacheReal.Visible = false;
+            this.lblTacheReal.Click += new System.EventHandler(this.lblTacheReal_Click);
             // 
             // panel2
             // 
@@ -295,18 +260,20 @@
             this.panel2.Controls.Add(this.btnCrunch);
             this.panel2.Controls.Add(this.btnQuitter);
             this.panel2.Controls.Add(this.btnTourSuivant);
-            this.panel2.Location = new System.Drawing.Point(2, 741);
+            this.panel2.Location = new System.Drawing.Point(3, 912);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1441, 141);
+            this.panel2.Size = new System.Drawing.Size(1921, 174);
             this.panel2.TabIndex = 23;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 53);
+            this.label5.Location = new System.Drawing.Point(4, 65);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 19);
+            this.label5.Size = new System.Drawing.Size(145, 23);
             this.label5.TabIndex = 31;
             this.label5.Text = "Mode sombre";
             // 
@@ -317,12 +284,12 @@
             this.switchColor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.switchColor.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.switchColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.switchColor.Location = new System.Drawing.Point(125, 53);
-            this.switchColor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.switchColor.Location = new System.Drawing.Point(167, 65);
+            this.switchColor.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.switchColor.Name = "switchColor";
             this.switchColor.Oncolor = System.Drawing.Color.SeaGreen;
             this.switchColor.Onoffcolor = System.Drawing.Color.DarkGray;
-            this.switchColor.Size = new System.Drawing.Size(51, 19);
+            this.switchColor.Size = new System.Drawing.Size(0, 0);
             this.switchColor.TabIndex = 30;
             this.switchColor.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.switchColor.Value = false;
@@ -331,9 +298,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(-3, 0);
+            this.label1.Location = new System.Drawing.Point(-4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 21;
             this.label1.Text = "Version 0.9";
             // 
@@ -344,9 +312,10 @@
             this.btnRepos.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRepos.Image = global::Menu.Properties.Resources.img_481167;
             this.btnRepos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRepos.Location = new System.Drawing.Point(455, 38);
+            this.btnRepos.Location = new System.Drawing.Point(607, 47);
+            this.btnRepos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRepos.Name = "btnRepos";
-            this.btnRepos.Size = new System.Drawing.Size(125, 44);
+            this.btnRepos.Size = new System.Drawing.Size(167, 54);
             this.btnRepos.TabIndex = 15;
             this.btnRepos.Text = "Repos";
             this.btnRepos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -361,9 +330,10 @@
             this.btnCrunch.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrunch.Image = global::Menu.Properties.Resources.work_hard_png_2;
             this.btnCrunch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCrunch.Location = new System.Drawing.Point(643, 38);
+            this.btnCrunch.Location = new System.Drawing.Point(857, 47);
+            this.btnCrunch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCrunch.Name = "btnCrunch";
-            this.btnCrunch.Size = new System.Drawing.Size(124, 44);
+            this.btnCrunch.Size = new System.Drawing.Size(165, 54);
             this.btnCrunch.TabIndex = 19;
             this.btnCrunch.Text = "Crunch";
             this.btnCrunch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -378,9 +348,10 @@
             this.btnQuitter.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitter.Image = global::Menu.Properties.Resources._53494;
             this.btnQuitter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQuitter.Location = new System.Drawing.Point(1306, 38);
+            this.btnQuitter.Location = new System.Drawing.Point(1741, 47);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(124, 44);
+            this.btnQuitter.Size = new System.Drawing.Size(165, 54);
             this.btnQuitter.TabIndex = 8;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -394,9 +365,10 @@
             this.btnTourSuivant.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTourSuivant.Image = global::Menu.Properties.Resources._510461;
             this.btnTourSuivant.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTourSuivant.Location = new System.Drawing.Point(1037, 38);
+            this.btnTourSuivant.Location = new System.Drawing.Point(1383, 47);
+            this.btnTourSuivant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTourSuivant.Name = "btnTourSuivant";
-            this.btnTourSuivant.Size = new System.Drawing.Size(184, 44);
+            this.btnTourSuivant.Size = new System.Drawing.Size(245, 54);
             this.btnTourSuivant.TabIndex = 7;
             this.btnTourSuivant.Text = "Tour suivant";
             this.btnTourSuivant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -417,11 +389,61 @@
             // 
             // pnlProgressBarTache
             // 
-            this.pnlProgressBarTache.Location = new System.Drawing.Point(1224, 49);
+            this.pnlProgressBarTache.Controls.Add(this.lblTacheReal);
+            this.pnlProgressBarTache.Location = new System.Drawing.Point(1632, 35);
+            this.pnlProgressBarTache.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlProgressBarTache.Name = "pnlProgressBarTache";
-            this.pnlProgressBarTache.Size = new System.Drawing.Size(233, 686);
+            this.pnlProgressBarTache.Size = new System.Drawing.Size(311, 869);
             this.pnlProgressBarTache.TabIndex = 24;
             this.pnlProgressBarTache.Visible = false;
+            // 
+            // uC_Personnage3
+            // 
+            this.uC_Personnage3.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage3.Location = new System.Drawing.Point(17, 21);
+            this.uC_Personnage3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.uC_Personnage3.Name = "uC_Personnage3";
+            this.uC_Personnage3.Size = new System.Drawing.Size(572, 405);
+            this.uC_Personnage3.TabIndex = 11;
+            this.uC_Personnage3.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragDrop);
+            this.uC_Personnage3.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage3_DragEnter);
+            // 
+            // uC_Personnage4
+            // 
+            this.uC_Personnage4.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage4.Location = new System.Drawing.Point(1035, 457);
+            this.uC_Personnage4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.uC_Personnage4.Name = "uC_Personnage4";
+            this.uC_Personnage4.Size = new System.Drawing.Size(572, 405);
+            this.uC_Personnage4.TabIndex = 12;
+            this.uC_Personnage4.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragDrop);
+            this.uC_Personnage4.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage4_DragEnter);
+            // 
+            // uC_Personnage2
+            // 
+            this.uC_Personnage2.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage2.Location = new System.Drawing.Point(1035, 21);
+            this.uC_Personnage2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.uC_Personnage2.Name = "uC_Personnage2";
+            this.uC_Personnage2.Size = new System.Drawing.Size(572, 405);
+            this.uC_Personnage2.TabIndex = 10;
+            this.uC_Personnage2.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragDrop);
+            this.uC_Personnage2.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage2_DragEnter);
+            // 
+            // uC_Personnage1
+            // 
+            this.uC_Personnage1.BackColor = System.Drawing.Color.AliceBlue;
+            this.uC_Personnage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.uC_Personnage1.Location = new System.Drawing.Point(17, 457);
+            this.uC_Personnage1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.uC_Personnage1.Name = "uC_Personnage1";
+            this.uC_Personnage1.Size = new System.Drawing.Size(572, 405);
+            this.uC_Personnage1.TabIndex = 9;
+            this.uC_Personnage1.DragDrop += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragDrop);
+            this.uC_Personnage1.DragEnter += new System.Windows.Forms.DragEventHandler(this.uC_Personnage1_DragEnter);
             // 
             // fonctionnalitesBindingSource
             // 
@@ -429,15 +451,15 @@
             // 
             // frmJeu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(1459, 920);
+            this.ClientSize = new System.Drawing.Size(1942, 1102);
             this.Controls.Add(this.pnlProgressBarTache);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.lblTacheReal);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmJeu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T3 Simulator";
@@ -447,9 +469,10 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnlProgressBarTache.ResumeLayout(false);
+            this.pnlProgressBarTache.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fonctionnalitesBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
