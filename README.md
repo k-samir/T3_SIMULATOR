@@ -51,7 +51,10 @@ Attention ! Il y aura de multiples aléas durant votre projet, restez prudent !
 
 # Synopsis du jeu
 
-
+Vous avez pour mission de mener un projet à bien avant une certaine date, cependant vous ne connaissez ni votre équipe de projet... ni même rien sur le projet.
+Il vous faudra apprendre à connaître votre équipe et reconnaître ce qu'il faut faire pour réussir ce projet. 
+Mais votre chemin sera semé d'embûches : équipiers malades, nouvelles demandes du client, stress et fatigue trop importants...
+Saurez-vous compléter le projet à temps malgré tout ?
 
 
 # Installation du jeu
@@ -66,6 +69,36 @@ Pour installer le jeu vous devez installer [l'executable]depuis gitlab.
 Il suffit de double cliquer sur l'executable que vous venez de télécharger. (Voir image)
 
 ### Déroulement d'une partie
+
+Vous commencerez la partie sans aucunes informations, car vous venez d'être assigné à un projet et une nouvelle équipe. 
+Vous ne pourrez rien faire sans faire une première réunion : dans celle-ci vous aurez plusieurs choix de thématique mais vous êtes limité à 3 thèmes (par réunion) sur une totalité de 8 thèmes.
+Les informations  sur votre équipe et le projet seront révélées peu à peu au fur et à mesure de vos réunions.
+#screen reunion
+
+
+Une fois le cahier des charges établi lors d'une réunion, vous pourrez commencer à travailler sur le projet.
+Pour cela il suffit de faire glisser une fonctionnalité du projet dans un horaire disponible d'un membre de l'équipe de projet.
+Celui-ci avancera plus ou moins vite en fonction de multiples paramètres : ses qualités, défauts, points forts, points faibles, sa compétence et même sa relation avec d'autres membres de l'équipe qui travaillent sur la même fonctionnalité impacteront l'efficacité et la vitesse à laquelle il travaillera.
+Votre choix de fonctionnalité à faire sera limité chaque tours : en effet ils vous sera nécessaire de finir un ensemble de fonctionnalité liées à une phase précise du projet, avant de pouvoir passer à d'autres fonctionnalités liées à la prochaine phase.
+#screen faireunefonctionnalite
+
+Le stress et la fatigue de chaque membre du groupe augmentera au fur et à mesure de la partie, plus ou moins vite en fonction de vos décisions.
+Puis fatalement vous aurez besoin de mettre au repos des membres de votre équipe pour éviter qu'ils ne deviennent complètement inneficaces !
+
+#screen repos ou screen burnout
+
+Aléatoirement ous aurez également une nouvelle demande client
+
+Enfin, vous aurez (peut-être) réussi à atteindre la dernière phase du projet : la livraison !
+Dans ce cas, bravo, vous avez réussi à terminer le projet à temps. Vous arriverez donc sur l'écran de fin.
+
+#screen gagné
+
+Dans le cas où vous n'ayez pas réussi à terminer le projet dans le nombre de tours impartis vous serez renvoyés sur l'écran de fin également... mais vous aurez perdu ! 
+
+
+#screen perdu
+
 
 
 
@@ -92,3 +125,4 @@ Le jeu a entièrement été développé sur [Visual Studio](https://visualstudio
 *  [Samir KAMAR](https://git.unistra.fr/skamar)
 
 
+ 
