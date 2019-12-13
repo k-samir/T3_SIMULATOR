@@ -74,7 +74,8 @@ Il suffit de double cliquer sur l'executable que vous venez de télécharger. (V
 Vous commencerez la partie sans aucunes informations, car vous venez d'être assigné à un projet et une nouvelle équipe. 
 Vous ne pourrez rien faire sans faire une première réunion : dans celle-ci vous aurez plusieurs choix de thématique mais vous êtes limité à 3 thèmes (par réunion) sur une totalité de 8 thèmes.
 Les informations  sur votre équipe et le projet seront révélées peu à peu au fur et à mesure de vos réunions.
-#screen reunion
+
+![Reunion](Menu/Images GIT/gitreunion.PNG)
 
 
 Une fois le cahier des charges établi lors d'une réunion, vous pourrez commencer à travailler sur le projet.
@@ -85,26 +86,20 @@ Votre choix de fonctionnalité à faire sera limité chaque tours : en effet ils
 Le stress et la fatigue de chaque membre du groupe augmentera au fur et à mesure de la partie, plus ou moins vite en fonction de vos décisions.
 Puis fatalement vous aurez besoin de mettre au repos des membres de votre équipe pour éviter qu'ils ne deviennent complètement inneficaces !
 
-#screen repos ou screen burnout
+![Repos](Menu/Images GIT/screenrepos.PNG)
 
 Aléatoirement ous aurez également une nouvelle demande client
 
 Enfin, vous aurez (peut-être) réussi à atteindre la dernière phase du projet : la livraison !
 Dans ce cas, bravo, vous avez réussi à terminer le projet à temps. Vous arriverez donc sur l'écran de fin.
 
-#screen gagné
-
 Dans le cas où vous n'ayez pas réussi à terminer le projet dans le nombre de tours impartis vous serez renvoyés sur l'écran de fin également... mais vous aurez perdu ! 
-
-
-#screen perdu
-
-
 
 
 ![Déroulement d'une partie](Menu/Images GIT/screenGIT.PNG)
 
-
+![Déroulement Fin de  partie 1](Menu/Images GIT/CapturePerdu.PNG)
+![Déroulement Fin de  partie 2](Menu/Images GIT/screenGagne.png)
 
 ### La fin de partie
 
