@@ -15,12 +15,14 @@ namespace Menu.Forms
     {
         private string s = "";
 
-        
 
+        /**
+         * Affiche le rapport journalier
+         */
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             frmRapportJournalier rapport = new frmRapportJournalier(s);
-           
+
             rapport.Show();
             //this.Hide();
 
@@ -40,8 +42,10 @@ namespace Menu.Forms
         {
 
         }
-
-        public FrmEnd(String si, ArrayList li,float avancement,int score)
+        /**
+         * Constructeur du formulaire de fin
+         */
+        public FrmEnd(String si, ArrayList li, float avancement, int score)
         {
             int avanc = (int)avancement;
             InitializeComponent();
@@ -53,7 +57,8 @@ namespace Menu.Forms
                 listBox1.Items.Add(f.getNom());
                 //MessageBox.Show(f.getNom());
             }
-            if (avanc != 0) {
+            if (avanc != 0)
+            {
                 bunifuGauge1.Value = avanc;
             }
             else
@@ -61,8 +66,8 @@ namespace Menu.Forms
                 bunifuGauge1.Value = avanc;
             }
             //listeFonctionNonCode = li;
-            
-            if(avanc >= 99)
+
+            if (avanc >= 99)
             {
                 bunifuGauge1.Value = 100;
                 label3.Text = "Vous avez Gagné ! Score :" + score;
@@ -74,7 +79,9 @@ namespace Menu.Forms
 
         }
 
-    
+        /**
+         * Créé un nouveau frmMenu
+         */
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             frmMenu fm = new frmMenu();

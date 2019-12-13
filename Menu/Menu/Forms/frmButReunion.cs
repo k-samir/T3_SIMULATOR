@@ -16,6 +16,9 @@ namespace Menu.Forms
         private frmReunion reunion;
         private static int compteurEquipe = 0;
         private frmReunionPopUp f;
+        /**
+         * Constructeur 
+         */
         public frmButReunion(frmReunion fr)
         {
             InitializeComponent();
@@ -23,23 +26,29 @@ namespace Menu.Forms
             update();
         }
 
+        /**
+         * Retourne le nombre de réunions de découverte de l'équipe effectué
+         */
         public static int getCompteurEquipe()
         {
             return compteurEquipe;
         }
 
+        /**
+         * Détermine le thème de la réunion en fonction du bouton cliqué
+         */
         public void themeReunion(String theme)
         {
             int posGauche = 66;
 
             if (theme == "Découvir l'équipe")
             {
-                
-               
+
+
 
                 Button button2 = new Button();
                 button2.Size = new System.Drawing.Size(494, 78);
-                button2.Location = new System.Drawing.Point(posGauche, 38);
+                button2.Location = new System.Drawing.Point(posGauche, 138);
                 button2.Text = "Évaluer le potentiel du groupe";
                 button2.Cursor = System.Windows.Forms.Cursors.Hand;
                 button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
@@ -54,7 +63,7 @@ namespace Menu.Forms
 
                 Button button3 = new Button();
                 button3.Size = new System.Drawing.Size(494, 78);
-                button3.Location = new System.Drawing.Point(posGauche, 138);
+                button3.Location = new System.Drawing.Point(posGauche, 238);
                 button3.Text = "Révèle les qualités et les défauts";
                 button3.Cursor = System.Windows.Forms.Cursors.Hand;
                 button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
@@ -69,7 +78,7 @@ namespace Menu.Forms
 
                 Button button4 = new Button();
                 button4.Size = new System.Drawing.Size(494, 78);
-                button4.Location = new System.Drawing.Point(posGauche, 238);
+                button4.Location = new System.Drawing.Point(posGauche, 338);
                 button4.Text = "Analyse des affinités de chacun";
                 button4.Cursor = System.Windows.Forms.Cursors.Hand;
                 button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
@@ -82,7 +91,7 @@ namespace Menu.Forms
                     button4.Enabled = false;
                 }
 
-                
+
                 this.Controls.Add(button2);
                 this.Controls.Add(button3);
                 this.Controls.Add(button4);
@@ -90,11 +99,11 @@ namespace Menu.Forms
 
             if (theme == "Examiner le projet")
             {
-                
+
 
                 Button button2 = new Button();
                 button2.Size = new System.Drawing.Size(494, 78);
-                button2.Location = new System.Drawing.Point(posGauche, 38);
+                button2.Location = new System.Drawing.Point(posGauche, 138);
                 button2.Text = "Analyse de la demande du client et de ses besoins + Définir un cahier des charges";
                 button2.Cursor = System.Windows.Forms.Cursors.Hand;
                 button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
@@ -109,7 +118,7 @@ namespace Menu.Forms
 
                 Button button3 = new Button();
                 button3.Size = new System.Drawing.Size(494, 78);
-                button3.Location = new System.Drawing.Point(posGauche, 138);
+                button3.Location = new System.Drawing.Point(posGauche, 238);
                 button3.Text = "Mettre en place un système d'organisation";
                 button3.Cursor = System.Windows.Forms.Cursors.Hand;
                 button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
@@ -122,7 +131,7 @@ namespace Menu.Forms
                     button3.Enabled = false;
                 }
 
-               
+
                 this.Controls.Add(button2);
                 this.Controls.Add(button3);
             }
@@ -149,7 +158,9 @@ namespace Menu.Forms
 
         }
 
-        /* Lancement d'un popup qui disparait progressivement avec le timerPopUp */
+        /**
+         * Lancement d'un popup qui disparait progressivement avec le timerPopUp 
+         */
         public void lancerNotification(object sender, EventArgs e)
         {
             this.reunion.incrementerNbReunion();    //incrementer le nb de thématique de réunions abordé
@@ -174,23 +185,30 @@ namespace Menu.Forms
             update();
         }
 
-        /* Diminue l'opacité du popup de 0.1 à chaque Tick */
+        /**
+         * Diminue l'opacité du popup de 0.1 à chaque Tick 
+         */
         private void fonduPopUp()
         {
 
-            if(f != null)
+            if (f != null)
             {
                 f.Opacity -= 0.1; //Peut être changer la valeur
                 /* Egalement modifier la position des forms car superposés on y voit plus rien */
             }
-            
-        }
 
+        }
+        /**
+         * Ferme le formulaire
+         */
         private void btnRevenir_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /**
+         * Vérifie le thème abordé
+         */
         public Boolean verifierThemeAborde(String themeReunion)     //verifie si le theme de la reunion a déjà été abordé
         {
             Boolean verif = false;
@@ -204,6 +222,9 @@ namespace Menu.Forms
             return verif;
         }
 
+        /**
+         * Mise a jour du nombre de réunions effectués et des thèmes 
+         */
         public void update()
         {
             if (reunion.getNbReunion() >= 3)
@@ -211,11 +232,12 @@ namespace Menu.Forms
                 frmReunionPopUp popup = new frmReunionPopUp();
                 popup.messagePopUp("Nombre de réunion dépassé");
                 popup.Show();
-                foreach(Object o in Controls)
+                foreach (Object o in Controls)
                 {
-                    if(o is Button) {
+                    if (o is Button)
+                    {
                         Button b = (Button)o;
-                        if(b.Name != "btnRevenir")
+                        if (b.Name != "btnRevenir")
                         {
                             b.Enabled = false;
                         }
@@ -224,18 +246,24 @@ namespace Menu.Forms
             }
         }
 
+        /**
+         * Appelle la méthode fonduPopUp
+         */
         private void timerPopUp_Tick(object sender, EventArgs e)
         {
             fonduPopUp();
         }
 
+        /**
+         * Timer qui ferme le popup au bout de 10 secondes
+         */
         private void timerClose_Tick(object sender, EventArgs e)
         {
-            if(f != null)
+            if (f != null)
             {
                 f.Close();
             }
-            
+
         }
     }
 }

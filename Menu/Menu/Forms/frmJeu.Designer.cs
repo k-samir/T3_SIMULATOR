@@ -247,7 +247,7 @@
             this.lblTacheReal.Text = "Tâches réalisées";
             this.lblTacheReal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTacheReal.Visible = false;
-            this.lblTacheReal.Click += new System.EventHandler(this.lblTacheReal_Click);
+           // this.lblTacheReal.Click += new System.EventHandler(this.lblTacheReal_Click);
             // 
             // panel2
             // 
