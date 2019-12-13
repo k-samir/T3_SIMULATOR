@@ -121,11 +121,12 @@ Le jeu a entièrement été développé sur [Visual Studio](https://visualstudio
 
 Telecharger le dossier complet depuis git le dézipper.
 
-image download 
+![Telecharger Dossier](Menu/Images GIT/DownloadGIT.png)
 
 et ouvrir le fichier Documentation.lnk situé içi : Documentation/Documentation.lnk
 
-image ouvrir
+![Ouverture Documentation](Menu/Images GIT/imageClickDoc.png)
+
 
 ### Collaborateurs 
 
