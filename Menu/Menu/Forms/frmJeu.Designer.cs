@@ -118,7 +118,7 @@
             this.btnReunion.Image = global::Menu.Properties.Resources.meeting_with_a_friend;
             this.btnReunion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReunion.Location = new System.Drawing.Point(728, 791);
-            this.btnReunion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReunion.Margin = new System.Windows.Forms.Padding(4);
             this.btnReunion.Name = "btnReunion";
             this.btnReunion.Size = new System.Drawing.Size(181, 71);
             this.btnReunion.TabIndex = 20;
@@ -134,7 +134,7 @@
             this.btnVider.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVider.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnVider.Location = new System.Drawing.Point(731, 727);
-            this.btnVider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVider.Margin = new System.Windows.Forms.Padding(4);
             this.btnVider.Name = "btnVider";
             this.btnVider.Size = new System.Drawing.Size(173, 33);
             this.btnVider.TabIndex = 22;
@@ -148,7 +148,7 @@
             this.lblLstTache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
             this.lblLstTache.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLstTache.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLstTache.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblLstTache.ForeColor = System.Drawing.Color.Snow;
             this.lblLstTache.Location = new System.Drawing.Point(628, 266);
             this.lblLstTache.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLstTache.Name = "lblLstTache";
@@ -168,7 +168,7 @@
             this.lstTache.FormattingEnabled = true;
             this.lstTache.ItemHeight = 27;
             this.lstTache.Location = new System.Drawing.Point(607, 306);
-            this.lstTache.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstTache.Margin = new System.Windows.Forms.Padding(4);
             this.lstTache.Name = "lstTache";
             this.lstTache.Size = new System.Drawing.Size(415, 380);
             this.lstTache.Sorted = true;
@@ -231,7 +231,7 @@
             this.rtbListeF.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbListeF.ForeColor = System.Drawing.Color.Black;
             this.rtbListeF.Location = new System.Drawing.Point(261, 22);
-            this.rtbListeF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtbListeF.Margin = new System.Windows.Forms.Padding(4);
             this.rtbListeF.Name = "rtbListeF";
             this.rtbListeF.ReadOnly = true;
             this.rtbListeF.Size = new System.Drawing.Size(152, 42);
@@ -264,7 +264,7 @@
             this.panel2.Controls.Add(this.btnQuitter);
             this.panel2.Controls.Add(this.btnTourSuivant);
             this.panel2.Location = new System.Drawing.Point(3, 912);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1921, 174);
             this.panel2.TabIndex = 23;
@@ -316,7 +316,7 @@
             this.btnRepos.Image = global::Menu.Properties.Resources.img_481167;
             this.btnRepos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRepos.Location = new System.Drawing.Point(564, 10);
-            this.btnRepos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRepos.Margin = new System.Windows.Forms.Padding(4);
             this.btnRepos.Name = "btnRepos";
             this.btnRepos.Size = new System.Drawing.Size(167, 54);
             this.btnRepos.TabIndex = 15;
@@ -334,7 +334,7 @@
             this.btnCrunch.Image = global::Menu.Properties.Resources.work_hard_png_2;
             this.btnCrunch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCrunch.Location = new System.Drawing.Point(739, 10);
-            this.btnCrunch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCrunch.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrunch.Name = "btnCrunch";
             this.btnCrunch.Size = new System.Drawing.Size(165, 54);
             this.btnCrunch.TabIndex = 19;
@@ -352,7 +352,7 @@
             this.btnQuitter.Image = global::Menu.Properties.Resources._53494;
             this.btnQuitter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuitter.Location = new System.Drawing.Point(739, 71);
-            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(172, 54);
             this.btnQuitter.TabIndex = 8;
@@ -369,7 +369,7 @@
             this.btnTourSuivant.Image = global::Menu.Properties.Resources._510461;
             this.btnTourSuivant.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTourSuivant.Location = new System.Drawing.Point(912, 10);
-            this.btnTourSuivant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTourSuivant.Margin = new System.Windows.Forms.Padding(4);
             this.btnTourSuivant.Name = "btnTourSuivant";
             this.btnTourSuivant.Size = new System.Drawing.Size(245, 54);
             this.btnTourSuivant.TabIndex = 7;
@@ -394,7 +394,7 @@
             // 
             this.pnlProgressBarTache.Controls.Add(this.lblTacheReal);
             this.pnlProgressBarTache.Location = new System.Drawing.Point(1632, 34);
-            this.pnlProgressBarTache.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlProgressBarTache.Margin = new System.Windows.Forms.Padding(4);
             this.pnlProgressBarTache.Name = "pnlProgressBarTache";
             this.pnlProgressBarTache.Size = new System.Drawing.Size(311, 869);
             this.pnlProgressBarTache.TabIndex = 24;
@@ -414,7 +414,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmJeu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T3 Simulator";

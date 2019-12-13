@@ -55,7 +55,7 @@
             // timerPopUp
             // 
             this.timerPopUp.Enabled = true;
-            this.timerPopUp.Interval = 900;
+            this.timerPopUp.Interval = 1600;
             this.timerPopUp.Tick += new System.EventHandler(this.timerPopUp_Tick);
             // 
             // timerClose
@@ -73,7 +73,7 @@
             this.Controls.Add(this.btnRevenir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(844, 640);
             this.MinimizeBox = false;
