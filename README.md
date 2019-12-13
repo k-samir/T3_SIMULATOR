@@ -65,7 +65,9 @@ Pour installer le jeu vous devez installer [l'executable]depuis gitlab.
 
 Il suffit de double cliquer sur l'executable que vous venez de télécharger. (Voir image)
 
-##Déroulement d'une partie
+### Déroulement d'une partie
+
+
 
 ![Déroulement d'une partie](Menu/Images GIT/screenGIT.PNG)
 
