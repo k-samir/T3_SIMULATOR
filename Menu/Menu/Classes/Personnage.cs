@@ -316,7 +316,7 @@ namespace Menu.classePersonnage
                 ajoutPA -= (diff / 2);           //-10% tous les 2pts
 
             }
-            else if (this.connaissances > action.getNvConnaissNecces())
+            else if (this.connaissances >= action.getNvConnaissNecces())
             {
                 int diff = this.connaissances - action.getNvConnaissNecces();
                 ajoutPA += (diff / 4);                          //+10% tous les 4pts

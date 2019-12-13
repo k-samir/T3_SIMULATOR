@@ -66,16 +66,17 @@ namespace Menu.Forms
             }
             //listeFonctionNonCode = li;
             
+            if(li.Count == 0)
+            {
+                bunifuGauge1.Value = 100;
+                label3.Text = "Vous avez Gagné !";
+            }
             if(avanc >= 99)
             {
                 bunifuGauge1.Value = 100;
-                label3.Text = "Vous avez Gagné ! Score :" + score;
+                label3.Text = "Vous avez Gagné !";
             }
-            else
-            {
-                label3.Text += score;
-            }
-
+            
         }
 
         /**

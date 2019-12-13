@@ -87,21 +87,49 @@ namespace Menu
         {
             fm.Hide();
 
-
-            Random aleatoire = new Random();
-
             //creation personnage
-            p1 = remplirPersonnage("Valentin", 20, 0, 71, null, null);
-            p2 = remplirPersonnage("Aymeric", 20, 20, 61, null, null);
-            p3 = remplirPersonnage("Mathieu", 30, 40, 32, null, null);
+            p1 = remplirPersonnage("Valentin", 20, 20, 71, null, null);
+            p2 = remplirPersonnage("Aymeric", 20, 45, 61, null, null);
+            p3 = remplirPersonnage("Mathieu", 30, 25, 32, null, null);
             p4 = remplirPersonnage("Samir", 40, 10, 23, null, null);
+            Personnage persov;
+            persov = new Personnage("-", -1, -1, -1, null, null);
 
+            p1.setAffinite(p4);
+            p2.setAffinite(p3);
+            p3.setAffinite(p2);
+            p4.setAffinite(p1);
 
+            p1.setDeteste(p3);
+            p2.setDeteste(p4);
+            p3.setDeteste(persov);
+            p4.setDeteste(p2);
+
+            p1.qualites.Add("Sang-froid");
+            p2.qualites.Add("Diplomate");
+            p3.qualites.Add("Inépuisable");
+            p4.qualites.Add("Inépuisable");
+
+            p1.defauts.Add("Fatigué");
+            p2.defauts.Add("Fatigué");
+            p3.defauts.Add("Stressé");
+            p4.defauts.Add("Asocial");
+
+            p1.pointsForts.Add("Recherche");
+            p2.pointsForts.Add("Conception");
+            p3.pointsForts.Add("Développement");
+            p4.pointsForts.Add("Développement");
+
+            p1.pointsFaibles.Add("Conception");
+            p2.pointsFaibles.Add("Développement");
+            p3.pointsFaibles.Add("Conception");
+            p4.pointsFaibles.Add("Recherche");
 
             /*
             FONCTIONNALITES ( NOM , PANECESS , POURCENTNOTE , NVCONNAIS , PADEPENSE , TYPE) */
-
             /* SUR 900 */
+
+
 
             /* Recherche pour obtenir plus de niveau de compétences */
             Fonctionnalites f0 = new Fonctionnalites("Formation", 100000, 0, 0, "Rechercher");    //n'impacte pas l'avancement du projet, elle sert juste à obtenir plus de compétences
@@ -114,7 +142,7 @@ namespace Menu
 
             /* Conception sur 120*/
             Fonctionnalites f4 = new Fonctionnalites("MCD", 20, 0, 40, "Concevoir");
-            Fonctionnalites f5 = new Fonctionnalites("Interface graphique", 80, 0, 50, "Concevoir");
+            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 80, 0, 50, "Concevoir");
             Fonctionnalites f6 = new Fonctionnalites("GIT", 20, 0, 20, "Concevoir");
 
             /* Developpement sur 450*/
@@ -122,25 +150,26 @@ namespace Menu
             Fonctionnalites f8 = new Fonctionnalites("Controleur", 150, 0, 65, "Développer");
             Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 150, 0, 50, "Développer");
 
-            /* Recette*/
+            /* Recette */
             Fonctionnalites f11 = new Fonctionnalites("Test du code", 20, 0, 40, "Recette");
-            Fonctionnalites f12 = new Fonctionnalites("Relation client", 10, 0, 20, "Recette");
+            Fonctionnalites f12 = new Fonctionnalites("Faire le point avec le client", 10, 0, 20, "Recette");
 
             /* Livraison */
             Fonctionnalites f13 = new Fonctionnalites("Livraison", 10, 0, 5, "Livraison");
 
+
             //REUNION(THEME DE LA REUNION) et le statut de cette réunion est par défaut à false
-           
+            // Reunion r1 = new Reunion("Faire connaissance", "Découvir l'équipe");
             Reunion r2 = new Reunion("Évaluer le potentiel du groupe", "Découvir l'équipe");
             Reunion r3 = new Reunion("Révèle les qualités et les défauts", "Découvir l'équipe");
             Reunion r4 = new Reunion("Analyse des affinités de chacun", "Découvir l'équipe");
-           // Reunion r5 = new Reunion("Découvrir le projet", "Examiner le projet");
+            // Reunion r5 = new Reunion("Découvrir le projet", "Examiner le projet");
             Reunion r6 = new Reunion("Analyse de la demande du client et de ses besoins + Définir un cahier des charges", "Examiner le projet");
             Reunion r7 = new Reunion("Mettre en place un système d'organisation", "Examiner le projet");
             Reunion r8 = new Reunion("Mettre en commun le travail et l'avancement de chacun", "Faire le point");
 
 
-            //listReunion.Add(r1);
+           // listReunion.Add(r1);
             listReunion.Add(r2);
             listReunion.Add(r3);
             listReunion.Add(r4);
@@ -150,7 +179,7 @@ namespace Menu
             listReunion.Add(r8);
 
 
-            listfonctionnalite.Add(f0);
+
             listfonctionnalite.Add(f1);
             listfonctionnalite.Add(f2);
             listfonctionnalite.Add(f3);
@@ -164,6 +193,7 @@ namespace Menu
             listfonctionnalite.Add(f12);
             listfonctionnalite.Add(f13);
             verifPourcentNote();
+            listfonctionnalite.Add(f0);
             foreach (Fonctionnalites f in listfonctionnalite)
             {
                 listtransmise.Add(f);
@@ -175,56 +205,7 @@ namespace Menu
             listPersonnage.Add(p4);
 
 
-            Personnage persov;
-            persov = new Personnage("-", -1, -1, -1, null, null);
-
-            int besoinAffinite = 120;
-            int besoinDeteste = 80;
-
-            //les relations sont determinees a 50% par la chance et 50% la sociabilite
-            foreach (Personnage p in listPersonnage)
-            {
-                Personnage meilleurAffinite = persov;
-                Personnage pireDeteste = persov;
-
-                foreach (Personnage p1 in listPersonnage)
-                {
-                    if (p1 != p)
-                    {
-                        int rand = aleatoire.Next(101);
-                        if (p1.getSociabilite() + p.getSociabilite() + rand >= besoinAffinite)
-                        {
-                            meilleurAffinite = p1;
-
-                        }
-                        if (p1.getSociabilite() + p.getSociabilite() - rand <= besoinDeteste && p1 != meilleurAffinite && p1.getAffinite() != p)
-                        {
-                            pireDeteste = p1;
-                        }
-
-                    }
-
-                }
-
-                p.setAffinite(meilleurAffinite);
-                p.setDeteste(pireDeteste);
-            }
-
-            //si affinite avec quelqu'un qui nous deteste : on enleve le deteste
-            foreach (Personnage p in listPersonnage)
-            {
-                if ((p.getAffinite()).getDeteste() == p)
-                {
-
-                    (p.getAffinite()).setDeteste(persov);
-                }
-
-            }
-
-
-            attributionQualitesDefautsPointsFortsEtFaibles();
-
-            jeu = new frmJeu(p1, p2, p3, p4, 10);
+            jeu = new frmJeu(p1, p2, p3, p4, 20);
 
             jeu.Refresh();
             jeu.Show();
@@ -412,75 +393,117 @@ namespace Menu
         {
             fm.Hide();
 
-            /*
-             */
 
-            /* ---------------- qualites et defauts ---------------- */
             Random aleatoire = new Random();
 
-
-
-            listeQualites.Add("Sang-froid");        //stress monte moins vite
-            listeQualites.Add("Inépuisable");       //fatigue monte moins vite
-            listeQualites.Add("Talentueux");        //ttes les actions *1,5
-            listeQualites.Add("Développeur né");    //dv *1,5
-            listeQualites.Add("Concepteur né");        //conception *1,5
-            listeQualites.Add("Chercheur né");        //recherche *1,5
-            listeQualites.Add("Diplomate");            //relations +10 points
-
-
-            listeDefauts.Add("Stressé");                    //stress monte plus vite
-            listeDefauts.Add("Fatigué");                //fatigue monte plus vite
-            listeDefauts.Add("Incompétent notoire");    //ttes les actions *1,5
-            listeDefauts.Add("Mauvais développeur");    //dv * 0,5
-            listeDefauts.Add("Mauvais concepteur");     //conception * 0,5
-            listeDefauts.Add("Mauvaise chercheur");     //recherche * 0,5
-            listeDefauts.Add("Asocial");                //relations -10 points
-
-
+            ArrayList prenoms = new ArrayList();
+            prenoms.Add("Pierre");
+            prenoms.Add("Max");
+            prenoms.Add("André");
+            prenoms.Add("Alexandre");
+            prenoms.Add("Gaël");
+            prenoms.Add("Gilles");
+            prenoms.Add("Georges");
+            prenoms.Add("Viviane");
+            prenoms.Add("Clémentine");
+            prenoms.Add("Alice");
+            prenoms.Add("Mathilde");
+            prenoms.Add("Sophie");
 
 
             //creation personnage
-            p1 = remplirPersonnage("Valentin", 20, 0, 82, null, null);
-            p2 = remplirPersonnage("Aymeric", 20, 20, 80, null, null);
-            p3 = remplirPersonnage("Mathieu", 33, 40, 50, null, null);
-            p4 = remplirPersonnage("Samir", 42, 10, 45, null, null);
+            int randomise = aleatoire.Next(prenoms.Count);
+            string name = (string)prenoms[randomise];
+            randomise = aleatoire.Next(51);
+            int connaissance = randomise;
+            randomise = aleatoire.Next(51);
+            int stress = randomise;
+            randomise = aleatoire.Next(101);
+            int sociabilite = randomise;
+            p1 = remplirPersonnage(name, connaissance, stress, sociabilite, null, null);
+
+            randomise = aleatoire.Next(prenoms.Count);
+            name = (string)prenoms[randomise];
+            randomise = aleatoire.Next(51);
+            connaissance = randomise;
+            randomise = aleatoire.Next(51);
+            stress = randomise;
+            randomise = aleatoire.Next(101);
+            sociabilite = randomise;
+            p2 = remplirPersonnage(name, connaissance, stress, sociabilite, null, null);
+
+            randomise = aleatoire.Next(prenoms.Count);
+            name = (string)prenoms[randomise];
+            randomise = aleatoire.Next(51);
+            connaissance = randomise;
+            randomise = aleatoire.Next(51);
+            stress = randomise;
+            randomise = aleatoire.Next(101);
+            sociabilite = randomise;
+            p3 = remplirPersonnage(name, connaissance, stress, sociabilite, null, null);
+
+            randomise = aleatoire.Next(prenoms.Count);
+            name = (string)prenoms[randomise];
+            randomise = aleatoire.Next(51);
+            connaissance = randomise;
+            randomise = aleatoire.Next(51);
+            stress = randomise;
+            randomise = aleatoire.Next(101);
+            sociabilite = randomise;
+            p4 = remplirPersonnage(name, connaissance, stress, sociabilite, null, null);
 
 
 
             /*
             FONCTIONNALITES ( NOM , PANECESS , POURCENTNOTE , NVCONNAIS , PADEPENSE , TYPE) */
 
-            // 88 sans le crunch donc en tout 900 
+            /* SUR 900 */
 
 
+
+            /* Recherche pour obtenir plus de niveau de compétences */
             Fonctionnalites f0 = new Fonctionnalites("Formation", 100000, 0, 0, "Rechercher");    //n'impacte pas l'avancement du projet, elle sert juste à obtenir plus de compétences
-            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 120, 0, 0, "Spécification");
-            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 40, 0, 0, "Spécification");
-            Fonctionnalites f3 = new Fonctionnalites("Documentation", 40, 0, 0, "Spécification");
-            Fonctionnalites f4 = new Fonctionnalites("MCD", 40, 0, 0, "Concevoir");
-            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 40, 0, 0, "Concevoir");
-            Fonctionnalites f6 = new Fonctionnalites("GIT", 40, 0, 0, "Concevoir");
-            Fonctionnalites f7 = new Fonctionnalites("Classes", 40, 0, 0, "Développer");
-            Fonctionnalites f8 = new Fonctionnalites("Controleur", 250, 0, 0, "Développer");
-            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 100, 0, 0, "Développer");
+
+            /* Spécification sur 240*/
+            Fonctionnalites f1 = new Fonctionnalites("Cahier des charges", 100, 0, 20, "Spécification");
+            Fonctionnalites f2 = new Fonctionnalites("Objectifs pédagogiques", 60, 0, 10, "Spécification");
+            Fonctionnalites f3 = new Fonctionnalites("Documentation", 40, 0, 20, "Spécification");
+
+
+            /* Conception sur 120*/
+            Fonctionnalites f4 = new Fonctionnalites("MCD", 20, 0, 40, "Concevoir");
+            Fonctionnalites f5 = new Fonctionnalites("Interface graphique ", 80, 0, 50, "Concevoir");
+            Fonctionnalites f6 = new Fonctionnalites("GIT", 20, 0, 20, "Concevoir");
+
+            /* Developpement sur 450*/
+            Fonctionnalites f7 = new Fonctionnalites("Classes", 150, 0, 50, "Développer");
+            Fonctionnalites f8 = new Fonctionnalites("Controleur", 150, 0, 65, "Développer");
+            Fonctionnalites f9 = new Fonctionnalites("Moteur de jeu", 150, 0, 50, "Développer");
+
+            /* Recette */
+            Fonctionnalites f11 = new Fonctionnalites("Test du code", 20, 0, 40, "Recette");
+            Fonctionnalites f12 = new Fonctionnalites("Faire le point avec le client", 10, 0, 20, "Recette");
+
+            /* Livraison */
+            Fonctionnalites f13 = new Fonctionnalites("Livraison", 10, 0, 5, "Livraison");
+
 
             //REUNION(THEME DE LA REUNION) et le statut de cette réunion est par défaut à false
-            Reunion r1 = new Reunion("Faire connaissance", "Découvir l'équipe");
+          //  Reunion r1 = new Reunion("Faire connaissance", "Découvir l'équipe");
             Reunion r2 = new Reunion("Évaluer le potentiel du groupe", "Découvir l'équipe");
             Reunion r3 = new Reunion("Révèle les qualités et les défauts", "Découvir l'équipe");
             Reunion r4 = new Reunion("Analyse des affinités de chacun", "Découvir l'équipe");
-            Reunion r5 = new Reunion("Découvrir le projet", "Examiner le projet");
+         //   Reunion r5 = new Reunion("Découvrir le projet", "Examiner le projet");
             Reunion r6 = new Reunion("Analyse de la demande du client et de ses besoins + Définir un cahier des charges", "Examiner le projet");
             Reunion r7 = new Reunion("Mettre en place un système d'organisation", "Examiner le projet");
             Reunion r8 = new Reunion("Mettre en commun le travail et l'avancement de chacun", "Faire le point");
 
 
-            listReunion.Add(r1);
+        //    listReunion.Add(r1);
             listReunion.Add(r2);
             listReunion.Add(r3);
             listReunion.Add(r4);
-            listReunion.Add(r5);
+          //  listReunion.Add(r5);
             listReunion.Add(r6);
             listReunion.Add(r7);
             listReunion.Add(r8);
@@ -496,8 +519,10 @@ namespace Menu
             listfonctionnalite.Add(f7);
             listfonctionnalite.Add(f8);
             listfonctionnalite.Add(f9);
+            listfonctionnalite.Add(f11);
+            listfonctionnalite.Add(f12);
+            listfonctionnalite.Add(f13);
             verifPourcentNote();
-
             foreach (Fonctionnalites f in listfonctionnalite)
             {
                 listtransmise.Add(f);
@@ -509,52 +534,63 @@ namespace Menu
             listPersonnage.Add(p4);
 
 
+            Personnage persov;
+            persov = new Personnage("-", -1, -1, -1, null, null);
 
+            int besoinAffinite = 120;
+            int besoinDeteste = 80;
 
+            //les relations sont determinees a 50% par la chance et 50% la sociabilite
             foreach (Personnage p in listPersonnage)
             {
-                for (int i = 0; i < nbQualites; i++)
+                Personnage meilleurAffinite = persov;
+                Personnage pireDeteste = persov;
+
+                foreach (Personnage p1 in listPersonnage)
                 {
-                    int rand1 = aleatoire.Next(listeQualites.Count);   //de 0 à X-1
-                    p.qualites.Add(listeQualites[rand1]);
+                    if (p1 != p)
+                    {
+                        int rand = aleatoire.Next(101);
+                        if (p1.getSociabilite() + p.getSociabilite() + rand >= besoinAffinite)
+                        {
+                            meilleurAffinite = p1;
+
+                        }
+                        if (p1.getSociabilite() + p.getSociabilite() - rand <= besoinDeteste && p1 != meilleurAffinite && p1.getAffinite() != p)
+                        {
+                            pireDeteste = p1;
+                        }
+
+                    }
+
                 }
 
-                for (int i = 0; i < nbDefauts; i++)
+                p.setAffinite(meilleurAffinite);
+                p.setDeteste(pireDeteste);
+            }
+
+            //si affinite avec quelqu'un qui nous deteste : on enleve le deteste
+            foreach (Personnage p in listPersonnage)
+            {
+                if ((p.getAffinite()).getDeteste() == p)
                 {
-                    int rand2 = aleatoire.Next(listeDefauts.Count);   //de 0 à X-1
-                                                                      //while (rand2 == rand1)
-                                                                      //{
-                                                                      //rand2 = aleatoire.Next(listeDefauts.Count);  //on fait cela car les qualites et defauts avec le meme argument sont opposés et incompatibles irl
-                                                                      //}
-                    p.defauts.Add(listeDefauts[rand2]);
-                }
 
-                int randAffinite = aleatoire.Next(4);
-                int randDeteste = aleatoire.Next(4);
-
-                if (listPersonnage[randAffinite] != p)
-                {
-                    p.setAffinite((Personnage)listPersonnage[randAffinite]);
-                }
-
-
-
-
-                if (listPersonnage[randDeteste] != p && listPersonnage[randDeteste] != p.getAffinite())
-                {
-                    p.setDeteste((Personnage)listPersonnage[randDeteste]);
+                    (p.getAffinite()).setDeteste(persov);
                 }
 
             }
 
+
             attributionQualitesDefautsPointsFortsEtFaibles();
 
-
-            jeu = new frmJeu(p1, p2, p3, p4, 20);
+            jeu = new frmJeu(p1, p2, p3, p4, 35);
 
             jeu.Refresh();
             jeu.Show();
+            frmReunionPopUp popup = new frmReunionPopUp();
+            popup.Show();
         }
+
 
 
         /**
@@ -604,7 +640,30 @@ namespace Menu
             }
 
 
-            Forms.FrmEnd e = new Forms.FrmEnd(s, tacheNonCodé, frmJeu.getAvancement(), 200);
+            Forms.FrmEnd e = new Forms.FrmEnd(s, tacheNonCodé, frmJeu.getAvancement(), 0);
+            e.Show();
+
+
+
+        }
+
+        public static void arreterJeu(String s, int a)
+        {
+
+
+
+            //crée une liste stockant tous les taches non effectué
+            ArrayList tacheNonCodé = new ArrayList();
+            foreach (Fonctionnalites f in getListeFonctionnalite())
+            {
+                if (!(f.getStatus()))
+                {
+                    tacheNonCodé.Add(f);
+                }
+            }
+
+
+            Forms.FrmEnd e = new Forms.FrmEnd(s, tacheNonCodé, frmJeu.getAvancement(), a);
             e.Show();
 
 

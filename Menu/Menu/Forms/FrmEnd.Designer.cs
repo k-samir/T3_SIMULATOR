@@ -100,7 +100,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(1065, 56);
             this.label3.TabIndex = 34;
-            this.label3.Text = "Vous avez perdu Score : ";
+            this.label3.Text = "Vous avez perdu ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2

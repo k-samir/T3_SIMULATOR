@@ -203,11 +203,12 @@ namespace Menu
          */
         private void btnQuitter_Click(object sender, EventArgs e)
         {
-            frmMenu menu = new frmMenu();
+         /*   frmMenu menu = new frmMenu();
             menu.Show();
-
+            lstTache.Items.Clear();
+            */
             //this.Dispose();
-            this.Close();
+            Application.Exit();
 
 
         }
@@ -256,8 +257,16 @@ namespace Menu
             // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
             if ((nbTour >= nbTourMax) || ((ControleurJeu.verifierTacheTermine())))
             {
+                if (ControleurJeu.verifierTacheTermine())
+                {
+                    ControleurJeu.arreterJeu(rtbListeF.Text,0);
+
+                    this.Close();
+                }
                 ControleurJeu.arreterJeu(rtbListeF.Text);
+
                 this.Close();
+
             }
 
             // Pre remplissage de toutes les taches pour le tour actuel pour chaque perso
@@ -403,7 +412,6 @@ namespace Menu
                 // FIN SI DEADLINE OU TOUTES LES FONCTIONS SONT FINIES
                 // A REVOIR ( VERIFIER SI LE POURCENTAGE DU PROJET == 100 --> FIN )
 
-
             }
             catch (NullReferenceException)
             {
@@ -518,7 +526,7 @@ namespace Menu
             }
 
 
-            if (nbTour >= 10)
+           /* if (nbTour >= nbTourMax)
             {
                 viderCBO();
 
@@ -526,7 +534,7 @@ namespace Menu
 
                 this.Close();
             }
-
+            */
             if (dr == DialogResult.OK)
             {
                 if (listRepos.Count() != 0)
@@ -729,7 +737,6 @@ namespace Menu
                     }
                     if (r.getThemeReunion() == "Révèle les qualités et les défauts")
                     {
-                        ;
                         uC_Personnage1.afficherQualiteDefaut();
                         uC_Personnage2.afficherQualiteDefaut();
                         uC_Personnage3.afficherQualiteDefaut();
@@ -740,6 +747,9 @@ namespace Menu
                         lstTache.Visible = true;
                         btnVider.Visible = true;
                         lblLstTache.Visible = true;
+                        frmReunionPopUp popup = new frmReunionPopUp();
+                        popup.messagePopUp("formation");
+                        popup.ShowDialog();
                     }
                     if (r.getThemeReunion() == "Mettre en commun le travail et l'avancement de chacun")
                     {
