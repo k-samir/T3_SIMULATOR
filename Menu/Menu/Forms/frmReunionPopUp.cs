@@ -18,7 +18,6 @@ namespace Menu.Forms
         public frmReunionPopUp()
         {
             InitializeComponent();
-            //StartPosition = FormStartPosition.Manual;
             Rectangle r = Screen.PrimaryScreen.WorkingArea;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - this.Width, Screen.PrimaryScreen.WorkingArea.Height - this.Height);
@@ -36,10 +35,6 @@ namespace Menu.Forms
         public void messagePopUp(String butReunion)
         {
             lblNotification.Text = "Félicitations";
-            if (butReunion == "Faire connaissance")
-            {
-                lblInfo.Text = "Vous pourrez maintenant mettre un nom sur ces visages mystérieux..";
-            }
 
             if (butReunion == "Évaluer le potentiel du groupe")
             {
@@ -53,17 +48,14 @@ namespace Menu.Forms
 
             if (butReunion == "Analyse des affinités de chacun")
             {
-                lblInfo.Text = "A la fin de la réunion, les affinités de chacun seront révélées. Vous devrez assigner les tâches correctement !";
+                lblInfo.Text = "Les éventuelles affinités de chacun seront révélées.\nVous devrez assigner les tâches correctement !";
             }
 
-            if (butReunion == "Découvrir le projet")
-            {
-                lblInfo.Text = "Il vous est demandé de réaliser la simulation d'une gestion de projet T3. Le but du jeu est donc de terminer le projet, pour cela vous devrez assigner les tâches situées au centre aux membres, astucieusement.";
-            }
+
 
             if (butReunion == "Analyse de la demande du client et de ses besoins + Définir un cahier des charges")
             {
-                lblInfo.Text = "Vous savez maintenant quelles sont les fonctionnalités dont le client a besoin.\nPar conséquent vous savez maintenant quelle tâches vous devez effectuer pour finir le projet.";
+                lblInfo.Text = "Vous savez maintenant quelles sont les fonctionnalités dont le client a besoin.\nMais attention les tâches sont à faire dans un ordre précis";
             }
 
             if (butReunion == "Mettre en place un système d'organisation")
@@ -73,12 +65,12 @@ namespace Menu.Forms
                 ArrayList tmp = ControleurJeu.getListePersonnage();
                 Personnage p = (Personnage)tmp[numPerso];
 
-                lblInfo.Text = p.getPrenom() + " a été désigné en tant que chef de projet. Et maintenant que vous avez un chef de projet, vous pouvez faire les points sur votre avancement du projet lors des réunions\n";
+                lblInfo.Text = p.getPrenom() + " a été désigné en tant que chef de projet.\nVous pouvez faire les points sur votre avancement du projet lors des réunions";
             }
 
             if (butReunion == "Mettre en commun le travail et l'avancement de chacun")
             {
-                lblInfo.Text = "Vous pouvez voir toutes les tâches terminées sur la console";
+                lblInfo.Text = "Vous pouvez voir l'avancement de chaque tâches à réaliser";
             }
 
             if(butReunion == "Nombre de réunion dépassé")
@@ -110,7 +102,7 @@ namespace Menu.Forms
 
             if(butReunion == "picturebox")
             {
-                lblNotification.Text = "Astuce";
+               lblNotification.Text = "Astuce";
                lblInfo.Text = "Faites connaissance avec les membres du projet, puis revenez ici..";
             }
 
