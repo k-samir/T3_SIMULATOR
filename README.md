@@ -51,21 +51,22 @@ Attention ! Il y aura de multiples aléas durant votre projet, restez prudent !
 
 # Synopsis du jeu
 
-RAJOUTER LE SCENARIO
 
-## Installation du jeu
 
-Pour installer le jeu vous devez telecharger [l'executable](https://git.unistra.fr/scl19-t4-c/juthose/raw/master/Juthose.exe) depuis gitlab.
 
+# Installation du jeu
+
+Pour installer le jeu vous devez installer [l'executable]depuis gitlab.
+
+![Image de l'exe à double cliquer](https://git.unistra.fr/skamar/myt3/raw/master/Menu/Images%20GIT/imageGITInstallation.png)
 
 ## Executer le jeu
 
-Il suffit de double cliquer sur l'executable afin de pouvoir installer le jeu. (Voir image)
-Un raccourci sur votre bureau est ensuite crée pour pouvoir jouer.
+Il suffit de double cliquer sur l'executable que vous venez de télécharger. (Voir image)
 
-![Image de l'exe à double cliquer]()
-![Raccourci sur le Bureau]()
+##Déroulement d'une partie
 
+![Déroulement d'une partie](https://git.unistra.fr/skamar/myt3/raw/master/Menu/Images%20GIT/screenGIT.PNG)
 
 ### La fin de partie
 
