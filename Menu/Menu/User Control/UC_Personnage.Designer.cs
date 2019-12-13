@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Personnage));
             this.lblPrenom = new System.Windows.Forms.Label();
             this.lblFatigue = new System.Windows.Forms.Label();
@@ -58,12 +59,15 @@
             this.lblQualite = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblDefaut = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pbClic = new System.Windows.Forms.PictureBox();
+            this.pnlClignotant = new System.Windows.Forms.Panel();
+            this.timerClignotant = new System.Windows.Forms.Timer(this.components);
             this.grpAction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeurNoir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCacheur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClic)).BeginInit();
+            this.pnlClignotant.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPrenom
@@ -374,7 +378,7 @@
             // pbClic
             // 
             this.pbClic.Image = ((System.Drawing.Image)(resources.GetObject("pbClic.Image")));
-            this.pbClic.Location = new System.Drawing.Point(120, 94);
+            this.pbClic.Location = new System.Drawing.Point(1, 1);
             this.pbClic.Name = "pbClic";
             this.pbClic.Size = new System.Drawing.Size(37, 40);
             this.pbClic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -382,12 +386,27 @@
             this.pbClic.TabStop = false;
             this.pbClic.Visible = false;
             // 
+            // pnlClignotant
+            // 
+            this.pnlClignotant.Controls.Add(this.pbClic);
+            this.pnlClignotant.Location = new System.Drawing.Point(120, 94);
+            this.pnlClignotant.Name = "pnlClignotant";
+            this.pnlClignotant.Size = new System.Drawing.Size(39, 42);
+            this.pnlClignotant.TabIndex = 28;
+            this.pnlClignotant.Visible = false;
+            // 
+            // timerClignotant
+            // 
+            this.timerClignotant.Enabled = true;
+            this.timerClignotant.Interval = 500;
+            this.timerClignotant.Tick += new System.EventHandler(this.timerClignotant_Tick);
+            // 
             // UC_Personnage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Controls.Add(this.pbClic);
+            this.Controls.Add(this.pnlClignotant);
             this.Controls.Add(this.lblDefaut);
             this.Controls.Add(this.lblQualite);
             this.Controls.Add(this.lblPointFaible);
@@ -417,6 +436,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCacheur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClic)).EndInit();
+            this.pnlClignotant.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -452,5 +472,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblQualite;
         private Bunifu.Framework.UI.BunifuCustomLabel lblDefaut;
         private System.Windows.Forms.PictureBox pbClic;
+        private System.Windows.Forms.Panel pnlClignotant;
+        private System.Windows.Forms.Timer timerClignotant;
     }
 }

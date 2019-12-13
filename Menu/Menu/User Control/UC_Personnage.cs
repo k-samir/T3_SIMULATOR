@@ -285,6 +285,8 @@ namespace Menu
         {
             lblPrenom.Visible = true;
             pbClic.Visible = true;
+            pnlClignotant.Visible = true;
+            timerClignotant.Start();
         }
 
         public void rendreAttributsVisible()
@@ -392,6 +394,7 @@ namespace Menu
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            arreterClignotant();
             if (frmButReunion.getCompteurEquipe() >= 2)
             {
                 frmStatPerso f = new frmStatPerso(this);
@@ -410,6 +413,31 @@ namespace Menu
         {
             return pictureBox1.Image;
         }
+
+        private void timerClignotant_Tick(object sender, EventArgs e)
+        {
+            if(pnlClignotant.BackColor == Color.Yellow)
+            {
+                pnlClignotant.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            }
+            else
+            {
+                pnlClignotant.BackColor = Color.Yellow;
+            }
+        }
+
+        public void arreterClignotant()
+        {
+            timerClignotant.Stop();
+            timerClignotant.Dispose();
+            pnlClignotant.Visible = false;
+            pbClic.Location = new System.Drawing.Point(120, 94);
+            this.Controls.Add(pbClic);
+            pbClic.Visible = false;
+
+        }
     }
+
+
 }
 
