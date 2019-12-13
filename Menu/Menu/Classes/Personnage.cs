@@ -8,11 +8,7 @@ using Menu.Forms;
 
 namespace Menu.classePersonnage
 {
-    /*
-     * 
-     * \brief Exemple de Commentaire
-     * 
-     */
+   
     public class Personnage
     {
         //Attributs d'un personnage 
@@ -40,10 +36,12 @@ namespace Menu.classePersonnage
         public List<Fonctionnalites> tacheTour = new List<Fonctionnalites>();
 
 
-        //Constructeur de la classe personnage
-        /*
-         * Constructeur Personnage
-         */
+        /**
+         * 
+		 *\brief exemple de brief
+		 *
+		 ... constructeur text ...
+        */
         public Personnage(string prenom, int connaissance, int stress, int sociabilite, Personnage affinite, Personnage deteste)
         {
             this.prenom = prenom;
