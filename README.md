@@ -1,3 +1,5 @@
+![](Menu/Menu/image/ecc6fc94-0f64-41ac-83a3-39886d177cad_200x200.png)
+
 # T432_GOJ19_T3_A : T3 Simulator
 
 # Présentation
