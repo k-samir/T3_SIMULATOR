@@ -12,7 +12,7 @@ Il dispose d’une Interface Homme-Machine, simple, intuitive et ergonomique.
 
 [Cahier des charges](https://docs.google.com/document/d/1Wt1TN2uy75v-5iO5i8XkizberEv1joOm_bvyGyg5HoU/edit)
 
-[Lien de téléchargement de l'application](https://git.unistra.fr/projet-t3/myt3/blob/master/Menu/Setup/Setup.msi)
+[Lien de téléchargement de l'application](https://git.unistra.fr/projet-t3/myt3/blob/master/Menu/Setup/Setup%20T3.msi)
 
 
 # Objectifs pédagogiques
@@ -62,7 +62,7 @@ Saurez-vous compléter le projet à temps malgré tout ?
 # Installation du jeu
 
 Pour installer le jeu vous devez installer [l'executable]depuis gitlab.
-[Lien de téléchargement de l'application](https://git.unistra.fr/projet-t3/myt3/blob/master/Menu/Setup/Setup.msi)
+[Lien de téléchargement de l'application](https://git.unistra.fr/projet-t3/myt3/blob/master/Menu/Setup/Setup%20T3.msi)
 
 
 ![Image de l'exe à double cliquer](Menu/Images GIT/imageGITInstallation.png)
