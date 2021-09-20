@@ -65,7 +65,7 @@ Pour installer le jeu vous devez installer [l'executable]depuis gitlab.
 [Lien de téléchargement de l'application](https://git.unistra.fr/projet-t3/myt3/blob/master/Menu/Setup/Setup%20T3.msi)
 
 
-![Image de l'exe à double cliquer](Menu/Images GIT/imageGITInstallation.png)
+![Image de l'exe à double cliquer](https://github.com/k-samir/T3_Simulator/blob/master/Menu/Images%20GIT/imageGITInstallation.png?raw=true)
 
 
 ## Executer le jeu
@@ -78,7 +78,7 @@ Vous commencerez la partie sans aucunes informations, car vous venez d'être ass
 Vous ne pourrez rien faire sans faire une première réunion : dans celle-ci vous aurez plusieurs choix de thématique mais vous êtes limité à 3 thèmes (par réunion) sur une totalité de 8 thèmes.
 Les informations  sur votre équipe et le projet seront révélées peu à peu au fur et à mesure de vos réunions.
 
-![Image d'une réunion](Menu/Images GIT/gitreunion.PNG)
+![Image d'une réunion](https://github.com/k-samir/T3_Simulator/blob/master/Menu/Images%20GIT/gitreunion.PNG?raw=true)
 
 Une fois le cahier des charges établi lors d'une réunion, vous pourrez commencer à travailler sur le projet.
 Pour cela il suffit de faire glisser une fonctionnalité du projet dans un horaire disponible d'un membre de l'équipe de projet.
@@ -88,22 +88,22 @@ Votre choix de fonctionnalité à faire sera limité chaque tours : en effet ils
 Le stress et la fatigue de chaque membre du groupe augmentera au fur et à mesure de la partie, plus ou moins vite en fonction de vos décisions.
 Puis fatalement vous aurez besoin de mettre au repos des membres de votre équipe pour éviter qu'ils ne deviennent complètement inneficaces !
 
-![Image du Menu Repos](Menu/Images GIT/screenrepos.PNG)
+![Image du Menu Repos](https://github.com/k-samir/T3_Simulator/blob/master/Menu/Images%20GIT/screenrepos.PNG?raw=true)
 
 Aléatoirement vous aurez également une nouvelle demande client
 
-![Déroulement d'une partie](Menu/Images GIT/screenGIT.PNG)
+![Déroulement d'une partie](https://user-images.githubusercontent.com/66287288/134029767-fd88f4bd-cb15-40b0-8927-c25a9bb1f695.png)
 
 ### La fin de partie
 
 Enfin, vous aurez (peut-être) réussi à atteindre la dernière phase du projet : la livraison !
 Dans ce cas, bravo, vous avez réussi à terminer le projet à temps. Vous arriverez donc sur l'écran de fin.
 
-![Image de fin Gagné](Menu/Images GIT/screenGagne.png)
+![Image de fin Gagné](https://user-images.githubusercontent.com/66287288/134029858-2e6a63b8-c8c6-4475-aec3-075e2fed80a0.png)
 
 Dans le cas où vous n'ayez pas réussi à terminer le projet dans le nombre de tours impartis vous serez renvoyés sur l'écran de fin également... mais vous aurez perdu ! 
 
-![Image de fin Perdu](Menu/Images GIT/CapturePerdu.PNG)
+![Image de fin Perdu](https://user-images.githubusercontent.com/66287288/134029818-f670c2d5-2c1f-4025-8979-bef52448b8fd.png)
 
 # Technologies utilisés
 
@@ -113,11 +113,11 @@ Le jeu a entièrement été développé sur [Visual Studio](https://visualstudio
 
 Telecharger le dossier complet depuis git le dézipper.
 
-![Telecharger .zip](Menu/Images GIT/DownloadGIT.png)
+![Telecharger .zip](https://user-images.githubusercontent.com/66287288/134029901-f93ffb3d-f631-4ca4-a285-843afa7cee10.png)
 
 et ouvrir le fichier Documentation.lnk situé içi : Documentation/Documentation.lnk
 
-![Ouvrir doc](Menu/Images GIT/imageClickDoc.png)
+![Ouvrir doc](https://user-images.githubusercontent.com/66287288/134029924-013fb361-6cbf-441c-94e4-196539fb6f4d.png)
 
 ### Collaborateurs 
 
